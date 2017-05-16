@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\api\controllers;
 
 use app\models\Actions;
 use Yii;
@@ -19,6 +19,9 @@ class ActionsController extends ActiveController
             [
                 'class' => \yii\filters\ContentNegotiator::className(),
                 'only' => ['index', 'view'],
+                'formats' => [
+                    'application/json' => \yii\web\Response::FORMAT_JSON,
+                ],
             ],
         ];
     }

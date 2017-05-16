@@ -7,15 +7,23 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+        ],
+        'v1' => [
+            'class' => \app\modules\api\v1\Module::class,
+        ],
+    ],
+    'defaultRoute' => '/admin/site',
+    'homeUrl' => '/admin/site',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'xxxxxxxxxx',
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
-                //'text/html' => 'yii\web\JsonParser',
-            ],
-
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -23,6 +31,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => '/admin',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -46,14 +55,23 @@ $config = [
         'db' => require(__DIR__ . '/db.php'),
         
         'urlManager' => [
-            'enablePrettyUrl' => false,
+            'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => false,
             'rules' => [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'countries'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'languages'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'sessionsapps'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'clients'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions']
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'stores'],
+
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions',
+                    'extraPatterns' => ['POST create' => 'create']
+                ],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'clients',
+                    'extraPatterns' => ['POST create' => 'create', 'POST upload' => 'upload']
+                ],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'sessionsapps',
+                    'extraPatterns' => ['POST create' => 'create']
+                ],
             ],
         ],
         
