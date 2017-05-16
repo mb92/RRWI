@@ -52,7 +52,8 @@ $config = [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'countries'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'languages'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'sessionsapps'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'clients']
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'clients'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions']
             ],
         ],
         
