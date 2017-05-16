@@ -3,6 +3,7 @@
 namespace app\modules\api\v1\controllers;
 
 use app\models\Clients;
+use app\models\Actions;
 use Yii;
 use yii\rest\ActiveController;
 
@@ -32,31 +33,62 @@ class ClientsController extends ActiveController
 
 	public function actionUpload() {
 		// Get image string posted from Android App
-		$request=Yii::$app->request->post();
+		//print_r(Yii::$app->request->post());
+		// die();
 
-		$request['imageB64'];
-		$request['name'];
-		$request['email'];
-		$request['sesId'];
-		$base = $request['imageB64'];
+		$name = Yii::$app->request->post('name', false);
+		$email = Yii::$app->request->post('email', false);
+		$token = Yii::$app->request->post('token', false);
+		$sesId = Yii::$app->request->post('sesId', false);
+		$imageB64 = Yii::$app->request->post('imageB64', false);
 
-		// Get file name posted from Android App
-		$filename = "filenam";
-		// Decode Image
-		$binary=base64_decode($base);
-		// header('Content-Type: bitmap; charset=utf-8');
-		// Images will be saved under 'www/imgupload/uplodedimages' folder
-		$file = fopen('../uploaded/'.$filename, 'wb');
-		// Create File
-		fwrite($file, $binary);
-		fclose($file);
-		echo 'Image upload complete, Please check your php file directory';
-		print_r(Yii::$app->request->post());
-		die();
+		$results = [
+			'image' => "bad",
+			'client' => "bad",
+			'action' => "bad", 
+			];
 
+		if (($name != false) && ($email != false) && ($token != false) && ($sesId != false) && ($imageB64 != false))
+		{
+			Yii::$app->response->statusCode = 200;
+			$filename = $sesId.'.jpg';
+			// Decode Image
+			$binary=base64_decode($imageB64);
+			// header('Content-Type: bitmap; charset=utf-8');
+			// Images will be saved under 'www/imgupload/uplodedimages' folder
+			$file = fopen('../upload/'.$filename, 'wb');
 
-		Yii::$app->response->statusCode = 200;	
+			// Create File
+			fwrite($file, $binary);
+			fclose($file);
+			// echo 'Image upload complete, Please check your php file directory';
 
+			$result['image'] = "OK";
+
+			$client = new Clients();
+			$client->email = Yii::$app->request->post('email');
+			$client->name = Yii::$app->request->post('name');
+			$sv = $client->save();
+			if($sv) {
+				$result['client'] = "OK";
+				$sv = false;
+			}
+
+			$action = new Actions();
+			$action->action = "tP";
+			$action->path = $filename;
+			$sv = $action->save();
+
+			if($sv) {
+				$result['action'] = "OK";
+				$sv = false;
+			}
+
+		} else {
+			Yii::$app->response->statusCode = 204;
+		}
+
+		return $result;
 	}
 
 	// public function actionIndex() {
