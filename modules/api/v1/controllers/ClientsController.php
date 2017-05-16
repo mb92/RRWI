@@ -35,7 +35,7 @@ class ClientsController extends ActiveController
 		// Get image string posted from Android App
 		//print_r(Yii::$app->request->post());
 		// die();
-
+		$auth = "0b3d4f561329b5a5dfdbaff634280be9";
 		$name = Yii::$app->request->post('name', false);
 		$email = Yii::$app->request->post('email', false);
 		$token = Yii::$app->request->post('token', false);
@@ -43,14 +43,20 @@ class ClientsController extends ActiveController
 		$imageB64 = Yii::$app->request->post('imageB64', false);
 
 		$results = [
-			'image' => "bad",
-			'client' => "bad",
-			'action' => "bad", 
+			'token' => "fail",
+			'image' => "fail",
+			'client' => "fail",
+			'action' => "fail"
 			];
-
+		if ($token != $auth) {
+			return $results;
+			Yii::$app->response->statusCode = 204;
+		} 
+			
 		if (($name != false) && ($email != false) && ($token != false) && ($sesId != false) && ($imageB64 != false))
 		{
 			Yii::$app->response->statusCode = 200;
+			$result['token'] = "OK";
 			$filename = $sesId.'.jpg';
 			// Decode Image
 			$binary=base64_decode($imageB64);
