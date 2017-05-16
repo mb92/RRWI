@@ -1,4 +1,5 @@
 <?php
+require(__DIR__ . '/functions.php');
 
 $params = require(__DIR__ . '/params.php');
 
@@ -48,10 +49,10 @@ $config = [
             'enablePrettyUrl' => false,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 
-                'controller' => 'countries'],
-                ['class' => 'yii\rest\UrlRule', 
-                'controller' => 'languages']
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'countries'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'languages'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'sessionsapps'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'clients']
             ],
         ],
         

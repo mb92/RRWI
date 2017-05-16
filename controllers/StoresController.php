@@ -2,16 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\Languages;
+use app\models\Stores;
 use Yii;
 use yii\rest\ActiveController;
 
 /**
 * 
 */
-class LanguagesController extends ActiveController
+class StoresController extends ActiveController
 {
-	public $modelClass = 'app\models\Languages';
+	public $modelClass = 'app\models\Stores';
 
 	public function behaviors()
     {

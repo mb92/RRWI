@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-05-15 17:35:53
+Date: 2017-05-16 10:57:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -83,10 +83,10 @@ INSERT INTO `languages` VALUES ('2', 'Portuguese', 'PT');
 INSERT INTO `languages` VALUES ('3', 'German', 'DE');
 
 -- ----------------------------
--- Table structure for `sessionsapp`
+-- Table structure for `sessionsapps`
 -- ----------------------------
-DROP TABLE IF EXISTS `sessionsapp`;
-CREATE TABLE `sessionsapp` (
+DROP TABLE IF EXISTS `sessionsapps`;
+CREATE TABLE `sessionsapps` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `sesId` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
   `appId` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -110,7 +110,7 @@ CREATE TABLE `sessionsapp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
--- Records of sessionsapp
+-- Records of sessionsapps
 -- ----------------------------
 
 -- ----------------------------
@@ -125,7 +125,7 @@ CREATE TABLE `sessions_actions` (
   KEY `sess` (`sessionAppId`),
   KEY `act` (`actionId`),
   CONSTRAINT `act` FOREIGN KEY (`actionId`) REFERENCES `actions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `sess` FOREIGN KEY (`sessionAppId`) REFERENCES `sessionsapp` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `sess` FOREIGN KEY (`sessionAppId`) REFERENCES `sessionsapps` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
