@@ -75,7 +75,7 @@ class SessionsappsController extends ActiveController
 		}
 		return $result;
 	}
-
+	
 	// public function actionIndex() {
 	// 	$actions = parent::actions();
 	// 	return $actions;
