@@ -3,6 +3,7 @@
 namespace app\modules\api\v1\controllers;
 
 use app\models\Actions;
+use app\models\Sessionsapps;
 use Yii;
 use yii\rest\ActiveController;
 
@@ -38,6 +39,8 @@ class ActionsController extends ActiveController
 		{
 			if (!verifyToken($api['token'])) return $result = "Bad Token";
 
+			// $session = Sessionsapps::find()->where(['sesId' => $api['sesId']])->one();
+			
 			$model = new Actions();
 			$model->action = $api['action'];
 			$model->path = "";

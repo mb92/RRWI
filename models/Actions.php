@@ -28,8 +28,7 @@ use Yii;
  
  rT 
  * @property string $created_at Format: 1970-01-01 00:00:01
- *
- * @property SessionsActions[] $sessionsActions
+ * @property int $sessionsAppId
  */
 class Actions extends \yii\db\ActiveRecord
 {
@@ -47,8 +46,9 @@ class Actions extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['action'], 'required'],
+            [['action', 'sessionsAppId'], 'required'],
             [['created_at'], 'safe'],
+            [['sessionsAppId'], 'integer'],
             [['action'], 'string', 'max' => 2],
             [['path'], 'string', 'max' => 255],
         ];
@@ -64,14 +64,7 @@ class Actions extends \yii\db\ActiveRecord
             'action' => 'Action',
             'path' => 'Path',
             'created_at' => 'Created At',
+            'sessionsAppId' => 'Sessions App ID',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getSessionsActions()
-    {
-        return $this->hasMany(SessionsActions::className(), ['actionId' => 'id']);
     }
 }

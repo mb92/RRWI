@@ -83,6 +83,9 @@ class ClientsController extends ActiveController
 			$action = new Actions();
 			$action->action = "tP";
 			$action->path = $filename;
+			$action->sessionsAppId = 1;
+
+			// dd($action);
 			$sv = $action->save();
 
 			if($sv) {
