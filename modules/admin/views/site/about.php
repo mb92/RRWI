@@ -47,8 +47,10 @@ $this->params['breadcrumbs'][] = $this->title;
 <table class="table table-bordered">
 <?php foreach ($files as $f): ?>
 		<tr>
-			<td><code><?= Html::encode($f); ?></code></td>
+			<td><code><?= Html::encode(str_replace(Yii::$app->basePath, "", $f)); ?></code></td>
 			<td><?= date("Y-m-d H:i:s.", stat($f)['mtime']); ?></td>
+			<td><?= filesize($f)/1000 ; ?> KB </td>
 		</tr>
 	<?php endforeach ?>
 </table>
+
