@@ -41,7 +41,7 @@ class Sessionsapps extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['created_at', 'clientId', 'storeId', 'languageId', 'countryId'], 'integer'],
+            [['clientId', 'storeId', 'languageId', 'countryId'], 'integer'],
             [['sesId'], 'string', 'max' => 32],
             [['appId', 'shareEmail'], 'string', 'max' => 255],
             [['status', 'emailStatus'], 'string', 'max' => 1],

@@ -32,3 +32,15 @@ function dd($var)
     d($var,$caller);
     die();
 }
+
+
+function verifyToken($sendToken) {
+    $ourToken = "0b3d4f561329b5a5dfdbaff634280be9";
+
+    if ($ourToken == $sendToken) return true;
+    else return false;
+}
+
+function mysqltime() {
+   return date("Y-m-d H:i:s");
+}
