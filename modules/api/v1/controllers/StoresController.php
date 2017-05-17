@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\api\controllers;
+namespace app\modules\api\v1\controllers;
 
 use app\models\Stores;
 use Yii;

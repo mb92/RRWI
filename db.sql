@@ -23,15 +23,15 @@ CREATE TABLE `actions` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `action` varchar(2) CHARACTER SET utf8 NOT NULL COMMENT 'Dropdown list:\r\n\r\ntP - Take a photo\r\nsF - Share photo on facebook\r\nsI - Share photo on instagram\r\nsE - Share photo on email\r\nrT - Press RETAKE button\r\n',
   `path` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT 'Path''s values:\r\n\r\ntP - Take a photo                     => link to photoUrl (name)\r\n\r\nsF - Share photo on facebook => link to facebook\r\n\r\nsI - Share photo on instagram => link to instagram\r\n\r\nsE - Share photo on email        => user''s email address\r\n\r\nrT ',
-  `created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Format: 1970-01-01 00:00:01',
+  `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of actions
 -- ----------------------------
-INSERT INTO `actions` VALUES ('3', 'tP', 'a50c23b5e690830e9111ddd2bcd38151.jpg', '0000-00-00 00:00:00');
-INSERT INTO `actions` VALUES ('4', 'tP', 'a50c23b5e690830e9111ddd2bcd38151.jpg', '0000-00-00 00:00:00');
+#INSERT INTO `actions` VALUES ('3', 'tP', 'a50c23b5e690830e9111ddd2bcd38151.jpg', '0000-00-00 00:00:00');
+#INSERT INTO `actions` VALUES ('4', 'tP', 'a50c23b5e690830e9111ddd2bcd38151.jpg', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `clients`
