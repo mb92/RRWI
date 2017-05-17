@@ -37,3 +37,11 @@ RETAKE
 	"token": "0b3d4f561329b5a5dfdbaff634280be9",
 	"action": "rT"
 }
+
+SHARE
+{
+	"sesId": "a50c23b5e690830e9111ddd2bcd38151",
+	"token": "0b3d4f561329b5a5dfdbaff634280be9",
+	"action": "sE",
+	"shareEmail": "friend@email.com"
+}

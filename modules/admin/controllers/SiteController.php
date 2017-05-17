@@ -7,8 +7,13 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
+use yii\helpers\BaseFileHelper;
+
+use app\models\Clients;
+use app\models\Actions;
 use app\models\LoginForm;
 use app\models\ContactForm;
+
 
 class SiteController extends Controller
 {
@@ -61,20 +66,20 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        // return $this->render('index');
-        if (Yii::$app->user->isGuest) {
-            $model = new LoginForm();
+        return $this->render('index');
+        // if (Yii::$app->user->isGuest) {
+        //     $model = new LoginForm();
             
-            if ($model->load(Yii::$app->request->post()) && $model->login()) {
-                return $this->goBack();
-            }
+        //     if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        //         return $this->goBack();
+        //     }
 
-            return $this->render('login', [
-                'model' => $model,
-                ]);
-        } else {
-            return $this->render('index');
-        }
+        //     return $this->render('login', [
+        //         'model' => $model,
+        //         ]);
+        // } else {
+        //     return $this->render('index');
+        // }
     }
 
     /**
@@ -95,6 +100,8 @@ class SiteController extends Controller
         return $this->render('login', [
             'model' => $model,
         ]);
+
+
     }
 
     /**
@@ -134,6 +141,12 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $clients=Clients::find()->all();
+        $actions=Actions::find()->all();
+
+        $files = BaseFileHelper::findFiles(Yii::$app->basePath."/upload/");
+        
+        return $this->render('about', ['clients' => $clients, 'actions' => $actions, 'files' => $files]);
     }
+
 }

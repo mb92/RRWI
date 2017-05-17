@@ -43,6 +43,7 @@ class Clients extends \yii\db\ActiveRecord
             'id' => 'ID',
             'email' => 'Email',
             'name' => 'Name',
+            'created_at' => 'Crated_at',
         ];
     }
 

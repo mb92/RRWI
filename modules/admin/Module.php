@@ -22,7 +22,7 @@ class Module extends \yii\base\Module
         return ArrayHelper::merge(parent::behaviors(), [
             'auth' => [
                 'class' => AccessControl::class,
-                'except' => ['auth/*'],
+                'except' => ['site/*'],
                 'rules' => [
                     [
                         'allow' => true,

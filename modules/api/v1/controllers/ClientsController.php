@@ -4,6 +4,8 @@ namespace app\modules\api\v1\controllers;
 
 use app\models\Clients;
 use app\models\Actions;
+use app\models\Sessionsapps;
+
 use Yii;
 use yii\rest\ActiveController;
 
@@ -83,6 +85,7 @@ class ClientsController extends ActiveController
 			$action = new Actions();
 			$action->action = "tP";
 			$action->path = $filename;
+			$action->created_at = mysqltime();
 			$action->sessionsAppId = 1;
 
 			// dd($action);
@@ -100,6 +103,48 @@ class ClientsController extends ActiveController
 		return $result;
 	}
 
+
+	public function actionShare() {
+		$results = ['content' => 'fail', 'token' => "fail", 'action' => "fail", 'email' => "fail"];
+		$api = Yii::$app->request->post();
+
+		$api['sesId'] = Yii::$app->request->post('sesId', false);
+		$api['action'] = Yii::$app->request->post('action', false);
+		$api['shareEmail'] = Yii::$app->request->post('shareEmail', false);
+		$api['token'] = Yii::$app->request->post('token', false);
+
+		if (($api['sesId'] != false) && ($api['action'] != false) && ($api['shareEmail'] != false) && ($api['token'] != false))
+		{
+			$results['content'] = "OK";
+
+			// Verify our token
+			if (!verifyToken($api['token'])) return $results['token'] = "Bad Token"; 
+			else $results['token'] = "OK";
+
+			// $results['action'] = "OK";
+			// $results['email'] = "OK";
+			
+			//Save info in Actions tabele
+			$model = new Actions();
+			$model->action = $api['action'];
+			$model->path = "";
+			$model->created_at = mysqltime();
+			$sv = $model->save();
+
+			if($sv) {
+				$results['action'] = "OK"; 
+
+				$session = Languages::find()->where(['short' => $api['lang']])->one();
+
+
+			} else $results['action'] = "Can't save data";
+
+		} else {
+			// Yii::$app->response->statusCode = 204;
+			$results['content'] = "Bad content";
+		}
+		return $results;
+	}
 	// public function actionIndex() {
 	// 	$actions = parent::actions();
 	// 	return $actions;

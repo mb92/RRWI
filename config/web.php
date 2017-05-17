@@ -31,7 +31,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
-            'loginUrl' => '/admin',
+            'loginUrl' => '/admin/site/login',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
