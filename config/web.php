@@ -37,12 +37,18 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
+                'class' => 'yii\swiftmailer\Mailer',
+                'viewPath' => '/mail/layouts',
+                'useFileTransport' => false,
+                'transport' => [
+                    'class' => 'Swift_SmtpTransport',
+                    'host' => 'smtp.mailtrap.io',
+                    'username' => '638f257e3a8555',
+                    'password' => '8d470dafa0a2a5',
+                    'port' => '2525',
+                    'encryption' => 'tls',
+                                ],
+                    ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -74,7 +80,6 @@ $config = [
                 ],
             ],
         ],
-        
     ],
     'params' => $params,
 ];

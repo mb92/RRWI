@@ -175,6 +175,22 @@ class ClientsController extends ActiveController
 		}
 		return $results;
 	}
+
+
+	public function actionEmail ()
+	{
+		Yii::$app->mailer->compose()
+		    ->setFrom('from@domain.com')
+		    ->setTo('to@domain.com')
+		    ->setSubject('Message subject')
+		    ->setTextBody('Plain text content')
+		    ->setHtmlBody('<b>HTML content222</b>')
+		    ->attach('../upload/lorem.jpg')
+		    ->send();
+
+		return true;
+	}
+
 	// public function actionIndex() {
 	// 	$actions = parent::actions();
 	// 	return $actions;
