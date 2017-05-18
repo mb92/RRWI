@@ -26,13 +26,10 @@ class ClientsController extends ActiveController
         ];
     }
 
-	public function actions()
-	{
-		$actions = parent::actions();
-		unset($actions['create']);
-		return $actions;
-	}
-
+    /**
+     * Last action in the application life cycle. Creates a file by typing the relevant data into the table and sends the email to the client
+     * @return array Results from the action.
+     */
 	public function actionUpload() {
 		// Get image string posted from Android App
 		// print_r(Yii::$app->request->post());
@@ -110,21 +107,37 @@ class ClientsController extends ActiveController
 			}
 
 			$ses->status = "1";
+			$ses->clientId = $client['id'];
 			$sv=$ses->save();
 
 			if($sv) {
 				$result['finish'] = "OK";
-				$sv = false;
+
+			// // send email for client
+				$emailStatus = $this->sendEmail($client->email, "selfie-app@dndtest.ovh", $sesId);
+				if ($emailStatus) {
+					$result['email'] = "OK";
+					$ses->emailStatus = "1";
+					$ses->save();
+				} else {
+					$result['email'] = "Email will be sent later";
+					$ses->emailStatus = "0";
+					$ses->save();
+				}
 			}
 		} else {
 			Yii::$app->response->statusCode = 204;
 		}
 
-
+		//Verify action results
+		if ($result['client'] != "OK" && $result['image'] == "OK") unlink('../upload/'.$filename);
 		return $result;
 	}
 
-
+	/**
+	 * Share photo with friend of client
+	 * @return array Array with reasults from the action
+	 */
 	public function actionShare() {
 		$results = ['content' => 'fail', 'token' => "fail", 'action' => "fail", 'send' => "fail"];
 		$api = Yii::$app->request->post();
@@ -164,7 +177,8 @@ class ClientsController extends ActiveController
 				// send email
 				$emailStatus = $this->sendEmail($api['shareEmail'], $client["email"], $api["sesId"]);
 				$ses->shareEmail = $api['shareEmail'];
-				if($emailStatus) $ses->emailStatus = "1";
+				// if($emailStatus) $ses->emailStatus = "1";
+				// WARNING!!!!::: GOOD OPITON WILL BE ADD NEW COLUMN 'shareEmailStatus'
 				$svSes = $ses->save();
 				if ($emailStatus && $svSes) $results['send'] = "Eamil was sent";
 				elseif ($svSes && !$emailStatus) $results['send'] = "Email will be send later";
@@ -179,14 +193,61 @@ class ClientsController extends ActiveController
 	}
 
 
-	// public function actionEmail ($address, $fileName, $message)
+	/**
+	 * Api breakpoint for sending email for client provided the email is not sent in the "clients/upload" ActionEvent
+	 * @return array Results from action.
+	 */
 	public function actionEmail ()
 	{
-		return $this->sendEmail();
+		$results = ['content' => 'fail', 'token' => "fail", 'send' => "fail"];
+		$api = Yii::$app->request->post();
+
+		$api['sesId'] = Yii::$app->request->post('sesId', false);
+		$api['email'] = Yii::$app->request->post('email', false);
+		$api['token'] = Yii::$app->request->post('token', false);
+
+		if (($api['sesId'] != false) && ($api['email'] != false) && ($api['token'] != false))
+		{
+			$results['content'] = "OK";
+
+		// Verify our token
+			if (!verifyToken($api['token'])) {
+				$results['token'] = "Bad Token";
+				return $results;
+			}
+			else $results['token'] = "OK";
+
+			$ses = Sessionsapps::find()->where(['sesId' => $api['sesId']])->one();
+			if (is_null($ses)) return "Session not found";
+
+			if ($ses->emailStatus == "1") return "Email was sent earlier";
+
+			$client = $ses->client;
+			$emailStatus = $this->sendEmail($client["email"], "selfie-app@dndtest.ovh", $api["sesId"]);
+
+			if ($emailStatus) {
+				$results['send'] = "OK";
+				$ses->emailStatus = "1";
+				$ses->save();
+			} else {
+				$results['send'] = "Email will be sent later";
+				$ses->emailStatus = "0";
+				$ses->save();
+			}
+		} else return "Bad content";
+		return $results;
 	}
 
-	public function sendEmail($email="test@ad.pl", $from="selfieapp@mail.com", $fileName="lorem.jpg") {
+	/**
+	 * Function to create and send an email with a picture to the customer or the person with whom the customer will provide
+	 * @param  string $email    Recipient email address (Client's email or shareEmail)
+	 * @param  string $from     Default value: selfie-app@dndtest.ovh
+	 * @param  string $fileName Name of image file (without extension). It's sesId value.
+	 * @return boolean          True if message was sent success!
+	 */
+	public function sendEmail($email="test@ad.pl", $from="selfie-app@dndtest.ovh", $fileName="lorem.jpg") {
 		$subject = "Your selfie!";
+		$fileName = $fileName.".jpg";
 		$message = Yii::$app->mailer->compose('email', ['imageFileName' => '../upload/'.$fileName])
 			->setFrom($from)
 			->setTo($email)
@@ -196,8 +257,4 @@ class ClientsController extends ActiveController
 
 		return $message; 
 	}
-	// public function actionIndex() {
-	// 	$actions = parent::actions();
-	// 	return $actions;
-	// }
 }
