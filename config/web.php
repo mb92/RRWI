@@ -38,7 +38,7 @@ $config = [
         ],
         'mailer' => [
                 'class' => 'yii\swiftmailer\Mailer',
-                'viewPath' => '/mail/layouts',
+                // 'viewPath' => '/layouts/email',
                 'useFileTransport' => false,
                 'transport' => [
                     'class' => 'Swift_SmtpTransport',

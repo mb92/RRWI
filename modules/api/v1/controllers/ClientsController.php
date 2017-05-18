@@ -145,6 +145,8 @@ class ClientsController extends ActiveController
 			$ses = Sessionsapps::find()->where(['sesId' => $api['sesId']])->one();
 			if (is_null($ses)) return "Session not found";
 
+			$client = $ses->client;
+			// var_dump($client["name"]);die();
 		//Save info in Actions tabele
 			$model = new Actions();
 			$model->action = $api['action'];
@@ -153,19 +155,19 @@ class ClientsController extends ActiveController
 			$model->sessionsAppId = $ses['id'];
 			$sv = $model->save();
 
+			// $filename = "lorem.jpg";
+			$filename = $api['sesId'].".jpg";
+
 			if($sv) {
 				$results['action'] = "OK"; 
 
 				// send email
-				// 
-				
+				$emailStatus = $this->sendEmail($api['shareEmail'], $client["email"], $api["sesId"]);
 				$ses->shareEmail = $api['shareEmail'];
-				$ses->emailStatus = "1";
+				if($emailStatus) $ses->emailStatus = "1";
 				$svSes = $ses->save();
-
-				if ($svSes) {
-					$results['send'] = "Was sent";
-				}
+				if ($emailStatus && $svSes) $results['send'] = "Eamil was sent";
+				elseif ($svSes && !$emailStatus) $results['send'] = "Email will be send later";
 
 			} else $results['action'] = "Can't save data";
 
@@ -177,20 +179,23 @@ class ClientsController extends ActiveController
 	}
 
 
+	// public function actionEmail ($address, $fileName, $message)
 	public function actionEmail ()
 	{
-		Yii::$app->mailer->compose()
-		    ->setFrom('from@domain.com')
-		    ->setTo('to@domain.com')
-		    ->setSubject('Message subject')
-		    ->setTextBody('Plain text content')
-		    ->setHtmlBody('<b>HTML content222</b>')
-		    ->attach('../upload/lorem.jpg')
-		    ->send();
-
-		return true;
+		return $this->sendEmail();
 	}
 
+	public function sendEmail($email="test@ad.pl", $from="selfieapp@mail.com", $fileName="lorem.jpg") {
+		$subject = "Your selfie!";
+		$message = Yii::$app->mailer->compose('email', ['imageFileName' => '../upload/'.$fileName])
+			->setFrom($from)
+			->setTo($email)
+			->setSubject($subject)
+			->attach('../upload/'.$fileName)
+			->send();
+
+		return $message; 
+	}
 	// public function actionIndex() {
 	// 	$actions = parent::actions();
 	// 	return $actions;
