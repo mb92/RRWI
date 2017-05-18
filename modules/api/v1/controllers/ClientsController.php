@@ -62,14 +62,14 @@ class ClientsController extends ActiveController
 			// Decode Image
 			$binary=base64_decode($imageB64);
 			// header('Content-Type: bitmap; charset=utf-8');
-			// Images will be saved under 'www/imgupload/uplodedimages' folder
+			// Images will be saved under 'www/upload/' folder
 			$file = fopen('../upload/'.$filename, 'wb');
 
 			// Create File
 			fwrite($file, $binary);
 			fclose($file);
-			// echo 'Image upload complete, Please check your php file directory';
-			// var_dump(file_exists("../upload/test.jpg"));die();
+
+		// Check existis uploaded file
 			if (!file_exists('../upload/'.$filename)) return $result['image'] = "Image not create";
 			else $result['image'] = "OK";
 
@@ -101,6 +101,8 @@ class ClientsController extends ActiveController
 			$action->created_at = mysqltime();
 			$action->sessionsAppId = $ses['id'];
 			$sv = $action->save();
+
+			// $sv = Actions::create("tP", $ses);
 
 			if($sv) {
 				$result['action'] = "OK";

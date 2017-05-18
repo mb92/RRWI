@@ -78,4 +78,19 @@ class Actions extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Sessionsapps::className(), ['id' => 'sessionsAppId']);
     }
+
+    // /**
+    //  * Create new recor in actions table
+    //  * @param  string(2) $ac  It's short code of action (tP, rT, tP etc)
+    //  * @param  array $ses It's row of the running sessionsApp
+    //  * @return boolean      If save success return true
+    //  */
+    // public function create($ac, $ses) {
+    //     $action = new Actions();
+    //     $action->action = $ac;
+    //     $action->path = $ses['sesId'];
+    //     $action->created_at = mysqltime();
+    //     $action->sessionsAppId = $ses['id'];
+    //     return $action->save();
+    // }
 }
