@@ -35,30 +35,29 @@ class ClientsController extends ActiveController
 
 	public function actionUpload() {
 		// Get image string posted from Android App
-		//print_r(Yii::$app->request->post());
+		// print_r(Yii::$app->request->post());
 		// die();
-		$auth = "0b3d4f561329b5a5dfdbaff634280be9";
 		$name = Yii::$app->request->post('name', false);
 		$email = Yii::$app->request->post('email', false);
 		$token = Yii::$app->request->post('token', false);
 		$sesId = Yii::$app->request->post('sesId', false);
 		$imageB64 = Yii::$app->request->post('imageB64', false);
 
-		$results = [
-			'token' => "fail",
-			'image' => "fail",
-			'client' => "fail",
-			'action' => "fail"
-			];
-		if ($token != $auth) {
-			return $results;
-			Yii::$app->response->statusCode = 204;
-		} 
-			
+		$result = ['token' => "fail",'image' => "fail",'client' => "fail",'action' => "fail", 'finish' => "not"];
+		// print_r(Yii::$app->request->post());
+		// 	die();	
 		if (($name != false) && ($email != false) && ($token != false) && ($sesId != false) && ($imageB64 != false))
 		{
-			Yii::$app->response->statusCode = 200;
-			$result['token'] = "OK";
+			// Yii::$app->response->statusCode = 200;
+		// Verify token
+			if (!verifyToken($token)) return $result['token'] = "fail";
+			else $result['token'] = "OK";
+
+		// Found sesssion information
+			$ses = Sessionsapps::find()->where(['sesId' => $sesId])->one();
+			if (is_null($ses)) return $result['action'] = "Session not found";
+
+		// Send, create and verify image file
 			$filename = $sesId.'.jpg';
 			// Decode Image
 			$binary=base64_decode($imageB64);
@@ -70,25 +69,37 @@ class ClientsController extends ActiveController
 			fwrite($file, $binary);
 			fclose($file);
 			// echo 'Image upload complete, Please check your php file directory';
+			// var_dump(file_exists("../upload/test.jpg"));die();
+			if (!file_exists('../upload/'.$filename)) return $result['image'] = "Image not create";
+			else $result['image'] = "OK";
 
-			$result['image'] = "OK";
+			
+		// Create client
+			$client = Clients::find()->where(['email' => $email, 'name' => $name])->one();
 
-			$client = new Clients();
-			$client->email = Yii::$app->request->post('email');
-			$client->name = Yii::$app->request->post('name');
-			$sv = $client->save();
+			if (is_null($client)) {
+				$client = new Clients();
+				$client->email = Yii::$app->request->post('email');
+				$client->name = Yii::$app->request->post('name');
+				$client->created_at = mysqltime();
+				$sv = $client->save();
+			} else {
+				$sv = true;
+			}
+			
 			if($sv) {
 				$result['client'] = "OK";
 				$sv = false;
+			} else {
+				$result['client'] = "Not exist";
 			}
 
+		// Save action
 			$action = new Actions();
 			$action->action = "tP";
 			$action->path = $filename;
 			$action->created_at = mysqltime();
-			$action->sessionsAppId = 1;
-
-			// dd($action);
+			$action->sessionsAppId = $ses['id'];
 			$sv = $action->save();
 
 			if($sv) {
@@ -96,16 +107,24 @@ class ClientsController extends ActiveController
 				$sv = false;
 			}
 
+			$ses->status = "1";
+			$sv=$ses->save();
+
+			if($sv) {
+				$result['finish'] = "OK";
+				$sv = false;
+			}
 		} else {
 			Yii::$app->response->statusCode = 204;
 		}
+
 
 		return $result;
 	}
 
 
 	public function actionShare() {
-		$results = ['content' => 'fail', 'token' => "fail", 'action' => "fail", 'email' => "fail"];
+		$results = ['content' => 'fail', 'token' => "fail", 'action' => "fail", 'send' => "fail"];
 		$api = Yii::$app->request->post();
 
 		$api['sesId'] = Yii::$app->request->post('sesId', false);
@@ -117,25 +136,34 @@ class ClientsController extends ActiveController
 		{
 			$results['content'] = "OK";
 
-			// Verify our token
+		// Verify our token
 			if (!verifyToken($api['token'])) return $results['token'] = "Bad Token"; 
-			else $results['token'] = "OK";
+			else $result['token'] = "OK";
 
-			// $results['action'] = "OK";
-			// $results['email'] = "OK";
-			
-			//Save info in Actions tabele
+			$ses = Sessionsapps::find()->where(['sesId' => $api['sesId']])->one();
+			if (is_null($ses)) return "Session not found";
+
+		//Save info in Actions tabele
 			$model = new Actions();
 			$model->action = $api['action'];
-			$model->path = "";
+			$model->path = $api['shareEmail'];
 			$model->created_at = mysqltime();
+			$model->sessionsAppId = $ses['id'];
 			$sv = $model->save();
 
 			if($sv) {
 				$results['action'] = "OK"; 
 
-				$session = Languages::find()->where(['short' => $api['lang']])->one();
+				// send email
+				// 
+				
+				$ses->shareEmail = $api['shareEmail'];
+				$ses->emailStatus = "1";
+				$svSes = $ses->save();
 
+				if ($svSes) {
+					$results['send'] = "Was sent";
+				}
 
 			} else $results['action'] = "Can't save data";
 

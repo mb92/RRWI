@@ -29,6 +29,8 @@ use Yii;
  rT 
  * @property string $created_at Format: 1970-01-01 00:00:01
  * @property int $sessionsAppId
+ *
+ * @property Sessionsapps $sessionsApp
  */
 class Actions extends \yii\db\ActiveRecord
 {
@@ -51,6 +53,7 @@ class Actions extends \yii\db\ActiveRecord
             [['sessionsAppId'], 'integer'],
             [['action'], 'string', 'max' => 2],
             [['path'], 'string', 'max' => 255],
+            [['sessionsAppId'], 'exist', 'skipOnError' => true, 'targetClass' => Sessionsapps::className(), 'targetAttribute' => ['sessionsAppId' => 'id']],
         ];
     }
 
@@ -66,5 +69,13 @@ class Actions extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'sessionsAppId' => 'Sessions App ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSessionsApp()
+    {
+        return $this->hasOne(Sessionsapps::className(), ['id' => 'sessionsAppId']);
     }
 }

@@ -47,7 +47,10 @@ class SessionsappsController extends ActiveController
 		$api['lang'] = Yii::$app->request->post('lang', false);
 		$api['token'] = Yii::$app->request->post('token', false);
 
-		if (($api['sesId'] != false) && ($api['appId'] != false) && ($api['country'] != false) && ($api['storeId'] != false) && ($api['lang'] != false) && ($api['token'] != false))
+		// print_r(Yii::$app->request->post());
+
+		// if (($api['sesId'] != false) && ($api['appId'] != false) && ($api['country'] != false) && ($api['storeId'] != false) && ($api['lang'] != false) && ($api['token'] != false))
+		if (($api['sesId'] != false) && ($api['appId'] != false))
 		{
 			if (!verifyToken($api['token'])) return $result = "Bad Token";
 
@@ -59,10 +62,13 @@ class SessionsappsController extends ActiveController
 			$model = new Sessionsapps();
 			$model->sesId = $api['sesId'];
 			$model->appId = $api['appId'];
-			$model->countryId = $country['id'];
+			$model->created_at = mysqltime();
+			$model->status = "0";
+			$model->emailStatus = "0";
+			$model->shareEmail = "";
 			$model->storeId = $api['storeId'];
 			$model->languageId = $lang['id'];
-			$model->created_at = mysqltime();
+			$model->countryId = $country['id'];
 			$sv = $model->save();
 
 			if($sv) $result = "OK"; 

@@ -10,7 +10,7 @@ use Yii;
  * @property int $id
  * @property string $sesId
  * @property string $appId
- * @property int $created_at
+ * @property string $created_at
  * @property string $status
  * @property string $emailStatus
  * @property string $shareEmail
@@ -19,7 +19,7 @@ use Yii;
  * @property int $languageId
  * @property int $countryId
  *
- * @property SessionsActions[] $sessionsActions
+ * @property Actions[] $actions
  * @property Clients $client
  * @property Countries $country
  * @property Languages $language
@@ -41,6 +41,7 @@ class Sessionsapps extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['created_at'], 'safe'],
             [['clientId', 'storeId', 'languageId', 'countryId'], 'integer'],
             [['sesId'], 'string', 'max' => 32],
             [['appId', 'shareEmail'], 'string', 'max' => 255],
@@ -75,9 +76,9 @@ class Sessionsapps extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSessionsActions()
+    public function getActions()
     {
-        return $this->hasMany(SessionsActions::className(), ['sessionAppId' => 'id']);
+        return $this->hasMany(Actions::className(), ['sessionsAppId' => 'id']);
     }
 
     /**
