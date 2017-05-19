@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=selfie-app',
-    'username' => 'root',
-    'password' => '',
+    'dsn' => 'mysql:host=localhost;dbname=selfie_app',
+    'username' => 'selfie',
+    'password' => 'selfie123',
     'charset' => 'utf8',
 ];
