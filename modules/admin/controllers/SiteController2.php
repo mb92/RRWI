@@ -30,7 +30,7 @@ class SiteController extends Controller
                 'rules' => [
                     [
                         'actions' => ['logout'],
-                        'allow' => true,
+                        'allow' => false,
                         'roles' => ['@'],
                     ],
                 ],
@@ -67,8 +67,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        // var_Dump(Yii::$app->user->isGuest);
-        return $this->render('index');
+        $countries = Countries::find()->all();
+
+        return $this->render('index', ['countries' => $countries]);
         // if (Yii::$app->user->isGuest) {
         //     $model = new LoginForm();
             
@@ -151,4 +152,13 @@ class SiteController extends Controller
         return $this->render('about', ['clients' => $clients, 'actions' => $actions, 'files' => $files]);
     }
 
+    public function actionDashboard()
+    {
+        $clients=Clients::find()->all();
+        $actions=Actions::find()->all();
+
+        $files = BaseFileHelper::findFiles(Yii::$app->basePath."/upload/");
+        
+        return $this->render('about', ['clients' => $clients, 'actions' => $actions, 'files' => $files]);
+    }
 }
