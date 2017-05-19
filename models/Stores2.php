@@ -9,10 +9,10 @@ use Yii;
  *
  * @property int $id
  * @property string $name
- * @property int $countryId
+ * @property string $address
+ * @property string $geolocation
  *
- * @property Sessionsapps[] $sessionsapps
- * @property Countries $country
+ * @property Sessionsapp[] $sessionsapps
  */
 class Stores extends \yii\db\ActiveRecord
 {
@@ -30,10 +30,8 @@ class Stores extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'countryId'], 'required'],
-            [['countryId'], 'integer'],
-            [['name'], 'string', 'max' => 255],
-            [['countryId'], 'exist', 'skipOnError' => true, 'targetClass' => Countries::className(), 'targetAttribute' => ['countryId' => 'id']],
+            [['name', 'address', 'geolocation'], 'required'],
+            [['name', 'address', 'geolocation'], 'string', 'max' => 255],
         ];
     }
 
@@ -45,7 +43,8 @@ class Stores extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'countryId' => 'Country ID',
+            'address' => 'Address',
+            'geolocation' => 'Geolocation',
         ];
     }
 
@@ -54,14 +53,6 @@ class Stores extends \yii\db\ActiveRecord
      */
     public function getSessionsapps()
     {
-        return $this->hasMany(Sessionsapps::className(), ['storeId' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCountry()
-    {
-        return $this->hasOne(Countries::className(), ['id' => 'countryId']);
+        return $this->hasMany(Sessionsapp::className(), ['storeId' => 'id']);
     }
 }

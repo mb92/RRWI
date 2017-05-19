@@ -11,6 +11,8 @@ use yii\console\Controller;
 use app\models\Actions;
 use app\models\Sessionsapps;
 use app\models\Clients;
+use app\models\Stores;
+
 
 /**
  * This command echoes the first argument that you have entered.
@@ -26,9 +28,10 @@ class MbController extends Controller
      * This command echoes what you have entered as the message.
      * @param string $message the message to be echoed.
      */
-    public function actionIndex($message = 'For test')
+    public function actionIndex()
     {
-        echo $message . "\n";
+        echo "/reset - reset tables: actions, sesionsapss and clients; Remove upload photos\n\n";
+        echo "/addstore - add data to stores's table\n\n";
     }
 
     public static function clearDirectoryRecursive($directory, $ommit = array()) {
@@ -84,8 +87,26 @@ class MbController extends Controller
         if ($st) echo "Table Clients cleared \n\n";
         else echo "Can't clean Clients actions \n\n";
 
+        //  $st = Stores::deleteAll();
+        // if ($st) echo "Table Stores cleared \n\n";
+        // else echo "Can't clean Stores actions \n\n";
+
         $this->clearDirectoryRecursive("upload");
     }
 
+
+    public function actionAddstore()
+    {
+    	$de = ["Vodafone Adalbertstraße","Vodafone Flagship-Store Dortmund","Vodafone Filiale Köln","Flagship-Store München Marienplatz","Vodafone Filiale Hannover","Vodafone-Shop Wuppertal II","Vodafone-Filiale Frankfurt Zeil","Vodafone Flagship HH Jungfernstieg","Vodafone Shop Freiburg","Vodafone Shop Hauptstr.","Vodafone Shop Königsplatz","Vodafone Shop Wuppertal","Vodafone Shop Königstr.","Vodafone Shop Pforzheim, Westliche Karl-Friedrich Str.","Vodafone Shop Fulda","Vodafone Shop Mannheim, Fressgasse","Vodafone Shop Sindelfingen","Vodafone Shop Neunkirchen","PA Frankencenter Nürnberg","PA Ludwigstr. Nürnberg","Vodafone-Shop Allee Center","Vodafone Shop Hauptstr.","Vodafone Shop Bietigheim-Bissingen","Vodafone PS Mainz Römerpassage","Vodafone Shop Gießen 2","Vodafone Shop Kaiserslautern","Vodafone Shop Bad Neuenahr-Ahr","Vodafone Shop im Postcarré","Vodafone Premium Store Bretten","Vodafone Shop Fulda KW, Keltenstr."];
+
+    	foreach ($de as $name) {
+    		$store = new Stores;
+    		$store->name = $name;
+    		$store->countryId = 3;
+    		$sv = $store->save();
+
+    		if(!$sv) return "Error";
+    	}
+    }
 	
 }

@@ -18,7 +18,6 @@ use Yii;
  * @property int $storeId
  * @property int $languageId
  * @property int $countryId
- * @property string $shareEmailStatus
  *
  * @property Actions[] $actions
  * @property Clients $client
@@ -46,7 +45,7 @@ class Sessionsapps extends \yii\db\ActiveRecord
             [['clientId', 'storeId', 'languageId', 'countryId'], 'integer'],
             [['sesId'], 'string', 'max' => 32],
             [['appId', 'shareEmail'], 'string', 'max' => 255],
-            [['status', 'emailStatus', 'shareEmailStatus'], 'string', 'max' => 1],
+            [['status', 'emailStatus'], 'string', 'max' => 1],
             [['clientId'], 'exist', 'skipOnError' => true, 'targetClass' => Clients::className(), 'targetAttribute' => ['clientId' => 'id']],
             [['countryId'], 'exist', 'skipOnError' => true, 'targetClass' => Countries::className(), 'targetAttribute' => ['countryId' => 'id']],
             [['languageId'], 'exist', 'skipOnError' => true, 'targetClass' => Languages::className(), 'targetAttribute' => ['languageId' => 'id']],
@@ -71,7 +70,6 @@ class Sessionsapps extends \yii\db\ActiveRecord
             'storeId' => 'Store ID',
             'languageId' => 'Language ID',
             'countryId' => 'Country ID',
-            'shareEmailStatus' => 'Share Email Status',
         ];
     }
 
