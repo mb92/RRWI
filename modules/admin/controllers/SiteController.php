@@ -3,6 +3,7 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
+use yii\db\Query;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -11,6 +12,7 @@ use yii\helpers\BaseFileHelper;
 
 use app\models\Clients;
 use app\models\Actions;
+use app\models\Sessionsapps;
 use app\models\Countries;
 use app\models\LoginForm;
 use app\models\ContactForm;
@@ -68,6 +70,20 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $countries = Countries::find()->all();
+
+        // $query = new Query;
+        // $query->select('*')->from('countries')->join([['INNER JOIN', 'sessionsapps', 'countries.id = countryId'], ['INNER JOIN', 'clients', 'sessionsapps.clientId = countryId']]);
+
+// $asd = query("select ct.*, group_concat(DISTINCT cl.email ORDER BY cl.name DESC SEPARATOR ', ')
+// from countries ct
+// inner join sessionsapps sa on ct.id = sa.countryId
+// inner join clients cl on sa.clientId = cl.id
+// group by ct.id, ct.name, ct.short");
+// 
+// 
+        // var_dump($query);
+        // $ses=Countries::sessionsapps;
+        // var_dump($ses);
         // var_Dump(Yii::$app->user->isGuest);
         return $this->render('index', ['countries' => $countries]);
         // if (Yii::$app->user->isGuest) {

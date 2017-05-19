@@ -24,7 +24,7 @@ $this->title = 'Dashboard';
 
 			<div class="box-footer no-padding">
 				<ul class="nav nav-stacked">
-				<li><a href="#">Users <span class="pull-right badge bg-blue">31</span></a></li>
+				<li><a href="#">Users <span class="pull-right badge bg-blue">5</span></a></li>
 				<li><a href="#">Number of use app <span class="pull-right badge bg-aqua">5</span></a></li>
 				<li><a href="#">Completed sessions <span class="pull-right badge bg-green">12</span></a></li>
 				<li><a href="#">Uncompleted sessions <span class="pull-right badge bg-red">842</span></a></li>

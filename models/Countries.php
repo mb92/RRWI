@@ -53,4 +53,11 @@ class Countries extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Sessionsapp::className(), ['countryId' => 'id']);
     }
+
+    public function getClients() {
+         return $this->hasMany(Clients::className(), ['id' => 'clientId'])
+            ->viaTable('sessionsapps', ['clientId' => 'id'], function($query) {
+            return $query->where('RecipeProduct.status = "active"');
+        });
+    }
 }

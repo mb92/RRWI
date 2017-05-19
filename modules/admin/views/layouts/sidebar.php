@@ -6,9 +6,9 @@
          <li><a href="<?= Yii::$app->getHomeUrl() ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="header">Settings</li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>Stores</span></a></li>
-        <li><a href="#"><i class="fa fa-globe"></i> <span>Countries</span></a></li>
-        <li><a href="#"><i class="fa fa-flag-o"></i> <span>Languages</span></a></li>
+        <li><a href="/admin/stores"><i class="fa fa-shopping-bag"></i> <span>Stores</span></a></li>
+        <li><a href="/admin/countries"><i class="fa fa-globe"></i> <span>Countries</span></a></li>
+        <li><a href="/admin/languages"><i class="fa fa-flag-o"></i> <span>Languages</span></a></li>
 
 <!--         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">

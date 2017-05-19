@@ -45,7 +45,7 @@ class Stores extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'countryId' => 'Country ID',
+            'countryId' => 'Country code',
         ];
     }
 
