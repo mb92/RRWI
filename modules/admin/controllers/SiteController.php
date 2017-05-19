@@ -29,7 +29,7 @@ class SiteController extends Controller
                 'rules' => [
                     [
                         'actions' => ['logout'],
-                        'allow' => false,
+                        'allow' => true,
                         'roles' => ['@'],
                     ],
                 ],
@@ -66,6 +66,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        var_Dump(Yii::$app->user->isGuest);
         return $this->render('index');
         // if (Yii::$app->user->isGuest) {
         //     $model = new LoginForm();

@@ -6,7 +6,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'app\extensions\DynamicRoutes'],
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
@@ -31,10 +31,10 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
-            'loginUrl' => '/admin/login',
+            'loginUrl' => '/admin/site/login',
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => '/admin/site/error',
         ],
         'mailer' => [
                 'class' => 'yii\swiftmailer\Mailer',
@@ -65,6 +65,7 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
+                ['class' => 'yii\web\UrlRule', 'pattern' => '/admin', 'route' => '/admin/site/index'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'countries'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'languages'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'stores'],
