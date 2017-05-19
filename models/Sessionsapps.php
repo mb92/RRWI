@@ -112,4 +112,8 @@ class Sessionsapps extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Stores::className(), ['id' => 'storeId']);
     }
+
+    public static function toResend() {
+        return parent::find()->where(['emailStatus' => "0"]);
+    }
 }
