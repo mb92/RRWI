@@ -67,8 +67,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $countries = Countries::find()->all();
         // var_Dump(Yii::$app->user->isGuest);
-        return $this->render('index');
+        return $this->render('index', ['countries' => $countries]);
         // if (Yii::$app->user->isGuest) {
         //     $model = new LoginForm();
             

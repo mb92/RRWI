@@ -3,7 +3,7 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
-         <li><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+         <li><a href="<?= Yii::$app->getHomeUrl() ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="header">Settings</li>
         <!-- Optionally, you can add icons to the links -->
         <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>Stores</span></a></li>

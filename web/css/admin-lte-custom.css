@@ -26,3 +26,28 @@
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+img.country-box {
+    width:100px !important;
+}
+
+.btn-country-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 101px;
+    width: 60px;
+    padding: 10px;
+    border: none;
+    padding-top: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h3.widget-user-username, h5.widget-user-desc {
+    margin-left: 136px !important;
+}
+
+h5.widget-user-desc {
+    color: #999;
+}
