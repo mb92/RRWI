@@ -55,7 +55,7 @@ Unfinished <?= $stats['unfinished'] ?>
 						<?php 
 							if ($action['action'] == 'tP') {
 								echo HTML::img(Url::to("@app/upload/".$action['path']));
-								echo HTML::img(Yii::$app->request->baseUrl."/upload/".$action['path']));
+								echo HTML::img(Yii::$app->request->baseUrl."/upload/".$action['path']);
 							}
 							elseif ($action['action'] == 'rT') {
 								$rt ++;
