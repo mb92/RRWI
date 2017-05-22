@@ -158,14 +158,9 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionAbout()
-    {
-        $clients=Clients::find()->all();
-        $actions=Actions::find()->all();
-
-        $files = BaseFileHelper::findFiles(Yii::$app->basePath."/upload/");
-        
-        return $this->render('about', ['clients' => $clients, 'actions' => $actions, 'files' => $files]);
-    }
+    // public function actionStats()
+    // {
+    //     return $this->render('stats');
+    // }
 
 }

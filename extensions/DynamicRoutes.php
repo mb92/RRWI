@@ -30,19 +30,38 @@
             $routesArray[] = [
                 'class' => 'yii\web\UrlRule',
                 'pattern' => '/admin/'.$countryName,
-                'route' => '/admin/site/index',
+                // 'route' => '/admin/site/index',
+                'route' => '/admin/site/stats',
+                
             ];
         }
         Yii::$app->urlManager->addRules($routesArray, false);
      }
      
      private function _setCountryId($countries) {
-        $request = Yii::$app->urlManager->parseRequest(Yii::$app->request);
-        if(isset($request[0])) {
-            $potentialCountryAcronimMatch = preg_match('/^\w+\\/(\w+)/', $request[0], $matches);
-            if($matches && isset($matches[1]) && in_array($matches[1], array_keys($countries))) {
-                Yii::$app->params['countryId'] = $countries[$matches[1]];
+        // $request = Yii::$app->urlManager->parseRequest(Yii::$app->request);
+        $request = Yii::$app->request->pathInfo;
+        
+        foreach ($countries as $code => $c) {
+            if (strpos($request, $code)) {
+                Yii::$app->params['countryId'] = $c;
+                break;
+            } else {
+                Yii::$app->params['countryId'] = NULL;
             }
         }
+
+
+        // if(isset($request[0])) {
+        //     $potentialCountryAcronimMatch = preg_match('/^\w+\\/(\w+)/', $request[0], $matches);
+        //     var_dump(parse_url($request)); die();
+        //     if($matches && isset($matches[1]) && in_array($matches[1], array_keys($countries))) {
+        //         Yii::$app->params['countryId'] = $countries[$matches[1]];
+        //         // var_dump(Yii::$app->params['countryId']); die();
+        //         var_dump($request); die();
+        //     }
+        //     // var_dump($request); die();
+        // }
+
      }
  }
