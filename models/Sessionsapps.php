@@ -118,4 +118,9 @@ class Sessionsapps extends \yii\db\ActiveRecord
     public static function toResend() {
         return parent::find()->where(['emailStatus' => "0"]);
     }
+
+    public function getRetakes()
+    {
+        return $this->hasMany(Actions::className(), ['sessionsAppId' => 'id']);
+    }
 }

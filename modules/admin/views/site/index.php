@@ -1,5 +1,5 @@
 <?php
-
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'Dashboard';
@@ -17,9 +17,9 @@ $this->title = 'Dashboard';
 				<!-- /.widget-user-image -->
 				<h3 class="widget-user-username"><?= $c['name'] ?></h3>
 				<h5 class="widget-user-desc"><?= $c['short'] ?></h5>
-				<div class="btn pull-right btn-success btn-flat btn-country-box">
+				<a href="<?= Url::to($c['short'].'/stats'); ?>" class="btn pull-right btn-success btn-flat btn-country-box">
 					<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-				</div>
+				</a>
 			</div>
 
 			<div class="box-footer no-padding">

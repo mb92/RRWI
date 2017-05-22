@@ -8,12 +8,15 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use yii\helpers\BaseFileHelper;
+use yii\db\ActiveQuery;
+use yii\db\Query;
 
 use app\models\Clients;
 use app\models\Actions;
 use app\models\Countries;
-use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\Sessionsapps;
+// use app\models\LoginForm;
+
 
 
 class StatsController extends Controller
@@ -67,9 +70,25 @@ class StatsController extends Controller
      */
     public function actionIndex()
     {
-        $country = Yii::$app->params['countryId'];
+        $countryId = Yii::$app->params['countryId'];
+        $title = "Analytics data for ". Countries::find()->Where(['id' => $countryId])->one()['name'];
 
-        return $this->render('stats', ['countryId' => $country]);
+        $sessions = Sessionsapps::find()->where(['countryId' => $countryId]);
+
+        $stats['all'] = $sessions->count();
+        $stats['finished'] = Sessionsapps::find()->where(['status' => '1', 'countryId' => $countryId])->count();
+        $stats['unfinished'] = Sessionsapps::find()->where(['status' => '0', 'countryId' => $countryId])->count();
+        $stats['retake'] = 0;
+  
+    
+        // foreach ($sessions->all() as $key => $sr) {
+        //     $actions[] = Actions::find()->where(['sessionsAppId' => $sr->id, 'action' => "rT"])->all();
+        // }
+
+        
+        // var_dump($stats['retake']);die();
+ 
+        return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats]);
         // if (Yii::$app->user->isGuest) {
         //     $model = new LoginForm();
             

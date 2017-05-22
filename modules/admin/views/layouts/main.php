@@ -39,6 +39,7 @@ AppAsset::register($this);
     <link rel="stylesheet" href="/dist/css/skins/skin-blue.min.css">
     <link rel="stylesheet" href="/css/admin-lte-custom.css">
     <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
