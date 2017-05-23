@@ -15,6 +15,7 @@ use app\models\Clients;
 use app\models\Actions;
 use app\models\Countries;
 use app\models\Sessionsapps;
+use app\models\Stores;
 // use app\models\LoginForm;
 
 
@@ -71,6 +72,8 @@ class StatsController extends Controller
     public function actionIndex()
     {
         $countryId = Yii::$app->params['countryId'];
+        $country = Countries::find()->where(['id'=>$countryId])->one();
+        $countries = Countries::find()->all();
         $title = "Analytics data for ". Countries::find()->Where(['id' => $countryId])->one()['name'];
 
         $sessions = Sessionsapps::find()->where(['countryId' => $countryId]);
@@ -79,8 +82,13 @@ class StatsController extends Controller
         $stats['finished'] = Sessionsapps::find()->where(['status' => '1', 'countryId' => $countryId])->count();
         $stats['unfinished'] = Sessionsapps::find()->where(['status' => '0', 'countryId' => $countryId])->count();
         $stats['retake'] = 0;
-  
-    
+        $stats['stores'] = Stores::find()->where(['countryId' => $countryId])->count();
+
+        foreach ($sessions->all() as $session) {
+            foreach ($session->actions as $action) {
+                if ($action['action'] == 'rT') $stats['retake'] += 1;
+            }
+        }
         // foreach ($sessions->all() as $key => $sr) {
         //     $actions[] = Actions::find()->where(['sessionsAppId' => $sr->id, 'action' => "rT"])->all();
         // }
@@ -88,20 +96,7 @@ class StatsController extends Controller
         
         // var_dump($stats['retake']);die();
  
-        return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats]);
-        // if (Yii::$app->user->isGuest) {
-        //     $model = new LoginForm();
-            
-        //     if ($model->load(Yii::$app->request->post()) && $model->login()) {
-        //         return $this->goBack();
-        //     }
-
-        //     return $this->render('login', [
-        //         'model' => $model,
-        //         ]);
-        // } else {
-        //     return $this->render('index');
-        // }
+        return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country]);
     }
 
 }

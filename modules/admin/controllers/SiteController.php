@@ -163,4 +163,9 @@ class SiteController extends Controller
     //     return $this->render('stats');
     // }
 
+
+    public function actionTest()
+    {
+        return $this->render('test');
+    }
 }

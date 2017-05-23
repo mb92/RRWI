@@ -6,78 +6,207 @@ use yii\helpers\Html;
 $this->title = $title;
 ?>
 
-All sessions: <?= $stats['all'] ?>
-Finished: <?= $stats['finished'] ?>
-Unfinished <?= $stats['unfinished'] ?>
+<div class="row">
+<div class="col-md-12">
+          <!-- Application buttons -->
+          <div class="box">
+            <div class="box-body">
+              <a href="/admin/<?= $country->short ?>/stats/customers" class="btn btn-success">
+                <i class="fa fa-users"></i> Customers
+                <span class="badge bg-purple">891</span>
+              </a>
+				<a href="/admin/<?= $country->short ?>/stats/stores" class="btn btn-success">
+				<i class="fa fa-shopping-cart "></i> Stores
+				<span class="badge bg-red"><?= $stats['stores']?></span>
+				</a>
 
-<table id="sessionsTable" class="display" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>AppstoreID</th>
-                <th>Store's name</th>
-                <th>Lang</th>
-                <th>Status</th>
-                <th>Date of session</th>
-                <th>Client</th>
-                <th>Photo</th>
-                <th>Retake</th>
-            </tr>
-        </thead>
-		<tfoot>
-            <tr>
-                <th>AppstoreID</th>
-                <th>Store's name</th>
-                <th>Lang</th>
-                <th>Status</th>
-                <th>Date of session</th>
-                <th>Client</th>
-                <th>Photo</th>
-                <th>Retake</th>
-            </tr>
-        </tfoot>
+				<?php foreach ($countries as $c): ?>
+					<a href="/admin/<?= $c->short ?>/stats" class="btn btn-warning">
+					<?= $c->name ?>
+					</a>
+				<?php endforeach ?>
+
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         
+</div>
+</div>
 
 
-		<tbody>
-			<?php foreach ($sessions as $key => $s): ?>
-			<tr role="row" class="even">
-				<td class="sorting_1"><?= $s->appId ?></td>
-				<td><?= $s->store->name ?></td>
-				<td><?= $s->language->short ?></td>
-				<td>
+<div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-send-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">All launches</span>
+              <span class="info-box-number"><?= $stats['all'] ?> <small></small></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="fa fa-check-circle-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Done</span>
+              <span class="info-box-number"><?= $stats['finished'] ?></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="fa fa-remove"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Interrupted</span>
+              <span class="info-box-number"><?= $stats['unfinished'] ?></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="fa fa-retweet"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Retake</span>
+              <span class="info-box-number"><?= $stats['retake'] ?></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="box">
+<!--             <div class="box-header">
+              <h3 class="box-title">Data Table With Full Features</h3>
+            </div> -->
+            <!-- /.box-header -->
+            <div class="box-body">
+             
+
+              <table id="table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                <thead>
+                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="AppstoreID: activate to sort column descending" style="width: 181px;" aria-sort="ascending">AppstoreID</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Store's name: activate to sort column ascending" style="width: 223px;">Store's name</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Lang: activate to sort column ascending" style="width: 197px;">Lang</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 155px;">Status</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Date of session: activate to sort column ascending" style="width: 112px;">Date of session</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Client: activate to sort column ascending" style="width: 112px;">Client</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Photo: activate to sort column ascending" style="width: 112px;">Photo</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Retake: activate to sort column ascending" style="width: 112px;">Retake</th></tr>
+                </thead>
+   
+				
+
+				<tfoot>
+					<tr><th rowspan="1" colspan="1">AppstoreID</th>
+					<th rowspan="1" colspan="1">Store's name</th>
+					<th rowspan="1" colspan="1">Lang</th>
+					<th rowspan="1" colspan="1">Status</th>
+					<th rowspan="1" colspan="1">Date of session</th>
+					<th rowspan="1" colspan="1">Client</th>
+					<th rowspan="1" colspan="1">Photo</th>
+					<th rowspan="1" colspan="1">Retake</th>
+					</tr>
+				</tfoot>
+                <tbody>
+
+				<?php foreach ($sessions as $key => $s): ?>
+                <tr role="row" class="odd">
+                  <td class="sorting_1"><?= $s->appId ?></td>
+                  <td><?= $s->store->name ?></td>
+                  <td><?= $s->language->short ?></td>
+                  <td>
 					<?php if($s->status == "1") echo '<span class="text-green"><i class="fa fa-check-circle" aria-hidden="true"></i></span>';
 					else echo '<span class="text-red"><i class="fa fa-times" aria-hidden="true"></i></span>';?>
-				</td>
-				<td><?= $s->created_at ?></td>
-				<td><?= $s->client->name ?></td>
-				<td style="text-center">
-					<?php $rt=0;?>
+                  </td>
+                  <td><?= $s->created_at ?></td>
+                  <td><?= $s->client->email ?></td>
+                  <td><?php $rt=0;?>
 					<?php foreach ($s->actions as $action): ?>
 						<?php 
 							if ($action['action'] == 'tP') {
-								// echo HTML::img(Url::to("@app/upload/".$action['path']));
-								// echo '<img src="'.Url::to("../../../@upld") .'/lorem.jpg" />';
 								// echo Html::img(Yii::getAlias('@app/upload/').$action['path']. '?' . time());
+								// echo HTML::img(Url::to("@web/store/lorem.jpg"));
+
+							//image from bas64
+							$path = 'store/lorem.jpg';
+							$type = pathinfo($path, PATHINFO_EXTENSION);
+							$data = file_get_contents($path);
+							$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
+
+							echo '<img src="'.$base64.'" class="dt img-circle" data-toggle="modal" data-target="#modal-default"/>';
+								
 							}
 							elseif ($action['action'] == 'rT') {
 								$rt ++;
 							}
 						?>
-					<?php endforeach ?>
-				</td>
-				<td>
-					<?= $rt?>
-				</td>
-			</tr>
-			<?php endforeach ?>
-		</tbody>
-	</table>
+					<?php endforeach ?></td>
+                  <td><?= $rt?></td>
+                </tr>
+				<?php endforeach ?>
 
-<!-- DataTables -->
-<script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<script src="/plugins/datatables/jquery.dataTables.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-    $('#sessionsTable').DataTable();
-} );
-</script>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
 
+
+
+<div class="modal fade" id="modal-default" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Default Modal</h4>
+              </div>
+              <div class="modal-body">
+               	<img src="" alt="img"/>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+               
