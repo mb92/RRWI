@@ -99,14 +99,39 @@ class MbController extends Controller
     {
     	$de = ["Vodafone Adalbertstraße","Vodafone Flagship-Store Dortmund","Vodafone Filiale Köln","Flagship-Store München Marienplatz","Vodafone Filiale Hannover","Vodafone-Shop Wuppertal II","Vodafone-Filiale Frankfurt Zeil","Vodafone Flagship HH Jungfernstieg","Vodafone Shop Freiburg","Vodafone Shop Hauptstr.","Vodafone Shop Königsplatz","Vodafone Shop Wuppertal","Vodafone Shop Königstr.","Vodafone Shop Pforzheim, Westliche Karl-Friedrich Str.","Vodafone Shop Fulda","Vodafone Shop Mannheim, Fressgasse","Vodafone Shop Sindelfingen","Vodafone Shop Neunkirchen","PA Frankencenter Nürnberg","PA Ludwigstr. Nürnberg","Vodafone-Shop Allee Center","Vodafone Shop Hauptstr.","Vodafone Shop Bietigheim-Bissingen","Vodafone PS Mainz Römerpassage","Vodafone Shop Gießen 2","Vodafone Shop Kaiserslautern","Vodafone Shop Bad Neuenahr-Ahr","Vodafone Shop im Postcarré","Vodafone Premium Store Bretten","Vodafone Shop Fulda KW, Keltenstr."];
 
-    	foreach ($de as $name) {
+    	$pt = ["Vodafone lorem ipsum", "dolor Vodafone sit", "amet Vodafone LOREM", "Vodafone IPSUM DOLOR", "Vodafone SIT AMET"];
+
+    	$en = ["Vod lorem ipsum", " sit dolor Vodafone", "LOREMLOREM amet Vodafone ", "LOREM Vodafone IPSUM DOLOR LOREM", "Vodafone LOREM SIT AMET"];
+
+
+    	// foreach ($de as $name) {
+    	// 	$store = new Stores;
+    	// 	$store->name = $name;
+    	// 	$store->countryId = 3;
+    	// 	$sv = $store->save();
+
+    	// 	if(!$sv) return "Error";
+    	// }
+    	// echo "DE stores was add\n";
+
+    	foreach ($pt as $name) {
     		$store = new Stores;
     		$store->name = $name;
-    		$store->countryId = 3;
+    		$store->countryId = 2;
     		$sv = $store->save();
 
     		if(!$sv) return "Error";
     	}
+    	echo "PT stores was add\n";
+    	foreach ($en as $name) {
+    		$store = new Stores;
+    		$store->name = $name;
+    		$store->countryId = 1;
+    		$sv = $store->save();
+
+    		if(!$sv) return "Error";
+    	}
+    	echo "EN stores was add\n";
     }
 	
 }
