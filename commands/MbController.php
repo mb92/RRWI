@@ -104,15 +104,16 @@ class MbController extends Controller
     	$en = ["Vod lorem ipsum", " sit dolor Vodafone", "LOREMLOREM amet Vodafone ", "LOREM Vodafone IPSUM DOLOR LOREM", "Vodafone LOREM SIT AMET"];
 
 
-    	foreach ($de as $name) {
-    		$store = new Stores;
-    		$store->name = $name;
-    		$store->countryId = 3;
-    		$sv = $store->save();
 
-    		if(!$sv) return "Error";
-    	}
-    	echo "DE stores was add\n";
+    	// foreach ($de as $name) {
+    	// 	$store = new Stores;
+    	// 	$store->name = $name;
+    	// 	$store->countryId = 3;
+    	// 	$sv = $store->save();
+
+    	// 	if(!$sv) return "Error";
+    	// }
+    	// echo "DE stores was add\n";
 
     	foreach ($pt as $name) {
     		$store = new Stores;
@@ -123,6 +124,7 @@ class MbController extends Controller
     		if(!$sv) return "Error";
     	}
     	echo "PT stores was add\n";
+
     	foreach ($en as $name) {
     		$store = new Stores;
     		$store->name = $name;
