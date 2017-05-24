@@ -34,16 +34,23 @@ use yii\helpers\Url;
         buttons: [
             'excelHtml5',
             'csvHtml5',
-            'pdfHtml5',
-            'colvis'
+            'pdfHtml5'
         ],
-        // columnDefs: [ {
-        //     targets: -1,
-        //     visible: false
-        // } ]
     });
 </script>
 
+<script>
+   $('#tableBasic').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      "pagingType": "full_numbers",
+    });
+</script>
 
 
 <script type="text/javascript">

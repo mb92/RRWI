@@ -44,3 +44,8 @@ function verifyToken($sendToken) {
 function mysqltime() {
    return date("Y-m-d H:i:s");
 }
+
+function vdd($var) {
+    var_dump($var);
+    die();
+}

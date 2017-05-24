@@ -16,8 +16,6 @@ use app\models\Actions;
 use app\models\Countries;
 use app\models\Sessionsapps;
 use app\models\Stores;
-// use app\models\LoginForm;
-
 
 
 class StatsController extends Controller
@@ -65,9 +63,18 @@ class StatsController extends Controller
     }
 
     /**
-     * Displays homepage.
+     * Displays dedicated analytics data for choose country.
+     * List of stats: All lunches, done sessions, interruped sessions, press retake
+     * Table witch details of sessions
+     * With the possibility of export data to XLS/CSV/PDF
+     * Link to Customers an stroes stats
      *
-     * @return string
+     * @return render to view "stats" with parameters:
+     * title - title of page with name of selected country
+     * sessions - list of all sessions for selected country
+     * stats - array with statisic (all/finished/)
+     * countries, 
+     * country
      */
     public function actionIndex()
     {
@@ -78,11 +85,13 @@ class StatsController extends Controller
 
         $sessions = Sessionsapps::find()->where(['countryId' => $countryId]);
 
-        $stats['all'] = $sessions->count();
-        $stats['finished'] = Sessionsapps::find()->where(['status' => '1', 'countryId' => $countryId])->count();
-        $stats['unfinished'] = Sessionsapps::find()->where(['status' => '0', 'countryId' => $countryId])->count();
+        $stats['allLunches'] = $sessions->count();
+        $stats['doneSes'] = Sessionsapps::find()->where(['status' => '1', 'countryId' => $countryId])->count();
+        $stats['interrupedSes'] = Sessionsapps::find()->where(['status' => '0', 'countryId' => $countryId])->count();
         $stats['retake'] = 0;
         $stats['stores'] = Stores::find()->where(['countryId' => $countryId])->count();
+        $stats['customers'] = count(Clients::getFromCountry($countryId)->all());
+        // vdd($stats['customers']);
 
         foreach ($sessions->all() as $session) {
             foreach ($session->actions as $action) {
@@ -99,4 +108,28 @@ class StatsController extends Controller
         return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country]);
     }
 
+
+
+    public function actionCustomers() {
+        $countryId = Yii::$app->params['countryId'];
+        $country = Countries::find()->where(['id'=>$countryId])->one();
+        $countries = Countries::find()->all();
+        $title = "Clients from ". Countries::find()->Where(['id' => $countryId])->one()['name'];
+
+        $clients = Clients::getFromCountry($countryId)->all();
+
+        return $this->render('customers', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'clients' => $clients]);
+    }
+
+    public function actionDetails($clientId) {
+        vdd("Works-client $clientId");
+        $countryId = Yii::$app->params['countryId'];
+        $country = Countries::find()->where(['id'=>$countryId])->one();
+        $countries = Countries::find()->all();
+        $title = "Datails about ". Clients::find()->Where(['id' => $clientId])->one();
+
+        $clients = Clients::getFromCountry($countryId)->all();
+
+        return $this->render('customers', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'clients' => $clients]);
+    }
 }
