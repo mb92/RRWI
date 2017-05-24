@@ -17,7 +17,7 @@ $this->title = 'Dashboard';
 				<!-- /.widget-user-image -->
 				<h3 class="widget-user-username"><?= $c['name'] ?></h3>
 				<h5 class="widget-user-desc"><?= $c['short'] ?></h5>
-				<a href="<?= Url::to($c['short'].'/stats'); ?>" class="btn pull-right btn-success btn-flat btn-country-box">
+				<a href="/admin/<?= Url::to($c['short'].'/stats'); ?>" class="btn pull-right btn-success btn-flat btn-country-box">
 					<i class="fa fa-angle-double-right" aria-hidden="true"></i>
 				</a>
 			</div>
