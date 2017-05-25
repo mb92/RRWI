@@ -88,15 +88,9 @@ class StatsController extends Controller
         $stats['allLunches'] = $sessions->count();
         $stats['doneSes'] = Sessionsapps::countDoneSesForCountry($countryId);
         $stats['interrupedSes'] = Sessionsapps::countInterruptedSesForCountry($countryId);
-        $stats['retake'] = 0;
+        $stats['retake'] = Actions::countRetakesFromCountry($countryId);
         $stats['stores'] = Stores::countStoresInCountry($countryId);
         $stats['customers'] = Clients::countClientFromCountry($countryId);
-
-        foreach ($sessions->all() as $session) {
-            foreach ($session->actions as $action) {
-                if ($action['action'] == 'rT') $stats['retake'] += 1;
-            }
-        }
  
         return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country]);
     }
