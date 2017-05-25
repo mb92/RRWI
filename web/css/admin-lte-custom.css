@@ -75,3 +75,14 @@ img.dt.img-circle {
 #horizontal-btns {
     margin-bottom: 20px;
 }
+
+.summary-title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 7px;
+}
+
+.spacing-left-icon {
+    margin-right:12px;
+}

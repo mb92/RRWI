@@ -72,7 +72,13 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $countries = Countries::find()->all();
-        return $this->render('index', ['countries' => $countries]);
+        $stats['globalLunches'] = Sessionsapps::countAllSes();
+        $stats['globalDoneSes'] = Sessionsapps::countDoneSes();
+        $stats['globalInterrupedSes'] = Sessionsapps::countInterruptedSes();
+        $stats['retake'] = Actions::countAllRetakes();
+        // $clients = Clients::find()->all();
+        // vdd($clients);
+        return $this->render('index', ['countries' => $countries, 'stats' => $stats]);
     }
 
     public function actionTest()

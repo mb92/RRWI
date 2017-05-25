@@ -123,4 +123,34 @@ class Sessionsapps extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Actions::className(), ['sessionsAppId' => 'id']);
     }
+
+    public static function countSesForCountry($countryId) 
+    {
+        return count(Self::find()->where(['countryId' => $countryId])->asArray()->all());
+    }
+
+    public static function countDoneSesForCountry($countryId) 
+    {
+        return count(Self::find()->where(['countryId' => $countryId, 'status' => "1"])->asArray()->all());
+    }
+
+    public static function countInterruptedSesForCountry($countryId) 
+    {
+        return count(Self::find()->where(['countryId' => $countryId, 'status' => "0"])->asArray()->all());
+    }
+
+    public static function countAllSes() 
+    {
+        return count(Self::find()->asArray()->all());
+    }
+
+    public static function countDoneSes() 
+    {
+        return count(Self::find()->where(['status' => "1"])->asArray()->all());
+    }
+
+    public static function countInterruptedSes() 
+    {
+        return count(Self::find()->where(['status' => "0"])->asArray()->all());
+    }
 }

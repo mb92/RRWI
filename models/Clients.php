@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveQuery;
 use Yii;
 
 /**
@@ -64,5 +64,16 @@ class Clients extends \yii\db\ActiveRecord
         return $query;
     }
 
+    public static function getDoneSes($clientId) 
+    {
+        $query = self::find()->where(['id' => $clientId])->innerJoin('sessionsapps')->where(['status' => '1']);
 
+        return $query;
+    }
+
+
+    public static function countClientFromCountry($countryId)
+    {
+        return count(Self::getFromCountry($countryId)->asArray()->all());
+    }
 }

@@ -86,24 +86,17 @@ class StatsController extends Controller
         $sessions = Sessionsapps::find()->where(['countryId' => $countryId]);
 
         $stats['allLunches'] = $sessions->count();
-        $stats['doneSes'] = Sessionsapps::find()->where(['status' => '1', 'countryId' => $countryId])->count();
-        $stats['interrupedSes'] = Sessionsapps::find()->where(['status' => '0', 'countryId' => $countryId])->count();
+        $stats['doneSes'] = Sessionsapps::countDoneSesForCountry($countryId);
+        $stats['interrupedSes'] = Sessionsapps::countInterruptedSesForCountry($countryId);
         $stats['retake'] = 0;
-        $stats['stores'] = Stores::find()->where(['countryId' => $countryId])->count();
-        $stats['customers'] = count(Clients::getFromCountry($countryId)->all());
-        // vdd($stats['customers']);
+        $stats['stores'] = Stores::countStoresInCountry($countryId);
+        $stats['customers'] = Clients::countClientFromCountry($countryId);
 
         foreach ($sessions->all() as $session) {
             foreach ($session->actions as $action) {
                 if ($action['action'] == 'rT') $stats['retake'] += 1;
             }
         }
-        // foreach ($sessions->all() as $key => $sr) {
-        //     $actions[] = Actions::find()->where(['sessionsAppId' => $sr->id, 'action' => "rT"])->all();
-        // }
-
-        
-        // var_dump($stats['retake']);die();
  
         return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country]);
     }
@@ -122,14 +115,41 @@ class StatsController extends Controller
     }
 
     public function actionDetails($clientId) {
-        vdd("Works-client $clientId");
+        // vdd("Works-client $clientId");
+
         $countryId = Yii::$app->params['countryId'];
         $country = Countries::find()->where(['id'=>$countryId])->one();
         $countries = Countries::find()->all();
-        $title = "Datails about ". Clients::find()->Where(['id' => $clientId])->one();
+        $title = "Datails about ". Clients::find()->Where(['id' => $clientId])->one()['name'];
 
-        $clients = Clients::getFromCountry($countryId)->all();
+        $client = Clients::find()->where(['id' => $clientId])->one();
+        $sessions = $client->sessionsapps;
 
-        return $this->render('customers', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'clients' => $clients]);
+        $stats['allLunches'] = count($sessions);
+        $stats['doneSes'] = $stats['interrupedSes'] = $stats['retake'] = $stats['photos'] = 0;
+
+        foreach ($sessions as $ses) {
+            if ($ses['status']=="1") $stats['doneSes']++;
+            else $stats['interrupedSes']++;
+
+            foreach ($ses->actions as $action) {
+                if ($action['action'] == 'rT') $stats['retake']++;
+                if ($action['action'] == 'tP') $stats['photos']++;
+            }
+        }
+
+        return $this->render('details', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'client' => $client, 'stats' => $stats]);
+    }
+
+    public function actionStores() {
+        $countryId = Yii::$app->params['countryId'];
+        $country = Countries::find()->where(['id'=>$countryId])->one();
+        $countries = Countries::find()->all();
+        $title = "All stores from ". $country->name;
+
+        $stores = Stores::getFromCountry($countryId)->all();
+        $mostPop  = Stores::mostPopular($countryId);
+        // vdd($mostPop);
+        return $this->render('stores', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'stores' => $stores, 'mostPop' => $mostPop]);
     }
 }

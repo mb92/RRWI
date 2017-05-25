@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 
+
 /**
  * This is the model class for table "actions".
  *
@@ -93,4 +94,18 @@ class Actions extends \yii\db\ActiveRecord
     //     $action->sessionsAppId = $ses['id'];
     //     return $action->save();
     // }
+    // 
+    // 
+    public static function countAllRetakes()
+    {
+        return count(Self::find()->where(['action' => "rT"])->asArray()->all());
+    }
+
+    public static function countRetakesFromCountry($countryId)
+    {
+        // SELECT cl.* FROM clients as cl INNER JOIN sessionsapps as ses ON cl.id = ses.clientId where ses.countryId = <countryId>;
+        
+        $query = self::find()->where(['action' => "rT"])->sessionsApps->wher(['countryId' => $countryId])->all();
+        return count($query);
+    }
 }

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 
 $this->title = $title;
+// $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="row">
@@ -107,10 +108,10 @@ $this->title = $title;
         <!-- Store's name -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Store's name: activate to sort column ascending" style="width: 223px;">Store's name</th>
         <!-- Status -->
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Lang: activate to sort column ascending" style="width: 197px;">Lang</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 155px;">Status</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Lang: activate to sort column ascending" style="width: 45px;">Lang</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 55px;">Status</th>
         <!-- Date of session -->
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Date of session: activate to sort column ascending" style="width: 112px;">Date of session</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Date of session: activate to sort column ascending" style="width: 180px;">Date of session</th>
         <!-- Client -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Client: activate to sort column ascending" style="width: 112px;">Client</th>
         <!-- photos -->
@@ -184,7 +185,7 @@ $this->title = $title;
                     }
                 ?>
                 <?php endforeach ?>
-                <td><?= $rt?></td>
+                <td><center><span class="badge bg-yellow"><?= $rt?></span></center></td>
             </tr>
         <?php endforeach ?>
         </tbody>
