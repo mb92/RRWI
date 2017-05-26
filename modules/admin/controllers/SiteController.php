@@ -83,7 +83,11 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        return $this->render('test');
+        \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
+        \Yii::$app->response->headers->add('content-type','image/png');
+        \Yii::$app->response->data = file_get_contents('../upload/lorem.jpg');
+        return \Yii::$app->response;
+        // return $this->render('test');
     }
 
     /**
@@ -97,7 +101,15 @@ class SiteController extends Controller
         $actions=Actions::find()->all();
 
         $files = BaseFileHelper::findFiles(Yii::$app->basePath."/upload/");
-        
+
         return $this->render('about', ['clients' => $clients, 'actions' => $actions, 'files' => $files]);
+    }
+
+    public static function actionImage($n)
+    {
+        \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
+        \Yii::$app->response->headers->add('content-type','image/jpg');
+        \Yii::$app->response->data = file_get_contents('../upload/'.$n.'.jpg');
+        return \Yii::$app->response;
     }
 }

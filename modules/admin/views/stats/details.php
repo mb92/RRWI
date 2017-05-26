@@ -134,7 +134,7 @@ $this->title = $title;
                     <?php
                     if ($s->status == "1")
                     {
-                        echo '<img src="'.$s->sesId.'.jpg" alt="selfie-'.$key.'"/>';
+                        echo '<img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="img-circle thumb-img-details"/>';
                     } else {
                         echo '<img src="'.@webroot.'/dist/img/no_photo.jpg" alt="no-selfie-available/>';
                     }

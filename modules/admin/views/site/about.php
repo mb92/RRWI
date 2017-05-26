@@ -4,6 +4,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
 
 $this->title = 'Clients, Actions & Files';
 $this->params['breadcrumbs'][] = $this->title;
@@ -45,12 +46,17 @@ $this->params['breadcrumbs'][] = $this->title;
 <br/>
 <h2>Files</h2>
 <table class="table table-bordered">
-<?php foreach ($files as $f): ?>
+<?php foreach ($actions as $a): ?>
+		<?php if($a->path != '' && $a->action == 'tP') {?>
 		<tr>
-			<td><code><?= Html::encode(str_replace(Yii::$app->basePath, "", $f)); ?></code></td>
-			<td><?= date("Y-m-d H:i:s.", stat($f)['mtime']); ?></td>
-			<td><?= filesize($f)/1000 ; ?> KB </td>
+			<td>
+			
+			<img src="<?= Url::toRoute(['site/image', 'n' => $a->path]);?>"/>
+			</td>
+			<td></td>
+			<td></td>
 		</tr>
+		<?php } ?>
 	<?php endforeach ?>
 </table>
 

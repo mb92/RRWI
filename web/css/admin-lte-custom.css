@@ -86,3 +86,7 @@ img.dt.img-circle {
 .spacing-left-icon {
     margin-right:12px;
 }
+
+.thumb-img-details {
+    max-width: 60px;
+}

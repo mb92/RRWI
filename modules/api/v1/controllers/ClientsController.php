@@ -55,19 +55,24 @@ class ClientsController extends ActiveController
 			if (is_null($ses)) return $result['action'] = "Session not found";
 
 		// Send, create and verify image file
-			$filename = $sesId.'.jpg';
+			// $filename = $sesId.'.jpg';
+			$filename = $sesId;
+			$ext = "jpg";
+			$filenameExt = $filename.'.'.$ext;
 			// Decode Image
 			$binary=base64_decode($imageB64);
 			// header('Content-Type: bitmap; charset=utf-8');
 			// Images will be saved under 'www/upload/' folder
-			$file = fopen('../upload/'.$filename, 'wb');
+			$file = fopen('../upload/'.$filenameExt, 'wb');
 
 			// Create File
 			fwrite($file, $binary);
 			fclose($file);
 
 		// Check existis uploaded file
-			if (!file_exists('../upload/'.$filename)) return $result['image'] = "Image not create";
+			if (!file_exists('../upload/'.$filenameExt)) {
+				return $result['image'] = "Image not create";
+			} 
 			else $result['image'] = "OK";
 
 			
@@ -130,7 +135,7 @@ class ClientsController extends ActiveController
 		}
 
 		//Verify action results
-		if ($result['client'] != "OK" && $result['image'] == "OK") unlink('../upload/'.$filename);
+		if ($result['client'] != "OK" && $result['image'] == "OK") unlink('../upload/'.$filenameExt);
 		return $result;
 	}
 
