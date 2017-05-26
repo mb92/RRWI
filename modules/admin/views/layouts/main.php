@@ -34,9 +34,12 @@ AppAsset::register($this);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+    
+    <!-- LightBox -->
+    <link href="/plugins/lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
 
-  <!-- DataTables -->
-  <link rel="stylesheet" href="/plugins/datatables/dataTables.bootstrap.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/plugins/datatables/dataTables.bootstrap.css">
 
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
     page. However, you can choose any other skin. Make sure you

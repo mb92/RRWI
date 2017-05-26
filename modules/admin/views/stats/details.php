@@ -22,11 +22,14 @@ $this->title = $title;
                     ?>
                 </a>
                 <?php endforeach ?>
-                <a href="<?= Yii::$app->request->referrer ?>" style="height:35px;" class="btn btn-default btn-app-country">
+                <a href="customers" style="height:35px;" class="btn btn-default btn-app-country">
                 Go back
                 </a>
                 <a href="#" style="height:35px;" class="btn btn-primary btn-app-country pull-right">
                 <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;Export to PDF
+                </a>
+                <a href="album?clientId=<?= $client->id ?>" style="height:35px;" class="btn btn-primary pull-right btn-app-album">
+                <i class="fa fa-camera" aria-hidden="true"></i>&nbsp;&nbsp;Album
                 </a>
             </div>
             <!-- /.box-body -->
@@ -68,6 +71,10 @@ $this->title = $title;
     </div>
 </div>
 
+<section class="content-header">      
+    <h1>List of sessions<small>(<?= $client->name?>)</small></h1>
+</section>
+<br/>
     <!-- DATA TABLE -->
 <div class="box">
     <!--             <div class="box-header">
@@ -104,7 +111,6 @@ $this->title = $title;
             <th rowspan="1" colspan="1">Status</th>
             <th rowspan="1" colspan="1">Date of session</th>
             <th rowspan="1" colspan="1">Photos</th>
-            <!--                    <th rowspan="1" colspan="1">Photo</th> -->
             <th rowspan="1" colspan="1">Retake</th>
         </tr>
         </tfoot>
@@ -119,11 +125,9 @@ $this->title = $title;
                     <center>
                     <?php 
                     if($s->status == "1") {
-                    /*echo '<span class="text-green"><i class="fa fa-check-circle" aria-hidden="true"></i></span>';*/ 
                     echo '<span class="label label-success">Done</span>';
                     }
                     else {
-                    /*echo '<span class="text-red"><i class="fa fa-times" aria-hidden="true"></i></span>';*/ 
                     echo '<span class="label label-danger">Interrupted</span>';
                     }
                     ?>
@@ -134,7 +138,14 @@ $this->title = $title;
                     <?php
                     if ($s->status == "1")
                     {
-                        echo '<img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="img-circle thumb-img-details"/>';
+                        echo '<a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-'.$key.'" 
+                        data-title="'.$client->name.' - '. $s->created_at .'">
+                        <img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="img-circle thumb-img-details"/></a>';
+                        echo '<div class="btn-group-vertical pull-right">
+                           <a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-'.$key.'" 
+                            data-title="'.$client->name.' - '. $s->created_at .'" class="btn btn-info" title="Preview selfie"><i class="fa fa-search-plus"></i></a>
+                            <a class="btn btn-info" title="Save image"><i class="fa fa-save"></i></a>
+                        </div>';
                     } else {
                         echo '<img src="'.@webroot.'/dist/img/no_photo.jpg" alt="no-selfie-available/>';
                     }
@@ -170,7 +181,6 @@ $this->title = $title;
     </div>
     <!-- /.box-body -->
 </div>
-
 
 
 <div class="modal fade" id="modal-default" style="display: none;">

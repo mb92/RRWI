@@ -79,6 +79,9 @@ class StatsController extends Controller
     public function actionIndex()
     {
         $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+
         $country = Countries::find()->where(['id'=>$countryId])->one();
         $countries = Countries::find()->all();
         $title = "Analytics data for ". Countries::find()->Where(['id' => $countryId])->one()['name'];
@@ -99,6 +102,9 @@ class StatsController extends Controller
 
     public function actionCustomers() {
         $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+
         $country = Countries::find()->where(['id'=>$countryId])->one();
         $countries = Countries::find()->all();
         $title = "Clients from ". Countries::find()->Where(['id' => $countryId])->one()['name'];
@@ -112,11 +118,17 @@ class StatsController extends Controller
         // vdd("Works-client $clientId");
 
         $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+
         $country = Countries::find()->where(['id'=>$countryId])->one();
         $countries = Countries::find()->all();
-        $title = "Datails about ". Clients::find()->Where(['id' => $clientId])->one()['name'];
+        $title = "Details about ". Clients::find()->Where(['id' => $clientId])->one()['name'];
 
         $client = Clients::find()->where(['id' => $clientId])->one();
+        if (is_null($client)) 
+        return $this->redirect('site/error');
+
         $sessions = $client->sessionsapps;
 
         $stats['allLunches'] = count($sessions);
@@ -135,8 +147,21 @@ class StatsController extends Controller
         return $this->render('details', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'client' => $client, 'stats' => $stats]);
     }
 
+    public function actionAlbum($clientId) {
+        $client = Clients::find()->where(['id' => $clientId])->one();
+        if (is_null($client)) 
+        return $this->redirect('site/error');
+
+        $title = $client->name.'\'s album';
+
+        return $this->render('album', ['title' => $title, 'client' => $client]);
+    }
+
     public function actionStores() {
         $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+
         $country = Countries::find()->where(['id'=>$countryId])->one();
         $countries = Countries::find()->all();
         $title = "All stores from ". $country->name;
@@ -146,4 +171,5 @@ class StatsController extends Controller
         // vdd($mostPop);
         return $this->render('stores', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'stores' => $stores, 'mostPop' => $mostPop]);
     }
+
 }

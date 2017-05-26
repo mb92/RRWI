@@ -9,7 +9,7 @@ use yii\helpers\Url;
 <!-- Bootstrap 3.3.7 -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
-
+<script src="/plugins/lightbox2-master/dist/js/lightbox.js"></script>
 <!-- <script src="//code.jquery.com/jquery-1.12.4.js"></script> -->
 <!-- <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script> -->
 <script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>

@@ -65,10 +65,9 @@ $this->title = $title;
             <td><?= $client->email ?></td>
             <td><?= $client->name ?></td>
             <td><?= $client->created_at ?></td>
-           
-
             <td>
            <a href="details?clientId=<?=$client->id?>" class="btn btn-info">Details</a>
+           <a href="album?clientId=<?= $client->id ?>" class="btn btn-primary" title="<=$client->name?>'s album"><i class="fa fa-camera" aria-hidden="true"></i></a>
             <a href="#" class="btn btn-primary">Save as PDF</a>
             </td>
         </tr>
