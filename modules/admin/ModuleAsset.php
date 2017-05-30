@@ -3,8 +3,9 @@
 namespace app\modules\admin;
 
 
-use dmstr\web\AdminLteAsset;
+// use dmstr\web\AdminLteAsset;
 use yii\web\AssetBundle;
+use app\assets\AppAsset;
 
 class ModuleAsset extends AssetBundle
 {
@@ -14,7 +15,7 @@ class ModuleAsset extends AssetBundle
         'css/main.css',
     ];
 
-    public $depends = [
-        AdminLteAsset::class,
-    ];
+    // public $depends = [
+    //     AdminLteAsset::class,
+    // ];
 }

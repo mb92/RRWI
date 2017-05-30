@@ -5,6 +5,7 @@ namespace app\modules\api\v1\controllers;
 use app\models\Sessionsapps;
 use app\models\Countries;
 use app\models\Languages;
+use app\models\Stores;
 
 use Yii;
 use yii\rest\ActiveController;
@@ -57,7 +58,9 @@ class SessionsappsController extends ActiveController
 			// Yii::$app->response->statusCode = 200;
 			$country = Countries::find()->where(['short' => $api['country']])->one();
 			$lang = Languages::find()->where(['short' => $api['lang']])->one();
-
+			$store = Stores::find()->where(['id' => $api['storeId']])->one();
+			$store->count ++;
+			$store->save();
 			// Save info about new session (after run app)
 			$model = new Sessionsapps();
 			$model->sesId = $api['sesId'];

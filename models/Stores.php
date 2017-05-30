@@ -64,4 +64,31 @@ class Stores extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Countries::className(), ['id' => 'countryId']);
     }
+
+    /**
+     * Dispaly all stores from selected country
+     * @param  int $countryId country id
+     * @return query (must by end of ->all())
+     */
+    public static function getFromCountry($countryId) 
+    {
+        return Self::find()->where(['countryId' => $countryId]);
+    }
+
+    public static function mostPopular($countryId, $r=1) 
+    {
+        if ($r==1) {
+            $max = Self::find()->where(['countryId' => $countryId])->max('count');
+            $rank = Self::find()->where(['count' => $max])->one();
+        } else {
+            $stores = Self::find()->where(['countryId' => $countryId])->orderBy(['count'=>SORT_ASC])->all();
+            $rank = array_slice($stores, 0, $r, true);
+        }
+        return $rank;
+    }
+
+    public static function countStoresInCountry($countryId)
+    {
+        return Self::find()->where(['countryId' => $countryId])->count();
+    } 
 }

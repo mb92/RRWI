@@ -87,11 +87,12 @@ class MbController extends Controller
         if ($st) echo "Table Clients cleared \n\n";
         else echo "Can't clean Clients actions \n\n";
 
-        //  $st = Stores::deleteAll();
+        // $st = Stores::deleteAll();
         // if ($st) echo "Table Stores cleared \n\n";
         // else echo "Can't clean Stores actions \n\n";
 
         $this->clearDirectoryRecursive("upload");
+        echo "Deleted photos \n\n";
     }
 
 
@@ -101,19 +102,18 @@ class MbController extends Controller
 
     	$pt = ["Vodafone lorem ipsum", "dolor Vodafone sit", "amet Vodafone LOREM", "Vodafone IPSUM DOLOR", "Vodafone SIT AMET"];
 
-    	$en = ["Vod lorem ipsum", " sit dolor Vodafone", "LOREMLOREM amet Vodafone ", "LOREM Vodafone IPSUM DOLOR LOREM", "Vodafone LOREM SIT AMET"];
+    	$en = ["Dundrum Town Centre", "Mahon Point", "Blanchardstown"];
 
 
+    	foreach ($de as $name) {
+    		$store = new Stores;
+    		$store->name = $name;
+    		$store->countryId = 3;
+    		$sv = $store->save();
 
-    	// foreach ($de as $name) {
-    	// 	$store = new Stores;
-    	// 	$store->name = $name;
-    	// 	$store->countryId = 3;
-    	// 	$sv = $store->save();
-
-    	// 	if(!$sv) return "Error";
-    	// }
-    	// echo "DE stores was add\n";
+    		if(!$sv) return "Error";
+    	}
+    	echo "DE stores was add\n";
 
     	foreach ($pt as $name) {
     		$store = new Stores;

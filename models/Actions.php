@@ -93,4 +93,18 @@ class Actions extends \yii\db\ActiveRecord
     //     $action->sessionsAppId = $ses['id'];
     //     return $action->save();
     // }
+    // 
+    // 
+    public static function countAllRetakes()
+    {
+        return count(Self::find()->where(['action' => "rT"])->asArray()->all());
+    }
+
+    public static function countRetakesFromCountry($countryId)
+    {
+        // SELECT cl.* FROM clients as cl INNER JOIN sessionsapps as ses ON cl.id = ses.clientId where ses.countryId = <countryId>;
+        
+        $query = self::find()->innerJoin('sessionsapps')->where(['actions.action' => 'rT','sessionsapps.countryId' => $countryId])->asArray()->all();
+        return count($query);
+    }
 }

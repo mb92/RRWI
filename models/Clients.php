@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveQuery;
 use Yii;
 
 /**
@@ -52,6 +52,28 @@ class Clients extends \yii\db\ActiveRecord
      */
     public function getSessionsapps()
     {
-        return $this->hasMany(Sessionsapp::className(), ['clientId' => 'id']);
+        return $this->hasMany(Sessionsapps::className(), ['clientId' => 'id']);
+    }
+
+
+    public static function getFromCountry($countryId)
+    {
+        // SELECT cl.* FROM clients as cl INNER JOIN sessionsapps as ses ON cl.id = ses.clientId where ses.countryId = <countryId>;
+        
+        $query = self::find()->innerJoin('sessionsapps')->where(['sessionsapps.countryId' => $countryId]);
+        return $query;
+    }
+
+    public static function getDoneSes($clientId) 
+    {
+        $query = self::find()->where(['id' => $clientId])->innerJoin('sessionsapps')->where(['status' => '1']);
+
+        return $query;
+    }
+
+
+    public static function countClientFromCountry($countryId)
+    {
+        return count(Self::getFromCountry($countryId)->asArray()->all());
     }
 }
