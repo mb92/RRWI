@@ -32,18 +32,20 @@ class ClientsController extends ActiveController
      */
 	public function actionUpload() {
 		// Get image string posted from Android App
-		// print_r(Yii::$app->request->post());
+		// print_r(Yii::$app->request->post('orders'));
 		// die();
 		$name = Yii::$app->request->post('name', false);
 		$email = Yii::$app->request->post('email', false);
 		$token = Yii::$app->request->post('token', false);
 		$sesId = Yii::$app->request->post('sesId', false);
 		$imageB64 = Yii::$app->request->post('imageB64', false);
+		$orders = Yii::$app->request->post('orders', false);
 
 		$result = ['token' => "fail",'image' => "fail",'client' => "fail",'action' => "fail", 'finish' => "not"];
 		// print_r(Yii::$app->request->post());
 		// 	die();	
-		if (($name != false) && ($email != false) && ($token != false) && ($sesId != false) && ($imageB64 != false))
+
+		if (($name != false) && ($email != false) && ($token != false) && ($sesId != false) && ($imageB64 != false) && ($orders != false))
 		{
 			// Yii::$app->response->statusCode = 200;
 		// Verify token
@@ -84,16 +86,25 @@ class ClientsController extends ActiveController
 				$client->email = Yii::$app->request->post('email');
 				$client->name = Yii::$app->request->post('name');
 				$client->created_at = mysqltime();
+				$client->orders = $orders;
 				$sv = $client->save();
 			} else {
+				if ($client->orders == $orders)
 				$sv = true;
+				else {
+					$client->orders = $orders;
+					$sv = $client->save();
+				}
 			}
 			
 			if($sv) {
 				$result['client'] = "OK";
 				$sv = false;
 			} else {
+				$rmimg= unlink('../upload/'.$filenameExt);
+				$results['image'] = "Must be removed";
 				$result['client'] = "Not exist";
+				return $results;
 			}
 
 		// Save action

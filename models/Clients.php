@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-use yii\db\ActiveQuery;
+
 use Yii;
 
 /**
@@ -10,8 +10,10 @@ use Yii;
  * @property int $id
  * @property string $email
  * @property string $name
+ * @property string $created_at
+ * @property string $orders
  *
- * @property Sessionsapp[] $sessionsapps
+ * @property Sessionsapps[] $sessionsapps
  */
 class Clients extends \yii\db\ActiveRecord
 {
@@ -30,7 +32,9 @@ class Clients extends \yii\db\ActiveRecord
     {
         return [
             [['email'], 'required'],
+            [['created_at'], 'safe'],
             [['email', 'name'], 'string', 'max' => 255],
+            [['orders'], 'string', 'max' => 1],
         ];
     }
 
@@ -43,7 +47,8 @@ class Clients extends \yii\db\ActiveRecord
             'id' => 'ID',
             'email' => 'Email',
             'name' => 'Name',
-            'created_at' => 'Crated_at',
+            'created_at' => 'Created At',
+            'orders' => 'Orders',
         ];
     }
 
@@ -54,7 +59,6 @@ class Clients extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Sessionsapps::className(), ['clientId' => 'id']);
     }
-
 
     public static function getFromCountry($countryId)
     {
