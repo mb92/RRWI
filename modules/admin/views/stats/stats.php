@@ -160,7 +160,7 @@ $this->title = $title;
                     if (is_null($s->clientId))
                     // echo '<code>iterrupted</code>';
                     echo "-";
-                    else echo $s->client->email; 
+                    else echo '<a href="stats/details?clientId='.$s->clientId.'"><u>'.$s->client->email .'</u></a>'; 
                 ?>
                 </td>
 

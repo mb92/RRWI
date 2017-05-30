@@ -14,8 +14,11 @@ $this->title = $title;
 					<a href="/admin/<?= $country->short ?>/stats" style="height:35px;" class="btn btn-warning">
                     Go back to <?='<b>'.$country->name.'</b>' ?> stats
 					</a>
-                <a href="#" style="height:35px;" class="btn btn-primary pull-right" title="Export all clients with their photos">
+                <a href="/admin/<?= $country->short ?>/stats/fullraport" target="_blank" style="height:35px;" class="btn btn-primary pull-right" title="Export all clients with their photos">
                 <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp; Full PDF raport</a>
+
+                <a href="/admin/<?= $country->short ?>/stats/simplyraport" target="_blank" style="height:35px; margin-right: 3px;" class="btn btn-primary pull-right" title="Export all clients with their photos">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp; Simply PDF raport</a>
             </div>
             <!-- /.box-body -->
           </div>
@@ -62,7 +65,7 @@ $this->title = $title;
     if (!is_null($clients)) {
     foreach ($clients as $client): ?>
         <tr>
-            <td><?= $client->email ?></td>
+            <td><a href="details?clientId=<?=$client->id?>"><u><?= $client->email ?></u></a></td>
             <td><?= $client->name ?></td>
             <td><?= $client->created_at ?></td>
             <td>

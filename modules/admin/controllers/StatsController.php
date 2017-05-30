@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\BaseFileHelper;
 use yii\db\ActiveQuery;
 use yii\db\Query;
+use \kartik\mpdf\Pdf;
 
 use app\models\Clients;
 use app\models\Actions;
@@ -172,4 +173,107 @@ class StatsController extends Controller
         return $this->render('stores', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'stores' => $stores, 'mostPop' => $mostPop]);
     }
 
+
+
+    public function actionFullraport()
+    {
+        $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+
+        $country = Countries::find()->where(['id'=>$countryId])->one();
+
+
+        $clients = Clients::getFromCountry($countryId)->all();
+        $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;"><i>slefie-app</i></div>';
+        $content = $this->renderPartial('pdfFullRaport', ['title' => $smallTitle, 'clients' => $clients, 'countryName' => strtoupper($country->name)]);
+
+        $pdf = new Pdf([
+            // your html content input
+            'content' => $content,  
+            'options' => ['title' => 'Raport for '. strtoupper($country->name)],
+            // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
+             // call mPDF methods on the fly
+            'methods' => [ 
+                'SetHeader'=>['Date of generate: '. mysqltime()],
+                'SetFooter'=>['{PAGENO}'],
+            ]
+        ]);
+        
+        // return the pdf output as per the destination setting
+        // $pdf = Yii::$app->pdf;
+        // $pdf->content = $content;
+        return $pdf->render(); 
+    }
+
+    public function actionSimplyraport()
+    {
+        $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+
+        $country = Countries::find()->where(['id'=>$countryId])->one();
+
+
+        $clients = Clients::getFromCountry($countryId)->all();
+        $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;"><i>Simple raport slefie-app</i></div>';
+        $content = $this->renderPartial('pdfSimplyRaport', ['title' => $smallTitle, 'clients' => $clients, 'countryName' => strtoupper($country->name)]);
+
+        $pdf = new Pdf([
+            // your html content input
+            'content' => $content,  
+            'options' => ['title' => 'Raport for '. strtoupper($country->name)],
+            // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
+             // call mPDF methods on the fly
+            'methods' => [ 
+                'SetHeader'=>['Date of generate: '. mysqltime()],
+                'SetFooter'=>['{PAGENO}'],
+            ]
+        ]);
+        
+        // return the pdf output as per the destination setting
+        // $pdf = Yii::$app->pdf;
+        // $pdf->content = $content;
+        return $pdf->render(); 
+    }
+
+    public function actionClientraport($clientId)
+    {
+        $client = Clients::find()->where(['id' => $clientId])->one();
+        $sessions = $client->sessionsapps;
+
+        $stats['allLunches'] = count($sessions);
+        $stats['doneSes'] = $stats['interrupedSes'] = $stats['retake'] = $stats['photos'] = 0;
+        foreach ($sessions as $ses) {
+            if ($ses['status']=="1") $stats['doneSes']++;
+            else $stats['interrupedSes']++;
+
+            foreach ($ses->actions as $action) {
+                if ($action['action'] == 'rT') $stats['retake']++;
+                if ($action['action'] == 'tP') $stats['photos']++;
+            }
+        }
+
+        // vdd($client);
+        $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;">
+            <i>Client details - slefie-app</i></div>';
+        $content = $this->renderPartial('pdfClientRaport', ['title' => $smallTitle, 'client' => $client, 'stats' => $stats]);
+
+        $pdf = new Pdf([
+            // your html content input
+            'content' => $content,  
+            'options' => ['title' => $client->name],
+            // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
+             // call mPDF methods on the fly
+            'methods' => [ 
+                'SetHeader'=>['Date of generate: '. mysqltime()],
+                'SetFooter'=>['{PAGENO}'],
+            ]
+        ]);
+        
+        // return the pdf output as per the destination setting
+        // $pdf = Yii::$app->pdf;
+        // $pdf->content = $content;
+        return $pdf->render(); 
+    }
 }

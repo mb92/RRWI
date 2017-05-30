@@ -25,7 +25,7 @@ $this->title = $title;
                 <a href="customers" style="height:35px;" class="btn btn-default btn-app-country">
                 Go back
                 </a>
-                <a href="#" style="height:35px;" class="btn btn-primary btn-app-country pull-right">
+                <a href="/admin/<?= $country->short ?>/stats/clientraport?clientId=<?= $client->id?>" target="_blank" style="height:35px;" class="btn btn-primary btn-app-country pull-right">
                 <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;Export to PDF
                 </a>
                 <a href="album?clientId=<?= $client->id ?>" style="height:35px;" class="btn btn-primary pull-right btn-app-album">
@@ -144,7 +144,9 @@ $this->title = $title;
                         echo '<div class="btn-group-vertical pull-right">
                            <a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-'.$key.'" 
                             data-title="'.$client->name.' - '. $s->created_at .'" class="btn btn-info" title="Preview selfie"><i class="fa fa-search-plus"></i></a>
-                            <a class="btn btn-info" title="Save image"><i class="fa fa-save"></i></a>
+                            <a href="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="btn btn-info" download="'.$s->sesId.'.jpg" title="Save image"><i class="fa fa-save"></i></a>
+
+
                         </div>';
                     } else {
                         echo '<img src="'.@webroot.'/dist/img/no_photo.jpg" alt="no-selfie-available/>';
