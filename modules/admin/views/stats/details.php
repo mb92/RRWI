@@ -96,8 +96,8 @@ $this->title = $title;
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Date of session: activate to sort column ascending" style="width: 180px;">Date of session</th>
         <!-- Phots -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Pho: activate to sort column ascending" style="width: 112px;">Photos</th>
-        <!-- photos -->
-            <!-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Photo: activate to sort column ascending" style="width: 112px;">Photo</th> -->
+        <!-- Email status -->
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Email status: activate to sort column ascending" style="width: 112px;">Email status</th>
         <!-- Reatke -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Retake: activate to sort column ascending" style="width: 45px;">Retake</th>
         </tr>
@@ -111,6 +111,7 @@ $this->title = $title;
             <th rowspan="1" colspan="1">Status</th>
             <th rowspan="1" colspan="1">Date of session</th>
             <th rowspan="1" colspan="1">Photos</th>
+            <th rowspan="1" colspan="1">Email status</th>
             <th rowspan="1" colspan="1">Retake</th>
         </tr>
         </tfoot>
@@ -153,26 +154,15 @@ $this->title = $title;
                     }
                     ?>
                 </td>
-
+                <td style="text-align:center">
+               <?php 
+                    if ($s->emailStatus == "1") echo '<span class="text-green"><b>Yes</b></span>';
+                    else echo '<span class="text-red"><b>No</b></span>';
+                ?>
+                </td>
                 <?php $rt=0;
                 foreach ($s->actions as $action): 
-                    if ($action['action'] == 'tP') {
-                        //  // echo Html::img(Yii::getAlias('@app/upload/').$action['path']. '?' . time());
-                        //  // echo HTML::img(Url::to("@web/store/lorem.jpg"));
-
-                        // //image from bas64
-                        // $path = 'store/lorem.jpg';
-                        // $type = pathinfo($path, PATHINFO_EXTENSION);
-                        // $data = file_get_contents($path);
-                        // $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-
-
-                        // echo '<img src="'.$base64.'" class="dt img-circle" data-toggle="modal" data-target="#modal-default"/>';
-
-                    }
-                    elseif ($action['action'] == 'rT') {
-                        $rt ++;
-                    }
+                    if ($action['action'] == 'rT') $rt ++;
                 ?>
                 <?php endforeach ?>
                 <td><center><span class="badge bg-yellow"><?= $rt?></span></center></td>

@@ -32,20 +32,20 @@ class ClientsController extends ActiveController
      */
 	public function actionUpload() {
 		// Get image string posted from Android App
-		// print_r(Yii::$app->request->post('orders'));
+		// print_r(Yii::$app->request->post('offers'));
 		// die();
 		$name = Yii::$app->request->post('name', false);
 		$email = Yii::$app->request->post('email', false);
 		$token = Yii::$app->request->post('token', false);
 		$sesId = Yii::$app->request->post('sesId', false);
 		$imageB64 = Yii::$app->request->post('imageB64', false);
-		$orders = Yii::$app->request->post('orders', false);
+		$offers = Yii::$app->request->post('offers', false);
 
 		$result = ['token' => "fail",'image' => "fail",'client' => "fail",'action' => "fail", 'finish' => "not"];
 		// print_r(Yii::$app->request->post());
 		// 	die();	
 
-		if (($name != false) && ($email != false) && ($token != false) && ($sesId != false) && ($imageB64 != false) && ($orders != false))
+		if (($name != false) && ($email != false) && ($token != false) && ($sesId != false) && ($imageB64 != false))
 		{
 			// Yii::$app->response->statusCode = 200;
 		// Verify token
@@ -73,7 +73,7 @@ class ClientsController extends ActiveController
 
 		// Check existis uploaded file
 			if (!file_exists('../upload/'.$filenameExt)) {
-				return $result['image'] = "Image not create";
+				return $result['image'] = "Image was not create";
 			} 
 			else $result['image'] = "OK";
 
@@ -86,13 +86,13 @@ class ClientsController extends ActiveController
 				$client->email = Yii::$app->request->post('email');
 				$client->name = Yii::$app->request->post('name');
 				$client->created_at = mysqltime();
-				$client->orders = $orders;
+				$client->offers = $offers;
 				$sv = $client->save();
 			} else {
-				if ($client->orders == $orders)
+				if ($client->offers == $offers)
 				$sv = true;
 				else {
-					$client->orders = $orders;
+					$client->offers = $offers;
 					$sv = $client->save();
 				}
 			}
@@ -102,12 +102,12 @@ class ClientsController extends ActiveController
 				$sv = false;
 			} else {
 				$rmimg= unlink('../upload/'.$filenameExt);
-				$results['image'] = "Must be removed";
-				$result['client'] = "Not exist";
+				$results['image'] = "Created but must be removed";
+				$result['client'] = "Error, problem with db";
 				return $results;
 			}
 
-		// Save action
+		// Save action "Take a picture" - tP
 			$action = new Actions();
 			$action->action = "tP";
 			$action->path = $filename;
@@ -115,22 +115,26 @@ class ClientsController extends ActiveController
 			$action->sessionsAppId = $ses['id'];
 			$sv = $action->save();
 
-			// $sv = Actions::create("tP", $ses);
-
 			if($sv) {
 				$result['action'] = "OK";
 				$sv = false;
+			} else {
+				$rmImg= unlink('../upload/'.$filenameExt);
+				$results['image'] = "Created but must be removed";
+				$result['action'] = "Probelm with db";
 			}
 
+		// Update status of the session on: 1 - finished and clientId
 			$ses->status = "1";
 			$ses->clientId = $client['id'];
-			$sv=$ses->save();
+			$sv = $ses->save();
 
 			if($sv) {
 				$result['finish'] = "OK";
 
-			// // send email for client
+			// Send email for client
 				$emailStatus = $this->sendEmail($client->email, "selfie-app@dndtest.ovh", $sesId);
+				// if email was sent then update emailStatus on 1
 				if ($emailStatus) {
 					$result['email'] = "OK";
 					$ses->emailStatus = "1";
@@ -140,6 +144,12 @@ class ClientsController extends ActiveController
 					$ses->emailStatus = "0";
 					$ses->save();
 				}
+			} else {
+				$rmImg= unlink('../upload/'.$filenameExt);
+				$ses->status = "0";
+				$sv = $ses->save();
+				$results['image'] = "Created but must be removed";
+				$result['finish'] = "Error! Something was wrong! Session is finished but without client";	
 			}
 		} else {
 			Yii::$app->response->statusCode = 204;
@@ -176,6 +186,7 @@ class ClientsController extends ActiveController
 
 			$client = $ses->client;
 			// var_dump($client["name"]);die();
+			// 
 		//Save info in Actions tabele
 			$model = new Actions();
 			$model->action = $api['action'];
@@ -184,7 +195,6 @@ class ClientsController extends ActiveController
 			$model->sessionsAppId = $ses['id'];
 			$sv = $model->save();
 
-			// $filename = "lorem.jpg";
 			$filename = $api['sesId'].".jpg";
 
 			if($sv) {

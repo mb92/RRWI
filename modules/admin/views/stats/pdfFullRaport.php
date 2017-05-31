@@ -28,10 +28,11 @@ use yii\helpers\Html;
 	<div style="padding-top:5px; text-align:center;">
 		<h3>List of clients from <?= $countryName?></h3>
 	</div>
-        
-  <table class="table table-bordered">
-    <tbody style="margin-bottom:0;">
+
+
       <?php foreach ($clients as $key => $c): ?>
+    <table class="table table-bordered" autosize="1" style="margin-bottom: 0px; margin-top:30px;">
+    <tbody style="margin-bottom:0;">
       	<tr class="info">
       		<td colspan="4">
 			<span style="font-family:fontawesome;" class="fa">&#xf1fa;&nbsp;</span>
@@ -53,12 +54,9 @@ use yii\helpers\Html;
 			<?= count($c->sessionsapps)?>
 			</td>
 		</tr>
-		<tr class="warning" style="height:20px;">
-			<td colspan="4" style="padding:2px; text-align:center;">List of sessions</td>
-		</tr>
-		<tr>
-			<td colspan="4" style="padding:0;">
-				<table class="table table-stripped">
+		    </tbody>
+  </table>
+				<table class="table table-bordered " repeat_header="1" autosize="1" style="margin-top:0;">
 					<thead>
 						<tr class="warning" style="height:20px;">
 							<th style="padding:2px; text-align:center;">Store</th>
@@ -81,10 +79,10 @@ use yii\helpers\Html;
 								}
 							?>
 							<!-- Retake -->
-								<td><?= $rt ?></td>
+								<td style="text-align:center;"><?= $rt ?></td>
 
 							<!-- Photo (if exist) -->
-								<td>
+								<td style="text-align: right;">
 									<?php 
 									if ($s->status == "1") {
 										echo '<img src="../upload/'.$s->sesId.'.jpg" style="max-width:200px;"/>';
@@ -98,11 +96,10 @@ use yii\helpers\Html;
 					<td colspan="4" style="padding:10px; text-align:center;"></td>
 					</tr> -->
 				</table>
-			</td>
-		</tr>
+
 	<?php endforeach ?>
-    </tbody>
-  </table>
+
+
 </div>
 
 </body>

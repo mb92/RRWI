@@ -37,7 +37,8 @@ class SessionsappsController extends ActiveController
 	// 	return $actions;
 	// }
 
-	public function actionRun() {
+	public function actionRun() 
+	{
 		$result = "fail";
 		$api = Yii::$app->request->post();
 
@@ -50,9 +51,12 @@ class SessionsappsController extends ActiveController
 
 		// print_r(Yii::$app->request->post());
 
-		// if (($api['sesId'] != false) && ($api['appId'] != false) && ($api['country'] != false) && ($api['storeId'] != false) && ($api['lang'] != false) && ($api['token'] != false))
-		if (($api['sesId'] != false) && ($api['appId'] != false))
+		if (($api['sesId'] != false) && ($api['appId'] != false) && ($api['country'] != false) && ($api['storeId'] != false) && ($api['lang'] != false) && ($api['token'] != false))
 		{
+			//Verification of uniqueness sesId
+			$checkSesId = Sessionsapps::find()->where(['sesId' => $api['sesId']])->one();
+			if (!is_null($checkSesId)) return "A session with this identifier already exists! Regenerete new sesId!";
+			// Verify Tokeny
 			if (!verifyToken($api['token'])) return $result = "Bad Token";
 
 			// Yii::$app->response->statusCode = 200;
@@ -61,6 +65,7 @@ class SessionsappsController extends ActiveController
 			$store = Stores::find()->where(['id' => $api['storeId']])->one();
 			$store->count ++;
 			$store->save();
+			
 			// Save info about new session (after run app)
 			$model = new Sessionsapps();
 			$model->sesId = $api['sesId'];

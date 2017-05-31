@@ -114,10 +114,12 @@ $this->title = $title;
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Date of session: activate to sort column ascending" style="width: 180px;">Date of session</th>
         <!-- Client -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Client: activate to sort column ascending" style="width: 112px;">Client</th>
+         <!-- Email status -->
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="email: activate to sort column ascending" style="width: 112px;">Email status</th>
         <!-- photos -->
             <!-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Photo: activate to sort column ascending" style="width: 112px;">Photo</th> -->
         <!-- Reatke -->
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Retake: activate to sort column ascending" style="width: 112px;">Retake</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Retake: activate to sort column ascending" style="width:45px;">Retake</th>
         </tr>
         </thead>
 
@@ -129,7 +131,7 @@ $this->title = $title;
             <th rowspan="1" colspan="1">Status</th>
             <th rowspan="1" colspan="1">Date of session</th>
             <th rowspan="1" colspan="1">Client</th>
-            <!-- 					<th rowspan="1" colspan="1">Photo</th> -->
+			<th rowspan="1" colspan="1">Email status</th>
             <th rowspan="1" colspan="1">Retake</th>
         </tr>
         </tfoot>
@@ -158,31 +160,21 @@ $this->title = $title;
                 <td>
                 <?php 
                     if (is_null($s->clientId))
-                    // echo '<code>iterrupted</code>';
                     echo "-";
                     else echo '<a href="stats/details?clientId='.$s->clientId.'"><u>'.$s->client->email .'</u></a>'; 
                 ?>
                 </td>
+                
+                <td style="text-align:center;">
+                   <?php 
+                        if ($s->emailStatus == "1") echo '<span class="text-green"><b>Send</b></span>';
+                        else echo '<span class="text-red"><b>Not send</b></span>';
+                    ?>   
+                </td>
 
                 <?php $rt=0;
                 foreach ($s->actions as $action): 
-                    if ($action['action'] == 'tP') {
-                        // 	// echo Html::img(Yii::getAlias('@app/upload/').$action['path']. '?' . time());
-                        // 	// echo HTML::img(Url::to("@web/store/lorem.jpg"));
-
-                        // //image from bas64
-                        // $path = 'store/lorem.jpg';
-                        // $type = pathinfo($path, PATHINFO_EXTENSION);
-                        // $data = file_get_contents($path);
-                        // $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-
-
-                        // echo '<img src="'.$base64.'" class="dt img-circle" data-toggle="modal" data-target="#modal-default"/>';
-
-                    }
-                    elseif ($action['action'] == 'rT') {
-                        $rt ++;
-                    }
+                    if ($action['action'] == 'rT') $rt ++;
                 ?>
                 <?php endforeach ?>
                 <td><center><span class="badge bg-yellow"><?= $rt?></span></center></td>

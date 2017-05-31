@@ -11,7 +11,7 @@ use Yii;
  * @property string $email
  * @property string $name
  * @property string $created_at
- * @property string $orders
+ * @property string $offers
  *
  * @property Sessionsapps[] $sessionsapps
  */
@@ -34,7 +34,7 @@ class Clients extends \yii\db\ActiveRecord
             [['email'], 'required'],
             [['created_at'], 'safe'],
             [['email', 'name'], 'string', 'max' => 255],
-            [['orders'], 'string', 'max' => 1],
+            [['offers'], 'string', 'max' => 1],
         ];
     }
 
@@ -48,7 +48,7 @@ class Clients extends \yii\db\ActiveRecord
             'email' => 'Email',
             'name' => 'Name',
             'created_at' => 'Created At',
-            'orders' => 'Orders',
+            'offers' => 'Offers',
         ];
     }
 

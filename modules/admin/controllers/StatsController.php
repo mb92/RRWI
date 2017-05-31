@@ -192,17 +192,21 @@ class StatsController extends Controller
             // your html content input
             'content' => $content,  
             'options' => ['title' => 'Raport for '. strtoupper($country->name)],
+            'filename' => strtoupper($country->short) . '_' . 'full-raport_'. mysqltime() .'.pdf',
             // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
              // call mPDF methods on the fly
             'methods' => [ 
-                'SetHeader'=>['Date of generate: '. mysqltime()],
+                'SetHeader'=>['Date of generate: '. mysqltime() . ' ['.strtoupper($country->short).']'],
                 'SetFooter'=>['{PAGENO}'],
             ]
+            // 'Output' => ['test.pdf', "I"]
         ]);
         
         // return the pdf output as per the destination setting
         // $pdf = Yii::$app->pdf;
         // $pdf->content = $content;
+        // We'll be outputting a PDF  
+
         return $pdf->render(); 
     }
 
@@ -223,10 +227,11 @@ class StatsController extends Controller
             // your html content input
             'content' => $content,  
             'options' => ['title' => 'Raport for '. strtoupper($country->name)],
+            'filename' => strtoupper($country->short) . '_' . 'simple-raport_'. mysqltime() .'.pdf',
             // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
              // call mPDF methods on the fly
             'methods' => [ 
-                'SetHeader'=>['Date of generate: '. mysqltime()],
+                'SetHeader'=>['Date of generate: '. mysqltime() . ' ['.strtoupper($country->short).']'],
                 'SetFooter'=>['{PAGENO}'],
             ]
         ]);
@@ -263,6 +268,7 @@ class StatsController extends Controller
             // your html content input
             'content' => $content,  
             'options' => ['title' => $client->name],
+            'filename' => str_replace('@', '[at]', $client->email) . '_' . 'raport_'. mysqltime() .'.pdf',
             // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
              // call mPDF methods on the fly
             'methods' => [ 

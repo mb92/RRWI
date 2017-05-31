@@ -29,28 +29,35 @@ use yii\helpers\Html;
 		<h3>Simple list of clients from <?= $countryName?></h3>
 	</div>
 
-<table class="table table-bordered">
+<?php foreach ($clients as $key => $c): ?>
+<table class="table table-bordered" autosize="1" style="margin-bottom: 0px; margin-top:50px;">
+    <tbody style="margin-bottom:0;">
 	<tbody style="margin-bottom:0;">
-		<?php foreach ($clients as $key => $c): ?>
 		<tr class="info">
 			<td><?= $key+1?>: <b><?= $c->email ?></b></td>
 			<td><?= $c->name ?></td>
 		</tr>
-		<tr>
-			<td colspan="2" style="width:100%; text-align:center;">
-		<?php 
+	</tbody>
+</table>
+<table class="table table-bordered " repeat_header="1" autosize="1" style="margin-top:0;">
+	<tbody>
+			<?php 
 			foreach ($c->sessionsapps as $key => $s): ?>
+			<?php if ($key%2 == 0) echo "<tr>"; ?>
+				<td style="text-align:center;">
 					<?php 
 					if ($s->status == "1") {
 					echo '<img src="../upload/'.$s->sesId.'.jpg" style="max-width:300px; margin:5px;"/>';
 				}
-					?>	
+					?>
+				</td>
+			<?php if ($key%2 == 0) echo "</tr>"; ?>
 			<?php endforeach ?>
-			</td>
-		</tr>
-		<?php endforeach ?>
+
 	</tbody>
 </table>
+<?php endforeach ?>
+
 </div>
 
 
