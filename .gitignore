@@ -31,3 +31,5 @@ tests/_support/_generated
 
 /upload/*
 /config/db.php
+
+/temp/*

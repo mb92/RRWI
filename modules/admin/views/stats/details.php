@@ -139,11 +139,12 @@ $this->title = $title;
                     <?php
                     if ($s->status == "1")
                     {
-                        echo '<a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-'.$key.'" 
+                        echo '<a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image" 
                         data-title="'.$client->name.' - '. $s->created_at .'">
                         <img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="img-circle thumb-img-details"/></a>';
+
                         echo '<div class="btn-group-vertical pull-right">
-                           <a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-'.$key.'" 
+                           <a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-preview" 
                             data-title="'.$client->name.' - '. $s->created_at .'" class="btn btn-info" title="Preview selfie"><i class="fa fa-search-plus"></i></a>
                             <a href="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="btn btn-info" download="'.$s->sesId.'.jpg" title="Save image"><i class="fa fa-save"></i></a>
 
