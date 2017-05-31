@@ -50,18 +50,5 @@
                 Yii::$app->params['countryId'] = NULL;
             }
         }
-
-
-        // if(isset($request[0])) {
-        //     $potentialCountryAcronimMatch = preg_match('/^\w+\\/(\w+)/', $request[0], $matches);
-        //     var_dump(parse_url($request)); die();
-        //     if($matches && isset($matches[1]) && in_array($matches[1], array_keys($countries))) {
-        //         Yii::$app->params['countryId'] = $countries[$matches[1]];
-        //         // var_dump(Yii::$app->params['countryId']); die();
-        //         var_dump($request); die();
-        //     }
-        //     // var_dump($request); die();
-        // }
-
      }
  }

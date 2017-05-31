@@ -1,4 +1,6 @@
 <?php
+use kartik\mpdf\Pdf;
+
 require(__DIR__ . '/functions.php');
 
 $params = require(__DIR__ . '/params.php');
@@ -18,6 +20,15 @@ $config = [
     'defaultRoute' => '/admin/site',
     'homeUrl' => '/admin/site',
     'components' => [
+        'pdf' => [
+            'class' => Pdf::classname(),
+            'format' => Pdf::FORMAT_A4,
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            'destination' => Pdf::DEST_BROWSER,
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+            // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
+            // refer settings section for all configuration options
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'xxxxxxxxxx',

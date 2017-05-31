@@ -28,21 +28,61 @@ class ClientsController extends ActiveController
 
     /**
      * Last action in the application life cycle. Creates a file by typing the relevant data into the table and sends the email to the client
+     * 1. Check what values were sent in the request.
+     * 2. If all the fields have been submitted correctly: 
+     *   - validation of the token
+     *   - check whether there is a session with the same sesId.
+     *   Otherwise, a wrong token or sesId message is returned.
+     * 3. Photos is decoded and saved in the "upload" directory and teh name of file is the same as sesId.jpg
+     *    When a picture can not be created, the program aborts and the corresponding error message is returned.
+     * 4. The next step is to create a new client (or update the "offers" setting if the user already exists).
+     *    In the case of an error, the image is deleted and the program aborted - it returns an error message.
+     * 5. Then the action "Take a picture" is saved.
+     * 6. Status is changed to "1" - i.e. the sessions was done.
+     * 7. The next step is sending email with a picture to client - is called sendEmail's method.
+     *    - add watermark for photo
+	 *	  - send message with image 
+	 *	  - image with watermark is remove from temp directory
+	 *	  - return true/false
+	 * 8. If email can not be sent emailStatus is not updated and will be sent at a later time by cron function.
+	 * 9. If at some stage an error occurs, all previous changes are reversed.
+	 *
+	 * Example for API:
+	 * POST: http://.../v1/clients/upload
+	 *	{
+ 	 *		"imageB64": "/9j/4AAQSkZ...."
+	 *		"name": "John Chavez",
+	 *		"email": john.chavez@gmail.com",
+	 *		"sesId": "a50c23b5e690830e9111ddd2bcd39126",
+	 *		"token": "0b3d4f561329b5a5dfdbaff634280be9",
+	 *		"offers": "1"
+	 *	}
+	 *
+ 	 *	Description:
+	 *	  imageB64 - image encoded in base64 without: 'data:image/jpeg;base64'
+	 *	  name - name (or names) of client [max 255 chars]
+	 *	  email - address email of client [max 255 chars]
+	 *	  sesId - A unique session identifier - random string in md5 [max 32 chars]
+	 *	  token - the same for all request [max 32 chars]
+	 *	  offers - "0"/"1" [1 char]
+	 *
      * @return array Results from the action.
      */
 	public function actionUpload() {
 		// Get image string posted from Android App
-		// print_r(Yii::$app->request->post());
+		// print_r(Yii::$app->request->post('offers'));
 		// die();
 		$name = Yii::$app->request->post('name', false);
 		$email = Yii::$app->request->post('email', false);
 		$token = Yii::$app->request->post('token', false);
 		$sesId = Yii::$app->request->post('sesId', false);
 		$imageB64 = Yii::$app->request->post('imageB64', false);
+		$offers = Yii::$app->request->post('offers', false);
 
 		$result = ['token' => "fail",'image' => "fail",'client' => "fail",'action' => "fail", 'finish' => "not"];
 		// print_r(Yii::$app->request->post());
 		// 	die();	
+
 		if (($name != false) && ($email != false) && ($token != false) && ($sesId != false) && ($imageB64 != false))
 		{
 			// Yii::$app->response->statusCode = 200;
@@ -71,7 +111,7 @@ class ClientsController extends ActiveController
 
 		// Check existis uploaded file
 			if (!file_exists('../upload/'.$filenameExt)) {
-				return $result['image'] = "Image not create";
+				return $result['image'] = "Image was not create";
 			} 
 			else $result['image'] = "OK";
 
@@ -84,19 +124,28 @@ class ClientsController extends ActiveController
 				$client->email = Yii::$app->request->post('email');
 				$client->name = Yii::$app->request->post('name');
 				$client->created_at = mysqltime();
+				$client->offers = $offers;
 				$sv = $client->save();
 			} else {
+				if ($client->offers == $offers)
 				$sv = true;
+				else {
+					$client->offers = $offers;
+					$sv = $client->save();
+				}
 			}
 			
 			if($sv) {
 				$result['client'] = "OK";
 				$sv = false;
 			} else {
-				$result['client'] = "Not exist";
+				$rmimg= unlink('../upload/'.$filenameExt);
+				$results['image'] = "Created but must be removed";
+				$result['client'] = "Error, problem with db";
+				return $results;
 			}
 
-		// Save action
+		// Save action "Take a picture" - tP
 			$action = new Actions();
 			$action->action = "tP";
 			$action->path = $filename;
@@ -104,31 +153,42 @@ class ClientsController extends ActiveController
 			$action->sessionsAppId = $ses['id'];
 			$sv = $action->save();
 
-			// $sv = Actions::create("tP", $ses);
-
 			if($sv) {
 				$result['action'] = "OK";
 				$sv = false;
+			} else {
+				$rmImg= unlink('../upload/'.$filenameExt);
+				$results['image'] = "Created but must be removed";
+				$result['action'] = "Probelm with db";
 			}
 
+		// Update status of the session on: 1 - finished and clientId
 			$ses->status = "1";
 			$ses->clientId = $client['id'];
-			$sv=$ses->save();
+			$sv = $ses->save();
 
 			if($sv) {
 				$result['finish'] = "OK";
 
-			// // send email for client
+			// Send email for client
 				$emailStatus = $this->sendEmail($client->email, "selfie-app@dndtest.ovh", $sesId);
+				// if email was sent then update emailStatus on 1
 				if ($emailStatus) {
 					$result['email'] = "OK";
 					$ses->emailStatus = "1";
 					$ses->save();
-				} else {
-					$result['email'] = "Email will be sent later";
-					$ses->emailStatus = "0";
-					$ses->save();
 				}
+				// } else {
+				// 	$result['email'] = "Email will be sent later";
+				// 	$ses->emailStatus = "0";
+				// 	$ses->save();
+				// }
+			} else {
+				$rmImg= unlink('../upload/'.$filenameExt);
+				$ses->status = "0";
+				$sv = $ses->save();
+				$results['image'] = "Created but must be removed";
+				$result['finish'] = "Error! Something was wrong! Session is finished but without client";	
 			}
 		} else {
 			Yii::$app->response->statusCode = 204;
@@ -139,8 +199,11 @@ class ClientsController extends ActiveController
 		return $result;
 	}
 
+
+
 	/**
-	 * Share photo with friend of client
+	 * Share photo with friend of client 
+	 * !!! Works have been stopped due to changes in project assumptions !!!
 	 * @return array Array with reasults from the action
 	 */
 	public function actionShare() {
@@ -165,6 +228,7 @@ class ClientsController extends ActiveController
 
 			$client = $ses->client;
 			// var_dump($client["name"]);die();
+			// 
 		//Save info in Actions tabele
 			$model = new Actions();
 			$model->action = $api['action'];
@@ -173,7 +237,6 @@ class ClientsController extends ActiveController
 			$model->sessionsAppId = $ses['id'];
 			$sv = $model->save();
 
-			// $filename = "lorem.jpg";
 			$filename = $api['sesId'].".jpg";
 
 			if($sv) {
@@ -200,7 +263,20 @@ class ClientsController extends ActiveController
 
 	/**
 	 * Api breakpoint for sending email for client provided the email is not sent in the "clients/upload" ActionEvent
+	 * 
+	 * 1. Check what values were sent in the request.
+	 * 2. Verify Token
+	 * 3. Check if there is a session with the given session and if the email was not sent earlier.
+	 * 4. In case of error, it returns the message and updates the emailStatus
 	 * @return array Results from action.
+	 *
+	 * Example Api:
+	 * POST: http://.../v1/clients/email
+	 * {
+	 *	"sesId": "a50c23b5e690830e9111ddd2bcd38000",
+	 * 	"token": "0b3d4f561329b5a5dfdbaff634280be9",
+	 *	"email": "client_email@email.com"
+	 *	}
 	 */
 	public function actionEmail ()
 	{
@@ -222,11 +298,14 @@ class ClientsController extends ActiveController
 			}
 			else $results['token'] = "OK";
 
+		// Verify the session
 			$ses = Sessionsapps::find()->where(['sesId' => $api['sesId']])->one();
 			if (is_null($ses)) return "Session not found";
 
+		// Check emailStatus
 			if ($ses->emailStatus == "1") return "Email was sent earlier";
 
+		// Take the email address client from the session and send email message
 			$client = $ses->client;
 			$emailStatus = $this->sendEmail($client["email"], "selfie-app@dndtest.ovh", $api["sesId"]);
 
@@ -245,6 +324,9 @@ class ClientsController extends ActiveController
 
 	/**
 	 * Function to create and send an email with a picture to the customer or the person with whom the customer will provide
+	 * This function composes email and sends a watermarked image.
+	 * HTML template is @app\mail\email.php and mail\layout\*
+	 * 
 	 * @param  string $email    Recipient email address (Client's email or shareEmail)
 	 * @param  string $from     Default value: selfie-app@dndtest.ovh
 	 * @param  string $fileName Name of image file (without extension). It's sesId value.
@@ -252,14 +334,28 @@ class ClientsController extends ActiveController
 	 */
 	public function sendEmail($email="test@ad.pl", $from="selfie-app@dndtest.ovh", $fileName="lorem.jpg") {
 		$subject = "Your selfie!";
-		$fileName = $fileName.".jpg";
-		$message = Yii::$app->mailer->compose('email', ['imageFileName' => '../upload/'.$fileName])
+		$fileName = $fileName.'.jpg';
+
+		addWatermark($fileName);
+
+		$image =  '../temp/'.$fileName;
+
+		$message = Yii::$app->mailer->compose('email', ['imageFileName' => $image])
 			->setFrom($from)
 			->setTo($email)
 			->setSubject($subject)
-			->attach('../upload/'.$fileName)
+			->attach($image)
 			->send();
+
+		if ($message) {
+			unlink($image);
+		}
 
 		return $message; 
 	}
+
+
+
+
+
 }

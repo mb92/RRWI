@@ -34,7 +34,7 @@ use app\assets\AppAsset;
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Test Api', 'url' => ['site/about']],
+            // ['label' => 'Test Api', 'url' => ['site/about']],
             // ['label' => 'Contact', 'url' => ['site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['auth/login']]
