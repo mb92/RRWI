@@ -141,7 +141,7 @@ $this->title = $title;
                     {
                         echo '<a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image" 
                         data-title="'.$client->name.' - '. $s->created_at .'">
-                        <img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="img-circle thumb-img-details"/></a>';
+                        <img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="img-circle thumb-img-details" style="max-width:70px;"/></a>';
 
                         echo '<div class="btn-group-vertical pull-right">
                            <a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-preview" 
@@ -151,7 +151,7 @@ $this->title = $title;
 
                         </div>';
                     } else {
-                        echo '<img src="'.@webroot.'/dist/img/no_photo.jpg" alt="no-selfie-available/>';
+                        echo '<img src="'.@webroot.'/dist/img/no_photo.jpg" style="max-width:70px;" alt="no-selfie-available/>';
                     }
                     ?>
                 </td>
