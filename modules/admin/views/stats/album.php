@@ -3,7 +3,7 @@ use yii\helpers\Url;
 
 $this->title = $title;
 ?>
-<div class="row">
+<div class="row animated fadeIn">
 	<div class="col-md-12">
 		<!-- APPLICATION BUTTONS -->
 		<div class="box">
@@ -18,7 +18,7 @@ $this->title = $title;
 	</div>
 </div>
 
-<div class="row">
+<div class="row animated rotateIn">
 	<div class="col-md-12">
 	<?php foreach ($client->sessionsapps as $key => $s): ?>
 	<?php

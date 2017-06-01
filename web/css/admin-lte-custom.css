@@ -90,6 +90,7 @@ img.dt.img-circle {
 .thumb-img-details {
     max-width: 60px;
     margin-right: 5px;
+    border-radius: 6px;
 }
 
 .btn-app-album {

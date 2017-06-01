@@ -16,7 +16,7 @@ use app\models\Countries;
         <li><a href="/admin/stores"><i class="fa fa-shopping-cart"></i> <span>Stores</span></a></li>
         <li><a href="/admin/countries"><i class="fa fa-globe"></i> <span>Countries</span></a></li>
         <li><a href="/admin/languages"><i class="fa fa-flag-o"></i> <span>Languages</span></a></li>
-        <li><a href="/admin/site/test"><i class="fa fa-cab"></i> <span>Test</span></a></li>
+        <!-- <li><a href="/admin/site/test"><i class="fa fa-cab"></i> <span>Test</span></a></li> -->
 <!--         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>

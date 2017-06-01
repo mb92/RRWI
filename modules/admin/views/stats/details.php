@@ -7,7 +7,7 @@ $this->title = $title;
 // $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="row">
+<div class="row animated fadeIn">
     <div class="col-md-8">
         <!-- APPLICATION BUTTONS -->
         <div class="box">
@@ -76,7 +76,7 @@ $this->title = $title;
 </section>
 <br/>
     <!-- DATA TABLE -->
-<div class="box">
+<div class="box animated fadeInUp">
     <!--             <div class="box-header">
     <h3 class="box-title">Data Table With Full Features</h3>
     </div> -->
@@ -141,14 +141,12 @@ $this->title = $title;
                     {
                         echo '<a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image" 
                         data-title="'.$client->name.' - '. $s->created_at .'">
-                        <img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="img-circle thumb-img-details" style="max-width:70px;"/></a>';
+                        <img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="thumb-img-details" style="max-width:70px;"/></a>';
 
                         echo '<div class="btn-group-vertical pull-right">
                            <a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-preview" 
                             data-title="'.$client->name.' - '. $s->created_at .'" class="btn btn-info" title="Preview selfie"><i class="fa fa-search-plus"></i></a>
                             <a href="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="btn btn-info" download="'.$s->sesId.'.jpg" title="Save image"><i class="fa fa-save"></i></a>
-
-
                         </div>';
                     } else {
                         echo '<img src="'.@webroot.'/dist/img/no_photo.jpg" style="max-width:70px;" alt="no-selfie-available/>';
@@ -163,7 +161,7 @@ $this->title = $title;
                 </td>
                 <?php $rt=0;
                 foreach ($s->actions as $action): 
-                    if ($action['action'] == 'rT') $rt ++;
+                    if ($action['action'] == 'rT') $rt++;
                 ?>
                 <?php endforeach ?>
                 <td><center><span class="badge bg-yellow"><?= $rt?></span></center></td>
