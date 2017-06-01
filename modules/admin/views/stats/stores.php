@@ -7,7 +7,7 @@ $this->title = $title;
 $this->params['breadcrumbs'][] = "Analytics data for ".$this->title;
 ?>
 
-<div class="row">
+<div class="row animated fadeIn">
 <div class="col-md-4">
   <!-- APPLICATION BUTTONS -->
           <div class="box">
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = "Analytics data for ".$this->title;
 </div>
 
 <!-- DATA TABLE -->
-<div class="box">
+<div class="box animated fadeInUp">
 <!--             <div class="box-header">
       <h3 class="box-title">Data Table With Full Features</h3>
     </div> -->

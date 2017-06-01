@@ -14,7 +14,7 @@ $this->title = 'Dashboard';
 <div class="row">
 <?php foreach ($countries as $c): ?>
 	<div class="col-lg-4 col-xs-6">
-		<div class="box box-widget widget-user-2">
+		<div class="box box-widget widget-user-2 animated fadeIn">
 			<!-- Add the bg color to the header using any of the bg-* classes -->
 			<div class="widget-user-header bg-light">
 				<div class="widget-user-image">
@@ -60,7 +60,7 @@ $this->title = 'Dashboard';
 
 
     <!-- GENERAL STATS BOX -->
-<div class="row">
+<div class="row animated fadeInUp">
 	<section class="content-header">      
 		<h1>Global summary <small>(for all countries)</small></h1>
 	</section>

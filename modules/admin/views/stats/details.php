@@ -7,7 +7,7 @@ $this->title = $title;
 // $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="row">
+<div class="row animated fadeIn">
     <div class="col-md-8">
         <!-- APPLICATION BUTTONS -->
         <div class="box">
@@ -76,7 +76,7 @@ $this->title = $title;
 </section>
 <br/>
     <!-- DATA TABLE -->
-<div class="box">
+<div class="box animated fadeInUp">
     <!--             <div class="box-header">
     <h3 class="box-title">Data Table With Full Features</h3>
     </div> -->
