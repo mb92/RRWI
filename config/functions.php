@@ -37,10 +37,12 @@ function vdd($var) {
  * Next, save new image in "temp" directory. After sending the email the image is deleted from "temp" dir.
  * @param string $filename - name of file with extension
  */
-function addWatermark($filename) {
+function addWatermark($filename="lorem.jpg") {
     // Load the stamp and the photo to apply the watermark to
     $stamp = imagecreatefrompng('../web/dist/img/wt.png');
     $im = imagecreatefromjpeg('../upload/'.$filename);
+
+    // vdd($im);
 
     // Set the margins for the stamp and get the height/width of the stamp image
     $marge_right = 20;
