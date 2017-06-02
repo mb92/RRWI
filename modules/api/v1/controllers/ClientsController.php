@@ -118,7 +118,7 @@ class ClientsController extends ActiveController
 
 			
 		// Create client
-			$client = Clients::find()->where(['email' => $email, 'name' => $name])->one();
+			$client = Clients::find()->where(['email' => $email])->one();
 
 			if (is_null($client)) {
 				$client = new Clients();
@@ -128,7 +128,15 @@ class ClientsController extends ActiveController
 				$client->offers = $offers;
 				$sv = $client->save();
 			} else {
-				if ($client->offers == $offers)
+				if (($client->offers == $offers) && ($client->name == Yii::$app->request->post('name')))
+				$sv = true;
+				else {
+					$client->offers = $offers;
+					$client->name == Yii::$app->request->post('name');
+					$sv = $client->save();
+				}
+
+				if ($client->name == Yii::$app->request->post('name'))
 				$sv = true;
 				else {
 					$client->offers = $offers;
@@ -347,7 +355,7 @@ class ClientsController extends ActiveController
 	{
 		// vdd(Yii::$app->params['email-username']);
 		if (!strstr($from, "@")) $from = Yii::$app->params['email-username'].'@mailtrap.io';
-		
+
 		try 
 		{
 			$subject = Yii::$app->params['email-subject'];
