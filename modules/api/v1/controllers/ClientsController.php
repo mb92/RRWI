@@ -119,7 +119,7 @@ class ClientsController extends ActiveController
 			
 		// Create client
 			$client = Clients::find()->where(['email' => $email])->one();
-
+			// vdd($client);
 			if (is_null($client)) {
 				$client = new Clients();
 				$client->email = Yii::$app->request->post('email');
@@ -128,18 +128,11 @@ class ClientsController extends ActiveController
 				$client->offers = $offers;
 				$sv = $client->save();
 			} else {
-				if (($client->offers == $offers) && ($client->name == Yii::$app->request->post('name')))
-				$sv = true;
-				else {
+				if (($client->offers == $offers) && ($client->name == Yii::$app->request->post('name'))) {
+					$sv = true;
+				} else {
 					$client->offers = $offers;
-					$client->name == Yii::$app->request->post('name');
-					$sv = $client->save();
-				}
-
-				if ($client->name == Yii::$app->request->post('name'))
-				$sv = true;
-				else {
-					$client->offers = $offers;
+					$client->name = Yii::$app->request->post('name');
 					$sv = $client->save();
 				}
 			}
