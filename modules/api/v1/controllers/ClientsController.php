@@ -8,6 +8,7 @@ use app\models\Sessionsapps;
 
 use Yii;
 use yii\rest\ActiveController;
+use yii\base\ErrorException;
 
 /**
 * 
@@ -333,26 +334,31 @@ class ClientsController extends ActiveController
 	 * @return boolean          True if message was sent success!
 	 */
 	public function sendEmail($email="test@ad.pl", $from="selfie-app@dndtest.ovh", $fileName="lorem.jpg") {
-		$subject = "Your selfie!";
-		$fileName = $fileName.'.jpg';
+		try {
+			$subject = "Your selfie!";
+			$fileName = $fileName.'.jpg';
 
-		addWatermark($fileName);
+			addWatermark($fileName);
 
-		$image =  '../temp/'.$fileName;
+			$image =  '../temp/'.$fileName;
 
-		$message = Yii::$app->mailer->compose('email', ['imageFileName' => $image])
-			->setFrom($from)
-			->setTo($email)
-			->setSubject($subject)
-			->setHeaders(['X-Confirm-Reading-To' => 'xyyy0107@gmail.com', 'Disposition-Notification-To' => 'xyyy0107@gmail.com'])
-			->attach($image)
-			->send();
+			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $image])
+				->setFrom($from)
+				->setTo($email)
+				->setSubject($subject)
+				->setHeaders(['X-Confirm-Reading-To' => 'xyyy0107@gmail.com', 'Disposition-Notification-To' => 'xyyy0107@gmail.com'])
+				->attach($image)
+				->send();
 
-		if ($message) {
-			unlink($image);
+			if ($message) {
+				unlink($image);
+			}
+
+			return $message; 
+
+		} catch (ErrorException $e) {
+			Yii::$app->response->statusCode = 511;
 		}
-
-		return $message; 
 	}
 
 
