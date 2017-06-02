@@ -50,13 +50,28 @@ $config = [
         'mailer' => [
                 'class' => 'yii\swiftmailer\Mailer',
                 // 'viewPath' => '/layouts/email',
-                'useFileTransport' => false,
+                'messageConfig' => [
+                    'from' => 'xyyy0107@gmail.com',
+                ],
+                'useFileTransport' => true,
+                // 'enableSwiftMailerLogging' => true,
+                // 
+                //xyyy0107@gmail.com
+                // 'transport' => [
+                //     'class' => 'Swift_SmtpTransport',
+                //     'host' => 'smtp.mailtrap.io',
+                //     'username' => '638f257e3a8555',
+                //     'password' => '8d470dafa0a2a5',
+                //     'port' => '2525',
+                //     'encryption' => 'tls',
+                //                 ],
+                //     ],
                 'transport' => [
                     'class' => 'Swift_SmtpTransport',
-                    'host' => 'smtp.mailtrap.io',
-                    'username' => '638f257e3a8555',
-                    'password' => '8d470dafa0a2a5',
-                    'port' => '2525',
+                    'host' => 'smtp.gmail.com',
+                    'username' => 'xyyy0107@gmail.com',
+                    'password' => 'Devdeliver123',
+                    'port' => '587',
                     'encryption' => 'tls',
                                 ],
                     ],

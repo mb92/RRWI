@@ -344,6 +344,7 @@ class ClientsController extends ActiveController
 			->setFrom($from)
 			->setTo($email)
 			->setSubject($subject)
+			->setHeaders(['X-Confirm-Reading-To' => 'xyyy0107@gmail.com', 'Disposition-Notification-To' => 'xyyy0107@gmail.com'])
 			->attach($image)
 			->send();
 
