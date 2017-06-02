@@ -172,18 +172,27 @@ class ClientsController extends ActiveController
 				$result['finish'] = "OK";
 
 			// Send email for client
-				$emailStatus = $this->sendEmail($client->email, "selfie-app@dndtest.ovh", $sesId);
+				$emailStatus = $this->sendEmail($client->email, Yii::$app->params['email-username'], $sesId);
 				// if email was sent then update emailStatus on 1
-				if ($emailStatus) {
+				
+				if ($emailStatus === true) {
 					$result['email'] = "OK";
 					$ses->emailStatus = "1";
 					$ses->save();
+
+				} else {
+									// vdd($emailStatus);
+					if ($emailStatus == 401)
+					{
+						$result['email'] = "Don't login to your email account. Email will be sent later";
+					} else {
+						$result['email'] = "Email will be sent later";
+					}
+
+					$ses->emailStatus = "0";
+					$ses->save();
 				}
-				// } else {
-				// 	$result['email'] = "Email will be sent later";
-				// 	$ses->emailStatus = "0";
-				// 	$ses->save();
-				// }
+
 			} else {
 				$rmImg= unlink('../upload/'.$filenameExt);
 				$ses->status = "0";
@@ -308,7 +317,7 @@ class ClientsController extends ActiveController
 
 		// Take the email address client from the session and send email message
 			$client = $ses->client;
-			$emailStatus = $this->sendEmail($client["email"], "selfie-app@dndtest.ovh", $api["sesId"]);
+			$emailStatus = $this->sendEmail($client["email"], Yii::$app->params['email-username'], $api["sesId"]);
 
 			if ($emailStatus) {
 				$results['send'] = "OK";
@@ -320,6 +329,7 @@ class ClientsController extends ActiveController
 				$ses->save();
 			}
 		} else return "Bad content";
+
 		return $results;
 	}
 
@@ -333,32 +343,42 @@ class ClientsController extends ActiveController
 	 * @param  string $fileName Name of image file (without extension). It's sesId value.
 	 * @return boolean          True if message was sent success!
 	 */
-	public function sendEmail($email="test@ad.pl", $from="selfie-app@dndtest.ovh", $fileName="lorem.jpg") {
-		try {
-			$subject = "Your selfie!";
+	public function sendEmail($email, $from, $fileName) 
+	{
+		// vdd(Yii::$app->params['email-username']);
+		if (!strstr($from, "@")) $from = Yii::$app->params['email-username'].'@mailtrap.io';
+		
+		try 
+		{
+			$subject = Yii::$app->params['email-subject'];
 			$fileName = $fileName.'.jpg';
 
 			addWatermark($fileName);
 
 			$image =  '../temp/'.$fileName;
 
+
 			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $image])
 				->setFrom($from)
 				->setTo($email)
 				->setSubject($subject)
-				->setHeaders(['X-Confirm-Reading-To' => 'xyyy0107@gmail.com', 'Disposition-Notification-To' => 'xyyy0107@gmail.com'])
+				->setHeaders(['X-Confirm-Reading-To' => $from, 'Disposition-Notification-To' => $from])
 				->attach($image)
 				->send();
 
-			if ($message) {
+			if ($message) 
+			{
 				unlink($image);
 			}
 
 			return $message; 
 
-		} catch (ErrorException $e) {
-			Yii::$app->response->statusCode = 511;
+		} 
+		catch (\Swift_TransportException $e) 
+		{
+			return 401;
 		}
+
 	}
 
 
