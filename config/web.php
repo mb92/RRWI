@@ -54,27 +54,27 @@ $config = [
                     'from' => 'xyyy0107@gmail.com',
                 ],
                 'useFileTransport' => false,
-                // 'enableSwiftMailerLogging' => true,
+                'enableSwiftMailerLogging' => true,
                 // 
                 //xyyy0107@gmail.com
+                'transport' => [
+                    'class' => 'Swift_SmtpTransport',
+                    'host' => $params['email-host'],
+                    'username' => $params['email-username'],
+                    'password' => $params['email-password'],
+                    'port' => $params['email-port'],
+                    'encryption' => $params['email-encryption'],
+                                ],
+                    ],
                 // 'transport' => [
                 //     'class' => 'Swift_SmtpTransport',
-                //     'host' => 'smtp.mailtrap.io',
-                //     'username' => '638f257e3a8555',
-                //     'password' => '8d470dafa0a2a5',
-                //     'port' => '2525',
+                //     'host' => 'smtp.gmail.com',
+                //     'username' => 'xyyy0107@gmail.com',
+                //     'password' => 'Devdeliver123',
+                //     'port' => '587',
                 //     'encryption' => 'tls',
                 //                 ],
                 //     ],
-                'transport' => [
-                    'class' => 'Swift_SmtpTransport',
-                    'host' => 'smtp.gmail.com',
-                    'username' => 'xyyy0107@gmail.com',
-                    'password' => 'Devdeliver123',
-                    'port' => '587',
-                    'encryption' => 'tls',
-                                ],
-                    ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
