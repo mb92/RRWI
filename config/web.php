@@ -51,7 +51,7 @@ $config = [
                 'class' => 'yii\swiftmailer\Mailer',
                 // 'viewPath' => '/layouts/email',
                 'messageConfig' => [
-                    'from' => 'mb@kajak.linuxpl.eu',
+                    'from' => 'xyyy0107@gmail.com',
                 ],
                 'useFileTransport' => false,
                 // 'enableSwiftMailerLogging' => true,
@@ -68,9 +68,9 @@ $config = [
                 //     ],
                 'transport' => [
                     'class' => 'Swift_SmtpTransport',
-                    'host' => 's24.linuxpl.com',
-                    'username' => 'mb@kajak.linuxpl.eu',
-                    'password' => 'iBTk5HkU',
+                    'host' => 'smtp.gmail.com',
+                    'username' => 'xyyy0107@gmail.com',
+                    'password' => 'Devdeliver123',
                     'port' => '587',
                     'encryption' => 'tls',
                                 ],
