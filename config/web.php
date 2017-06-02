@@ -53,7 +53,7 @@ $config = [
                 'messageConfig' => [
                     'from' => 'xyyy0107@gmail.com',
                 ],
-                'useFileTransport' => true,
+                'useFileTransport' => false,
                 // 'enableSwiftMailerLogging' => true,
                 // 
                 //xyyy0107@gmail.com
