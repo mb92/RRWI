@@ -39,20 +39,26 @@ function vdd($var) {
  */
 function addWatermark($filename="lorem.jpg") {
     // Load the stamp and the photo to apply the watermark to
-    $stamp = imagecreatefrompng('../web/dist/img/wt.png');
-    $im = imagecreatefromjpeg('../upload/'.$filename);
+    $watermarkName = '../web/dist/img/wt-2.png';
+    $photoName = '../upload/'.$filename;
+
+    $stamp = imagecreatefrompng($watermarkName);
+    $im = imagecreatefromjpeg($photoName);
 
     // vdd($im);
 
     // Set the margins for the stamp and get the height/width of the stamp image
     $marge_right = 20;
-    $marge_bottom = 20;
+    $marge_bottom = getimagesize($photoName)[1]-getimagesize($watermarkName)[1];
+    // $marge_bottom = 50;
+
     $sx = imagesx($stamp);
     $sy = imagesy($stamp);
 
     // Copy the stamp image onto our photo using the margin offsets and the photo 
     // width to calculate positioning of the stamp. 
-    imagecopy($im, $stamp, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($stamp), imagesy($stamp));
+    // imagecopy($im, $stamp, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($stamp), imagesy($stamp));
+    imagecopy($im, $stamp, 0, 0, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, imagesx($stamp), imagesy($stamp));
 
     // Output and free memory
     // header('Content-type: image/png');

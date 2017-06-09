@@ -366,7 +366,7 @@ class ClientsController extends ActiveController
 				->setHeaders(['X-Confirm-Reading-To' => $from, 'Disposition-Notification-To' => $from])
 				->attach($image)
 				->send();
-
+			// vdd($message);
 			if ($message) 
 			{
 				unlink($image);
