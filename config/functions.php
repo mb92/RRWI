@@ -41,15 +41,18 @@ function addWatermark($filename="lorem.jpg") {
     // Load the stamp and the photo to apply the watermark to
     $watermarkName = '../web/dist/img/wt-2.png';
     $photoName = '../upload/'.$filename;
+    $thumb = '../temp/thumb-'.$filename;
+
+    Image::thumbnail($image, 171, 300)->save(Yii::getAlias($thumb), ['quality' => 90]);
 
     $stamp = imagecreatefrompng($watermarkName);
-    $im = imagecreatefromjpeg($photoName);
+    $im = imagecreatefromjpeg($thumb);
 
     // vdd($im);
 
     // Set the margins for the stamp and get the height/width of the stamp image
     $marge_right = 20;
-    $marge_bottom = getimagesize($photoName)[1]-getimagesize($watermarkName)[1];
+    $marge_bottom = getimagesize($thumb)[1]-getimagesize($watermarkName)[1];
     // $marge_bottom = 50;
 
     $sx = imagesx($stamp);
@@ -62,7 +65,7 @@ function addWatermark($filename="lorem.jpg") {
 
     // Output and free memory
     // header('Content-type: image/png');
-    $savePath = '../temp/'.$filename;
+    $savePath = $thumb;
     imagepng($im, $savePath);
     imagedestroy($im);
 

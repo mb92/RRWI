@@ -353,15 +353,17 @@ class ClientsController extends ActiveController
 		{
 			$subject = Yii::$app->params['email-subject'];
 			$fileNameExt = $fileName.'.jpg';
+			$image =  '../upload/'.$fileNameExt;
 
-			Image::thumbnail('../upload/'.$filenameExt, 171, 300)
-    			->save(Yii::getAlias('../temp/thumb-'.$filenameExt), ['quality' => 90]);
+			// Image::thumbnail($image, 171, 300)
+   //  			->save(Yii::getAlias('../temp/thumb-'.$filenameExt), ['quality' => 90]);
 			
 			addWatermark($fileNameExt);
 
-			$image =  '../temp/'.$fileNameExt;
+			
+			$thumb =  '../temp/thumb-'.$fileNameExt;
 
-			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $image])
+			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb])
 				->setFrom($from)
 				->setTo($email)
 				->setSubject($subject)
@@ -371,7 +373,7 @@ class ClientsController extends ActiveController
 			// vdd($message);
 			if ($message) 
 			{
-				unlink($image);
+				unlink($thumb);
 			}
 
 			return $message; 
