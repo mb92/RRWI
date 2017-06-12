@@ -9,7 +9,7 @@ use app\models\Sessionsapps;
 use Yii;
 use yii\rest\ActiveController;
 use yii\base\ErrorException;
-
+use yii\imagine\Image;
 /**
 * 
 */
@@ -352,12 +352,14 @@ class ClientsController extends ActiveController
 		try 
 		{
 			$subject = Yii::$app->params['email-subject'];
-			$fileName = $fileName.'.jpg';
+			$fileNameExt = $fileName.'.jpg';
 
-			addWatermark($fileName);
+			Image::thumbnail('../upload/'.$filenameExt, 171, 300)
+    			->save(Yii::getAlias('../temp/thumb-'.$filenameExt), ['quality' => 90]);
+			
+			addWatermark($fileNameExt);
 
-			$image =  '../temp/'.$fileName;
-
+			$image =  '../temp/'.$fileNameExt;
 
 			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $image])
 				->setFrom($from)

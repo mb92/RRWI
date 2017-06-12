@@ -3,6 +3,7 @@
  
 return [
     'adminEmail' => 'admin@example.com',
+    'email-notifications' => "xyyy0107@gmail.com",
 
     // /*mailtrap.io*/
 	'email-host' => 'smtp.mailtrap.io',
@@ -10,8 +11,7 @@ return [
 	'email-password' => '8d470dafa0a2a5',
 	'email-port' => '2525',
 	'email-encryption' => 'tls',
-	'email-subject' => "Your selfie!!"
-
+	'email-subject' => "Your selfie!!",
 
 	// /*gmail*/
 	// 'email-host' => 'smtp.gmail.com',

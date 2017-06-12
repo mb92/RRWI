@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f9457f849be741d7900215c46f0cd33",
+    "content-hash": "af0050d6f0421e8e888f920d1a19a833",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -780,16 +780,16 @@
         },
         {
             "name": "yiisoft/yii2-imagine",
-            "version": "2.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-imagine.git",
-                "reference": "59dcd0b43c2b0e5495c7e5c0320e2cbc1cd57411"
+                "reference": "fc8709e2648b26590c63119f624bf55ceee199ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/59dcd0b43c2b0e5495c7e5c0320e2cbc1cd57411",
-                "reference": "59dcd0b43c2b0e5495c7e5c0320e2cbc1cd57411",
+                "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/fc8709e2648b26590c63119f624bf55ceee199ac",
+                "reference": "fc8709e2648b26590c63119f624bf55ceee199ac",
                 "shasum": ""
             },
             "require": {
@@ -824,7 +824,7 @@
                 "imagine",
                 "yii2"
             ],
-            "time": "2016-11-03T19:28:39+00:00"
+            "time": "2017-05-24T22:43:13+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -3350,9 +3350,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "yiisoft/yii2-imagine": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
