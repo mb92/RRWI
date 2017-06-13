@@ -90,4 +90,14 @@ class Clients extends \yii\db\ActiveRecord
     {
         return $this->sessionsapps[0]->country['name'];
     }
+
+    public function getCountryShortName() 
+    {
+        return $this->sessionsapps[0]->country['short'];
+    }
+
+    public function getStore() 
+    {
+        return $this->sessionsapps[0]->store['name'];
+    }
 }
