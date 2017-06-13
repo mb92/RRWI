@@ -3,7 +3,7 @@
 // vdd(yii::$app->getRequest()->serverName);
 // $path = Yii::$app->params['urlTemplateElements'];
 
-$path = "http://mb.kajak.linuxpl.eu/dist/email";
+$path = Yii::$app->params['urlTemplateElements'].'/dist/email';
 ?> 
 
 <center>
