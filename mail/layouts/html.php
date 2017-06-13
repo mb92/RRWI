@@ -8,7 +8,7 @@ use yii\helpers\Html;
 
 // $path = Yii::$app->getRequest()->serverName;
 
-$path = "http://mb.kajak.linuxpl.eu/dist/email";
+$path = Yii::$app->params['urlTemplateElements'].'dist/email';
 ?>
 <?php $this->beginPage() ?>
 

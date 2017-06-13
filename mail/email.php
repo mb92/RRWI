@@ -3,7 +3,7 @@
 // vdd(yii::$app->getRequest()->serverName);
 // $path = Yii::$app->params['urlTemplateElements'];
 
-$path = "http://mb.kajak.linuxpl.eu/dist/email";
+$path = Yii::$app->params['urlTemplateElements'].'dist/email';
 ?> 
 
 <center>
@@ -163,11 +163,13 @@ $path = "http://mb.kajak.linuxpl.eu/dist/email";
                       <tr>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
-                        <td>
+                        <td style="text-align:center">
+                        <center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="38" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px; text-align:center;" class="mobile-font">
                           <b>MAKE EVERY SHOT A COVER SHOT</b>
                         </font>
+                        </center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                           The Huawei P10’s co-engineered with Leica. An extraordinary fusion of art, culture and technology. A phone wit a soul, designed to help you take photo portraitslike a pro, to unleash your inner artist and change the way the world sees you.
