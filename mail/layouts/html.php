@@ -7,8 +7,8 @@ use yii\helpers\Html;
 /* @var $content string main view render result */
 
 // $path = Yii::$app->getRequest()->serverName;
-
-$path = yii::$app->getRequest()->serverName.'/dist/email';
+$path = "http://mb.kajak.linuxpl.eu/dist/email/";
+// $path = yii::$app->getRequest()->serverName.'/dist/email';
 
 ?>
 <?php $this->beginPage() ?>
