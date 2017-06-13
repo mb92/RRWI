@@ -353,7 +353,9 @@ class ClientsController extends ActiveController
 		{
 			$subject = Yii::$app->params['email-subject'];
 			$fileNameExt = $fileName.'.jpg';
-	
+
+			vdd("test");
+
 			$image =  '../upload/'.$fileNameExt;
 			
 			// Image::thumbnail($image, 171, 300)
