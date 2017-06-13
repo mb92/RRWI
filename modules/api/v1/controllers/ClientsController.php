@@ -353,11 +353,12 @@ class ClientsController extends ActiveController
 		{
 			$subject = Yii::$app->params['email-subject'];
 			$fileNameExt = $fileName.'.jpg';
+	
 			$image =  '../upload/'.$fileNameExt;
-
+			
 			// Image::thumbnail($image, 171, 300)
    //  			->save(Yii::getAlias('../temp/thumb-'.$filenameExt), ['quality' => 90]);
-			
+							vdd("test");
 			addWatermark($fileNameExt);
 
 			
