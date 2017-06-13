@@ -2,6 +2,8 @@
 
 // vdd(Yii::$app->getRequest()->serverName);
 $path = Yii::$app->getRequest()->serverName;
+
+vdd($path);
 ?> 
 
 <center>
