@@ -82,4 +82,10 @@ class Settings extends \yii\db\ActiveRecord
 
         return $links;
     }
+
+
+     public static function getSourcePath()
+     {
+        $query = self::find()->where(['param' => "email-url-source-file"])->one();
+     }
 }

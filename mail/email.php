@@ -5,7 +5,7 @@
 
 // $path = yii::$app->getRequest()->serverName.'/dist/email';
 $path = "http://mb.kajak.linuxpl.eu/dist/email/";
-// vdd($path);
+
 ?>
 
 <center>
@@ -21,12 +21,37 @@ $path = "http://mb.kajak.linuxpl.eu/dist/email/";
                 <table width="100%" cellpadding="0" cellspacing="0" border="0" class="container">
                   <tr>
                     <td bgcolor="#f2f2f2" height="30px">
-                      <center>
+
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="text-align:center;" width="25%">
+                        <a href="#">
+                            <center>
+                              <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
+                              <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
+                              unsubscribe</font>
+                              </a>
+                            </center>
+                        </a>
+                        </td>
+                        <td style="text-align:center;">
+                            <center>
+                              <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
+                              <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
+                              YOUR PERFECT SELFIE IS ATTACHED</font>
+                              </a>
+                            </center>
+                        </td>
+                        <td width="25%"></td>
+                      </tr>
+                    </table>
+
+<!--                       <center>
                         <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                         <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                         YOUR PERFECT SELFIE IS ATTACHED</font>
                         </a>
-                      </center>
+                      </center> -->
                     </td>
                   </tr>
                   <tr>

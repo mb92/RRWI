@@ -1,6 +1,9 @@
 <?php
 use yii\helpers\Html;
 
+// use app\models\Settings;
+
+// $path = Settings::getSourcePath();
 
 /* @var $this \yii\web\View view component instance */
 /* @var $message \yii\mail\MessageInterface the message being composed */
