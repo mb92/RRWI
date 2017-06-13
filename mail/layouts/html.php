@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $message \yii\mail\MessageInterface the message being composed */
 /* @var $content string main view render result */
 
-$path = "http://mborowiec.eu/dndtest/selfie";
+$path = Yii::$app->getRequest()->serverName;
 ?>
 <?php $this->beginPage() ?>
 

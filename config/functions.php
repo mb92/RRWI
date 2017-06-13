@@ -37,13 +37,13 @@ function vdd($var) {
  * Next, save new image in "temp" directory. After sending the email the image is deleted from "temp" dir.
  * @param string $filename - name of file with extension
  */
-function addWatermark($filename="lorem.jpg") {
+function addWatermark($filename) {
     // Load the stamp and the photo to apply the watermark to
     $watermarkName = '../web/dist/img/wt-2.png';
-    $photoName = '../upload/'.$filename;
-    $thumb = '../temp/thumb-'.$filename;
+    $photoName = Yii::getAlias("@upload").'/'.$filename;
+    $thumb = Yii::getAlias("@temp").'/'.$filename;
 
-    Image::thumbnail($image, 171, 300)->save($thumb, ['quality' => 90]);
+    // \Image::thumbnail($image, 171, 300)->save($thumb, ['quality' => 90]);
 
     $stamp = imagecreatefrompng($watermarkName);
     $im = imagecreatefromjpeg($thumb);
@@ -51,7 +51,7 @@ function addWatermark($filename="lorem.jpg") {
     // vdd($im);
 
     // Set the margins for the stamp and get the height/width of the stamp image
-    $marge_right = 20;
+    $marge_right = 0;
     $marge_bottom = getimagesize($thumb)[1]-getimagesize($watermarkName)[1];
     // $marge_bottom = 50;
 

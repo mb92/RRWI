@@ -50,9 +50,9 @@ $config = [
         'mailer' => [
                 'class' => 'yii\swiftmailer\Mailer',
                 // 'viewPath' => '/layouts/email',
-                'messageConfig' => [
-                    'from' => 'xyyy0107@gmail.com',
-                ],
+                // 'messageConfig' => [
+                //     'from' => 'xyyy0107@gmail.com',
+                // ],
                 'useFileTransport' => false,
                 'enableSwiftMailerLogging' => true,
                 // 

@@ -1,6 +1,7 @@
 <?php  
 
-$path = "http://mborowiec.eu/dndtest/selfie";
+// vdd(Yii::$app->getRequest()->serverName);
+$path = Yii::$app->getRequest()->serverName;
 ?> 
 
 <center>
@@ -40,7 +41,7 @@ $path = "http://mborowiec.eu/dndtest/selfie";
                     <td style="text-align:center; font-size:16px; font-family:MyriadLight, Arial, Helvetica;" class="mobile">
                       <center>
                       <img src="<?= $path ?>/imgs/clean.png" width="1" height="50" style="display:block; margin:0; padding:0; border:none;"/>
-                        Hi <font color="#ed1c24">[name]</font>
+                        Hi <font color="#ed1c24"><?= $name; ?></font>
                       </center>
                     </td>
                   </tr>
@@ -72,7 +73,7 @@ $path = "http://mborowiec.eu/dndtest/selfie";
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
-                            Thank you for visiting the P10 Selfie Studio at Vodafone <font color="#ee1c24">[place]</font>. <br/>
+                            Thank you for visiting the P10 Selfie Studio at Vodafone <font color="#ee1c24"><?= $place; ?></font>. <br/>
                             We’ve attached your selfie to thisemail. We hope you love it.
                             </p>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
@@ -111,7 +112,8 @@ $path = "http://mborowiec.eu/dndtest/selfie";
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                             All you need to do is share your Selfie Studio shot on <br/>
                             Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone</font> and 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#DE</font> before <font style="color:#ee1c24">[end date]</font>.
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 
+                            <font style="color:#ee1c24"><?= $endDate; ?></font>.
                           <br/><br/>
                             Each week we’ll shortlist the five selfies with the most likes on <br/>
                             Instagram. Our panel of judges will then select a weekly winner <br/>

@@ -1,10 +1,11 @@
 <?php
- yii::setAlias('@upld', 'localhost/upload');
- 
+yii::setAlias('@upld', 'localhost/upload');
+yii::setAlias('@upload', '../upload');
+yii::setAlias('@temp', '../temp');
+
 return [
     'adminEmail' => 'admin@example.com',
     'email-notifications' => "xyyy0107@gmail.com",
-
     // /*mailtrap.io*/
 	'email-host' => 'smtp.mailtrap.io',
 	'email-username' => '638f257e3a8555',

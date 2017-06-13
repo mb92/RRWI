@@ -34,7 +34,8 @@ class ClientsController extends ActiveController
      *   - validation of the token
      *   - check whether there is a session with the same sesId.
      *   Otherwise, a wrong token or sesId message is returned.
-     * 3. Photos is decoded and saved in the "upload" directory and teh name of file is the same as sesId.jpg
+     * 3. Photos is decoded and saved in the "upload" directory and teh name of file is the same as sesId.jpg 
+     * 	  and createthumbanil with big image from upload directory. The watermark will be added to the thumbnail
      *    When a picture can not be created, the program aborts and the corresponding error message is returned.
      * 4. The next step is to create a new client (or update the "offers" setting if the user already exists).
      *    In the case of an error, the image is deleted and the program aborted - it returns an error message.
@@ -99,23 +100,27 @@ class ClientsController extends ActiveController
 			// $filename = $sesId.'.jpg';
 			$filename = $sesId;
 			$ext = "jpg";
-			$filenameExt = $filename.'.'.$ext;
+			$fileNameExt = $filename.'.'.$ext;
 			// Decode Image
 			$binary=base64_decode($imageB64);
 			// header('Content-Type: bitmap; charset=utf-8');
 			// Images will be saved under 'www/upload/' folder
-			$file = fopen('../upload/'.$filenameExt, 'wb');
+			$file = fopen(Yii::getAlias("@upload").'/'.$fileNameExt, 'wb');
 
 			// Create File
 			fwrite($file, $binary);
 			fclose($file);
 
 		// Check existis uploaded file
-			if (!file_exists('../upload/'.$filenameExt)) {
+			if (!file_exists(Yii::getAlias("@upload").'/'.$fileNameExt)) {
 				return $result['image'] = "Image was not create";
 			} 
-			else $result['image'] = "OK";
-
+			else {
+				$result['image'] = "OK";
+				//Create thumbanil for email template
+				Image::thumbnail(Yii::getAlias("@upload").'/'.$fileNameExt, 171, 300)->save(Yii::getAlias("@temp").'/'.$fileNameExt, ['quality' => 90]);
+				addWatermark($fileNameExt);
+			}
 			
 		// Create client
 			$client = Clients::find()->where(['email' => $email])->one();
@@ -141,7 +146,7 @@ class ClientsController extends ActiveController
 				$result['client'] = "OK";
 				$sv = false;
 			} else {
-				$rmimg= unlink('../upload/'.$filenameExt);
+				$rmimg= unlink(Yii::getAlias("@upload").'/'.$fileNameExt);
 				$results['image'] = "Created but must be removed";
 				$result['client'] = "Error, problem with db";
 				return $results;
@@ -159,7 +164,7 @@ class ClientsController extends ActiveController
 				$result['action'] = "OK";
 				$sv = false;
 			} else {
-				$rmImg= unlink('../upload/'.$filenameExt);
+				$rmImg= unlink(Yii::getAlias("@upload").'/'.$fileNameExt);
 				$results['image'] = "Created but must be removed";
 				$result['action'] = "Probelm with db";
 			}
@@ -173,7 +178,7 @@ class ClientsController extends ActiveController
 				$result['finish'] = "OK";
 
 			// Send email for client
-				$emailStatus = $this->sendEmail($client->email, Yii::$app->params['email-username'], $sesId);
+				$emailStatus = $this->sendEmail($client, Yii::$app->params['email-username'], $sesId);
 				// if email was sent then update emailStatus on 1
 				
 				if ($emailStatus === true) {
@@ -195,7 +200,7 @@ class ClientsController extends ActiveController
 				}
 
 			} else {
-				$rmImg= unlink('../upload/'.$filenameExt);
+				$rmImg= unlink(Yii::getAlias("@upload").'/'.$fileNameExt);
 				$ses->status = "0";
 				$sv = $ses->save();
 				$results['image'] = "Created but must be removed";
@@ -206,7 +211,7 @@ class ClientsController extends ActiveController
 		}
 
 		//Verify action results
-		if ($result['client'] != "OK" && $result['image'] == "OK") unlink('../upload/'.$filenameExt);
+		if ($result['client'] != "OK" && $result['image'] == "OK") unlink(Yii::getAlias("@upload").'/'.$fileNameExt);
 		return $result;
 	}
 
@@ -339,14 +344,13 @@ class ClientsController extends ActiveController
 	 * This function composes email and sends a watermarked image.
 	 * HTML template is @app\mail\email.php and mail\layout\*
 	 * 
-	 * @param  string $email    Recipient email address (Client's email or shareEmail)
+	 * @param  object $client   Client's object.
 	 * @param  string $from     Default value: selfie-app@dndtest.ovh
 	 * @param  string $fileName Name of image file (without extension). It's sesId value.
 	 * @return boolean          True if message was sent success!
 	 */
-	public function sendEmail($email, $from, $fileName) 
+	public function sendEmail($client, $from, $fileName) 
 	{
-		// vdd(Yii::$app->params['email-username']);
 		if (!strstr($from, "@")) $from = Yii::$app->params['email-username'].'@mailtrap.io';
 
 		try 
@@ -354,31 +358,31 @@ class ClientsController extends ActiveController
 			$subject = Yii::$app->params['email-subject'];
 			$fileNameExt = $fileName.'.jpg';
 
-			$image =  '../upload/'.$fileNameExt;
-			
-			// Image::thumbnail($image, 171, 300)
-   //  			->save(Yii::getAlias('../temp/thumb-'.$filenameExt), ['quality' => 90]);
+			// Get big image for attachment
+			$image =  Yii::getAlias("@upload").'/'.$fileNameExt;
 
-			addWatermark($fileNameExt);
+			// Get thumb with watermark for template
+			$thumb =  Yii::getAlias("@temp").'/'.$fileNameExt;
 
-			
-			$thumb =  '../temp/thumb-'.$fileNameExt;
-
-			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb])
+			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
+															'name' => ucwords($client->name),
+															'country' => $client->countryShortName,
+															'place' => $client->store,
+															'endDate' => "00-00-0000"
+				])
 				->setFrom($from)
-				->setTo($email)
+				->setTo($client->email)
 				->setSubject($subject)
-				->setHeaders(['X-Confirm-Reading-To' => $from, 'Disposition-Notification-To' => $from])
+				->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
+								'Disposition-Notification-To' => Yii::$app->params['email-notifications']
+							])
 				->attach($image)
 				->send();
-			// vdd($message);
-			if ($message) 
-			{
-				unlink($thumb);
-			}
+
+			// Remove thumbnail from "temp" directory
+			if ($message) unlink($thumb);
 
 			return $message; 
-
 		} 
 		catch (\Swift_TransportException $e) 
 		{
