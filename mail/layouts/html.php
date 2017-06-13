@@ -10,7 +10,7 @@ use yii\helpers\Html;
 /* @var $content string main view render result */
 
 // $path = Yii::$app->getRequest()->serverName;
-$path = "http://mb.kajak.linuxpl.eu/dist/email/";
+$path = "http://selfie-app.testdnd.ovh/dist/email/";
 // $path = yii::$app->getRequest()->serverName.'/dist/email';
 
 ?>

@@ -219,7 +219,7 @@ class MbController extends Controller
                 'email-password' => '8d470dafa0a2a5',
                 'email-port' => '2525',
                 'email-encryption' => 'tls',
-                'email-url-source-file' => "http://server.com/",
+                'email-url-source-file' => "http://selfie-app.testdnd.ovh/",
                 'email-subject' => "Your selfie!!",
                 'email-offers-title' => "LOREM IPSUM OFFERS",
                 'email-offers-content' => "No duo solum reque ipsum, decore tractatos an has, ne sit consect es etuer.
