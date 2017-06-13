@@ -42,7 +42,7 @@ function addWatermark($filename="lorem.jpg") {
     $watermarkName = '../web/dist/img/wt-2.png';
     $photoName = '../upload/'.$filename;
     $thumb = '../temp/thumb-'.$filename;
-                vdd("test");
+                vdd("test-watermark");
     Image::thumbnail($image, 171, 300)->save(Yii::getAlias($thumb), ['quality' => 90]);
 
     $stamp = imagecreatefrompng($watermarkName);
