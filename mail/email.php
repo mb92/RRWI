@@ -3,7 +3,8 @@
 // vdd(yii::$app->getRequest()->serverName);
 // $path = Yii::$app->params['urlTemplateElements'];
 
-$path = Yii::$app->params['urlTemplateElements'].'dist/email';
+$path = yii::$app->getRequest()->serverName.'/dist/email';
+vdd($path);
 ?>
 
 <center>
