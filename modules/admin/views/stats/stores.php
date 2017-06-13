@@ -56,6 +56,8 @@ $this->params['breadcrumbs'][] = "Analytics data for ".$this->title;
         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 181px;" aria-sort="ascending">Name</th>
       <!-- Counter -->
         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Counter: activate to sort column ascending" style="width: 50px;">Counter</th>
+        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Counter: activate to sort column ascending" style="width: 50px;">SessionDone</th>
+        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Counter: activate to sort column ascending" style="width: 50px;">Number of client's</th>
         </tr>
         </thead>
 		<tfoot>
@@ -67,9 +69,12 @@ $this->params['breadcrumbs'][] = "Analytics data for ".$this->title;
     <tbody>
     <?php if (!is_null($stores)) { ?>
     <?php foreach ($stores as $store): ?>
+
         <tr>
-            <td><?= $store->name ?></td>
+            <td><a href="store-details?storeId=<?= $store->id ?>"><?= $store->name ?></a></td>
             <td><?= $store->count ?></td>
+            <td><?= $store->getSessionsapps()->where(['status' => '0'])->count() ?></td>
+            <td>xx</td>
         </tr>
 
     <?php endforeach ?>

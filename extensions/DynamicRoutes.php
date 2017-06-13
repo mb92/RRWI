@@ -19,12 +19,12 @@
         foreach(array_keys($countries) as $countryName) {
             $routesArray[] = [
                 'class' => 'yii\web\UrlRule',
-                'pattern' => '/admin/'.$countryName.'/<controller:\w+>/<action:\w+>',
+                'pattern' => '/admin/'.$countryName.'/<controller:[\w\-]+>/<action:[\w\-]+>',
                 'route' => '/admin/<controller>/<action>',
             ];
             $routesArray[] = [
                 'class' => 'yii\web\UrlRule',
-                'pattern' => '/admin/'.$countryName.'/<controller:\w+>',
+                'pattern' => '/admin/'.$countryName.'/<controller:[\w\-]+>',
                 'route' => '/admin/<controller>',
             ];
             $routesArray[] = [

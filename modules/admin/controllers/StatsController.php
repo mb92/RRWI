@@ -100,8 +100,8 @@ class StatsController extends Controller
     }
 
 
-
-    public function actionCustomers() {
+    public function actionCustomers() 
+    {
         $countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');
@@ -115,7 +115,9 @@ class StatsController extends Controller
         return $this->render('customers', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'clients' => $clients]);
     }
 
-    public function actionDetails($clientId) {
+
+    public function actionDetails($clientId) 
+    {
         // vdd("Works-client $clientId");
 
         $countryId = Yii::$app->params['countryId'];
@@ -148,7 +150,9 @@ class StatsController extends Controller
         return $this->render('details', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'client' => $client, 'stats' => $stats]);
     }
 
-    public function actionAlbum($clientId) {
+
+    public function actionAlbum($clientId) 
+    {
         $client = Clients::find()->where(['id' => $clientId])->one();
         if (is_null($client)) 
         return $this->redirect('site/error');
@@ -158,7 +162,9 @@ class StatsController extends Controller
         return $this->render('album', ['title' => $title, 'client' => $client]);
     }
 
-    public function actionStores() {
+
+    public function actionStores() 
+    {
         $countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');
@@ -173,6 +179,21 @@ class StatsController extends Controller
         return $this->render('stores', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'stores' => $stores, 'mostPop' => $mostPop]);
     }
 
+
+    public function actionStoreDetails($storeId) 
+    {
+        $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+
+        $store = Stores::find()->where(['id' => $storeId])->one();
+        $country = Countries::find()->where(['id' => $countryId])->one();
+        $countries = Countries::find()->all();
+        $title = $store->name.' from '.$country->name;
+        $mostPop  = Stores::mostPopular($countryId);
+        // vdd($mostPop);
+        return $this->render('storeDetails', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'store' => $store, 'mostPop' => $mostPop]);
+    }
 
 
     public function actionFullraport()
@@ -241,6 +262,7 @@ class StatsController extends Controller
         // $pdf->content = $content;
         return $pdf->render(); 
     }
+
 
     public function actionClientraport($clientId)
     {
