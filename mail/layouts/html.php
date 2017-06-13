@@ -6,7 +6,9 @@ use yii\helpers\Html;
 /* @var $message \yii\mail\MessageInterface the message being composed */
 /* @var $content string main view render result */
 
-$path = Yii::$app->getRequest()->serverName;
+// $path = Yii::$app->getRequest()->serverName;
+
+$path = "http://mb.kajak.linuxpl.eu/web/dist/email";
 ?>
 <?php $this->beginPage() ?>
 
