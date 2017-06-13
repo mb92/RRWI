@@ -5,6 +5,7 @@ namespace app\modules\api\v1\controllers;
 use app\models\Clients;
 use app\models\Actions;
 use app\models\Sessionsapps;
+use app\models\Settings;
 
 use Yii;
 use yii\rest\ActiveController;
@@ -351,6 +352,7 @@ class ClientsController extends ActiveController
 	 */
 	public function sendEmail($client, $from, $fileName) 
 	{
+		$links = Settings::getEmailLinks($client->countryShortName);
 		if (!strstr($from, "@")) $from = Yii::$app->params['email-username'].'@mailtrap.io';
 
 		try 
@@ -368,7 +370,8 @@ class ClientsController extends ActiveController
 															'name' => ucwords($client->name),
 															'country' => $client->countryShortName,
 															'place' => $client->store,
-															'endDate' => "00-00-0000"
+															'endDate' => "00-00-0000",
+															'links' => $links
 				])
 				->setFrom($from)
 				->setTo($client->email)

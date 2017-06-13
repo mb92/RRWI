@@ -309,11 +309,11 @@ $path = "http://mb.kajak.linuxpl.eu/dist/email/";
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                         <tr>
                           <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg.jpg" width="170" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
-                          <td><a href="#"><img src="<?= $path ?>/imgs/icon_instagram.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="#"><img src="<?= $path ?>/imgs/icon_fb.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="#"><img src="<?= $path ?>/imgs/icon_twitter.jpg" width="57" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="#"><img src="<?= $path ?>/imgs/icon_yt.jpg" width="61" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="#"><img src="<?= $path ?>/imgs/icon_maps.jpg" width="40" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="<?= $links['twitter']; ?>"><img src="<?= $path ?>/imgs/icon_twitter.jpg" width="57" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="<?= $links['youtube']; ?>"><img src="<?= $path ?>/imgs/icon_yt.jpg" width="61" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps.jpg" width="40" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
                           <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg.jpg" width="170" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
                         </tr>
                       </table>
