@@ -25,14 +25,15 @@ $path = "http://selfie-app.testdnd.ovh/dist/email/";
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td style="text-align:center;" width="25%">
-                        <a href="#">
-                            <center>
-                              <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
+                        <?php if ($unsub != "#") { 
+                              echo '<center>
+                              <a href="'.$unsub.'" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
                               unsubscribe</font>
                               </a>
-                            </center>
-                        </a>
+                            </center>';
+                          } ?>
+
                         </td>
                         <td style="text-align:center;">
                             <center>

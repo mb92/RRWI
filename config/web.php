@@ -100,7 +100,7 @@ $config = [
                     'extraPatterns' => ['POST create' => 'create']
                 ],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'clients',
-                    'extraPatterns' => ['POST create' => 'create', 'POST upload' => 'upload']
+                    'extraPatterns' => ['POST create' => 'create', 'POST upload' => 'upload', 'POST unsub' => 'unsub']
                 ],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'sessionsapps',
                     'extraPatterns' => ['POST create' => 'create']

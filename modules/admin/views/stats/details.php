@@ -8,7 +8,7 @@ $this->title = $title;
 ?>
 
 <div class="row animated fadeIn">
-    <div class="col-md-8">
+    <div class="col-md-9">
         <!-- APPLICATION BUTTONS -->
         <div class="box">
             <div class="box-body">
@@ -26,10 +26,10 @@ $this->title = $title;
                 Go back
                 </a>
                 <a href="/admin/<?= $country->short ?>/stats/clientraport?clientId=<?= $client->id?>" target="_blank" style="height:35px;" class="btn btn-primary btn-app-country pull-right">
-                <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;Export to PDF
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
                 </a>
                 <a href="album?clientId=<?= $client->id ?>" style="height:35px;" class="btn btn-primary pull-right btn-app-album">
-                <i class="fa fa-camera" aria-hidden="true"></i>&nbsp;&nbsp;Album
+                <i class="fa fa-camera" aria-hidden="true"></i>
                 </a>
             </div>
             <!-- /.box-body -->
@@ -39,9 +39,19 @@ $this->title = $title;
                 <!-- Add the bg color to the header using any of the bg-* classes -->
                 <div class="box-footer no-padding">
                 <ul class="nav nav-stacked">
-                <li><a href="#"><i class="fa fa-at spacing-left-icon" aria-hidden="true"></i><b><?= $client->email?></b></a></li>
-                <li><a href="#"><i class="fa fa-user spacing-left-icon" aria-hidden="true"></i><?= $client->name?></a></li>
+                <li>
+                    <a href="#"><i class="fa fa-at spacing-left-icon" aria-hidden="true"></i><b><?= $client->email?></b>
+                        <div class="pull-right" style="width:50%;"><i class="fa fa-user spacing-left-icon" aria-hidden="true"></i><?= $client->name?></div>
+                    </a>
+                </li>
                 <li><a href="#"><i class="fa fa-calendar-plus-o spacing-left-icon" aria-hidden="true"></i><?= $client->created_at?> </a></li>
+                <li><a href="#"><i class="fa fa-info spacing-left-icon" aria-hidden="true"></i>Newsletter: 
+                    <?php 
+                        if ($client->offers == "0")  
+                        echo '<span class="text-red"><b>No</b></span>';
+                        else echo '<span class="text-green"><b>Yes</b></span>';
+                    ?> 
+                </a></li>
                 </ul>
                 </div>
             </div>        
@@ -50,7 +60,7 @@ $this->title = $title;
     </div>
 
 
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="box box-body widget-user-2">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="summary-title text-light-blue">.:: Summary ::.</div>
@@ -85,8 +95,6 @@ $this->title = $title;
         <table id="tableBasic" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
         <thead>
         <tr role="row">
-        <!-- AppStoresID -->
-            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="AppstoreID: activate to sort column descending" style="width: 181px;" aria-sort="ascending">AppstoreID</th>
         <!-- Store's name -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Store's name: activate to sort column ascending" style="width: 223px;">Store's name</th>
         <!-- Status -->
@@ -105,7 +113,6 @@ $this->title = $title;
 
         <tfoot>
         <tr>
-            <th rowspan="1" colspan="1">AppstoreID</th>
             <th rowspan="1" colspan="1">Store's name</th>
             <th rowspan="1" colspan="1">Lang</th>
             <th rowspan="1" colspan="1">Status</th>
@@ -119,7 +126,6 @@ $this->title = $title;
         <tbody>
         <?php foreach ($client->sessionsapps as $key => $s): ?>
             <tr role="row" class="odd">
-                <td class="sorting_1"><?= $s->appId ?></td>
                 <td><?= $s->store->name ?></td>
                 <td><?= $s->language->short ?></td>
                 <td>

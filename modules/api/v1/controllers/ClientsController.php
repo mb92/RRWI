@@ -353,6 +353,19 @@ class ClientsController extends ActiveController
 	public function sendEmail($client, $from, $fileName) 
 	{
 		$links = Settings::getEmailLinks($client->countryShortName);
+		
+		if ($client->offers == "1") {
+			$sesId = encrypt($fileName);
+			$token = encrypt("0b3d4f561329b5a5dfdbaff634280be9");
+			$clientId = encrypt($client->email);
+
+			$unsub = '../../&t='.$token.'&s='.$sesId.'&c='.$clientId;
+		} else {
+			$unsub = '#';
+		}
+
+
+
 		if (!strstr($from, "@")) $from = Yii::$app->params['email-username'].'@mailtrap.io';
 
 		try 
@@ -371,7 +384,8 @@ class ClientsController extends ActiveController
 															'country' => $client->countryShortName,
 															'place' => $client->store,
 															'endDate' => "00-00-0000",
-															'links' => $links
+															'links' => $links,
+															'unsub' => $unsub
 				])
 				->setFrom($from)
 				->setTo($client->email)
@@ -396,6 +410,29 @@ class ClientsController extends ActiveController
 
 
 
+	public function actionUnsub()
+	{
+		$data['sesId'] = Yii::$app->request->get('s', false);
+		$data['client'] = Yii::$app->request->get('c', false);
+		$data['token'] = Yii::$app->request->get('t', false);
+		
+		if (($data['sesId'] != false) && ($data['client'] != false) && ($data['token'] != false)) {
+					// Verify token
+			if (!verifyToken(decrypt($data['token']))) return $this->redirect('../../error.php');
 
+			$client = Clients::find()->where(['email' => decrypt($data['client'])])->one();
+
+			// Check if there is a session for this client
+			$check = Sessionsapps::find()->where(['sesId' => decrypt($data['sesId']), 'clientId' => $client->id])->exists();
+			if (!$check) return $this->redirect('../../error.php');
+
+			// Update offers status on 0 (unsubscribe)
+			$client->offers = "0";
+			$st = $client->save();
+			if ($st) return $this->redirect('../../unsub.php');
+		} else {
+			return $this->redirect('../../error.php');
+		} 
+	}
 
 }

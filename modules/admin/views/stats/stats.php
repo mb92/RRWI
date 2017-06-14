@@ -103,8 +103,6 @@ $this->title = $title;
         <table id="table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
         <thead>
         <tr role="row">
-        <!-- AppStoresID -->
-            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="AppstoreID: activate to sort column descending" style="width: 181px;" aria-sort="ascending">AppstoreID</th>
         <!-- Store's name -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Store's name: activate to sort column ascending" style="width: 223px;">Store's name</th>
         <!-- Status -->
@@ -114,6 +112,8 @@ $this->title = $title;
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Date of session: activate to sort column ascending" style="width: 180px;">Date of session</th>
         <!-- Client -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Client: activate to sort column ascending" style="width: 112px;">Client</th>
+        <!-- Newsletter -->
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Newsletter: activate to sort column ascending" style="width: 112px;">Newsletter</th>
          <!-- Email status -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="email: activate to sort column ascending" style="width: 112px;">Email status</th>
         <!-- photos -->
@@ -125,12 +125,12 @@ $this->title = $title;
 
         <tfoot>
         <tr>
-            <th rowspan="1" colspan="1">AppstoreID</th>
             <th rowspan="1" colspan="1">Store's name</th>
             <th rowspan="1" colspan="1">Lang</th>
             <th rowspan="1" colspan="1">Status</th>
             <th rowspan="1" colspan="1">Date of session</th>
             <th rowspan="1" colspan="1">Client</th>
+            <th rowspan="1" colspan="1">Newsletter</th>
 			<th rowspan="1" colspan="1">Email status</th>
             <th rowspan="1" colspan="1">Retake</th>
         </tr>
@@ -139,7 +139,6 @@ $this->title = $title;
         <tbody>
         <?php foreach ($sessions as $key => $s): ?>
             <tr role="row" class="odd">
-                <td class="sorting_1"><?= $s->appId ?></td>
                 <td><?= $s->store->name ?></td>
                 <td><?= $s->language->short ?></td>
                 <td>
@@ -164,7 +163,15 @@ $this->title = $title;
                     else echo '<a href="stats/details?clientId='.$s->clientId.'"><u>'.$s->client->email .'</u></a>'; 
                 ?>
                 </td>
-                
+
+                <td>
+                    <?php 
+
+                    if ($s->client['offers'] == "1") echo '<span class="text-green"><b>Yes</b></span>';
+                    else echo '<span class="text-red"><b>No</b></span>';
+                    ?>
+                </td>
+
                 <td style="text-align:center;">
                    <?php 
                         if ($s->emailStatus == "1") echo '<span class="text-green"><b>Send</b></span>';
