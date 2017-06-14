@@ -54,6 +54,7 @@ class Actions extends \yii\db\ActiveRecord
             [['action'], 'string', 'max' => 2],
             [['path'], 'string', 'max' => 255],
             [['sessionsAppId'], 'exist', 'skipOnError' => true, 'targetClass' => Sessionsapps::className(), 'targetAttribute' => ['sessionsAppId' => 'id']],
+            [['base64'], 'string'],
         ];
     }
 
@@ -68,6 +69,7 @@ class Actions extends \yii\db\ActiveRecord
             'path' => 'Path',
             'created_at' => 'Created At',
             'sessionsAppId' => 'Sessions App ID',
+            'base64' => "Image code"
         ];
     }
 

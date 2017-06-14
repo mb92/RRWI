@@ -159,6 +159,7 @@ class ClientsController extends ActiveController
 			$action->path = $filename;
 			$action->created_at = mysqltime();
 			$action->sessionsAppId = $ses['id'];
+			$action->base64 = $imageB64;
 			$sv = $action->save();
 
 			if($sv) {
