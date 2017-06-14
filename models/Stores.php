@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-
+use app\models\Actions;
 /**
  * This is the model class for table "stores".
  *
@@ -92,4 +92,39 @@ class Stores extends \yii\db\ActiveRecord
         return Self::find()->where(['countryId' => $countryId])->count();
     } 
 
+    public function countAllSes($storeId) {
+        return Self::getSessionsapps()->where(['storeId' => $storeId])->count();
+    }
+
+    public function countDoneSes() {
+        return Self::getSessionsapps()->where(['status' => "1"])->count();
+    }
+
+    public function countInterrupedSes() {
+        return Self::getSessionsapps()->where(['status' => "0"])->count();
+    }
+
+    public function countClients() {
+        return Self::getSessionsapps()->join("RIGHT JOIN", 'clients', 'clients.id')->where(['not', ['clientId' => null]])->groupBy(['clientId'])->count();
+    }
+
+    public static function countRetakes($storeId) {
+       $query = Actions::find()->where(['action' => 'rT'])
+            ->joinWith('sessionsApp')
+            // ->join('INNER JOIN', 'sessionsapps', 'sessionsapps.id = actions.sessionsAppId')
+            ->andWhere(['sessionsapps.storeId' => $storeId ])->count();
+
+            // vdd(Actions::find()->where(['action' => 'rT'])
+            // ->joinWith('sessionsApp')
+            // ->join('INNER JOIN', 'sessionsapps', 'sessionsapps.id = actions.sessionsAppId')
+            // ->andWhere(['sessionsapps.storeId' => $store->id ])->createCommand()->getRawSql());
+            // vdd($store->getSessionsApps()->join('INNER JOIN', 'actions', 'sessionsapps.id')->where(['actions.action' => 'rT'])->all());
+        return $query;
+    }
+
+    public static function countClientsForCountry($countryId) {
+        $query = Self::getFromCountry($countryId)->joinWith('sessionsapps')->join("RIGHT JOIN", 'clients', 'clients.id')->where(['not', ['clientId' => null]])->groupBy(['clientId'])->count();
+        return $query;
+    }
+    
 }

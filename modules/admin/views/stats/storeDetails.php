@@ -25,11 +25,8 @@ $this->title = $title;
                 <a href="<?= Yii::$app->request->referrer ?>" style="height:35px;" class="btn btn-default btn-app-country">
                 Go back
                 </a>
-                <a href="/admin/<?= $country->short ?>/stats/clientraport?clientId=<?= $store->id?>" target="_blank" style="height:35px;" class="btn btn-primary btn-app-country pull-right">
+                <a href="/admin/<?= $country->short ?>/stats/storeraport?storeId=<?= $store->id?>" target="_blank" style="height:35px;" class="btn btn-primary btn-app-country pull-right">
                 <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;Export to PDF
-                </a>
-                <a href="album?clientId=<?= $store->id ?>" style="height:35px;" class="btn btn-primary pull-right btn-app-album">
-                <i class="fa fa-camera" aria-hidden="true"></i>&nbsp;&nbsp;Album
                 </a>
             </div>
             <!-- /.box-body -->      

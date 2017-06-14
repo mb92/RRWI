@@ -4,7 +4,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 
 $this->title = $title;
-$this->params['breadcrumbs'][] = "Analytics data for ".$this->title;
+// $this->params['breadcrumbs'][] = "Analytics data for ".$this->title;
 ?>
 
 <div class="row animated fadeIn">
@@ -51,19 +51,23 @@ $this->params['breadcrumbs'][] = "Analytics data for ".$this->title;
      
       <table id="table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
         <thead>
-      <!-- Name -->
-        <tr role="row">
-        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 181px;" aria-sort="ascending">Name</th>
-      <!-- Counter -->
-        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Counter: activate to sort column ascending" style="width: 50px;">Counter</th>
-        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Counter: activate to sort column ascending" style="width: 50px;">SessionDone</th>
-        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Counter: activate to sort column ascending" style="width: 50px;">Number of client's</th>
-        </tr>
+            <tr role="row">
+                <!-- Name -->
+                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 181px;" aria-sort="ascending">Name</th>
+                <!-- Counter -->
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Number of visits: activate to sort column ascending" style="width: 50px;">Number of visits</th>
+                <!-- Ses done --> 
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Sessions Done: activate to sort column ascending" style="width: 50px;">Sessions Done</th>
+                <!-- Clients --> 
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Number of clients: activate to sort column ascending" style="width: 50px;">Number of clients</th>
+            </tr>
         </thead>
 		<tfoot>
 			<tr>
             <th rowspan="1" colspan="1">Name</th>
-			<th rowspan="1" colspan="1">Counter</th>
+			<th rowspan="1" colspan="1">Number of visits</th>
+            <th rowspan="1" colspan="1">Sessions Done</th>
+            <th rowspan="1" colspan="1">Number of clients</th>
 			</tr>
 		</tfoot>
     <tbody>
@@ -74,7 +78,7 @@ $this->params['breadcrumbs'][] = "Analytics data for ".$this->title;
             <td><a href="store-details?storeId=<?= $store->id ?>"><?= $store->name ?></a></td>
             <td><?= $store->count ?></td>
             <td><?= $store->getSessionsapps()->where(['status' => '0'])->count() ?></td>
-            <td>xx</td>
+            <td><?= $store->countClients()?></td>
         </tr>
 
     <?php endforeach ?>

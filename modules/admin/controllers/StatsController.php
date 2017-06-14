@@ -175,8 +175,11 @@ class StatsController extends Controller
 
         $stores = Stores::getFromCountry($countryId)->all();
         $mostPop  = Stores::mostPopular($countryId);
+
+        $clients = Stores::countClientsForCountry($countryId);
+
         // vdd($mostPop);
-        return $this->render('stores', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'stores' => $stores, 'mostPop' => $mostPop]);
+        return $this->render('stores', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'stores' => $stores, 'mostPop' => $mostPop, 'clients' => $clients]);
     }
 
 
@@ -302,6 +305,39 @@ class StatsController extends Controller
         // return the pdf output as per the destination setting
         // $pdf = Yii::$app->pdf;
         // $pdf->content = $content;
+        return $pdf->render(); 
+    }
+
+
+    public function actionStoreraport($storeId)
+    {
+        $store = Stores::find()->where(['id' => $storeId])->one();
+
+        $stats['allLunches'] = $store->countAllSes($storeId);
+        $stats['retake'] = Stores::countRetakes($store->id);
+
+        $stats['doneSes'] = $store->countDoneSes();
+        $stats['interrupedSes'] = $store->countInterrupedSes();
+        $stats['clients'] = $store->countClients();
+        $stats['photos'] = $store->countDoneSes();
+
+        // vdd($client);
+        $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;">
+            <i>Store details - slefie-app</i></div>';
+        $content = $this->renderPartial('pdfStoreRaport', ['title' => $smallTitle, 'store' => $store, 'stats' => $stats]);
+
+        $pdf = new Pdf([
+            // your html content input
+            'content' => $content,  
+            'options' => ['title' => $store->name],
+            'filename' => str_replace('@', '[at]', $store->name) . '_' . 'raport_'. mysqltime() .'.pdf',
+             // call mPDF methods on the fly
+            'methods' => [ 
+                'SetHeader'=>['Date of generate: '. mysqltime()],
+                'SetFooter'=>['{PAGENO}'],
+            ]
+        ]);
+        
         return $pdf->render(); 
     }
 }
