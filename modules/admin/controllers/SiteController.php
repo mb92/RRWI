@@ -107,9 +107,30 @@ class SiteController extends Controller
 
     public static function actionImage($n)
     {
+        // vdd("test");
+        $path = '../upload/'.$n.'.jpg';
+
+        if (!file_exists($path)) {
+            $imageB64 = Actions::find()->where(['path' => $n])->one()->base64;
+            // $filename = $sesId.'.jpg';
+            $filename = $n;
+            $ext = "jpg";
+            $fileNameExt = $filename.'.'.$ext;
+            // Decode Image
+            $binary=base64_decode($imageB64);
+            // header('Content-Type: bitmap; charset=utf-8');
+            // Images will be saved under 'www/upload/' folder
+            $file = fopen(Yii::getAlias("@upload").'/'.$fileNameExt, 'wb');
+
+            // Create File
+            fwrite($file, $binary);
+            fclose($file);
+        }
+
+
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/jpg');
-        \Yii::$app->response->data = file_get_contents('../upload/'.$n.'.jpg');
+        \Yii::$app->response->data = file_get_contents($path);
         return \Yii::$app->response;
     }
 }

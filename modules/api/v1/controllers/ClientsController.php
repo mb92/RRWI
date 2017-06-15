@@ -419,9 +419,8 @@ class ClientsController extends ActiveController
 		$data['sesId'] = Yii::$app->request->get('s', false);
 		$data['client'] = Yii::$app->request->get('c', false);
 		$data['token'] = Yii::$app->request->get('t', false);
-		// vdd(Yii::$app->request->get());
-		vdd(encrypt_decrypt('decrypt', $data['token']));
-					// Verify token
+
+			// Verify token
 			if (!verifyToken(encrypt_decrypt('decrypt', $data['token']))) return $this->redirect('../../error.php');
 
 			$client = Clients::find()->where(['email' => encrypt_decrypt('decrypt', $data['client'])])->one();
