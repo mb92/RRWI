@@ -357,6 +357,7 @@ class ClientsController extends ActiveController
 	{
 		$links = Settings::getEmailLinks($client->countryShortName);
 		
+		// Generate unsumscribe link
 		if ($client->offers == "1") {
 			$sesId = encrypt_decrypt('encrypt', $fileName);
 			$token = encrypt_decrypt('encrypt', "0b3d4f561329b5a5dfdbaff634280be9");
