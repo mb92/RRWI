@@ -360,7 +360,7 @@ class ClientsController extends ActiveController
 			$token = encrypt("0b3d4f561329b5a5dfdbaff634280be9");
 			$clientId = encrypt($client->email);
 
-			$unsub = '../../&t='.$token.'&s='.$sesId.'&c='.$clientId;
+			$unsub = 'http://mb.kajak.linuxpl.eu/v1/clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId;
 		} else {
 			$unsub = '#';
 		}
