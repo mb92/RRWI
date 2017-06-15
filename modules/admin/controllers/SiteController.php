@@ -73,8 +73,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $path = Yii::$app->getUrlManager()->getBaseUrl();
-        vdd($path);
+
         $countries = Countries::find()->all();
         $stats['globalLunches'] = Sessionsapps::countAllSes();
         $stats['globalDoneSes'] = Sessionsapps::countDoneSes();
