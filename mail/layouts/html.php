@@ -12,7 +12,7 @@ use yii\helpers\Url;
 
 // $path = Yii::$app->getRequest()->serverName;
 // $path = "http://selfie-app.testdnd.ovh/dist/email/";
-$path = Url::to("site/dist/email/");
+$path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 // $path = yii::$app->getRequest()->serverName.'/dist/email';
 
 ?>

@@ -5,7 +5,7 @@ use yii\helpers\Url;
 
 // $path = yii::$app->getRequest()->serverName.'/dist/email';
 // $path = "http://selfie-app.testdnd.ovh/dist/email/";
-$path = Url::to("site/dist/email/");
+$path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
 ?>
 
