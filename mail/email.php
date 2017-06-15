@@ -26,22 +26,19 @@ $path = "http://selfie-app.testdnd.ovh/dist/email/";
                       <tr>
                         <td style="text-align:center;" width="25%">
                         <?php if ($unsub != "#") { 
-                              echo '<center>
+                              echo '
                               <a href="'.$unsub.'" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
                               unsubscribe</font>
-                              </a>
-                            </center>';
+                              </a>';
                           } ?>
 
                         </td>
                         <td style="text-align:center;">
-                            <center>
                               <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                               YOUR PERFECT SELFIE IS ATTACHED</font>
                               </a>
-                            </center>
                         </td>
                         <td width="25%"></td>
                       </tr>
