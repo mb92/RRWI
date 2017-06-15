@@ -12,6 +12,7 @@ use yii\rest\ActiveController;
 use yii\base\ErrorException;
 use yii\imagine\Image;
 use yii\helpers\Url;
+use yii\base\Security;
 /**
 * 
 */
@@ -357,9 +358,9 @@ class ClientsController extends ActiveController
 		$links = Settings::getEmailLinks($client->countryShortName);
 		
 		if ($client->offers == "1") {
-			$sesId = Yii::$app->getSecurity()->encryptByPassword($fileName, "qrwa");
-			$token = Yii::$app->getSecurity()->encryptByPassword("0b3d4f561329b5a5dfdbaff634280be9", "qrwa");
-			$clientId = Yii::$app->getSecurity()->encryptByPassword($client->email, "qrwa");
+			$sesId = encrypt_decrypt('encrypt', $fileName);
+			$token = encrypt_decrypt('encrypt', "0b3d4f561329b5a5dfdbaff634280be9");
+			$clientId = encrypt_decrypt('encrypt', $client->email);
 
 			// $unsub = 'http://mb.kajak.linuxpl.eu/v1/clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId;
 			$unsub = Url::to(['clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId], true);
@@ -418,24 +419,21 @@ class ClientsController extends ActiveController
 		$data['sesId'] = Yii::$app->request->get('s', false);
 		$data['client'] = Yii::$app->request->get('c', false);
 		$data['token'] = Yii::$app->request->get('t', false);
-		
-		if (($data['sesId'] != false) && ($data['client'] != false) && ($data['token'] != false)) {
+		// vdd(Yii::$app->request->get());
+		vdd(encrypt_decrypt('decrypt', $data['token']));
 					// Verify token
-			if (!verifyToken(Yii::$app->getSecurity()->decryptByPassword($data['token'], "qrwa"))) return $this->redirect('../../error.php');
+			if (!verifyToken(encrypt_decrypt('decrypt', $data['token']))) return $this->redirect('../../error.php');
 
-			$client = Clients::find()->where(['email' => Yii::$app->getSecurity()->decryptByPassword($data['client'], "qrwa")])->one();
+			$client = Clients::find()->where(['email' => encrypt_decrypt('decrypt', $data['client'])])->one();
 
 			// Check if there is a session for this client
-			$check = Sessionsapps::find()->where(['sesId' => Yii::$app->getSecurity()->decryptByPassword($data['sesId'], "qrwa"), 'clientId' => $client->id])->exists();
+			$check = Sessionsapps::find()->where(['sesId' => encrypt_decrypt('decrypt', $data['sesId']), 'clientId' => $client->id])->exists();
 			if (!$check) return $this->redirect('../../error.php');
 
 			// Update offers status on 0 (unsubscribe)
 			$client->offers = "0";
 			$st = $client->save();
 			if ($st) return $this->redirect('../../unsub.php');
-		} else {
-			return $this->redirect('../../error.php');
-		} 
-	}
+		}
 
 }

@@ -75,24 +75,40 @@ function addWatermark($filename) {
 }
 
 
-function encrypt($string, $key="39jf9yr0fj0wifkl0hf33902") 
-{
-    $text =strval($string);
+/**
+ * simple method to encrypt or decrypt a plain text string
+ * initialization vector(IV) has to be the same when encrypting and decrypting
+ * PHP 5.4.9 ( check your PHP version for function definition changes )
+ *
+ * this is a beginners template for simple encryption decryption
+ * before using this in production environments, please read about encryption
+ * use at your own risk
+ *
+ * @param string $action: can be 'encrypt' or 'decrypt'
+ * @param string $string: string to encrypt or decrypt
+ *
+ * @return string
+ */
+function encrypt_decrypt($action, $string) {
+    $output = false;
 
-    $outText = '';
+    $encrypt_method = "AES-256-CBC";
+    $secret_key = '654G65N46Y5G4MO65JL46GIP4M6NUY5KJ4BHV6AGCFAS54D6';
+    $secret_iv = 'ssg5dr6vthdf651tyk1b6fk1gjg16fdvsd61gcsf15';
 
-    for($i=0;$i<strlen($text);)
-    {
-        for($j=0;($j<strlen($key) && $i<strlen($text));$j++,$i++)
-        {
-           $outText .= chr(ord($text{$i}) ^ ord($key{$j}));
-        }
+    // hash
+    $key = hash('sha256', $secret_key);
+    
+    // iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
+    $iv = substr(hash('sha256', $secret_iv), 0, 16);
+
+    if( $action == 'encrypt' ) {
+        $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
+        $output = base64_encode($output);
+    }
+    else if( $action == 'decrypt' ){
+        $output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv);
     }
 
-    return $outText;
-}
-
-function decrypt($string, $key="39jf9yr0fj0wifkl0hf33902") 
-{
-    return encrypt($string, $key);
+    return $output;
 }
