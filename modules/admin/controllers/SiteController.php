@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use yii\helpers\BaseFileHelper;
+use yii\helpers\Url;
+
 
 use app\models\Clients;
 use app\models\Actions;
@@ -71,6 +73,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $path = Yii::$app->getUrlManager()->getBaseUrl();
+        vdd($path);
         $countries = Countries::find()->all();
         $stats['globalLunches'] = Sessionsapps::countAllSes();
         $stats['globalDoneSes'] = Sessionsapps::countDoneSes();
