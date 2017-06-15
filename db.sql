@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-05-31 15:01:49
+Date: 2017-06-15 01:28:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,10 +25,11 @@ CREATE TABLE `actions` (
   `path` varchar(255) NOT NULL COMMENT 'Path''s values:\r\n\r\ntP - Take a photo                     => link to photoUrl (name)\r\n\r\nsF - Share photo on facebook => link to facebook\r\n\r\nsI - Share photo on instagram => link to instagram\r\n\r\nsE - Share photo on email        => user''s email address\r\n\r\nrT ',
   `created_at` datetime NOT NULL COMMENT 'Format: 1970-01-01 00:00:01',
   `sessionsAppId` int(8) NOT NULL,
+  `base64` mediumtext,
   PRIMARY KEY (`id`),
   KEY `session` (`sessionsAppId`),
   CONSTRAINT `session` FOREIGN KEY (`sessionsAppId`) REFERENCES `sessionsapps` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of actions
@@ -45,7 +46,7 @@ CREATE TABLE `clients` (
   `created_at` datetime DEFAULT NULL,
   `offers` varchar(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of clients
@@ -60,7 +61,7 @@ CREATE TABLE `countries` (
   `name` varchar(255) DEFAULT NULL,
   `short` varchar(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of countries
@@ -68,6 +69,9 @@ CREATE TABLE `countries` (
 INSERT INTO `countries` VALUES ('1', 'England', 'EN');
 INSERT INTO `countries` VALUES ('2', 'Portugal', 'PT');
 INSERT INTO `countries` VALUES ('3', 'Germany', 'DE');
+INSERT INTO `countries` VALUES ('4', 'Romania', 'RO');
+INSERT INTO `countries` VALUES ('5', 'South Africa', 'ZA');
+INSERT INTO `countries` VALUES ('6', 'Czech Republic', 'CZ');
 
 -- ----------------------------
 -- Table structure for `languages`
@@ -78,7 +82,7 @@ CREATE TABLE `languages` (
   `name` varchar(255) DEFAULT NULL,
   `short` varchar(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of languages
@@ -86,6 +90,9 @@ CREATE TABLE `languages` (
 INSERT INTO `languages` VALUES ('1', 'English', 'EN');
 INSERT INTO `languages` VALUES ('2', 'Portuguese', 'PT');
 INSERT INTO `languages` VALUES ('3', 'German', 'DE');
+INSERT INTO `languages` VALUES ('4', 'Romanian', 'RO');
+INSERT INTO `languages` VALUES ('5', 'South African English', 'ZA');
+INSERT INTO `languages` VALUES ('6', 'Czech', 'CZ');
 
 -- ----------------------------
 -- Table structure for `sessionsapps`
@@ -113,10 +120,27 @@ CREATE TABLE `sessionsapps` (
   CONSTRAINT `country` FOREIGN KEY (`countryId`) REFERENCES `countries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `language` FOREIGN KEY (`languageId`) REFERENCES `languages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `store` FOREIGN KEY (`storeId`) REFERENCES `stores` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sessionsapps
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `settings`
+-- ----------------------------
+DROP TABLE IF EXISTS `settings`;
+CREATE TABLE `settings` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `param` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `value` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `category` varchar(255) CHARACTER SET utf8 DEFAULT 'Email',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of settings
 -- ----------------------------
 
 -- ----------------------------
@@ -131,8 +155,23 @@ CREATE TABLE `stores` (
   PRIMARY KEY (`id`),
   KEY `shopcountry` (`countryId`),
   CONSTRAINT `shopcountry` FOREIGN KEY (`countryId`) REFERENCES `countries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of stores
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `users`
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `login` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of users
 -- ----------------------------

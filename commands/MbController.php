@@ -8,12 +8,15 @@
 namespace app\commands;
 
 use yii\console\Controller;
+
 use app\models\Actions;
 use app\models\Sessionsapps;
 use app\models\Clients;
 use app\models\Stores;
 use app\models\Settings;
 use app\models\Users;
+
+use yii\base\Security;
 
 /**
  * This command echoes the first argument that you have entered.
@@ -33,6 +36,7 @@ class MbController extends Controller
     {
         echo "/reset - reset tables: actions, sesionsapss and clients; Remove upload photos\n\n";
         echo "/addstore - add data to stores's table\n\n";
+        echo "/setparams - set parametes and links for mailing template\n\n";
         echo "/cltemp - clear temp directory\n\n";
     }
 
@@ -357,4 +361,19 @@ class MbController extends Controller
         }
         echo "Links ZA was add\n";
     }
+
+    // public function actionGenuser()
+    // {
+    //     $login = \Yii::$app->security->generateRandomKey(6);
+    //     $pass = \Yii::$app->security->generateRandomKey(12);
+
+    //     $user = new Users;
+    //     $user->login = Yii::$app->getSecurity()->generatePasswordHash($login);
+    //     $user->pass = Yii::$app->getSecurity()->generatePasswordHash($pass);
+    //     $st = $user->save();
+
+    //     if ($st) {
+    //         echo 'Login: '.$login.'    Password: '.$pass;
+    //     }
+    // }
 }   

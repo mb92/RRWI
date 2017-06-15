@@ -2,18 +2,11 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-// use app\models\Settings;
-
-// $path = Settings::getSourcePath();
-
 /* @var $this \yii\web\View view component instance */
 /* @var $message \yii\mail\MessageInterface the message being composed */
 /* @var $content string main view render result */
 
-// $path = Yii::$app->getRequest()->serverName;
-// $path = "http://selfie-app.testdnd.ovh/dist/email/";
 $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
-// $path = yii::$app->getRequest()->serverName.'/dist/email';
 
 ?>
 <?php $this->beginPage() ?>

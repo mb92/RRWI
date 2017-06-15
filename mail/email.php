@@ -1,10 +1,6 @@
 <?php  
 use yii\helpers\Url;
-// vdd(yii::$app->getRequest()->serverName);
-// $path = Yii::$app->params['urlTemplateElements'];
 
-// $path = yii::$app->getRequest()->serverName.'/dist/email';
-// $path = "http://selfie-app.testdnd.ovh/dist/email/";
 $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
 ?>

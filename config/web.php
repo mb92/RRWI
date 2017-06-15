@@ -49,14 +49,8 @@ $config = [
         ],
         'mailer' => [
                 'class' => 'yii\swiftmailer\Mailer',
-                // 'viewPath' => '/layouts/email',
-                // 'messageConfig' => [
-                //     'from' => 'xyyy0107@gmail.com',
-                // ],
                 'useFileTransport' => false,
                 'enableSwiftMailerLogging' => true,
-                // 
-                //xyyy0107@gmail.com
                 'transport' => [
                     'class' => 'Swift_SmtpTransport',
                     'host' => $params['email-host'],
@@ -66,15 +60,6 @@ $config = [
                     'encryption' => $params['email-encryption'],
                                 ],
                     ],
-                // 'transport' => [
-                //     'class' => 'Swift_SmtpTransport',
-                //     'host' => 'smtp.gmail.com',
-                //     'username' => 'xyyy0107@gmail.com',
-                //     'password' => 'Devdeliver123',
-                //     'port' => '587',
-                //     'encryption' => 'tls',
-                //                 ],
-                //     ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

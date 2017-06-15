@@ -85,30 +85,24 @@ class SiteController extends Controller
         return $this->render('index', ['countries' => $countries, 'stats' => $stats]);
     }
 
+    /**
+     * Method for the tests
+     * @return [type] [description]
+     */
     public function actionTest()
     {
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/png');
         \Yii::$app->response->data = file_get_contents('../upload/lorem.jpg');
         return \Yii::$app->response;
-        // return $this->render('test');
     }
+
 
     /**
-     * Displays about page.
-     *
-     * @return string
+     * This function mediates the display of images. Also, it re-generates an image when it is not on the current server
+     * @param  string $n path's column from actions table or sesId
+     * @return response    Return url link to image
      */
-    public function actionAbout()
-    {
-        $clients=Clients::find()->all();
-        $actions=Actions::find()->all();
-
-        $files = BaseFileHelper::findFiles(Yii::$app->basePath."/upload/");
-
-        return $this->render('about', ['clients' => $clients, 'actions' => $actions, 'files' => $files]);
-    }
-
     public static function actionImage($n)
     {
         // vdd("test");

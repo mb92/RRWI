@@ -247,8 +247,7 @@ class ClientsController extends ActiveController
 			if (is_null($ses)) return "Session not found";
 
 			$client = $ses->client;
-			// var_dump($client["name"]);die();
-			// 
+
 		//Save info in Actions tabele
 			$model = new Actions();
 			$model->action = $api['action'];
@@ -274,7 +273,6 @@ class ClientsController extends ActiveController
 			} else $results['action'] = "Can't save data";
 
 		} else {
-			// Yii::$app->response->statusCode = 204;
 			$results['content'] = "Bad content";
 		}
 		return $results;
@@ -414,7 +412,10 @@ class ClientsController extends ActiveController
 	}
 
 
-
+	/** 
+	 * Functions for unsubscribe from newsletter
+	 * @return redirect to unsum.php or error.php in web directory
+	 */
 	public function actionUnsub()
 	{
 		$data['sesId'] = Yii::$app->request->get('s', false);
