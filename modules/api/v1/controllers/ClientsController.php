@@ -360,7 +360,8 @@ class ClientsController extends ActiveController
 			$token = Yii::$app->getSecurity()->encryptByPassword("0b3d4f561329b5a5dfdbaff634280be9", "qrwa");
 			$clientId = Yii::$app->getSecurity()->encryptByPassword($client->email, "qrwa");
 
-			$unsub = 'http://mb.kajak.linuxpl.eu/v1/clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId;
+			// $unsub = 'http://mb.kajak.linuxpl.eu/v1/clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId;
+			$unsub = Url::to(['clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId], true);
 		} else {
 			$unsub = '#';
 		}
@@ -421,7 +422,7 @@ class ClientsController extends ActiveController
 					// Verify token
 			if (!verifyToken(Yii::$app->getSecurity()->decryptByPassword($data['token'], "qrwa"))) return $this->redirect('../../error.php');
 
-			$client = Clients::find()->where(['email' => Yii::$app->getSecurity()->decryptByPassword($data['client', "qrwa"])])->one();
+			$client = Clients::find()->where(['email' => Yii::$app->getSecurity()->decryptByPassword($data['client'], "qrwa")])->one();
 
 			// Check if there is a session for this client
 			$check = Sessionsapps::find()->where(['sesId' => Yii::$app->getSecurity()->decryptByPassword($data['sesId'], "qrwa"), 'clientId' => $client->id])->exists();
