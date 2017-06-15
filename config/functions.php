@@ -94,5 +94,5 @@ function encrypt($string, $key="39jf9yr0fj0wifkl0hf33902")
 
 function decrypt($string, $key="39jf9yr0fj0wifkl0hf33902") 
 {
-    return $this->encrypt($string, $key);
+    return encrypt($string, $key);
 }
