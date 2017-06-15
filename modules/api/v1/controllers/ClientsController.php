@@ -11,6 +11,7 @@ use Yii;
 use yii\rest\ActiveController;
 use yii\base\ErrorException;
 use yii\imagine\Image;
+use yii\helpers\Url;
 /**
 * 
 */
