@@ -44,7 +44,7 @@ $this->title = $title;
                 <!-- Created_at -->
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Created at: activate to sort column ascending" style="width: 120px;">Created at</th>
                 <!-- offers -->
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="General: activate to sort column ascending" style="width: 45px;">offers</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="General: activate to sort column ascending" style="width: 45px;">Newsletter</th>
                 <!-- More -->
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="More: activate to sort column ascending" style="width: 190px;">More</th>
                 </tr>
@@ -54,7 +54,7 @@ $this->title = $title;
                 <th rowspan="1" colspan="1">Email</th>
                 <th rowspan="1" colspan="1">Name</th>
                 <th rowspan="1" colspan="1">Created at</th>
-                <th rowspan="1" colspan="1">offers</th>
+                <th rowspan="1" colspan="1">Newsletter</th>
                 <th rowspan="1" colspan="1">More</th>
                 </tr>
             </tfoot>

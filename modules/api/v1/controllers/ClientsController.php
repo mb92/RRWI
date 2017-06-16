@@ -11,6 +11,8 @@ use Yii;
 use yii\rest\ActiveController;
 use yii\base\ErrorException;
 use yii\imagine\Image;
+use yii\helpers\Url;
+use yii\base\Security;
 /**
 * 
 */
@@ -159,6 +161,7 @@ class ClientsController extends ActiveController
 			$action->path = $filename;
 			$action->created_at = mysqltime();
 			$action->sessionsAppId = $ses['id'];
+			$action->base64 = $imageB64;
 			$sv = $action->save();
 
 			if($sv) {
@@ -244,8 +247,7 @@ class ClientsController extends ActiveController
 			if (is_null($ses)) return "Session not found";
 
 			$client = $ses->client;
-			// var_dump($client["name"]);die();
-			// 
+
 		//Save info in Actions tabele
 			$model = new Actions();
 			$model->action = $api['action'];
@@ -271,7 +273,6 @@ class ClientsController extends ActiveController
 			} else $results['action'] = "Can't save data";
 
 		} else {
-			// Yii::$app->response->statusCode = 204;
 			$results['content'] = "Bad content";
 		}
 		return $results;
@@ -353,6 +354,21 @@ class ClientsController extends ActiveController
 	public function sendEmail($client, $from, $fileName) 
 	{
 		$links = Settings::getEmailLinks($client->countryShortName);
+		
+		// Generate unsumscribe link
+		if ($client->offers == "1") {
+			$sesId = encrypt_decrypt('encrypt', $fileName);
+			$token = encrypt_decrypt('encrypt', "0b3d4f561329b5a5dfdbaff634280be9");
+			$clientId = encrypt_decrypt('encrypt', $client->email);
+
+			// $unsub = 'http://mb.kajak.linuxpl.eu/v1/clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId;
+			$unsub = Url::to(['clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId], true);
+		} else {
+			$unsub = '#';
+		}
+
+
+
 		if (!strstr($from, "@")) $from = Yii::$app->params['email-username'].'@mailtrap.io';
 
 		try 
@@ -371,7 +387,8 @@ class ClientsController extends ActiveController
 															'country' => $client->countryShortName,
 															'place' => $client->store,
 															'endDate' => "00-00-0000",
-															'links' => $links
+															'links' => $links,
+															'unsub' => $unsub
 				])
 				->setFrom($from)
 				->setTo($client->email)
@@ -395,7 +412,29 @@ class ClientsController extends ActiveController
 	}
 
 
+	/** 
+	 * Functions for unsubscribe from newsletter
+	 * @return redirect to unsum.php or error.php in web directory
+	 */
+	public function actionUnsub()
+	{
+		$data['sesId'] = Yii::$app->request->get('s', false);
+		$data['client'] = Yii::$app->request->get('c', false);
+		$data['token'] = Yii::$app->request->get('t', false);
 
+			// Verify token
+			if (!verifyToken(encrypt_decrypt('decrypt', $data['token']))) return $this->redirect('../../error.php');
 
+			$client = Clients::find()->where(['email' => encrypt_decrypt('decrypt', $data['client'])])->one();
+
+			// Check if there is a session for this client
+			$check = Sessionsapps::find()->where(['sesId' => encrypt_decrypt('decrypt', $data['sesId']), 'clientId' => $client->id])->exists();
+			if (!$check) return $this->redirect('../../error.php');
+
+			// Update offers status on 0 (unsubscribe)
+			$client->offers = "0";
+			$st = $client->save();
+			if ($st) return $this->redirect('../../unsub.php');
+		}
 
 }

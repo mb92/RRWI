@@ -100,8 +100,8 @@ class StatsController extends Controller
     }
 
 
-
-    public function actionCustomers() {
+    public function actionCustomers() 
+    {
         $countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');
@@ -115,7 +115,9 @@ class StatsController extends Controller
         return $this->render('customers', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'clients' => $clients]);
     }
 
-    public function actionDetails($clientId) {
+
+    public function actionDetails($clientId) 
+    {
         // vdd("Works-client $clientId");
 
         $countryId = Yii::$app->params['countryId'];
@@ -148,7 +150,9 @@ class StatsController extends Controller
         return $this->render('details', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'client' => $client, 'stats' => $stats]);
     }
 
-    public function actionAlbum($clientId) {
+
+    public function actionAlbum($clientId) 
+    {
         $client = Clients::find()->where(['id' => $clientId])->one();
         if (is_null($client)) 
         return $this->redirect('site/error');
@@ -158,7 +162,9 @@ class StatsController extends Controller
         return $this->render('album', ['title' => $title, 'client' => $client]);
     }
 
-    public function actionStores() {
+
+    public function actionStores() 
+    {
         $countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');
@@ -169,10 +175,28 @@ class StatsController extends Controller
 
         $stores = Stores::getFromCountry($countryId)->all();
         $mostPop  = Stores::mostPopular($countryId);
+
+        $clients = Stores::countClientsForCountry($countryId);
+
         // vdd($mostPop);
-        return $this->render('stores', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'stores' => $stores, 'mostPop' => $mostPop]);
+        return $this->render('stores', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'stores' => $stores, 'mostPop' => $mostPop, 'clients' => $clients]);
     }
 
+
+    public function actionStoreDetails($storeId) 
+    {
+        $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+
+        $store = Stores::find()->where(['id' => $storeId])->one();
+        $country = Countries::find()->where(['id' => $countryId])->one();
+        $countries = Countries::find()->all();
+        $title = $store->name.' from '.$country->name;
+        $mostPop  = Stores::mostPopular($countryId);
+        // vdd($mostPop);
+        return $this->render('storeDetails', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'store' => $store, 'mostPop' => $mostPop]);
+    }
 
 
     public function actionFullraport()
@@ -242,6 +266,7 @@ class StatsController extends Controller
         return $pdf->render(); 
     }
 
+
     public function actionClientraport($clientId)
     {
         $client = Clients::find()->where(['id' => $clientId])->one();
@@ -280,6 +305,39 @@ class StatsController extends Controller
         // return the pdf output as per the destination setting
         // $pdf = Yii::$app->pdf;
         // $pdf->content = $content;
+        return $pdf->render(); 
+    }
+
+
+    public function actionStoreraport($storeId)
+    {
+        $store = Stores::find()->where(['id' => $storeId])->one();
+
+        $stats['allLunches'] = $store->countAllSes($storeId);
+        $stats['retake'] = Stores::countRetakes($store->id);
+
+        $stats['doneSes'] = $store->countDoneSes();
+        $stats['interrupedSes'] = $store->countInterrupedSes();
+        $stats['clients'] = $store->countClients();
+        $stats['photos'] = $store->countDoneSes();
+
+        // vdd($client);
+        $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;">
+            <i>Store details - slefie-app</i></div>';
+        $content = $this->renderPartial('pdfStoreRaport', ['title' => $smallTitle, 'store' => $store, 'stats' => $stats]);
+
+        $pdf = new Pdf([
+            // your html content input
+            'content' => $content,  
+            'options' => ['title' => $store->name],
+            'filename' => str_replace('@', '[at]', $store->name) . '_' . 'raport_'. mysqltime() .'.pdf',
+             // call mPDF methods on the fly
+            'methods' => [ 
+                'SetHeader'=>['Date of generate: '. mysqltime()],
+                'SetFooter'=>['{PAGENO}'],
+            ]
+        ]);
+        
         return $pdf->render(); 
     }
 }

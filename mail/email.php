@@ -1,10 +1,7 @@
 <?php  
+use yii\helpers\Url;
 
-// vdd(yii::$app->getRequest()->serverName);
-// $path = Yii::$app->params['urlTemplateElements'];
-
-// $path = yii::$app->getRequest()->serverName.'/dist/email';
-$path = "http://selfie-app.testdnd.ovh/dist/email/";
+$path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
 ?>
 
@@ -25,22 +22,20 @@ $path = "http://selfie-app.testdnd.ovh/dist/email/";
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td style="text-align:center;" width="25%">
-                        <a href="#">
-                            <center>
-                              <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
+                        <?php if ($unsub != "#") { 
+                              echo '
+                              <a href="'.$unsub.'" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
                               unsubscribe</font>
-                              </a>
-                            </center>
-                        </a>
+                              </a>';
+                          } ?>
+
                         </td>
                         <td style="text-align:center;">
-                            <center>
                               <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                               YOUR PERFECT SELFIE IS ATTACHED</font>
                               </a>
-                            </center>
                         </td>
                         <td width="25%"></td>
                       </tr>

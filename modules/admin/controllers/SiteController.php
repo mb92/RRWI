@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use yii\helpers\BaseFileHelper;
+use yii\helpers\Url;
+
 
 use app\models\Clients;
 use app\models\Actions;
@@ -71,6 +73,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
         $countries = Countries::find()->all();
         $stats['globalLunches'] = Sessionsapps::countAllSes();
         $stats['globalDoneSes'] = Sessionsapps::countDoneSes();
@@ -81,35 +84,50 @@ class SiteController extends Controller
         return $this->render('index', ['countries' => $countries, 'stats' => $stats]);
     }
 
+    /**
+     * Method for the tests
+     * @return [type] [description]
+     */
     public function actionTest()
     {
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/png');
         \Yii::$app->response->data = file_get_contents('../upload/lorem.jpg');
         return \Yii::$app->response;
-        // return $this->render('test');
     }
+
 
     /**
-     * Displays about page.
-     *
-     * @return string
+     * This function mediates the display of images. Also, it re-generates an image when it is not on the current server
+     * @param  string $n path's column from actions table or sesId
+     * @return response    Return url link to image
      */
-    public function actionAbout()
-    {
-        $clients=Clients::find()->all();
-        $actions=Actions::find()->all();
-
-        $files = BaseFileHelper::findFiles(Yii::$app->basePath."/upload/");
-
-        return $this->render('about', ['clients' => $clients, 'actions' => $actions, 'files' => $files]);
-    }
-
     public static function actionImage($n)
     {
+        // vdd("test");
+        $path = '../upload/'.$n.'.jpg';
+
+        if (!file_exists($path)) {
+            $imageB64 = Actions::find()->where(['path' => $n])->one()->base64;
+            // $filename = $sesId.'.jpg';
+            $filename = $n;
+            $ext = "jpg";
+            $fileNameExt = $filename.'.'.$ext;
+            // Decode Image
+            $binary=base64_decode($imageB64);
+            // header('Content-Type: bitmap; charset=utf-8');
+            // Images will be saved under 'www/upload/' folder
+            $file = fopen(Yii::getAlias("@upload").'/'.$fileNameExt, 'wb');
+
+            // Create File
+            fwrite($file, $binary);
+            fclose($file);
+        }
+
+
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/jpg');
-        \Yii::$app->response->data = file_get_contents('../upload/'.$n.'.jpg');
+        \Yii::$app->response->data = file_get_contents($path);
         return \Yii::$app->response;
     }
 }

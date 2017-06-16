@@ -22,7 +22,14 @@ $this->title = 'Dashboard';
 				</div>
 
 				<!-- /.widget-user-image -->
-				<h3 class="widget-user-username"><?= $c['name'] ?></h3>
+				<h3 class="widget-user-username">
+                <?php 
+                    if (strlen($c['name']) > 10)
+                    {
+                        echo substr($c['name'], 0, 9) ."<small>...</small>";
+                    } else echo $c['name'];
+                ?>
+                </h3>
 				<h5 class="widget-user-desc"><?= $c['short'] ?></h5>
 				<a href="/admin/<?= Url::to($c['short'].'/stats'); ?>" class="btn pull-right btn-success btn-flat btn-country-box">
 					<i class="fa fa-angle-double-right" aria-hidden="true"></i>
@@ -37,13 +44,13 @@ $this->title = 'Dashboard';
 				<li><a href="#">Launches app <span class="pull-right badge bg-aqua">
 					<?= Sessionsapps::countSesForCountry($c['id']);?>
 				</span></a></li>
-				<li><a href="#">Done sessions <span class="pull-right badge bg-green">
+				<li><a href="#">Completed Sessions <span class="pull-right badge bg-green">
 					<?= Sessionsapps::countDoneSesForCountry($c['id']);?>
 				</span></a></li>
 				<li><a href="#">Interrupted sessions <span class="pull-right badge bg-red">
 					<?= Sessionsapps::countInterruptedSesForCountry($c['id']);?>
 				</span></a></li>
-				<li><a href="#">Retakes <span class="pull-right badge bg-yellow">
+				<li><a href="#">Photo Retakes <span class="pull-right badge bg-yellow">
 					<?= Actions::countRetakesFromCountry($c['id'])?>
 				</span></a></li>
 				<li><a href="#">Stores <span class="pull-right badge bg-purple">
@@ -69,7 +76,7 @@ $this->title = 'Dashboard';
         <div class="info-box bg-light-blue-active">
             <span class="info-box-icon bg-aqua"><i class="fa fa-send-o"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">All launches</span>
+                <span class="info-box-text">Total Sessions</span>
                 <span class="info-box-number"><?php $ses = $stats['globalLunches']; echo $ses; ?> <small></small></span>
             </div>
             <!-- /.info-box-content -->
@@ -81,7 +88,7 @@ $this->title = 'Dashboard';
         <div class="info-box bg-green-active">
             <span class="info-box-icon bg-green"><i class="fa fa-check-circle-o"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">Done</span>
+                <span class="info-box-text">Completed Sessions</span>
                 <span class="info-box-number"><?= $stats['globalDoneSes'] ?></span>
             </div>
             <!-- /.info-box-content -->
@@ -97,7 +104,7 @@ $this->title = 'Dashboard';
         <div class="info-box bg-red-active">
             <span class="info-box-icon bg-red"><i class="fa fa-remove"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">Interrupted</span>
+                <span class="info-box-text">Interrupted Sessions</span>
                 <span class="info-box-number"><?= $stats['globalInterrupedSes'] ?></span>
             </div>
             <!-- /.info-box-content -->
@@ -109,7 +116,7 @@ $this->title = 'Dashboard';
         <div class="info-box bg-yellow-active">
             <span class="info-box-icon bg-yellow"><i class="fa fa-retweet"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">Retake</span>
+                <span class="info-box-text">Photo Retakes</span>
                 <span class="info-box-number"><?= $stats['retake'] ?></span>
             </div>
             <!-- /.info-box-content -->

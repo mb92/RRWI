@@ -110,3 +110,6 @@ img.dt.img-circle {
     width: 30px;
 }
 
+.btn {
+    margin-top:2px !important;
+}

@@ -8,7 +8,7 @@ $this->title = $title;
 ?>
 
 <div class="row animated fadeIn">
-    <div class="col-md-9">
+    <div class="col-md-12">
         <!-- APPLICATION BUTTONS -->
         <div class="box">
             <div class="box-body">
@@ -22,67 +22,21 @@ $this->title = $title;
                     ?>
                 </a>
                 <?php endforeach ?>
-                <a href="customers" style="height:35px;" class="btn btn-default btn-app-country">
+                <a href="<?= Yii::$app->request->referrer ?>" style="height:35px;" class="btn btn-default btn-app-country">
                 Go back
                 </a>
-                <a href="/admin/<?= $country->short ?>/stats/clientraport?clientId=<?= $client->id?>" target="_blank" style="height:35px;" class="btn btn-primary btn-app-country pull-right">
-                <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                </a>
-                <a href="album?clientId=<?= $client->id ?>" style="height:35px;" class="btn btn-primary pull-right btn-app-album">
-                <i class="fa fa-camera" aria-hidden="true"></i>
+                <a href="/admin/<?= $country->short ?>/stats/storeraport?storeId=<?= $store->id?>" target="_blank" style="height:35px;" class="btn btn-primary btn-app-country pull-right">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;Export to PDF
                 </a>
             </div>
-            <!-- /.box-body -->
-  
-
-            <div class="box box-widget widget-user-2">
-                <!-- Add the bg color to the header using any of the bg-* classes -->
-                <div class="box-footer no-padding">
-                <ul class="nav nav-stacked">
-                <li>
-                    <a href="#"><i class="fa fa-at spacing-left-icon" aria-hidden="true"></i><b><?= $client->email?></b>
-                        <div class="pull-right" style="width:50%;"><i class="fa fa-user spacing-left-icon" aria-hidden="true"></i><?= $client->name?></div>
-                    </a>
-                </li>
-                <li><a href="#"><i class="fa fa-calendar-plus-o spacing-left-icon" aria-hidden="true"></i><?= $client->created_at?> </a></li>
-                <li><a href="#"><i class="fa fa-info spacing-left-icon" aria-hidden="true"></i>Newsletter: 
-                    <?php 
-                        if ($client->offers == "0")  
-                        echo '<span class="text-red"><b>No</b></span>';
-                        else echo '<span class="text-green"><b>Yes</b></span>';
-                    ?> 
-                </a></li>
-                </ul>
-                </div>
-            </div>        
+            <!-- /.box-body -->      
         </div>
         <!-- /.box -->   
-    </div>
-
-
-    <div class="col-md-3">
-        <div class="box box-body widget-user-2">
-            <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="summary-title text-light-blue">.:: Summary ::.</div>
-            <div class="box-footer no-padding">
-                <ul class="nav nav-stacked">
-                    <li><a href="#">Launches app: <span class="pull-right badge bg-blue">
-                    <?= $stats['allLunches'] ?>
-                    </span></a></li>
-                    <li><a href="#">Completed Sessions: <span class="pull-right badge bg-green">
-                    <?= $stats['doneSes'] ?> 
-                    </span></a></li>
-                    <li><a href="#">Photo Retakes: <span class="pull-right badge bg-yellow">
-                    <?= $stats['retake'] ?>
-                    </span></a></li>
-                </ul>
-            </div>
-        </div>
     </div>
 </div>
 
 <section class="content-header">      
-    <h1>List of sessions<small>(<?= $client->name?>)</small></h1>
+    <h1>List of sessions<small>(<?= $store->name?>)</small></h1>
 </section>
 <br/>
     <!-- DATA TABLE -->
@@ -95,8 +49,10 @@ $this->title = $title;
         <table id="tableBasic" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
         <thead>
         <tr role="row">
-        <!-- Store's name -->
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Store's name: activate to sort column ascending" style="width: 223px;">Store's name</th>
+        <!-- client's email-->
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Store's name: activate to sort column ascending" style="width: 223px;">Client's email</th>
+        <!-- Client's name -->
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Store's name: activate to sort column ascending" style="width: 223px;">Client's name</th>
         <!-- Status -->
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Lang: activate to sort column ascending" style="width: 45px;">Lang</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 45px;">Status</th>
@@ -113,7 +69,8 @@ $this->title = $title;
 
         <tfoot>
         <tr>
-            <th rowspan="1" colspan="1">Store's name</th>
+            <th rowspan="1" colspan="1">Client name</th>
+            <th rowspan="1" colspan="1">Client email</th>
             <th rowspan="1" colspan="1">Lang</th>
             <th rowspan="1" colspan="1">Status</th>
             <th rowspan="1" colspan="1">Date of session</th>
@@ -124,9 +81,18 @@ $this->title = $title;
         </tfoot>
 
         <tbody>
-        <?php foreach ($client->sessionsapps as $key => $s): ?>
+        <?php foreach ($store->sessionsapps as $key => $s): ?>
             <tr role="row" class="odd">
-                <td><?= $s->store->name ?></td>
+                <?php 
+                    if($s->status == "1") {?>
+                        <td><?= $s->client['name']; ?></td>
+                        <td><a href="details?clientId=<?=$s->client['id']?>"><u><?= $s->client['email']; ?></u></a></td>
+                   <?php }
+                    else {
+                        echo '<td><center>-</center></td><td><center>-</center></td>';
+                    }
+                ?>
+                
                 <td><?= $s->language->short ?></td>
                 <td>
                     <center>
@@ -146,16 +112,16 @@ $this->title = $title;
                     if ($s->status == "1")
                     {
                         echo '<a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image" 
-                        data-title="'.$client->name.' - '. $s->created_at .'">
+                        data-title="'.$store->name.' - '. $s->created_at .'">
                         <img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="thumb-img-details" style="max-width:70px;"/></a>';
 
                         echo '<div class="btn-group-vertical pull-right">
                            <a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-preview" 
-                            data-title="'.$client->name.' - '. $s->created_at .'" class="btn btn-info" title="Preview selfie"><i class="fa fa-search-plus"></i></a>
+                            data-title="'.$store->name.' - '. $s->created_at .'" class="btn btn-info" title="Preview selfie"><i class="fa fa-search-plus"></i></a>
                             <a href="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="btn btn-info" download="'.$s->sesId.'.jpg" title="Save image"><i class="fa fa-save"></i></a>
                         </div>';
                     } else {
-                        echo '<img src="'.@webroot.'/dist/img/no_photo.jpg" style="max-width:70px;" alt="no-selfie-available/>';
+                        echo '<img src="/dist/img/no_photo.jpg" style="max-width:70px;" class="thumb-img-details" alt="no-selfie-available" />';
                     }
                     ?>
                 </td>
