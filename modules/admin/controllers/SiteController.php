@@ -127,8 +127,13 @@ class SiteController extends Controller
             $filename = $n.'.jpg';
             $photo = Yii::getAlias("@upload").'/'.$filename;
             $watermarkNameBg= '../web/dist/img/wt-1.png';
-
             $stPhoto = watermark($watermarkNameBg, $photo);
+
+            Image::thumbnail(Yii::getAlias("@upload").'/'.$fileNameExt, 171, 300)->save(Yii::getAlias("@temp").'/'.$fileNameExt, ['quality' => 90]);
+            
+            // $thumb = Yii::getAlias("@temp").'/'.$filename;
+            // $watermarkNameSm= '../web/dist/img/wt-2.png';
+            // $stThumb = watermark($watermarkNameSm, $photo);
 
             return Yii::$app->getResponse()->redirect(Yii::$app->getRequest()->getUrl());
         }
