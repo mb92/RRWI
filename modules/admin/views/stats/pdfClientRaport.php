@@ -32,17 +32,17 @@ use app\models\Clients;
 		<table>
 			<tr>
 				<td style="width:350px;"><b>Created at:</b> <?= $client->created_at ?></td>
-				<td style="width:150px;"><b>Done:</b>
+				<td style="width:150px;"><b>Completed Sessions:</b>
 					<?= $stats['doneSes']?>/<?= $stats['allLunches'] ?>
 				</td>
 				<td style="width:150px;"><b>Photos:</b><?= $stats['photos']?></td>
 			</tr>
 			<tr>
 				<td><b>Country:</b> <?= $client->country ?></td>
-				<td><b>Interruped:</b>
+				<td><b>Interrupted Sessions:</b>
 					<?= $stats['interrupedSes']?>
 				</td>
-				<td><b>Reatke:</b>
+				<td><b>Photo Retakes:</b>
 				<?= $stats['retake'] ?>
 				</td>
 			</tr>

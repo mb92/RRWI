@@ -69,10 +69,10 @@ $this->title = $title;
                     <li><a href="#">Launches app: <span class="pull-right badge bg-blue">
                     <?= $stats['allLunches'] ?>
                     </span></a></li>
-                    <li><a href="#">Done sessions: <span class="pull-right badge bg-green">
+                    <li><a href="#">Completed Sessions: <span class="pull-right badge bg-green">
                     <?= $stats['doneSes'] ?> 
                     </span></a></li>
-                    <li><a href="#">Retakes: <span class="pull-right badge bg-yellow">
+                    <li><a href="#">Photo Retakes: <span class="pull-right badge bg-yellow">
                     <?= $stats['retake'] ?>
                     </span></a></li>
                 </ul>

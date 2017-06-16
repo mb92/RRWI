@@ -31,17 +31,17 @@ use app\models\Stores;
 		<center>
             <table>
                 <tr>
-                    <td style="width:150px;"><b>Done:</b>
+                    <td style="width:150px;"><b>Completed Sessions:</b>
                         <?= $stats['doneSes']?>/<?= $stats['allLunches'] ?>
                     </td>
                     <td style="width:150px;"><b>Photos: </b><?= $stats['photos']?></td>
                     <td style="width:150px;"><b>Number of clients:</b> <?= $stats['clients']?></td>   
                 </tr>
                 <tr>
-                    <td><b>Interruped:</b>
+                    <td><b>Interrupted Sessions:</b>
                         <?= $stats['interrupedSes']?>
                     </td>
-                    <td><b>Retakes:</b>
+                    <td><b>Photo Retakes:</b>
                     <?= $stats['retake'] ?>
                     </td>
                     <td></td>

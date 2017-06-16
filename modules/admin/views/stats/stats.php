@@ -43,7 +43,7 @@ $this->title = $title;
         <div class="info-box">
             <span class="info-box-icon bg-aqua"><i class="fa fa-send-o"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">All launches</span>
+                <span class="info-box-text">Total Sessions</span>
                 <span class="info-box-number"><?= $stats['allLunches'] ?> <small></small></span>
             </div>
             <!-- /.info-box-content -->
@@ -55,7 +55,7 @@ $this->title = $title;
         <div class="info-box">
             <span class="info-box-icon bg-green"><i class="fa fa-check-circle-o"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">Done</span>
+                <span class="info-box-text">Completed Sessions</span>
                 <span class="info-box-number"><?= $stats['doneSes'] ?></span>
             </div>
             <!-- /.info-box-content -->
@@ -71,7 +71,7 @@ $this->title = $title;
         <div class="info-box">
             <span class="info-box-icon bg-red"><i class="fa fa-remove"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">Interrupted</span>
+                <span class="info-box-text">Interrupted Sessions</span>
                 <span class="info-box-number"><?= $stats['interrupedSes'] ?></span>
             </div>
             <!-- /.info-box-content -->
@@ -83,7 +83,7 @@ $this->title = $title;
         <div class="info-box">
             <span class="info-box-icon bg-yellow"><i class="fa fa-retweet"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">Retake</span>
+                <span class="info-box-text">Photo Retakes</span>
                 <span class="info-box-number"><?= $stats['retake'] ?></span>
             </div>
             <!-- /.info-box-content -->

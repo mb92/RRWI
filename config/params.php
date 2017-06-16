@@ -5,7 +5,7 @@ yii::setAlias('@temp', '../temp');
 
 return [
     'adminEmail' => 'admin@example.com',
-    'email-notifications' => "xyyy0107@gmail.com",
+    'email-notifications' => "sara@flipsidegroup.com",
 
 	// /*gmail*/
 	'email-host' => 'smtp.gmail.com',
