@@ -93,19 +93,22 @@ class MbController extends Controller
         if ($st) echo "Table Clients cleared \n\n";
         else echo "Can't clean Clients actions \n\n";
 
-        $st = Stores::deleteAll();
-        if ($st) echo "Table Stores cleared \n\n";
-        else echo "Can't clean Stores actions \n\n";
+        // $st = Stores::deleteAll();
+        // if ($st) echo "Table Stores cleared \n\n";
+        // else echo "Can't clean Stores actions \n\n";
 
-        $st = Settings::deleteAll();
-        if ($st) echo "Table Settings cleared \n\n";
-        else echo "Can't clean Settings actions \n\n";
+        // $st = Settings::deleteAll();
+        // if ($st) echo "Table Settings cleared \n\n";
+        // else echo "Can't clean Settings actions \n\n";
 
         $st = Users::deleteAll();
         if ($st) echo "Table Users cleared \n\n";
         else echo "Can't clean Users actions \n\n";
 
         $this->clearDirectoryRecursive("upload");
+        echo "Deleted photos \n\n";
+
+        $this->clearDirectoryRecursive("temp");
         echo "Deleted photos \n\n";
     }
 

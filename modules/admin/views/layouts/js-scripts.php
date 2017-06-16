@@ -26,6 +26,7 @@ use yii\helpers\Url;
       "lengthChange": true,
       "searching": true,
       "ordering": true,
+      "order": [[ 3, "desc" ]],
       "info": true,
       "autoWidth": false,
       "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
@@ -45,6 +46,21 @@ use yii\helpers\Url;
       "lengthChange": true,
       "searching": true,
       "ordering": true,
+      "order": [[ 3, "desc" ]],
+      "info": true,
+      "autoWidth": false,
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      "pagingType": "full_numbers",
+    });
+</script>
+
+<script>
+   $('#tableBasicCustomers').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "order": [[ 2, "desc" ]],
       "info": true,
       "autoWidth": false,
       "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],

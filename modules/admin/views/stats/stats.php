@@ -215,3 +215,10 @@ $this->title = $title;
     <!-- /.modal-dialog -->
 </div>
 
+<script>
+$(document).ready(function() {
+    $('#table').DataTable( {
+        "order": [[ 3, "desc" ]]
+    } );
+} );
+</script>

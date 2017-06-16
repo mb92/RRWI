@@ -34,7 +34,7 @@ $this->title = $title;
     </div> -->
     <!-- /.box-header -->
     <div class="box-body">
-        <table id="tableBasic" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+        <table id="tableBasicCustomers" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
             <thead>
                 <!-- Email -->
                 <tr role="row">
