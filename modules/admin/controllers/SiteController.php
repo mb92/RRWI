@@ -122,6 +122,14 @@ class SiteController extends Controller
             // Create File
             fwrite($file, $binary);
             fclose($file);
+
+            $filename = $n.'.jpg';
+            $photo = Yii::getAlias("@upload").'/'.$filename;
+            $watermarkNameBg= '../web/dist/img/wt-1.png';
+
+            $stPhoto = watermark($watermarkNameBg, $photo);
+
+            return Yii::$app->getResponse()->redirect(Yii::$app->getRequest()->getUrl());
         }
 
 
