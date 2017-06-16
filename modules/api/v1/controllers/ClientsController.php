@@ -400,7 +400,7 @@ class ClientsController extends ActiveController
 				->send();
 
 			// Remove thumbnail from "temp" directory
-			if ($message) unlink($thumb);
+			// if ($message) unlink($thumb);
 
 			return $message; 
 		} 
