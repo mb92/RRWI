@@ -1,0 +1,48 @@
+/* simple pages css sheet*/
+
+body {
+	background-color: #525252;
+	color: #424344;
+}
+
+h1 {
+	font-size: 14px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.top {
+	margin-top: 20px;
+}
+
+#banner {
+	padding: 0px;
+	background-color: #1b1919;
+}
+
+#content {
+	background-color: #1b1919;
+	padding-left: 45px;
+	padding-right: 45px;
+	padding-bottom: 45px;
+}
+
+#content p {
+	font-size: 11px;
+	line-height: 16px;
+}
+
+a {
+	color: #424344;
+}
+
+a:hover {
+	color: #ed1b24;
+}
+
+
+@media screen and (max-width: 994px) {
+    body {
+        background-color: #1b1919;
+    }
+}

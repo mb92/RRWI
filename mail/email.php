@@ -98,7 +98,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
                             Thank you for visiting the P10 Selfie Studio at Vodafone <font color="#ee1c24"><?= $place; ?></font>. <br/>
-                            We’ve attached your selfie to thisemail. We hope you love it.
+                            We’ve attached your selfie to this email. We hope you love it.
                             </p>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
@@ -351,21 +351,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <tr>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
-                        <td>
+                        <td style="text-align:center;">
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="14" style="display:block; margin:0; padding:0; border:none;"/>
-                          <p style="color:#555; font-family:MyriadLight, Arial, Helvetica; letter-spacing: 1px; font-size: 10px; text-align:left;">
-                          TERMS AND CONDITIONS 
-                          </p>
-                          <p style="color:#555; font-family:MyriadLight, Arial, Helvetica; font-size: 10px; text-align:left;">
-                          Dolor sit amet, qui te meliore quaestio moderatius, no alia sonet his. Quo ea unum laoreet maiorum, nam ea tollit graecis. Vis quando platonem explicari in, impedit suscipit probatus mel te. Eam no dolorum inermis, eos dicat quodsi recteque cu, ei vix enim tibique.
-                          </p>
-                          <p style="color:#555; font-family:MyriadLight, Arial, Helvetica; font-size: 10px; text-align:left;">
-                          Omittam disputando vituperatoribus nec at. Putant officiis scribentur sit ne, altera fierent verterem sit id. Aeque aperiri consetetur sit no, id etiam utroque vix, duo tempor invidunt legendos in. Ei sit suavitate neglegentur. Everti eruditi sit in. Ea usu viris mucius, ex vis minim discere intellegam. Eum te nisl fuisset.
-                          </p>
-                          <p style="color:#555; font-family:MyriadLight, Arial, Helvetica; font-size: 10px; text-align:left;">
-                          Vis quando platonem explicari in, impedit suscipit probatus mel te. Eam no dolorum inermis, eos dicat quodsi recteque cu, ei vix enim tibique. Everti eruditi sit in. Ea usu viris mucius, ex vis minim discere intellegam. Eum te nisl fuisset.
-                          </p>
-                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="35" style="display:block; margin:0; padding:0; border:none;"/>
+                          <a href="admin/pages/terms-and-conditions"><b>TERMS & CONDITIONS</b></a>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
