@@ -106,6 +106,7 @@ class SiteController extends Controller
     {
         // vdd("test");
         $path = '../upload/'.$n.'.jpg';
+        $path2 = '../temp/'.$n.'.jpg';
 
         if (!file_exists($path)) {
             $imageB64 = Actions::find()->where(['path' => $n])->one()->base64;
@@ -135,7 +136,7 @@ class SiteController extends Controller
 
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/jpg');
-        \Yii::$app->response->data = file_get_contents($path);
+        \Yii::$app->response->data = file_get_contents($path2);
         return \Yii::$app->response;
     }
 }
