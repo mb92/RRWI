@@ -354,7 +354,11 @@ class ClientsController extends ActiveController
 	public function sendEmail($client, $from, $fileName) 
 	{
 		$links = Settings::getEmailLinks($client->countryShortName);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> f0d95024139340c66377147dc35d3e28ce7b549a
 		// Generate unsumscribe link
 		if ($client->offers == "1") {
 			$sesId = encrypt_decrypt('encrypt', $fileName);
