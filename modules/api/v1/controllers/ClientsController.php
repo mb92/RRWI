@@ -386,7 +386,7 @@ class ClientsController extends ActiveController
 															'name' => ucwords($client->name),
 															'country' => $client->countryShortName,
 															'place' => $client->store,
-															'endDate' => "00-00-0000",
+															'endDate' => "7th August",
 															'links' => $links,
 															'unsub' => $unsub
 				])
@@ -396,7 +396,7 @@ class ClientsController extends ActiveController
 				->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
 								'Disposition-Notification-To' => Yii::$app->params['email-notifications']
 							])
-				->attach(\Swift_Attachment::fromPath($image)/*->setDisposition('inline')*/)
+				->attach(\Swift_Attachment::fromPath($image))
 				->send();
 
 			// Remove thumbnail from "temp" directory
