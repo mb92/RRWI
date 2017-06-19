@@ -21,32 +21,24 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
-                        <td style="text-align:center;" width="25%">
-                        <?php if ($unsub != "#") { 
-                              echo '
-                              <a href="'.$unsub.'" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
-                              <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
-                              unsubscribe</font>
-                              </a>';
-                          } ?>
-
-                        </td>
+                        <td width="25%"></td>
                         <td style="text-align:center;">
                               <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                               YOUR PERFECT SELFIE IS ATTACHED</font>
                               </a>
                         </td>
-                        <td width="25%"></td>
+                        <td style="text-align:center;" width="25%">
+                            <?php if ($unsub != "#") { 
+                              echo '
+                              <a href="'.$unsub.'" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
+                              <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
+                              unsubscribe</font>
+                              </a>';
+                          } ?>
+                        </td>
                       </tr>
                     </table>
-
-<!--                       <center>
-                        <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
-                        <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
-                        YOUR PERFECT SELFIE IS ATTACHED</font>
-                        </a>
-                      </center> -->
                     </td>
                   </tr>
                   <tr>
@@ -56,7 +48,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                   </tr>
                   <tr>
                     <td width="600" class="mobile" style="font-family:MyriadLight, Arial, Helvetica; font-size:12px; line-height:18px;">
-                      <img src="<?= $path ?>/imgs/women.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
+                      <img src="<?= $path ?>/imgs/women-2.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
                     </td>
                   </tr>
 
@@ -107,16 +99,6 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       </tr>
                       </table>
 
-<!--                       <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
-                      <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
-                        Thank you for visiting the P10 Selfie Studio at Vodafone <font color="#ee1c24">[place]</font>. <br/>
-                        We’ve attached your selfie to thisemail. We hope you love it.
-                      </p>
-                      <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/> -->
-
-
-
-
                     </td>
                   </tr>
 
@@ -166,7 +148,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
                           <td width="243">
-                            <a href="#">
+                            <a href="<?= $links['instagram']; ?>">
                             <img src="<?= $path ?>/imgs/btn-share-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                             </a>
                           </td>
@@ -227,7 +209,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/left-side.jpg" width="35" height="300" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                             <td width="171px" align="center">
-                              <img src="<?= $message->embed($imageFileName); ?>" width="171" height="300" style="display:block; margin:0; padding:0; border:none;"/>
+                              <img src="<?= $path ?>/imgs/photo-2.jpg" width="171" height="300" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                             <td width="214px" align="left">
                               <img src="<?= $path ?>/imgs/right-side.jpg" width="85" height="300" style="display:block; margin:0; padding:0; border:none;"/>
@@ -260,10 +242,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <td width="178" class="mobileOffTab"></td>
                       <td width="29" class="mobileOnTab"></td>
                       <td width="243">
-                        <a href="#">
-                        <img src="<?= $path ?>/imgs/btn-discover-more.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
-                        </a>
-                      <img src="<?= $path ?>/imgs/clean.png" width="1" height="74" style="display:block; margin:0; padding:0; border:none;"/>
+                      <img src="<?= $path ?>/imgs/clean.png" width="1" height="0" style="display:block; margin:0; padding:0; border:none;"/>
                       </td>
                       <td width="178" class="mobileOffTab"></td>
                       <td width="29" class="mobileOnTab"></td>
@@ -284,13 +263,13 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="48" style="display:block; margin:0; padding:0; border:none;"/>
                             <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center;" class="mobile-font">
-                              OFFER LOREM IPSUM<br/>
+                              HUAWEI P10 ON VODACOM 4G<br/>
                             </font>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
-                              No duo solum reque ipsum, decore tractatos an has, ne sit consect es etuer.<br/>
-                               Elit quas zril his no. Duo at prodesset dissentiet, molestie in ius. Vis amet quot <br/> ei, expetenda intellegam reformidans tesed, ornatus percipitur ex sit.
+                              Style, craftmanship and innovation, all with the connectivity speed to match
+                              thanks to Vodacom's 4G network. Discover more in store or online. 
                             </p>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
@@ -309,7 +288,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
                             <td width="243">
-                              <a href="#">
+                              <a href="<?= $links['location']; ?>">
                               <img src="<?= $path ?>/imgs/btn-shop-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                               </a>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="72" style="display:block; margin:0; padding:0; border:none;" /> 
@@ -328,13 +307,11 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td style="text-align:center; display:inline" class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                         <tr>
-                          <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg.jpg" width="170" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
-                          <td><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['twitter']; ?>"><img src="<?= $path ?>/imgs/icon_twitter.jpg" width="57" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['youtube']; ?>"><img src="<?= $path ?>/imgs/icon_yt.jpg" width="61" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps.jpg" width="40" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg.jpg" width="170" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
+                          <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
+                          <td><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
                         </tr>
                       </table>
                     </td>
@@ -353,11 +330,14 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td width="16" class="mobileOnTab"></td>
                         <td style="text-align:center;">
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="14" style="display:block; margin:0; padding:0; border:none;"/>
-                              <a href="admin/pages/terms-and-conditions" target="_blank" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
-                              <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
-                              TERMS & CONDITIONS</font>
+
+                              <a href="<?= 'http://'.$_SERVER['HTTP_HOST'] ?>/admin/pages/terms-and-conditions" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
+                                <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
+                                <u>Please click here to view terms and conditions</u></font>
                               </a>
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="14" style="display:block; margin:0; padding:0; border:none;"/>
+
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
+
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>

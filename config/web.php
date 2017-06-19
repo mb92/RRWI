@@ -70,7 +70,12 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        
+
+        // 'formatter'  => [
+        //     'class' => 'yii\i18n\Formatter',
+        //     'timeZone'        => 'Europe/London',
+        // ],
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

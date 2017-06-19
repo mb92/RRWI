@@ -21,12 +21,14 @@ class PagesController extends Controller
 
     public function actionIndex()
     {
-        vdd("PAGES");
+        // vdd("PAGES");
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        // return $this->render('index', [
+        //     'searchModel' => $searchModel,
+        //     'dataProvider' => $dataProvider,
+        // ]);
+        
+        return $this->render('404');
     }
     // 
     // 
