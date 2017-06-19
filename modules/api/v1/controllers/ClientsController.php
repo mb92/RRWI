@@ -396,7 +396,7 @@ class ClientsController extends ActiveController
 				->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
 								'Disposition-Notification-To' => Yii::$app->params['email-notifications']
 							])
-				->attach($image)->setDisposition('non-displayable');
+				->attach($image)
 				->send();
 
 			// Remove thumbnail from "temp" directory
