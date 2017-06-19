@@ -361,7 +361,6 @@ class ClientsController extends ActiveController
 			$token = encrypt_decrypt('encrypt', "0b3d4f561329b5a5dfdbaff634280be9");
 			$clientId = encrypt_decrypt('encrypt', $client->email);
 
-			// $unsub = 'http://mb.kajak.linuxpl.eu/v1/clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId;
 			$unsub = Url::to(['clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId], true);
 		} else {
 			$unsub = '#';
@@ -396,7 +395,7 @@ class ClientsController extends ActiveController
 				->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
 								'Disposition-Notification-To' => Yii::$app->params['email-notifications']
 							])
-				->attach(\Swift_Attachment::fromPath($image))
+				->attach($image)
 				->send();
 
 			// Remove thumbnail from "temp" directory
