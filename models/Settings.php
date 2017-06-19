@@ -52,15 +52,14 @@ class Settings extends \yii\db\ActiveRecord
         $category = 'links '.$countryCode;
         
         $query = self::find()->where(['category' => $category])->all();
-        // vdd($category);
+  
         $links = [
             'consumer' => "#",
             'location' => "#",
             'facebook' => "#",
             'instagram' => "#",
             'twitter' => "#",
-            'youtube' => "#",
-            'other' => "#"
+            'youtube' => "#"
         ];
 
         foreach ($query as $key => $value) {
@@ -68,18 +67,13 @@ class Settings extends \yii\db\ActiveRecord
             elseif (strstr(strtolower($value->value), "instagram")) $links['instagram'] = $value->value;
             elseif (strstr(strtolower($value->value), "twitter")) $links['twitter'] = $value->value;
             elseif (strstr(strtolower($value->value), "youtube")) $links['youtube'] = $value->value;
+            elseif (strstr(strtolower($value->param), "consumer")) $links['consumer'] = $value->value;
             elseif (strstr(strtolower($value->value), "locator")) $links['location'] = $value->value;
             elseif (strstr(strtolower($value->value), "store")) $links['location'] = $value->value;
-            elseif (strstr(strtolower($value->value), "consumer")) $links['consumer'] = $value->value;
-            elseif (strstr(strtolower($value->param), "instagram")) $links['instagram'] = $value->value;
-            elseif (strstr(strtolower($value->param), "twitter")) $links['twitter'] = $value->value;
-            elseif (strstr(strtolower($value->param), "youtube")) $links['youtube'] = $value->value;
-            elseif (strstr(strtolower($value->param), "locator")) $links['location'] = $value->value;
-            elseif (strstr(strtolower($value->param), "store")) $links['location'] = $value->value;
-            elseif (strstr(strtolower($value->param), "consumer")) $links['consumer'] = $value->value;
-            else $links['other'] = $value->value;
+            else $links['location'] = $value->value;
         }
 
+        // vdd($links);
         return $links;
     }
 
