@@ -73,7 +73,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
+        // vdd(Yii::$app->timeZone);
         $countries = Countries::find()->all();
         $stats['globalLunches'] = Sessionsapps::countAllSes();
         $stats['globalDoneSes'] = Sessionsapps::countDoneSes();
