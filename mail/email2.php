@@ -287,7 +287,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
                             <td width="243">
-                              <a href="<?= $links['location']; ?>">
+                              <a href="https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2">
                               <img src="<?= $path ?>/imgs/btn-shop-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                               </a>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="72" style="display:block; margin:0; padding:0; border:none;" /> 
@@ -307,9 +307,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                         <tr>
                           <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
-                          <td><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="https://www.instagram.com/huaweiza/"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="https://www.facebook.com/HuaweimobileZA/"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="http://www.vodacom.co.za/vodacom/contact-us/find-a-store"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
                           <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
                         </tr>
                       </table>
