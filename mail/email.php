@@ -21,8 +21,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
-                        <td>
-                        </td>
+                        <td width="25%"></td>
                         <td style="text-align:center;">
                               <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
