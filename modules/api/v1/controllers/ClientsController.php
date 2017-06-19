@@ -354,7 +354,7 @@ class ClientsController extends ActiveController
 	public function sendEmail($client, $from, $fileName) 
 	{
 		$links = Settings::getEmailLinks($client->countryShortName);
-		
+		// vdd($links);
 		// Generate unsumscribe link
 		if ($client->offers == "1") {
 			$sesId = encrypt_decrypt('encrypt', $fileName);
@@ -396,7 +396,7 @@ class ClientsController extends ActiveController
 				->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
 								'Disposition-Notification-To' => Yii::$app->params['email-notifications']
 							])
-				->attach(\Swift_Attachment::fromPath($image)->setDisposition('inline'))
+				->attach(\Swift_Attachment::fromPath($image)/*->setDisposition('inline')*/)
 				->send();
 
 			// Remove thumbnail from "temp" directory

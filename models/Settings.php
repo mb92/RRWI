@@ -52,7 +52,7 @@ class Settings extends \yii\db\ActiveRecord
         $category = 'links '.$countryCode;
         
         $query = self::find()->where(['category' => $category])->all();
-
+        // vdd($category);
         $links = [
             'consumer' => "#",
             'location' => "#",
