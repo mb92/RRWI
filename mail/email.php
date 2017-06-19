@@ -40,13 +40,6 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td width="25%"></td>
                       </tr>
                     </table>
-
-<!--                       <center>
-                        <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
-                        <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
-                        YOUR PERFECT SELFIE IS ATTACHED</font>
-                        </a>
-                      </center> -->
                     </td>
                   </tr>
                   <tr>
@@ -56,7 +49,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                   </tr>
                   <tr>
                     <td width="600" class="mobile" style="font-family:MyriadLight, Arial, Helvetica; font-size:12px; line-height:18px;">
-                      <img src="<?= $path ?>/imgs/women.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
+                      <img src="<?= $path ?>/imgs/women-2.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
                     </td>
                   </tr>
 
@@ -227,7 +220,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/left-side.jpg" width="35" height="300" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                             <td width="171px" align="center">
-                              <img src="<?= $message->embed($imageFileName); ?>" width="171" height="300" style="display:block; margin:0; padding:0; border:none;"/>
+                              <img src="<?= $path ?>/imgs/photo-2.jpg" width="171" height="300" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                             <td width="214px" align="left">
                               <img src="<?= $path ?>/imgs/right-side.jpg" width="85" height="300" style="display:block; margin:0; padding:0; border:none;"/>
@@ -260,9 +253,6 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <td width="178" class="mobileOffTab"></td>
                       <td width="29" class="mobileOnTab"></td>
                       <td width="243">
-                        <a href="#">
-                        <img src="<?= $path ?>/imgs/btn-discover-more.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
-                        </a>
                       <img src="<?= $path ?>/imgs/clean.png" width="1" height="74" style="display:block; margin:0; padding:0; border:none;"/>
                       </td>
                       <td width="178" class="mobileOffTab"></td>
@@ -284,13 +274,13 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="48" style="display:block; margin:0; padding:0; border:none;"/>
                             <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center;" class="mobile-font">
-                              OFFER LOREM IPSUM<br/>
+                              HUAWEI P10 ON VODACOM 4G<br/>
                             </font>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
-                              No duo solum reque ipsum, decore tractatos an has, ne sit consect es etuer.<br/>
-                               Elit quas zril his no. Duo at prodesset dissentiet, molestie in ius. Vis amet quot <br/> ei, expetenda intellegam reformidans tesed, ornatus percipitur ex sit.
+                              Style, craftmanship and innovation, all with the connectivity speed to match<br/> 
+                              thanks to Vodacom's 4G network. Discover more in store or online. 
                             </p>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
@@ -359,7 +349,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               </a>
                               <a href="admin/pages/terms-and-conditions" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
-                              TERMS & CONDITIONS</font>
+                              <u>Please click here to view terms and conditions</u></font>
                               </a>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="14" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
