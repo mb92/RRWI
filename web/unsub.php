@@ -26,8 +26,8 @@ div {
 <body>
 <div>
 	<div id="text" class="animated rotateIn">
-		<p>You have unsubscribed from our mailing list.<br/>
-			We're sorry to see you go.<br/>
+		<p style="font-size:30px;">You have unsubscribed from our mailing list.</p>
+		<p style="font-size:20px;">We're sorry to see you go.<br/>
 			We will ensure that all your personal details are deleted
 		</p>	
 	</div>

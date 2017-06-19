@@ -242,7 +242,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <td width="178" class="mobileOffTab"></td>
                       <td width="29" class="mobileOnTab"></td>
                       <td width="243">
-                      <img src="<?= $path ?>/imgs/clean.png" width="1" height="74" style="display:block; margin:0; padding:0; border:none;"/>
+                      <img src="<?= $path ?>/imgs/clean.png" width="1" height="0" style="display:block; margin:0; padding:0; border:none;"/>
                       </td>
                       <td width="178" class="mobileOffTab"></td>
                       <td width="29" class="mobileOnTab"></td>
@@ -307,13 +307,11 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td style="text-align:center; display:inline" class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                         <tr>
-                          <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg.jpg" width="170" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
-                          <td><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['twitter']; ?>"><img src="<?= $path ?>/imgs/icon_twitter.jpg" width="57" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['youtube']; ?>"><img src="<?= $path ?>/imgs/icon_yt.jpg" width="61" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps.jpg" width="40" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg.jpg" width="170" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
+                          <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
+                          <td><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
                         </tr>
                       </table>
                     </td>
@@ -333,7 +331,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td style="text-align:center;">
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="14" style="display:block; margin:0; padding:0; border:none;"/>
                               <a href="<?= 'http://'.$_SERVER['HTTP_HOST'] ?>/admin/pages/terms-and-conditions" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
-                              <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
+                              <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
                               <u>Please click here to view terms and conditions</u></font>
                               </a>
 
