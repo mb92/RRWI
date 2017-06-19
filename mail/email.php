@@ -269,7 +269,11 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
+<<<<<<< HEAD
                               Style, craftmanship and innovation, all with the connectivity speed to match
+=======
+                              Style, craftmanship and innovation, all with the connectivity speed to match<br/> 
+>>>>>>> 2a7a03944deffd3eca9645312a1273d039302e09
                               thanks to Vodacom's 4G network. Discover more in store or online. 
                             </p>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
@@ -337,7 +341,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                               <u>Please click here to view terms and conditions</u></font>
                               </a>
+
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
+
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
