@@ -89,7 +89,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
-                            Thank you for visiting the P10 Selfie Studio at Vodafone <font color="#ee1c24"><?= $place; ?></font>. <br/>
+                            Thank you for visiting the P10 Selfie Studio
                             We’ve attached your selfie to this email. We hope you love it.
                             </p>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
@@ -111,19 +111,19 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px;" class="mobile-font">
-                            <b>SHARE YOUR SELFIE FOR YOUR CHANCE TO <br/>WIN A HUAWEI P10</b>
+                            <b>SHARE TO <br/>WIN A HUAWEI P10</b>
                             </font>
                             </center>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                            All you need to do is share your Selfie Studio shot on <br/>
-                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone</font> and 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 
-                            <font style="color:#ee1c24"><?= $endDate; ?></font>.
+                            To enter, all you need to do is share your Selfie Studio shot on <br/>
+                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodacom</font> and 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#Huawei<?= $country; ?></font> before 7th August.
+
+                            <!-- <font style="color:#ee1c24"> $endDate; </font>. -->
                           <br/><br/>
-                            Each week we’ll shortlist the five selfies with the most likes on <br/>
-                            Instagram. Our panel of judges will then select a weekly winner <br/>
-                            from that shortlist to receive a Huawei P10
+                            We’ll choose a one selfie to win R1000 every Monday for 7 weeks, between 26 June and 7 August. At the end of the competition, one final selfie will be selected to win a Huawei P10. That winner will
+                            be announced on 10 August.  
                           </p>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
@@ -176,7 +176,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         </center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                          The Huawei P10’s co-engineered with Leica. An extraordinary fusion of art, culture and technology. A phone wit a soul, designed to help you take photo portraitslike a pro, to unleash your inner artist and change the way the world sees you.
+                              The Huawei P10; co-engineered with Leica. An extraordinary fusion of art, culture and technology. A phone with a soul, designed to help you take photo portraits like a pro, to unleash your inner artist and change the way the world sees you.
                           </p>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
@@ -268,8 +268,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
-                              Style, craftmanship and innovation, all with the connectivity speed to match
-                              thanks to Vodacom's 4G network. Discover more in store or online. 
+                              Style, craftmanship and innovation, all with the connectivity speed to match thanks to Vodacom’s 4G network. Discover more in store or online.
                             </p>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
