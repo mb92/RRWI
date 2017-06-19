@@ -9,6 +9,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="/css/animate.css">
 
   <title>Selfie Studio</title>
 
@@ -99,9 +100,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
   </style>
 </head>
 
-<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" style="margin:0; padding:0; background-color:#525252;">
+<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" style="margin:0; padding:0; background-color:#525252;" class="animated fadeIn">
   <center>
-    <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#525252">
+    <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#525252" >
       <tr>
         <td align="center" valign="top">
           <!-- Start Wrapper -->

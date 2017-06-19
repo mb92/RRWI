@@ -10,7 +10,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use yii\helpers\BaseFileHelper;
 use yii\helpers\Url;
-
+use yii\imagine\Image;
 
 use app\models\Clients;
 use app\models\Actions;
@@ -104,11 +104,15 @@ class SiteController extends Controller
      */
     public static function actionImage($n)
     {
-        // vdd("test");
-        $path = '../upload/'.$n.'.jpg';
-        $path2 = '../temp/'.$n.'.jpg';
+       
+        //Regenerate image when image was remove
+        $uploadDir = Yii::getAlias("@upload");
+        $tempDir = Yii::getAlias("@temp");
 
-        if (!file_exists($path)) {
+        $pathUpload = $uploadDir.'/'.$n.'.jpg';
+        $pathTemp = $tempDir.'/'.$n.'.jpg';
+
+        if (!file_exists($pathUpload) or (!file_exists($pathTemp))) {
             $imageB64 = Actions::find()->where(['path' => $n])->one()->base64;
             // $filename = $sesId.'.jpg';
             $filename = $n;
@@ -118,30 +122,28 @@ class SiteController extends Controller
             $binary=base64_decode($imageB64);
             // header('Content-Type: bitmap; charset=utf-8');
             // Images will be saved under 'www/upload/' folder
-            $file = fopen(Yii::getAlias("@upload").'/'.$fileNameExt, 'wb');
+            $file = fopen($uploadDir.'/'.$fileNameExt, 'wb');
 
             // Create File
             fwrite($file, $binary);
             fclose($file);
 
-            $filename = $n.'.jpg';
-            $photo = Yii::getAlias("@upload").'/'.$filename;
-            $watermarkNameBg= '../web/dist/img/wt-1.png';
-            $stPhoto = watermark($watermarkNameBg, $photo);
-
-            Image::thumbnail(Yii::getAlias("@upload").'/'.$fileNameExt, 171, 300)->save(Yii::getAlias("@temp").'/'.$fileNameExt, ['quality' => 90]);
+            Image::thumbnail($uploadDir.'/'.$fileNameExt, 171, 300)->save($tempDir.'/'.$fileNameExt, ['quality' => 90]);
+                addWatermark($fileNameExt);
             
-            // $thumb = Yii::getAlias("@temp").'/'.$filename;
-            // $watermarkNameSm= '../web/dist/img/wt-2.png';
-            // $stThumb = watermark($watermarkNameSm, $photo);
+            // return Yii::$app->getResponse()->redirect(Yii::$app->getRequest()->getUrl());
+        }
 
-            return Yii::$app->getResponse()->redirect(Yii::$app->getRequest()->getUrl());
+        if (!file_exists($pathTemp)) {
+            Image::thumbnail($uploadDir.'/'.$fileNameExt, 171, 300)->save($tempDir.'/'.$fileNameExt, ['quality' => 90]);
+                addWatermark($fileNameExt);
         }
 
 
+        //Generate link to images
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/jpg');
-        \Yii::$app->response->data = file_get_contents($path2);
+        \Yii::$app->response->data = file_get_contents($pathTemp);
         return \Yii::$app->response;
     }
 }
