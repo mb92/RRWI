@@ -84,7 +84,7 @@ class Clients extends \yii\db\ActiveRecord
     {
         // return count(Self::getFromCountry($countryId)->asArray()->all());
         
-        return Sessionsapps::find()->where(['countryId' => $countryId])->groupBy('clientId')->count();
+        return Sessionsapps::find()->where(['countryId' => $countryId, 'status' => 1])->groupBy('clientId')->count();
     }
 
     public static function countLaunches($clientId)
