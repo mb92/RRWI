@@ -120,6 +120,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodacom</font> and 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#Huawei<?= $country; ?></font> before 7th August.
 
+                            <!-- <font style="color:#ee1c24"> $endDate; </font>. -->
                           <br/><br/>
                             We’ll choose a one selfie to win R1000 every Monday for 7 weeks, between 26 June and 7 August. At the end of the competition, one final selfie will be selected to win a Huawei P10. That winner will
                             be announced on 10 August.  
@@ -136,6 +137,12 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <!-- button share now-->
                     <tr height="110px" bgcolor="#f2f2f2">
                     <td class="mobile" style="font-size:19px; font-family:MyriadLight, Arial, Helvetica; color:#000; letter-spacing:2px; text-align:center;">
+<!--                       <center>
+                        <a href="#" class="mobileOnTab">
+                              <img src="<?= $path ?>/imgs/btn-share-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
+                        </a>
+                      </center> -->
+
                       <table width="100%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                           <td width="178" class="mobileOffTab"></td>
@@ -183,19 +190,43 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
 
                     <!-- moccap -->
-                      <tr bgcolor="#f2f2f2">
+                    <tr bgcolor="#f2f2f2">
                       <td class="mobile">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tbody><tr bgcolor="#f2f2f2">
-                            <td width="207px" class="mobileOffTab"></td>
-                            <td width="57px" class="mobileOnTab"></td>
-                            <td width="186px" align="center" style="text-align:center;">
-                              <img src="<?= $path ?>/imgs/phone.jpg" width="186" height="391" style="display:block; margin:0; padding:0; border:none;">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tr bgcolor="#f2f2f2">
+                            <td width="214px" align="right">
+                              <img src="<?= $path ?>/imgs/left-up.jpg" width="35" height="42" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
-                            <td width="207px" class="mobileOffTab"></td>
-                            <td width="57px" class="mobileOnTab"></td>
+                            <td width="171px" align="center">
+                              <img src="<?= $path ?>/imgs/center-up.jpg" width="171" height="42" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
+                            <td width="214px" align="left">
+                              <img src="<?= $path ?>/imgs/right-up.jpg" width="35" height="42" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
                           </tr>
-                        </tbody></table>
+                          <tr bgcolor="#f2f2f2">
+                            <td width="214px" align="right">
+                              <img src="<?= $path ?>/imgs/left-side.jpg" width="35" height="300" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
+                            <td width="171px" align="center">
+                              <img src="<?= $path ?>/imgs/photo-2.jpg" width="171" height="300" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
+                            <td width="214px" align="left">
+                              <img src="<?= $path ?>/imgs/right-side.jpg" width="85" height="300" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
+                          </tr>
+                          <tr bgcolor="#f2f2f2">
+                            <td width="214px" align="right">
+                              <img src="<?= $path ?>/imgs/left-down.jpg" width="35" height="43" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
+                            <td width="171px" align="center">
+                              <img src="<?= $path ?>/imgs/center-down.jpg" width="171" height="43" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
+                            <td width="214px" align="left">
+                              <img src="<?= $path ?>/imgs/right-down.jpg" width="85" height="43" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
+                          </tr>
+                        </table>
                       </td>
                     </tr>
                     <!-- end: moccap -->
@@ -256,7 +287,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
                             <td width="243">
-                              <a href="<?= $links['store']; ?>">
+                              <a href="<?= $links['location']; ?>">
                               <img src="<?= $path ?>/imgs/btn-shop-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                               </a>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="72" style="display:block; margin:0; padding:0; border:none;" /> 
