@@ -389,7 +389,7 @@ class ClientsController extends ActiveController
 															'country' => $client->countryShortName,
 															//'country' => $country,
 															'place' => $client->store,
-															'endDate' => "7th August",
+															'endDate' => "00-00-0000",
 															'links' => $links,
 															'unsub' => $unsub
 				])
