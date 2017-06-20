@@ -256,7 +256,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
                             <td width="243">
-                              <a href="<?= $links['location']; ?>">
+                              <a href="<?= $links['store']; ?>">
                               <img src="<?= $path ?>/imgs/btn-shop-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                               </a>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="72" style="display:block; margin:0; padding:0; border:none;" /> 
