@@ -54,7 +54,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                     <!-- Hi -->
                   <tr bgcolor="#f2f2f2">
-                    <td style="text-align:center; font-size:16px; font-family:MyriadLight, Arial, Helvetica;" class="mobile">
+                    <td style="text-align:center; font-size:16px; color:#000; font-family:MyriadLight, Arial, Helvetica;" class="mobile">
                       <center>
                       <img src="<?= $path ?>/imgs/clean.png" width="1" height="50" style="display:block; margin:0; padding:0; border:none;"/>
                         Hi <font color="#ed1c24"><?= $name; ?></font>
@@ -66,11 +66,11 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                     <!-- Header1 - Big text -->
                   <tr height="auto" bgcolor="#f2f2f2">
-                    <td class="mobile" style="overflow:hidden; line-height:60px;">
+                    <td class="mobile" style="overflow:hidden; line-height:60px; color:#000;">
                       <center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
-                        <font style="font-family:MyriadLight, Arial, Helvetica; font-size:40px; letter-spacing:7px;" class="mobile-head1">YOU'RE LOOKING</font>
-                        <font style="font-family:MyriadSemibold, Arial, Helvetica; letter-spacing:10px; font-size:75px;" class="mobile-head2">
+                        <font style="font-family:MyriadLight, Arial, Helvetica; font-size:40px; letter-spacing:7px; color:#000;" class="mobile-head1">YOU'RE LOOKING</font>
+                        <font style="font-family:MyriadSemibold, Arial, Helvetica; letter-spacing:10px; font-size:75px; color:#000;" class="mobile-head2">
                           <b>INCREDIBLE</b>
                         </font>
                       </center>
