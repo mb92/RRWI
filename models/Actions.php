@@ -106,7 +106,8 @@ class Actions extends \yii\db\ActiveRecord
     {
         // SELECT cl.* FROM clients as cl INNER JOIN sessionsapps as ses ON cl.id = ses.clientId where ses.countryId = <countryId>;
         
-        $query = self::find()->innerJoin('sessionsapps')->where(['actions.action' => 'rT','sessionsapps.countryId' => $countryId])->asArray()->all();
-        return count($query);
+        $query = self::find()->innerJoin('sessionsapps', 'sessionsapps.Id = '.$countryId)->where(['actions.action' => 'rT','sessionsapps.countryId' => $countryId])->asArray()->all();
+        $query = self::find()->innerJoin('sessionsapps', 'sessionsapps.id = actions.sessionsappId')->where(['actions.action' => 'rT','sessionsapps.countryId' => $countryId])->groupBy('actions.id')->count();
+        return $query;
     }
 }
