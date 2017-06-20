@@ -99,6 +99,7 @@ class ClientsController extends ActiveController
 			$ses = Sessionsapps::find()->where(['sesId' => $sesId])->one();
 			if (is_null($ses)) return $result['action'] = "Session not found";
 
+			$countryCode = $ses->country->short;
 		// Send, create and verify image file
 			// $filename = $sesId.'.jpg';
 			$filename = $sesId;
@@ -182,7 +183,7 @@ class ClientsController extends ActiveController
 				$result['finish'] = "OK";
 
 			// Send email for client
-				$emailStatus = $this->sendEmail($client, Yii::$app->params['email-username'], $sesId);
+				$emailStatus = $this->sendEmail($client, Yii::$app->params['email-username'], $sesId, $countryCode);
 				// if email was sent then update emailStatus on 1
 				
 				if ($emailStatus === true) {
@@ -351,9 +352,11 @@ class ClientsController extends ActiveController
 	 * @param  string $fileName Name of image file (without extension). It's sesId value.
 	 * @return boolean          True if message was sent success!
 	 */
-	public function sendEmail($client, $from, $fileName) 
+	public function sendEmail($client, $from, $fileName, $country) 
 	{
-		$links = Settings::getEmailLinks($client->countryShortName);
+		// $links = Settings::getEmailLinks($client->countryShortName);
+
+		$links = Settings::getEmailLinks($country);
 
 		// Generate unsumscribe link
 		if ($client->offers == "1") {
@@ -383,7 +386,8 @@ class ClientsController extends ActiveController
 
 			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
 															'name' => ucwords($client->name),
-															'country' => $client->countryShortName,
+															// 'country' => $client->countryShortName,
+															'country' => $country,
 															'place' => $client->store,
 															'endDate' => "7th August",
 															'links' => $links,
