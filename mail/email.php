@@ -141,7 +141,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
                           <td width="243">
-                            <a href="https://www.instagram.com/">
+                            <a href="<?= $links['share']; ?>">
                             <img src="<?= $path ?>/imgs/btn-share-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                             </a>
                           </td>
