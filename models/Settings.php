@@ -74,7 +74,7 @@ class Settings extends \yii\db\ActiveRecord
             else $links['store'] = $value->value;
         }
 
-        // vdd($links);
+        vdd($links);
         return $links;
     }
 
