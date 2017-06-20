@@ -64,13 +64,17 @@ class Clients extends \yii\db\ActiveRecord
     {
         // SELECT cl.* FROM clients as cl INNER JOIN sessionsapps as ses ON cl.id = ses.clientId where ses.countryId = <countryId>;
         
-        $query = self::find()->innerJoin('sessionsapps')->where(['sessionsapps.countryId' => $countryId]);
+        // $query = self::find()->innerJoin('sessionsapps')->where(['sessionsapps.countryId' => $countryId]);
+        
+        $query = Self::find()->innerJoin('sessionsapps', 'sessionsapps.clientId = clients.id')->where(['sessionsapps.countryId' => $countryId])->groupBy('clients.id');
+        // vdd($query);
         return $query;
     }
 
     public static function getDoneSes($clientId) 
     {
-        $query = self::find()->where(['id' => $clientId])->innerJoin('sessionsapps')->where(['status' => '1']);
+        // $query = self::find()->where(['id' => $clientId])->innerJoin('sessionsapps')->where(['status' => '1']);
+        $query = self::find()->where(['id' => $clientId])->innerJoin('sessionsapps', 'sessionsapps.clientId = clients.id')->where(['status' => '1']);
 
         return $query;
     }
@@ -78,7 +82,9 @@ class Clients extends \yii\db\ActiveRecord
 
     public static function countClientFromCountry($countryId)
     {
-        return count(Self::getFromCountry($countryId)->asArray()->all());
+        // return count(Self::getFromCountry($countryId)->asArray()->all());
+        
+        return Sessionsapps::find()->where(['countryId' => $countryId])->groupBy('clientId')->count();
     }
 
     public static function countLaunches($clientId)
