@@ -356,7 +356,7 @@ class ClientsController extends ActiveController
 	{
 		$links = Settings::getEmailLinks($client->countryShortName);
 
-		$links = Settings::getEmailLinks($country);
+		// $links = Settings::getEmailLinks($country);
 
 		// Generate unsumscribe link
 		if ($client->offers == "1") {
