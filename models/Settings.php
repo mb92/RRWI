@@ -59,7 +59,8 @@ class Settings extends \yii\db\ActiveRecord
             'facebook' => "#",
             'instagram' => "#",
             'twitter' => "#",
-            'youtube' => "#"
+            'youtube' => "#",
+            'store' => "#"
         ];
 
         foreach ($query as $key => $value) {
@@ -68,9 +69,9 @@ class Settings extends \yii\db\ActiveRecord
             elseif (strstr(strtolower($value->value), "twitter")) $links['twitter'] = $value->value;
             elseif (strstr(strtolower($value->value), "youtube")) $links['youtube'] = $value->value;
             elseif (strstr(strtolower($value->param), "consumer")) $links['consumer'] = $value->value;
-            elseif (strstr(strtolower($value->value), "locator")) $links['location'] = $value->value;
             elseif (strstr(strtolower($value->value), "store")) $links['location'] = $value->value;
-            else $links['location'] = $value->value;
+            elseif (strstr(strtolower($value->value), "locator")) $links['store'] = $value->value; 
+            else $links['store'] = $value->value;
         }
 
         // vdd($links);
