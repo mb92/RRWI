@@ -38,6 +38,7 @@ class MbController extends Controller
         echo "/addstore - add data to stores's table\n\n";
         echo "/setparams - set parametes and links for mailing template\n\n";
         echo "/cltemp - clear temp directory\n\n";
+        echo "/clupload - clear temp directory\n\n";
     }
 
     public static function clearDirectoryRecursive($directory, $ommit = array()) {
@@ -212,6 +213,12 @@ class MbController extends Controller
     {
         $this->clearDirectoryRecursive("temp");
         echo "Temp is empty \n\n";
+    }
+
+    public function actionClupload()
+    {
+        $this->clearDirectoryRecursive("upload");
+        echo "Upload is empty \n\n";
     }
 
 
