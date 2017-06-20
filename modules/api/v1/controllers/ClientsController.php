@@ -99,6 +99,7 @@ class ClientsController extends ActiveController
 			$ses = Sessionsapps::find()->where(['sesId' => $sesId])->one();
 			if (is_null($ses)) return $result['action'] = "Session not found";
 
+			// $countryCode = $ses->country->short;
 		// Send, create and verify image file
 			// $filename = $sesId.'.jpg';
 			$filename = $sesId;
@@ -355,6 +356,8 @@ class ClientsController extends ActiveController
 	{
 		$links = Settings::getEmailLinks($client->countryShortName);
 
+		// $links = Settings::getEmailLinks($country);
+
 		// Generate unsumscribe link
 		if ($client->offers == "1") {
 			$sesId = encrypt_decrypt('encrypt', $fileName);
@@ -384,8 +387,9 @@ class ClientsController extends ActiveController
 			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
 															'name' => ucwords($client->name),
 															'country' => $client->countryShortName,
+															//'country' => $country,
 															'place' => $client->store,
-															'endDate' => "7th August",
+															'endDate' => "00-00-0000",
 															'links' => $links,
 															'unsub' => $unsub
 				])
