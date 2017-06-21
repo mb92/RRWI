@@ -109,6 +109,10 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 </head>
 
 <body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" style="margin:0; padding:0; background-color:#525252;">
+<!-- <img src="http://www.google-analytics.com/collect?v=1&tid=UA-12345678-1&cid=CLIENT_ID_NUMBER&t=event&ec=email&ea=open&el=recipient_id&cs=newsletter&cm=email&cn=Campaign_Name"/> -->
+
+
+
     <?php $this->beginBody() ?>
     <?= $content ?>
  
