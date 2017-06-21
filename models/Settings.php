@@ -90,6 +90,7 @@ class Settings extends \yii\db\ActiveRecord
             $links['facebook'] = "https://www.facebook.com/HuaweiMobileDE/";
             $links['instagram'] = "https://www.instagram.com/huaweimobilede/";
             $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=de';
+            
             return $links;
         }
 
@@ -100,6 +101,7 @@ class Settings extends \yii\db\ActiveRecord
             $links['facebook'] = "https://www.facebook.com/huaweimobileie/";
             $links['instagram'] = "https://instagram.com/huaweimobileie";
             $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=en';
+            
             return $links;
         }
 
@@ -110,6 +112,7 @@ class Settings extends \yii\db\ActiveRecord
             $links['facebook'] = "https://www.facebook.com/HuaweiMobileCZSK";
             $links['instagram'] = "https://www.instagram.com/huaweimobileczsk";
             $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=cz';
+            
             return $links;
         }
 
@@ -120,6 +123,7 @@ class Settings extends \yii\db\ActiveRecord
             $links['facebook'] = "https://www.facebook.com/HuaweimobileRO/";
             $links['instagram'] = "https://www.instagram.com/huaweimobilero/?hl=ro";
             $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ro';
+            
             return $links;
         }
 
@@ -130,6 +134,7 @@ class Settings extends \yii\db\ActiveRecord
             $links['facebook'] = "https://www.facebook.com/HuaweimobileZA/";
             $links['instagram'] = "https://www.instagram.com/huaweiza/";
             $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=za';
+            
             return $links;
         }
 
