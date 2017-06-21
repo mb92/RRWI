@@ -4,14 +4,14 @@
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');
 
-if (!file_exists(Yii::$app."/temp")) 
+if (!file_exists("../temp")) 
 {
-	mkdir(Yii::getAlias("@temp"), '0777');
+	mkdir("../temp", '0777');
 }
 
-if (!file_exists($app."/upload")) 
+if (!file_exists("../upload")) 
 {
-	mkdir(Yii::getAlias("@upload"), '0777');
+	mkdir("../upload", '0777');
 }
 
 
