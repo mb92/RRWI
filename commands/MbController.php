@@ -211,6 +211,7 @@ class MbController extends Controller
 
     public function actionCltemp()
     {
+        if (!file_exists("temp/tmp")) $this->clearDirectoryRecursive("temp/tmp");
         $this->clearDirectoryRecursive("temp");
         echo "Temp is empty \n\n";
     }
