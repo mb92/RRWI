@@ -33,9 +33,11 @@ class PagesController extends Controller
     // 
     // 
     
-    public function actionTermsAndConditions() 
+    public function actionTermsAndConditions($c) 
     {
-        return $this->render('terms');
+        if($c == "za")
+            return $this->render('terms-za');
+        else return $this->render('terms');
     }
 
     // public function actionUnsub() 

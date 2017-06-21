@@ -383,6 +383,7 @@ class ClientsController extends ActiveController
 
 			// Get thumb with watermark for template
 			$thumb =  Yii::getAlias("@temp").'/'.$fileNameExt;
+			// $attachment = \Swift_Attachment::fromPath($image)->setFilename('P10.jpg');
 
 			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
 															'name' => ucwords($client->name),

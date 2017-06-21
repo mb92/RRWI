@@ -23,10 +23,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <tr>
                         <td width="25%"></td>
                         <td style="text-align:center;">
-                              <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
-                              <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:11px; letter-spacing:1px;">
+                              <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; font-size:11px; letter-spacing:1px;">
                               YOUR PERFECT SELFIE IS ATTACHED</font>
-                              </a>
                         </td>
                         <td style="text-align:center;" width="25%">
                             <?php if ($unsub != "#") { 
@@ -187,8 +185,12 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <td class="mobile">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tbody><tr bgcolor="#f2f2f2">
-                            <td width="207px" class="mobileOffTab"></td>
-                            <td width="57px" class="mobileOnTab"></td>
+                            <td width="207px" class="mobileOffTab">
+                              <img src="<?= $path ?>/imgs/clean.png" width="207" height="1" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
+                            <td width="57px" class="mobileOnTab">
+                              <img src="<?= $path ?>/imgs/clean.png" width="57" height="1" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
                             <td width="186px" align="center" style="text-align:center;">
                               <img src="<?= $path ?>/imgs/phone.jpg" width="186" height="391" style="display:block; margin:0; padding:0; border:none;">
                             </td>
@@ -299,7 +301,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td style="text-align:center;">
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="14" style="display:block; margin:0; padding:0; border:none;"/>
 
-                              <a href="<?= 'http://'.$_SERVER['HTTP_HOST'] ?>/admin/pages/terms-and-conditions" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
+                              <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
                                 <u>Please click here to view terms and conditions</u></font>
                               </a>
