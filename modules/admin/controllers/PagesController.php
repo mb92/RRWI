@@ -33,9 +33,11 @@ class PagesController extends Controller
     // 
     // 
     
-    public function actionTermsAndConditions() 
+    public function actionTermsAndConditions($country) 
     {
-        return $this->render('terms');
+        if($country == "za")
+            return $this->render('terms-za');
+        else return $this->render('terms');
     }
 
     // public function actionUnsub() 
