@@ -108,3 +108,22 @@ function encrypt_decrypt($action, $string) {
 
     return $output;
 }
+
+
+function rename_attachment($img)
+{
+    // return substr($img, strlen(Yii::getAlias("@upload")), strlen($img));
+    return substr($img, 0, 5);
+    
+
+    $tmpDir = Yii::getAlias("@temp").'/tmp';
+    $sesDir = $tmpDir."/".$sesId;
+
+    $sesId = "n50c23b5e690830e9111ddd2bcd31100";
+    $img = $sesId.".jpg";
+
+    if (!file_exists($tmp)) mkdir($tmp);
+
+    mkdir($tmpDir."/".$sesId);
+    copy($img, $sesDir);
+}
