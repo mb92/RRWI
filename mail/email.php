@@ -23,10 +23,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <tr>
                         <td width="25%"></td>
                         <td style="text-align:center;">
-                              <a href="#" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; font-size:11px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; font-size:11px; letter-spacing:1px;">
                               YOUR PERFECT SELFIE IS ATTACHED</font>
-                              </a>
                         </td>
                         <td style="text-align:center;" width="25%">
                             <?php if ($unsub != "#") { 
