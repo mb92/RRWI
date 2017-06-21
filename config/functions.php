@@ -4,6 +4,7 @@
  * d($var);
  */
 use yii\helpers\VarDumper;
+use yii\helpers\FileHelper;
 
 function verifyToken($sendToken) {
     $ourToken = "0b3d4f561329b5a5dfdbaff634280be9";
@@ -110,20 +111,28 @@ function encrypt_decrypt($action, $string) {
 }
 
 
-function rename_attachment($img)
+function rename_email_attachment($imgPath)
 {
-    // return substr($img, strlen(Yii::getAlias("@upload")), strlen($img));
-    return substr($img, 0, 5);
-    
+    $sesId = substr($imgPath, strlen(Yii::getAlias("@upload"))+1, 32);
+    $img = $sesId.".jpg";
+    $newImgName = "P10.jpg";
 
     $tmpDir = Yii::getAlias("@temp").'/tmp';
     $sesDir = $tmpDir."/".$sesId;
 
-    $sesId = "n50c23b5e690830e9111ddd2bcd31100";
-    $img = $sesId.".jpg";
+    // if (!file_exists($tmpDir)) mkdir($tmpDir, '0777');
+    // if (!file_exists($sesDir)) mkdir($sesDir, '0777');
+    if (!file_exists($tmpDir)) mkdir($tmpDir);
+    if (!file_exists($sesDir)) mkdir($sesDir);
+    
+    $cp = copy($imgPath, $sesDir."/".$newImgName);
 
-    if (!file_exists($tmp)) mkdir($tmp);
+    if ($cp) return $sesDir."/".$newImgName;
+    else return false;
+}
 
-    mkdir($tmpDir."/".$sesId);
-    copy($img, $sesDir);
+function remove_dir_attachment($attachPath) {
+    $path = str_replace("/P10.jpg", "", $attachPath);
+    if (is_null(FileHelper::removeDirectory($path))) return true;
+    else return false;
 }

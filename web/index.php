@@ -4,6 +4,19 @@
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');
 
+if (!file_exists("../temp")) 
+{
+	mkdir("../temp");
+}
+
+if (!file_exists("../upload")) 
+{
+	mkdir("../upload");
+}
+
+
+
+
 require(__DIR__ . '/../vendor/autoload.php');
 require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 
