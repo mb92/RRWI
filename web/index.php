@@ -6,12 +6,12 @@ defined('YII_ENV') or define('YII_ENV', 'dev');
 
 if (!file_exists("../temp")) 
 {
-	mkdir("../temp", '0777');
+	mkdir("../temp");
 }
 
 if (!file_exists("../upload")) 
 {
-	mkdir("../upload", '0777');
+	mkdir("../upload");
 }
 
 

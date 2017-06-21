@@ -120,8 +120,10 @@ function rename_email_attachment($imgPath)
     $tmpDir = Yii::getAlias("@temp").'/tmp';
     $sesDir = $tmpDir."/".$sesId;
 
-    if (!file_exists($tmpDir)) mkdir($tmpDir, '0777');
-    if (!file_exists($sesDir)) mkdir($sesDir, '0777');
+    // if (!file_exists($tmpDir)) mkdir($tmpDir, '0777');
+    // if (!file_exists($sesDir)) mkdir($sesDir, '0777');
+    if (!file_exists($tmpDir)) mkdir($tmpDir);
+    if (!file_exists($sesDir)) mkdir($sesDir);
     
     $cp = copy($imgPath, $sesDir."/".$newImgName);
 
