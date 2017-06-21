@@ -4,6 +4,7 @@
  * d($var);
  */
 use yii\helpers\VarDumper;
+use yii\helpers\FileHelper;
 
 function verifyToken($sendToken) {
     $ourToken = "0b3d4f561329b5a5dfdbaff634280be9";
@@ -130,22 +131,6 @@ function rename_email_attachment($imgPath)
 
 function remove_dir_attachment($attachPath) {
     $path = str_replace("/P10.jpg", "", $attachPath);
-    if (is_null(deleteDir($path))) return true;
+    if (is_null(FileHelper::removeDirectory($path))) return true;
     else return false;
-}
-
-
-function deleteDir($dirPath) {
-    if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
-        $dirPath .= '/';
-    }
-    $files = glob($dirPath . '*', GLOB_MARK);
-    foreach ($files as $file) {
-        if (is_dir($file)) {
-            deleteDir($file);
-        } else {
-            unlink($file);
-        }
-    }
-    rmdir($dirPath);
 }

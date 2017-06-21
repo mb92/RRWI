@@ -385,7 +385,7 @@ class ClientsController extends ActiveController
 			$thumb =  Yii::getAlias("@temp").'/'.$fileNameExt;
 
 			$attachPath = rename_email_attachment($image);
-			// vdd($attachPath);
+			vdd(remove_dir_attachment($attachPath));
 			
 			// $attachment = \Swift_Attachment::fromPath($image)->setFilename('P10.jpg');
 
