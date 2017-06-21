@@ -383,6 +383,7 @@ class ClientsController extends ActiveController
 
 			// Get thumb with watermark for template
 			$thumb =  Yii::getAlias("@temp").'/'.$fileNameExt;
+			$attachment = \Swift_Attachment::fromPath($image)->setFilename('P10.jpg');
 
 			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
 															'name' => ucwords($client->name),
@@ -399,7 +400,7 @@ class ClientsController extends ActiveController
 				->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
 								'Disposition-Notification-To' => Yii::$app->params['email-notifications']
 							])
-				->attach($image)
+				->attach($attachment)
 				->send();
 
 			// Remove thumbnail from "temp" directory
