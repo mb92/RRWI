@@ -110,20 +110,45 @@ function encrypt_decrypt($action, $string) {
 }
 
 
-function rename_attachment($img)
+function rename_email_attachment($imgPath)
 {
-    // return substr($img, strlen(Yii::getAlias("@upload")), strlen($img));
-    return substr($img, 0, 5);
-    
+    $sesId = substr($imgPath, strlen(Yii::getAlias("@upload"))+1, 32);
+    $img = $sesId.".jpg";
+    $newImgName = "P10.jpg";
 
     $tmpDir = Yii::getAlias("@temp").'/tmp';
     $sesDir = $tmpDir."/".$sesId;
 
-    $sesId = "n50c23b5e690830e9111ddd2bcd31100";
-    $img = $sesId.".jpg";
+    if (!file_exists($tmpDir)) mkdir($tmpDir, '0777');
+    if (!file_exists($sesDir)) mkdir($sesDir, '0777');
+    
+    $cp = copy($imgPath, $sesDir."/".$newImgName);
 
-    if (!file_exists($tmp)) mkdir($tmp);
+    if ($cp) return $sesDir."/".$newImgName;
+    else return false;
+}
 
-    mkdir($tmpDir."/".$sesId);
-    copy($img, $sesDir);
+function remove_dir_attachment($attachPath) {
+    $path = str_replace("/P10.jpg", "", $attachPath);
+    if (is_null(deleteDir($path))) return true;
+    else return false;
+}
+
+
+function deleteDir($dirPath) {
+    if (! is_dir($dirPath)) {
+        throw new InvalidArgumentException("$dirPath must be a directory");
+    }
+    if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+        $dirPath .= '/';
+    }
+    $files = glob($dirPath . '*', GLOB_MARK);
+    foreach ($files as $file) {
+        if (is_dir($file)) {
+            self::deleteDir($file);
+        } else {
+            unlink($file);
+        }
+    }
+    rmdir($dirPath);
 }

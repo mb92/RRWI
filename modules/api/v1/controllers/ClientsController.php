@@ -384,8 +384,9 @@ class ClientsController extends ActiveController
 			// Get thumb with watermark for template
 			$thumb =  Yii::getAlias("@temp").'/'.$fileNameExt;
 
-			// vdd(rename_attachment($image));
-
+			$attachPath = rename_email_attachment($image);
+			// vdd($attachPath);
+			
 			// $attachment = \Swift_Attachment::fromPath($image)->setFilename('P10.jpg');
 
 			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
@@ -408,6 +409,7 @@ class ClientsController extends ActiveController
 
 			// Remove thumbnail from "temp" directory
 			// if ($message) unlink($thumb);
+			if ($message) remove_dir_attachment($attachPath);
 
 			return $message; 
 		} 
