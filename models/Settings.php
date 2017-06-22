@@ -84,56 +84,90 @@ class Settings extends \yii\db\ActiveRecord
 
 
         if ($countryCode == "DE") {
-            $links['share'] = "http://instagram.com";
-            $links['store'] = "http://www.vodafone.de/privat/handys/huawei-p10.html";
-            $links['location'] = "https://www.vodafone.de/filialsuche.html?appointment=1";
-            $links['facebook'] = "https://www.facebook.com/HuaweiMobileDE/";
-            $links['instagram'] = "https://www.instagram.com/huaweimobilede/";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=de';
+            // $links['share'] = "http://instagram.com";
+            // $links['store'] = "http://www.vodafone.de/privat/handys/huawei-p10.html";
+            // $links['location'] = "https://www.vodafone.de/filialsuche.html?appointment=1";
+            // $links['facebook'] = "https://www.facebook.com/HuaweiMobileDE/";
+            // $links['instagram'] = "https://www.instagram.com/huaweimobilede/";
+            // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=de';
             
+            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['store'] = "http://www.vodafone.de/privat/handys/huawei-p10.html?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "https://www.vodafone.de/filialsuche.html?appointment=1?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/HuaweiMobileDE?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://www.instagram.com/huaweimobilede?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=de&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             return $links;
         }
 
         if ($countryCode == "EN") {
-            $links['share'] = "http://instagram.com";
-            $links['store'] = "http://shop.vodafone.ie/shop/phones/huawei-p10-bill-pay-black";
-            $links['location'] = "https://n.vodafone.ie/stores.html";
-            $links['facebook'] = "https://www.facebook.com/huaweimobileie/";
-            $links['instagram'] = "https://instagram.com/huaweimobileie";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=en';
+            // $links['share'] = "http://instagram.com";
+            // $links['store'] = "http://shop.vodafone.ie/shop/phones/huawei-p10-bill-pay-black";
+            // $links['location'] = "https://n.vodafone.ie/stores.html";
+            // $links['facebook'] = "https://www.facebook.com/huaweimobileie/";
+            // $links['instagram'] = "https://instagram.com/huaweimobileie";
+            // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=en';
+
+            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['store'] = "http://shop.vodafone.ie/shop/phones/huawei-p10-bill-pay-black?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "https://n.vodafone.ie/stores.html?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/huaweimobileie?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://instagram.com/huaweimobileie?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=en&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             
             return $links;
         }
 
         if ($countryCode == "CZ") {
-            $links['share'] = "http://instagram.com";
-            $links['store'] = "https://www.vodafone.cz/";
-            $links['location'] = "https://www.vodafone.cz/prodejny/";
-            $links['facebook'] = "https://www.facebook.com/HuaweiMobileCZSK";
-            $links['instagram'] = "https://www.instagram.com/huaweimobileczsk";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=cz';
+            // $links['share'] = "http://instagram.com";
+            // $links['store'] = "https://www.vodafone.cz/";
+            // $links['location'] = "https://www.vodafone.cz/prodejny/";
+            // $links['facebook'] = "https://www.facebook.com/HuaweiMobileCZSK";
+            // $links['instagram'] = "https://www.instagram.com/huaweimobileczsk";
+            // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=cz';
+
+            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['store'] = "https://www.vodafone.cz?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "https://www.vodafone.cz/prodejny?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/HuaweiMobileCZSK?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://www.instagram.com/huaweimobileczsk?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=cz&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             
             return $links;
         }
 
         if ($countryCode == "RO") {
-            $links['share'] = "http://instagram.com";
-            $links['store'] = "https://www.vodafone.ro/business/produse/huawei-p10/";
-            $links['location'] = "https://www.vodafone.ro/business/produse/huawei-p10/";
-            $links['facebook'] = "https://www.facebook.com/HuaweimobileRO/";
-            $links['instagram'] = "https://www.instagram.com/huaweimobilero/?hl=ro";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ro';
+            // $links['share'] = "http://instagram.com";
+            // $links['store'] = "https://www.vodafone.ro/business/produse/huawei-p10/";
+            // $links['location'] = "https://www.vodafone.ro/business/produse/huawei-p10/";
+            // $links['facebook'] = "https://www.facebook.com/HuaweimobileRO/";
+            // $links['instagram'] = "https://www.instagram.com/huaweimobilero/?hl=ro";
+            // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ro';
+            
+            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-appnstagram.com";
+            $links['store'] = "https://www.vodafone.ro/business/produse/huawei-p10?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "https://www.vodafone.ro/business/produse/huawei-p10?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/HuaweimobileRO?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://www.instagram.com/huaweimobilero/?hl=ro&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ro&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             
             return $links;
         }
 
         if ($countryCode == "ZA") {
-            $links['share'] = "http://instagram.com";
-            $links['store'] = "https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2";
-            $links['location'] = "http://www.vodacom.co.za/vodacom/contact-us/find-a-store";
-            $links['facebook'] = "https://www.facebook.com/HuaweimobileZA/";
-            $links['instagram'] = "https://www.instagram.com/huaweiza/";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=za';
+            // $links['share'] = "http://instagram.com";
+            // $links['store'] = "https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2";
+            // $links['location'] = "http://www.vodacom.co.za/vodacom/contact-us/find-a-store";
+            // $links['facebook'] = "https://www.facebook.com/HuaweimobileZA/";
+            // $links['instagram'] = "https://www.instagram.com/huaweiza/";
+            // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=za';
+
+            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-appnstagram.com";
+            $links['store'] = "https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "http://www.vodacom.co.za/vodacom/contact-us/find-a-store?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/HuaweimobileZA?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://www.instagram.com/huaweiza?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=za&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             
             return $links;
         }
