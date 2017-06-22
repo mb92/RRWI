@@ -384,13 +384,13 @@ class ClientsController extends ActiveController
 			// Get thumb with watermark for template
 			$thumb =  Yii::getAlias("@temp").'/'.$fileNameExt;
 
+			//Create temporary file from upload dir into temp/tmp/<sesId>/P10.jpg - attachment must by short name. Always temporary image will be removed
 			$attachPath = rename_email_attachment($image);
-			// vdd(remove_dir_attachment($attachPath));
-			
-			// $attachment = \Swift_Attachment::fromPath($image)->setFilename('P10.jpg');
 
 			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
 															'name' => ucwords($client->name),
+															'cid' => $client->id."-".time(),
+															'tid' => Yii::$app->params['tid'],
 															'country' => $client->countryShortName,
 															//'country' => $country,
 															'place' => $client->store,
@@ -401,15 +401,15 @@ class ClientsController extends ActiveController
 				->setFrom($from)
 				->setTo($client->email)
 				->setSubject($subject)
-				->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
+				/*->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
 								'Disposition-Notification-To' => Yii::$app->params['email-notifications']
-							])
+							])*/
 				->attach($attachPath)
 				->send();
 
 			// Remove thumbnail from "temp" directory
 			// if ($message) unlink($thumb);
-			if ($message) remove_dir_attachment($attachPath);
+			remove_dir_attachment($attachPath);
 
 			return $message; 
 		} 
