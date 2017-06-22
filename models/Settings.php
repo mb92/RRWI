@@ -91,12 +91,12 @@ class Settings extends \yii\db\ActiveRecord
             // $links['instagram'] = "https://www.instagram.com/huaweimobilede/";
             // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=de';
             
-            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['store'] = "http://www.vodafone.de/privat/handys/huawei-p10.html?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['location'] = "https://www.vodafone.de/filialsuche.html?appointment=1?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['facebook'] = "https://www.facebook.com/HuaweiMobileDE?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['instagram'] = "https://www.instagram.com/huaweimobilede?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=de&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
+            $links['share'] = "http://instagram.com?&tid=UA-101419703-1&t=event&ea=click_share&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['store'] = "http://www.vodafone.de/privat/handys/huawei-p10.html?&tid=UA-101419703-1&t=event&ea=click_store&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "https://www.vodafone.de/filialsuche.html?appointment=1?&tid=UA-101419703-1&t=event&ea=click_location&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/HuaweiMobileDE?&tid=UA-101419703-1&t=event&ea=click_facebook&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://www.instagram.com/huaweimobilede?&tid=UA-101419703-1&t=event&ea=click_instagram&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=de&&tid=UA-101419703-1&t=event&ea=click_terms&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             return $links;
         }
 
@@ -108,12 +108,12 @@ class Settings extends \yii\db\ActiveRecord
             // $links['instagram'] = "https://instagram.com/huaweimobileie";
             // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=en';
 
-            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['store'] = "http://shop.vodafone.ie/shop/phones/huawei-p10-bill-pay-black?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['location'] = "https://n.vodafone.ie/stores.html?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['facebook'] = "https://www.facebook.com/huaweimobileie?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['instagram'] = "https://instagram.com/huaweimobileie?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=en&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
+            $links['share'] = "http://instagram.com?&tid=UA-101419703-1&t=event&ea=click_share&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['store'] = "http://shop.vodafone.ie/shop/phones/huawei-p10-bill-pay-black?&tid=UA-101419703-1&t=event&ea=click_store&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "https://n.vodafone.ie/stores.html?&tid=UA-101419703-1&t=event&ea=click_location&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/huaweimobileie?&tid=UA-101419703-1&t=event&ea=click_facebook&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://instagram.com/huaweimobileie?&tid=UA-101419703-1&t=event&ea=click_instagram&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=en&&tid=UA-101419703-1&t=event&ea=click_terms&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             
             return $links;
         }
@@ -126,12 +126,12 @@ class Settings extends \yii\db\ActiveRecord
             // $links['instagram'] = "https://www.instagram.com/huaweimobileczsk";
             // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=cz';
 
-            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['store'] = "https://www.vodafone.cz?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['location'] = "https://www.vodafone.cz/prodejny?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['facebook'] = "https://www.facebook.com/HuaweiMobileCZSK?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['instagram'] = "https://www.instagram.com/huaweimobileczsk?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=cz&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
+            $links['share'] = "http://instagram.com?&tid=UA-101419703-1&t=event&ea=click_share&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['store'] = "https://www.vodafone.cz?&tid=UA-101419703-1&t=event&ea=click_store&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "https://www.vodafone.cz/prodejny?&tid=UA-101419703-1&t=event&ea=click_location&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/HuaweiMobileCZSK?&tid=UA-101419703-1&t=event&ea=click_facebook&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://www.instagram.com/huaweimobileczsk?&tid=UA-101419703-1&t=event&ea=click_instagram&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=cz&&tid=UA-101419703-1&t=event&ea=click_terms&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             
             return $links;
         }
@@ -144,12 +144,12 @@ class Settings extends \yii\db\ActiveRecord
             // $links['instagram'] = "https://www.instagram.com/huaweimobilero/?hl=ro";
             // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ro';
             
-            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-appnstagram.com";
-            $links['store'] = "https://www.vodafone.ro/business/produse/huawei-p10?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['location'] = "https://www.vodafone.ro/business/produse/huawei-p10?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['facebook'] = "https://www.facebook.com/HuaweimobileRO?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['instagram'] = "https://www.instagram.com/huaweimobilero/?hl=ro&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ro&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
+            $links['share'] = "http://instagram.com?&tid=UA-101419703-1&t=event&ea=click_share&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-appnstagram.com";
+            $links['store'] = "https://www.vodafone.ro/business/produse/huawei-p10?&tid=UA-101419703-1&t=event&ea=click_store&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "https://www.vodafone.ro/business/produse/huawei-p10?&tid=UA-101419703-1&t=event&ea=click_location&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/HuaweimobileRO?&tid=UA-101419703-1&t=event&ea=click_facebook&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://www.instagram.com/huaweimobilero/?hl=ro&&tid=UA-101419703-1&t=event&ea=click_instagram&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ro&&tid=UA-101419703-1&t=event&ea=click_terms&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             
             return $links;
         }
@@ -162,12 +162,12 @@ class Settings extends \yii\db\ActiveRecord
             // $links['instagram'] = "https://www.instagram.com/huaweiza/";
             // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=za';
 
-            $links['share'] = "http://instagram.com?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-appnstagram.com";
-            $links['store'] = "https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['location'] = "http://www.vodacom.co.za/vodacom/contact-us/find-a-store?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['facebook'] = "https://www.facebook.com/HuaweimobileZA?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['instagram'] = "https://www.instagram.com/huaweiza?utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
-            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=za&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
+            $links['share'] = "http://instagram.com?&tid=UA-101419703-1&t=event&ea=click_share&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-appnstagram.com";
+            $links['store'] = "https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2&&tid=UA-101419703-1&t=event&ea=click_store&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['location'] = "http://www.vodacom.co.za/vodacom/contact-us/find-a-store?&tid=UA-101419703-1&t=event&ea=click_location&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['facebook'] = "https://www.facebook.com/HuaweimobileZA?&tid=UA-101419703-1&t=event&ea=click_facebook&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['instagram'] = "https://www.instagram.com/huaweiza?&tid=UA-101419703-1&t=event&ea=click_instagram&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
+            $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=za&&tid=UA-101419703-1&t=event&ea=click_terms&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
             
             return $links;
         }
