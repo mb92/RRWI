@@ -97,6 +97,7 @@ class Settings extends \yii\db\ActiveRecord
             $links['facebook'] = "https://www.facebook.com/HuaweiMobileDE?&tid=UA-101419703-1&t=event&ea=click_facebook&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
             $links['instagram'] = "https://www.instagram.com/huaweimobilede?&tid=UA-101419703-1&t=event&ea=click_instagram&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app";
             $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=de&&tid=UA-101419703-1&t=event&ea=click_terms&utm_source=newsletter&utm_medium=email&utm_campaign=selfie-app';
+
             return $links;
         }
 
