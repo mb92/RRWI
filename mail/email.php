@@ -4,7 +4,7 @@ use yii\helpers\Url;
 $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
 ?>
-<img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=recipient_id&cs=newsletter&cm=email&cn=selfie-app" />
+<img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=open_email&cs=newsletter&cm=email&cn=selfie-app" />
 <center>
     <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#525252">
       <tr>
