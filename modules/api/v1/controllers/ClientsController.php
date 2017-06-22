@@ -390,7 +390,7 @@ class ClientsController extends ActiveController
 			$message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
 															'name' => ucwords($client->name),
 															'cid' => $client->id,
-															'tid' => "UA-101419703-1",
+															'tid' => Yii::$app->params['tid'],
 															'country' => $client->countryShortName,
 															//'country' => $country,
 															'place' => $client->store,
@@ -401,9 +401,9 @@ class ClientsController extends ActiveController
 				->setFrom($from)
 				->setTo($client->email)
 				->setSubject($subject)
-				->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
+				/*->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
 								'Disposition-Notification-To' => Yii::$app->params['email-notifications']
-							])
+							])*/
 				->attach($attachPath)
 				->send();
 
