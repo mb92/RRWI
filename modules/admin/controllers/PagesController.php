@@ -33,8 +33,10 @@ class PagesController extends Controller
     // 
     // 
     
-    public function actionTermsAndConditions($c) 
+    public function actionTermsAndConditions($c=null) 
     {
+        if (!isset($c)) return $this->render('404');
+
         switch ($c) {
             case 'za':
                 $view = 'terms-za';
