@@ -12,6 +12,9 @@ use yii\console\Controller;
 use app\models\Sessionsapps;
 use app\models\Clients;
 use yii\swiftmailer\Mailer;
+use app\modules\api\v1\controllers\ClientsController;
+use yii\helpers\FileHelper;
+
 /**
  * This command echoes the first argument that you have entered.
  *
@@ -31,32 +34,41 @@ class ResendController extends Controller
         $toResend = Sessionsapps::toResend()->all();
 
         foreach ($toResend as $key => $value) {
-        	echo $key .": ".$value["id"] ."\n";
+        	echo $key+1 .": ".$value["id"]. " - " .$value["created_at"] ."; client: ". $value->client['email']."\n";
         }
+    }
+
+    public function actionP1($id) {
+        // var_dump($id);die();
+        $ses = Sessionsapps::find()->where(['id' => $id])->one();
+        $ses->emailStatus = "1";
+        $ses->save();
+    }
+
+    public function actionP0($id) {
+        // var_dump($id);die();
+        $ses = Sessionsapps::find()->where(['id' => $id])->one();
+        $ses->emailStatus = "0";
+        $ses->save();
     }
 
     public function actionSend()
     {
         $toResend = Sessionsapps::toResend()->all();
+        // var_dump();die();
+        $logs = '../app/runtime/resend_logs';
+        if(!file_exists($logs)) {
+            mkdir($logs);
+        }
 
         foreach ($toResend as $key => $value) {
-        	echo $key .": '".$value->client["email"] ."'; ". $value['created_at']."\n";
-			$subject = "Your selfie!";
-			$fileName = $value["sesId"].".jpg";
 
-			// $message = Yii::$app->mailer->compose()
-			// ->setFrom("selfie-app@dndtest.ovh")
-			// ->setTo("asd@asd.pl")
-			// ->setSubject($subject)
-			// ->send();
-			$message = Yii::$app->mailer->compose('email', ['imageFileName' => 'upload/'.$fileName])
-			->setFrom("selfie-app@dndtest.ovh")
-			->setTo($value->client["email"])
-			->setSubject($subject)
-			->attach('upload/'.$fileName)
-			->send();
+            $sesId = $value->sesId;
 
-			if ($message == "1") $st = "sent";
+            $ClientsController = new ClientsController;
+            $emailStatus = $ClientsController->sendEmail($value->client, Yii::$app->params['email-username'], $sesId);
+
+			if ($emailStatus == "1") $st = "Resend to: ".$value->client->email;
 			else $st="Not sent";
         	echo "Status: ".$st."\n\n";
         }

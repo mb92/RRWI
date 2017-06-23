@@ -63,8 +63,29 @@ h2 {
 #title-p {
 	margin-top:30px !important;
 }
+
 @media screen and (max-width: 994px) {
     body {
         background-color: #1b1919;
     }
+}
+
+
+.mobileOff {
+    display: block;
+}
+
+.mobileOn {
+    display: none;
+}
+
+@media screen and (max-width: 438px) {
+    .mobileOff {
+        display: none;
+    }
+	
+	.mobileOn {
+        display: block;
+    }
+
 }

@@ -40,6 +40,10 @@ class PagesController extends Controller
                 $view = 'terms-za';
             break;
 
+            case 'sa':
+                $view = 'terms-za';
+            break;
+
             case 'de':
                 $view = 'terms-de';
             break;

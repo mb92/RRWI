@@ -78,10 +78,16 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
 &nbsp;&nbsp;</a>
 </p>
 
-<p>Vodafone:
+<p class="mobileOff">Vodafone:
 &nbsp;&nbsp;<a href="http://www.vodafone.com/content/index/misc/privacy-policy.html" target="_blank"> http://www.vodafone.com/content/index/misc/privacy-policy.html
 &nbsp;&nbsp;</a>
 </p>
+
+<p class="mobileOn">Vodafone:
+&nbsp;&nbsp;<a href="http://www.vodafone.com/content/index/misc/privacy-policy.html" target="_blank"> http://www.vodafone.com/.../privacy-policy.html
+&nbsp;&nbsp;</a>
+</p>
+
 </p>
  
 
@@ -101,18 +107,10 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
 
 <h2>2.&nbsp;&nbsp;Teilnehmende Vodafone Läden</h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="mobileOff">
+<p>
+&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;Germany:
+</p>
 <table cellspacing=0 cellpadding=0 width=0>
  <tr>
  <thead>
@@ -127,13 +125,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
  </thead>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Adalbertstraße
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Adalbertstr. 25a
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   52062
   </td>
   <td>
@@ -141,13 +139,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Flagship-Store Dortmund
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Westenhellweg 52
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   44137
   </td>
   <td>
@@ -155,13 +153,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Filiale Köln
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Schildergasse 69-73
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   50667
   </td>
   <td>
@@ -169,13 +167,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Flagship-Store München Marienplatz
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Marienplatz 25
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   80331
   </td>
   <td>
@@ -183,13 +181,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Filiale Hannover
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Georgstr. 20
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   30159
   </td>
   <td>
@@ -197,13 +195,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone-Shop Wuppertal II
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Poststr. 10
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   42103
   </td>
   <td>
@@ -211,13 +209,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone-Filiale Frankfurt Zeil
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Zeil 85
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   60313
   </td>
   <td>
@@ -225,13 +223,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Flagship HH Jungfernstieg
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Jungfernstieg 14
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   20354
   </td>
   <td>
@@ -239,13 +237,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Freiburg
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Kaiser-Joseph-Str. 230
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   79098
   </td>
   <td>
@@ -253,13 +251,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Hauptstr.
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Hauptstr.11
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   48529
   </td>
   <td>
@@ -267,13 +265,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Königsplatz
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Königsplatz 61-City-Point
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   34117
   </td>
   <td>
@@ -281,14 +279,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;border:solid;border-top:
-  none;'>
+  <td>
   Vodafone Shop Wuppertal
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Werth 12
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   42275
   </td>
   <td>
@@ -296,14 +293,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;border:solid;border-top:
-  none;'>
+  <td>
   Vodafone Shop Königstr.
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Königstr. 13
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   47051
   </td>
   <td>
@@ -311,13 +307,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
-  <p class=MsoNormal><span lang=DE>Vodafone Shop Pforzheim, Westliche Karl-Friedrich Str. 
+  <td>
+  Vodafone Shop Pforzheim, Westliche Karl-Friedrich Str. 
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Westliche Karl-Friedrich-Str.2
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   75172
   </td>
   <td>
@@ -325,13 +321,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Fulda
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Heinrichstr. 10
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   36037
   </td>
   <td>
@@ -339,13 +335,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Mannheim, Fressgasse
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Q2, 17-23
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   68161
   </td>
   <td>
@@ -353,13 +349,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Sindelfingen
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Mercedesstr. 12
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   71063
   </td>
   <td>
@@ -367,13 +363,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Neunkirchen
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Stummplatz 1
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   66538
   </td>
   <td>
@@ -381,13 +377,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   PA Frankencenter Nürnberg
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Glogauerstr. 30-38
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   90473
   </td>
   <td>
@@ -395,13 +391,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   PA Ludwigstr. Nürnberg
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Ludwigstr. 67
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   90402
   </td>
   <td>
@@ -409,13 +405,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone-Shop Allee Center
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Richard-Matthai-Platz 1
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   59065
   </td>
   <td>
@@ -423,14 +419,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;border:solid;border-top:
-  none;'>
+  <td>
   Vodafone Shop Hauptstr.
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Hauptstr. 152
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   51465
   </td>
   <td>
@@ -438,13 +433,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Bietigheim-Bissingen
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Hauptstr. 28
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   74321
   </td>
   <td>
@@ -452,13 +447,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone PS Mainz Römerpassage
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Römerpassage/Pfandhausstr. 1
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   55116
   </td>
   <td>
@@ -466,13 +461,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Gießen 2
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Kreuzplatz 3
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   35390
   </td>
   <td>
@@ -480,13 +475,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Kaiserslautern
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Eisenbahnstr. 18
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   67655
   </td>
   <td>
@@ -494,13 +489,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Bad Neuenahr-Ahr
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Hauptstr. 72
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   53474
   </td>
   <td>
@@ -508,13 +503,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop im Postcarré
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Am Steinheimer Tor 7
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   63450
   </td>
   <td>
@@ -522,13 +517,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Premium Store Bretten
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Pforzheimer Str. 46
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   75015
   </td>
   <td>
@@ -536,13 +531,13 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
  <tr>
-  <td width=217 style='width:162.55pt;'>
+  <td>
   Vodafone Shop Fulda KW, Keltenstr.
   </td>
-  <td width=200 style='width:6.0cm;'>
+  <td>
   Keltenstr. 20
   </td>
-  <td width=84 style='width:49.6pt;'>
+  <td>
   36043
   </td>
   <td>
@@ -550,6 +545,242 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   </td>
  </tr>
 </table>
+</div>
 
 
-<br/>
+
+
+
+<div class="mobileOn">
+<p>
+NAME, 
+ADDRESSE, 
+Postleitzahl, 
+Stadt</p>
+
+
+<p>
+Vodafone Adalbertstra&szlig;e, 
+Adalbertstr. 25a, 
+52062, 
+Aachen</p>
+
+
+<p>
+Vodafone Flagship-Store Dortmund, 
+Westenhellweg 52, 
+44137, 
+Dortmund</p>
+
+
+<p>
+Vodafone Filiale K&ouml;ln, 
+Schildergasse 69-73, 
+50667, 
+K&ouml;ln</p>
+
+
+<p>
+Flagship-Store M&uuml;nchen Marienplatz, 
+Marienplatz 25, 
+80331, 
+M&uuml;nchen</p>
+
+
+<p>
+Vodafone Filiale Hannover, 
+Georgstr. 20, 
+30159, 
+Hannover</p>
+
+
+<p>
+Vodafone-Shop Wuppertal II, 
+Poststr. 10, 
+42103, 
+Wuppertal</p>
+
+
+<p>
+Vodafone-Filiale Frankfurt Zeil, 
+Zeil 85, 
+60313, 
+Frankfurt</p>
+
+
+<p>
+Vodafone Flagship HH Jungfernstieg, 
+Jungfernstieg 14, 
+20354, 
+Hamburg</p>
+
+
+<p>
+Vodafone Shop Freiburg, 
+Kaiser-Joseph-Str. 230, 
+79098, 
+Freiburg</p>
+
+
+<p>
+Vodafone Shop Hauptstr., 
+Hauptstr.11, 
+48529, 
+Nordhorn</p>
+
+
+<p>
+Vodafone Shop K&ouml;nigsplatz, 
+K&ouml;nigsplatz 61-City-Point, 
+34117, 
+Kassel</p>
+
+
+<p>
+Vodafone Shop Wuppertal, 
+Werth 12, 
+42275, 
+Wuppertal</p>
+
+
+<p>
+Vodafone Shop K&ouml;nigstr., 
+K&ouml;nigstr. 13, 
+47051, 
+Duisburg</p>
+
+
+<p>
+Vodafone Shop Pforzheim, Westliche Karl-Friedrich Str., 
+Westliche Karl-Friedrich-Str.2, 
+75172, 
+Pforzheim</p>
+
+
+<p>
+Vodafone Shop Fulda, 
+Heinrichstr. 10, 
+36037, 
+Fulda</p>
+
+
+<p>
+Vodafone Shop Mannheim, Fressgasse, 
+Q2, 17-23, 
+68161, 
+Mannheim</p>
+
+
+<p>
+Vodafone Shop Sindelfingen, 
+Mercedesstr. 12, 
+71063, 
+Sindelfingen</p>
+
+
+<p>
+Vodafone Shop Neunkirchen, 
+Stummplatz 1, 
+66538, 
+Neunkirchen</p>
+
+
+<p>
+PA Frankencenter N&uuml;rnberg, 
+Glogauerstr. 30-38, 
+90473, 
+N&uuml;rnberg</p>
+
+
+<p>
+PA Ludwigstr. N&uuml;rnberg, 
+Ludwigstr. 67, 
+90402, 
+N&uuml;rnberg</p>
+
+
+<p>
+Vodafone-Shop Allee Center, 
+Richard-Matthai-Platz 1, 
+59065, 
+Hamm</p>
+
+
+<p>
+Vodafone Shop Hauptstr., 
+Hauptstr. 152, 
+51465, 
+Bergisch Gladbach</p>
+
+
+<p>
+Vodafone Shop Bietigheim-Bissingen, 
+Hauptstr. 28, 
+74321, 
+Bietigheim-Bissingen</p>
+
+
+<p>
+Vodafone PS Mainz R&ouml;merpassage, 
+R&ouml;merpassage/Pfandhausstr. 1, 
+55116, 
+Mainz</p>
+
+
+<p>
+Vodafone Shop Gie&szlig;en 2, 
+Kreuzplatz 3, 
+35390, 
+Gie&szlig;en</p>
+
+
+<p>
+Vodafone Shop Kaiserslautern, 
+Eisenbahnstr. 18, 
+67655, 
+Kaiserslautern</p>
+
+
+<p>
+Vodafone Shop Bad Neuenahr-Ahr, 
+Hauptstr. 72, 
+53474, 
+Bad Neuenahr</p>
+
+
+<p>
+Vodafone Shop im Postcarr&eacute;, 
+Am Steinheimer Tor 7, 
+63450, 
+Hanau</p>
+
+
+<p>
+Vodafone Premium Store Bretten, 
+Pforzheimer Str. 46, 
+75015, 
+Bretten</p>
+
+
+<p>
+Vodafone Shop Fulda KW, Keltenstr., 
+Keltenstr. 20, 
+36043, 
+Fulda</p>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<br/><br/>

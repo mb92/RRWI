@@ -87,8 +87,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
-                            Thank you for visiting the P10 Selfie Studio.
-                            We’ve attached your selfie to this email. We hope you love it.
+                            Danke für Deinen Besuch im HUAWEI P10 Selfie Studio in Deinem
+                            Vodafone Store <?= $place ?>. Wir schicken Dir anbei Dein Selfie und hoffen, es gefällt Dir.
                             </p>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
@@ -109,18 +109,18 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px;" class="mobile-font">
-                            <b>SHARE TO <br/>WIN A HUAWEI P10</b>
+                            <b>TEILE ES AUF INSTAGRAM, UM DIR DIE GEWINNCHANCEN ZU SICHERN</b>
                             </font>
                             </center>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                            To enter, all you need to do is share your Selfie Studio shot on <br/>
-                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodacom</font> and 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#Huawei<?= $country; ?></font> before 7th August.
+                            Bitte denk an den 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodacom</font> und 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">7th August.</font>
 
                           <br/><br/>
-                            We’ll choose a one selfie to win R1000 every Monday for 7 weeks, between 26 June and 7 August. At the end of the competition, one final selfie will be selected to win a Huawei P10. That winner will
-                            be announced on 10 August.  
+                            Jede Woche werden wir unter allen Teilnehmern die fünf Selfies mit den meisten Likes auswählen. Unsere Jury wird dann daraus den Gewinner der Woche ermitteln, der ein HUAWEI P10 gewinnt.  
                           </p>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
@@ -131,17 +131,6 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     </tr>
                     <!-- end: text 1-->
                     
-
-
-                
-
-
-
-
-
-
-
-
 
                     <!-- button share now-->
                     <tr height="110px" bgcolor="#f2f2f2">
@@ -174,12 +163,12 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="38" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px; text-align:center;" class="mobile-font">
-                          <b>MAKE EVERY SHOT A COVER SHOT</b>
+                          <b>DEIN PHOTO. DEIN TITELBILD.</b>
                         </font>
                         </center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                              The Huawei P10; co-engineered with Leica. An extraordinary fusion of art, culture and technology. A phone with a soul, designed to help you take photo portraits like a pro, to unleash your inner artist and change the way the world sees you.
+                              Das HUAWEI P10 - coengineered with Leica. Eine außergewöhnliche Komposition von Kunst, Kultur und Technik. Ein Telefon mit einer Seele, entworfen, um Dir zu helfen, Foto-Porträts wie ein Profi zu machen, um Deinen inneren Künstler zu entfesseln und die Art und Weise zu ändern, wie die Welt Dich sieht.
                           </p>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
@@ -250,12 +239,13 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="48" style="display:block; margin:0; padding:0; border:none;"/>
                             <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center;" class="mobile-font">
-                              HUAWEI P10 ON VODACOM 4G<br/>
+                              DAS HUAWEI P10 IM VODAFONE NETZ<br/>
                             </font>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
-                              Style, craftmanship and innovation, all with the connectivity speed to match thanks to Vodacom’s 4G network. Discover more in store or online.
+                              Innovation, Design und höchste Perfektion bei der Fertigung - das macht das HUAWEI P10 aus. Verbunden im besten High-Speed-Netz von Vodafone. <br/>
+                              Hol Dir das neue HUAWEI P10 in Deinem Vodafone Shop oder online.
                             </p>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
