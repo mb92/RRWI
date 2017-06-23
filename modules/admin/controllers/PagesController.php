@@ -35,9 +35,20 @@ class PagesController extends Controller
     
     public function actionTermsAndConditions($c) 
     {
-        if($c == "za")
-            return $this->render('terms-za');
-        else return $this->render('terms');
+        switch ($c) {
+            case 'za':
+                $view = 'terms-za';
+            break;
+
+            case 'de':
+                $view = 'terms-de';
+            break;
+
+            default:
+                $view = 'terms';
+            break;
+        }
+        return $this->render($view);
     }
 
     // public function actionUnsub() 

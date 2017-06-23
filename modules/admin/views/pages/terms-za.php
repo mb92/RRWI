@@ -68,13 +68,13 @@ By submitting an entry, participants agree to provide their personal information
 </p>
 <p>Huawei: 
 	<a href="http://consumer.huawei.com/za/privacy-policy/index.htm" target="_blank"> 
-	http://consumer.huawei.com/de/privacy-policy/index.htm
+	http://consumer.huawei.com/za/privacy-policy/index.htm
 	</a>
 </p>
 
 <p>Vodacom: 
 	<a href="http://www.Vodacom.com/content/index/misc/privacy-policy.html" target="_blank"> 
-	http://consumer.huawei.com/de/privacy-policy/index.htm
+	http://consumer.huawei.com/za/privacy-policy/index.htm
 	</a>
 </p>
 <p>

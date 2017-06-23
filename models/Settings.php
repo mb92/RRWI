@@ -85,6 +85,67 @@ class Settings extends \yii\db\ActiveRecord
         // vdd($links);
         // return $links;
 
+        switch ($countryCode) {
+            case 'DE':
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['store'] = 'http://www.vodafone.de/privat/handys/huawei-p10.html?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'https://www.vodafone.de/filialsuche.html?appointment=1?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['facebook'] = 'https://www.facebook.com/HuaweiMobileDE?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['instagram'] = 'https://www.instagram.com/huaweimobilede?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=de&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+            break;
+
+            case 'EN':
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['store'] = 'http://shop.vodafone.ie/shop/phones/huawei-p10-bill-pay-black?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'https://n.vodafone.ie/stores.html?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['facebook'] = 'https://www.facebook.com/huaweimobileie?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['instagram'] = 'https://instagram.com/huaweimobileie?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=en&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+            break;
+            
+            case 'CZ':
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['store'] = 'https://www.vodafone.cz?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'https://www.vodafone.cz/prodejny?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['facebook'] = 'https://www.facebook.com/HuaweiMobileCZSK?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['instagram'] = 'https://www.instagram.com/huaweimobileczsk?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=cz&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+            break;
+
+            case 'RO':
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign=n.$campNamestagram.com';
+                $links['store'] = 'https://www.vodafone.ro/business/produse/huawei-p10?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'https://www.vodafone.ro/business/produse/huawei-p10?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['facebook'] = 'https://www.facebook.com/HuaweimobileRO?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['instagram'] = 'https://www.instagram.com/huaweimobilero/?hl=ro&&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ro&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+            break;
+
+            case 'ZA':
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign=n.$campNamestagram.com';
+                $links['store'] = 'https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2&&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'http://www.vodacom.co.za/vodacom/contact-us/find-a-store?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['facebook'] = 'https://www.facebook.com/HuaweimobileZA?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['instagram'] = 'https://www.instagram.com/huaweiza?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=za&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+            break;
+
+            default:
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['store'] = 'http://shop.vodafone.ie/shop/phones/huawei-p10-bill-pay-black?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'https://n.vodafone.ie/stores.html?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['facebook'] = 'https://www.facebook.com/huaweimobileie?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['instagram'] = 'https://instagram.com/huaweimobileie?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=en&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+            break;
+        }
+
+        return $links;
+
+
+
+/*
 
         if ($countryCode == 'DE') {
             // $links['share'] = 'http://instagram.com';
@@ -175,7 +236,7 @@ class Settings extends \yii\db\ActiveRecord
             
             return $links;
         }
-
+        */
     }
 
 
