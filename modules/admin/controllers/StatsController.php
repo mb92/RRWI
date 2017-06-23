@@ -95,7 +95,7 @@ class StatsController extends Controller
         $stats['retake'] = Actions::countRetakesFromCountry($countryId);
         $stats['stores'] = Stores::countStoresInCountry($countryId);
         $stats['customers'] = Clients::countClientFromCountry($countryId);
- 
+                
         return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country]);
     }
 
