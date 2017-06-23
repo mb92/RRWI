@@ -340,4 +340,31 @@ class StatsController extends Controller
         
         return $pdf->render(); 
     }
+
+
+    public function actionNewsletter($country) {
+        $countryId = Countries::find()->where(['short' => $country])->one()['id'];
+        
+        $list = Clients::find()->select(['email'])->innerJoinWith('sessionsapps',"sessionsapps.countryId = $countryId")->where(['offers' => "1"])->groupBy('clients.email')->all()->toArray();
+
+        // Select clients.email from clients right join sessionsapps on sessionsapps.countryId = 1 where clients.offers = 1 group by clients.email;
+
+        vdd($list);
+        // vdd($list[0]->client->email);
+        $file = Yii::getAlias("@temp").'/tmp/file.csv';
+
+        $fp = fopen($file, 'w');
+
+        foreach ($list as $ses) {
+
+            fputcsv($fp, $list);
+        }
+
+        fclose($fp);
+
+        if (file_exists($file)) {
+            echo "i";
+        }
+        vdd($list);
+    }
 }

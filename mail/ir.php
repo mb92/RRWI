@@ -117,7 +117,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                             To enter, all you need to do is share your Selfie Studio shot on <br/>
                             Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone</font> and 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#Huawei<?= $country; ?></font> before 7th August.
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 13th August.
 
                           <br/><br/>
                             Each week we’ll shortlist the five selfies with the most likes on Instagram. Our panel of judges will then select a weekly winner from that shortlist to receive a Huawei P10.
