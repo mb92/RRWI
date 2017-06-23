@@ -114,7 +114,7 @@ class Settings extends \yii\db\ActiveRecord
             break;
 
             case 'RO':
-                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign=n.$campNamestagram.com';
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['store'] = 'https://www.vodafone.ro/business/produse/huawei-p10?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['location'] = 'https://www.vodafone.ro/business/produse/huawei-p10?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['facebook'] = 'https://www.facebook.com/HuaweimobileRO?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
@@ -123,7 +123,7 @@ class Settings extends \yii\db\ActiveRecord
             break;
 
             case 'ZA':
-                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign=n.$campNamestagram.com';
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['store'] = 'https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2&&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['location'] = 'http://www.vodacom.co.za/vodacom/contact-us/find-a-store?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['facebook'] = 'https://www.facebook.com/HuaweimobileZA?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
@@ -132,7 +132,7 @@ class Settings extends \yii\db\ActiveRecord
             break;
 
             case 'SA':
-                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign=n.$campNamestagram.com';
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['store'] = 'https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2&&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['location'] = 'http://www.vodacom.co.za/vodacom/contact-us/find-a-store?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['facebook'] = 'https://www.facebook.com/HuaweimobileZA?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
@@ -218,7 +218,7 @@ class Settings extends \yii\db\ActiveRecord
             // $links['instagram'] = 'https://www.instagram.com/huaweimobilero/?hl=ro';
             // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ro';
             
-            $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign=n.$campNamestagram.com';
+            $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
             $links['store'] = 'https://www.vodafone.ro/business/produse/huawei-p10?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
             $links['location'] = 'https://www.vodafone.ro/business/produse/huawei-p10?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
             $links['facebook'] = 'https://www.facebook.com/HuaweimobileRO?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
@@ -236,7 +236,7 @@ class Settings extends \yii\db\ActiveRecord
             // $links['instagram'] = 'https://www.instagram.com/huaweiza/';
             // $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=za';
 
-            $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign=n.$campNamestagram.com';
+            $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
             $links['store'] = 'https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2&&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
             $links['location'] = 'http://www.vodacom.co.za/vodacom/contact-us/find-a-store?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
             $links['facebook'] = 'https://www.facebook.com/HuaweimobileZA?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
