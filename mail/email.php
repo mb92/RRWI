@@ -20,7 +20,7 @@ switch ($country) {
     break;
 
     default:
-        include "en.php";
+        include "ir.php";
     break;
 }
 

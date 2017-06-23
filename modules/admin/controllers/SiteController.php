@@ -90,6 +90,9 @@ class SiteController extends Controller
      */
     public function actionTest()
     {
+        // $fcm = Yii::$app->sender->test();
+
+        // vdd($fcm);
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/png');
         \Yii::$app->response->data = file_get_contents('../upload/lorem.jpg');

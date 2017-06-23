@@ -57,9 +57,9 @@ class ResendController extends Controller
         $toResend = Sessionsapps::toResend()->all();
         // var_dump();die();
         $logs = '../app/runtime/resend_logs';
-        if(!file_exists($logs)) {
-            mkdir($logs);
-        }
+        // if(!file_exists($logs)) {
+        //     mkdir($logs);
+        // }
 
         foreach ($toResend as $key => $value) {
 

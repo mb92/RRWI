@@ -6,6 +6,7 @@ use app\models\Clients;
 use app\models\Actions;
 use app\models\Sessionsapps;
 use app\models\Settings;
+use app\models\Stores;
 
 use Yii;
 use yii\rest\ActiveController;
@@ -378,6 +379,10 @@ class ClientsController extends ActiveController
 			$subject = Yii::$app->params['email-subject'];
 			$fileNameExt = $fileName.'.jpg';
 
+			//Get store name
+			$storeId = $client->getSessionsapps()->where(['sesId' => $fileName])->one()->storeId;
+			$place = Stores::find()->where(['id' => $storeId])->one()->name;
+
 			// Get big image for attachment
 			$image =  Yii::getAlias("@upload").'/'.$fileNameExt;
 
@@ -393,7 +398,7 @@ class ClientsController extends ActiveController
 															'tid' => Yii::$app->params['tid'],
 															'country' => $client->countryShortName,
 															//'country' => $country,
-															'place' => $client->store,
+															'place' => $place,
 															'endDate' => "00-00-0000",
 															'links' => $links,
 															'unsub' => $unsub
