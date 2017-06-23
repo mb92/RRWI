@@ -120,7 +120,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             Bitte denk an den 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodacom</font> und 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">7th August.</font>
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">vor dem 5 August.</font>
 
                           <br/><br/>
                             Jede Woche werden wir unter allen Teilnehmern die fünf Selfies mit den meisten Likes auswählen. Unsere Jury wird dann daraus den Gewinner der Woche ermitteln, der ein HUAWEI P10 gewinnt.  

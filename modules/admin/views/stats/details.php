@@ -127,7 +127,14 @@ $this->title = $title;
         <?php foreach ($client->sessionsapps as $key => $s): ?>
             <tr role="row" class="odd">
                 <td><?= $s->store->name ?></td>
-                <td><?= $s->language->short ?></td>
+                <td>
+                    <?php if(isset($s->language->short)) {
+                        echo $s->language->short;
+                        } else {
+                        echo "IR";  //Fix bugo on previous EN version
+                        } 
+                    ?>  
+                </td>
                 <td>
                     <center>
                     <?php 
