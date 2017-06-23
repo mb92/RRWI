@@ -68,6 +68,11 @@ $config = [
                     'levels' => ['error', 'warning'],
                 ],
             ],
+
+        // 'sender' => [
+        //     'class' => \app\components\Sender::class,
+        //     ],
+
         ],
         'db' => require(__DIR__ . '/db.php'),
 

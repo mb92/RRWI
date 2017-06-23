@@ -11,6 +11,7 @@
      public function bootstrap($app)
      {
         $countries = ArrayHelper::map(Countries::find()->all(),'short', 'id'); 
+        // vdd($countries);
         $this->_addExtraRoutes($countries);
         $this->_setCountryId($countries);
      }

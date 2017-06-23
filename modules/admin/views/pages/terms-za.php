@@ -7,22 +7,34 @@ $this->title = 'Terms and Conditions';
 
 
 <h1>CONDITIONS OF PARTICIPATION FOR THE HUAWEI & VODACOM SELFIE STUDIO PROMOTIONAL COMPETITION</h1>
+
+<h2>1.Scope of application</h2>
 <p>
-1.Scope of application<br/>
 1.By entering your email address and/or the competition, the participant accepts these conditions. A copy of these terms and conditions are available on Huawei Mobile South Africa Facebook Page<br/>
-2.Organizer<br/>
+</p>
+
+<h2>2.Organizer</h2>
+<p>
 2.1 The organizer of the competition is Huawei Technologies South Africa (Pty) Ltd including its affiliates, partners, associates and agents  (“Organisers”). <br/>
 2.2 The Organizer is working in partnership with Vodacom Limited (“Vodacom”). <br/>
-
 2.3 This competition is not sponsored, endorsed or administered by, or associated with, Facebook or Instagram. Participants shall comply with the terms of service, community guidelines or other applicable policies for user submissions and/or uploads located at: <a href="https://www.facebook.com/legal/terms" target="_blank">https://www.facebook.com/legal/terms</a> 
 for Facebook and <a href="http://instagram.com/about/legal/terms/#" target="_blank">http://instagram.com/about/legal/terms/#</a> for Instagram. Submissions that violate the applicable terms of service or guidelines shall be disqualified. Participants in the competition completely release Facebook and Instagram from any possible claims. All information regarding the competition is solely provided by the Organizer. In cases of any questions, suggestions or complaint, please contact the Organizer at  
 <a href="https://www.facebook.com/HuaweimobileZA/">https://www.facebook.com/HuaweimobileZA/</a>
  or <a href="https://www.instagram.com/huaweiza" target="_blank">https://www.instagram.com/huaweiza/</a><br/>
-3.Eligibility for Participation<br/>
+</p>
+
+
+<h2>3.Eligibility for Participation</h2>
+<p>
 3.1 The competition is open to all persons who, at the date of entry, are (1) aged 18 years or over; (2) who are resident in South Africa; (3) has a public Instagram or Facebook account used in connection with this Competition; and (4) possess a photo taken on the Huawei P10 from inside the Huawei Selfie Booths located in participating Vodafone Stores.<br/>
 3.2 The Organisers and Vodafones employees and their advertising and/or promotion agencies, outlet owners, retailers and wholesalers that form part of the Competition and their immediate families are excluded from this Competition. The Competition is not open for entry by or on behalf of a legal entity. The Competition will be executed online via Facebook nd Instagram. <br/>
 3.3 Participation is only possible on one’s own behalf and joint submissions are not allowed. There is a restriction on one entry per person per week for this Competition.<br/>
-4.Participation<br/>
+</p>
+
+
+
+<h2>4.Participation</h2>
+<p>
 4.1 Participation in the competition is free of charges and fees and does not require the purchase of goods and/or services.<br/>
 4.2 The Competition will run between 15 June 2017 to 7 August 2017, both dates inclusive.<br/>
 4.3 During the Entry Period, the competition is open to all participants on Instagram who upload an image and use both of the following hashtags (entries that fail to include both hashtags will not be considered):<br/>
@@ -41,7 +53,10 @@ AND<br/>
 4.10.3 The Glen (Vodacom Court)<br/>
 4.10.4 Vodaworld (June: Front of mall & July: Middle of mall)<br/>
 4.10.5 Canal Walk (Checkers centre court)<br/>
-5.Prizes, determination and notification of winners<br/>
+</p>
+
+<h2>5.Prizes, determination and notification of winners</h2>
+<p>
 5.1 Prize draws will be done on a weekly basis for 7 weeks as follows<br/>
 &nbsp;5.2 7x R1,000 gift vouchers to be drawn on the following dates:<br/>
 &nbsp;5.2.1 Monday 26th of June<br/>
@@ -59,7 +74,10 @@ AND<br/>
 5.7 The notified winners must accept their prize within six (6) days after receiving the notification of the prize by way of official Huawei social media channels on Facebook or Instagram (Direct messaging also acceptable). If a winner fails to accept his/her prize within this period, his/her prize shall be forfeited. In this case a new winner will be determined pursuant to the selection procedure in section 5.<br/>
 5.8 The Organizer does not accept any responsibility if you are not able to take up the prize.<br/>
 5.9 The Organisers reserve the right to select alternative winners in the event that they believe, in their sole discretion, that any one or more winners has contravened any of these terms and conditions. The Organisers decision shall be final and no correspondence will be entered into.<br/>
-6.Rights of Use<br/>
+</p>
+
+<h2>6.Rights of Use</h2>
+<p>
 6.1 The participant warrants that each of his/her submitted photograph entries (herein together: “Contribution”) is free of third party rights, in particular free of copyrights, logos and other intellectual property rights (e. g. patents, trademarks, design rights, know-how etc.), and that the participant has the right to grant a license to the Organizer pursuant to section 6.3.<br/>
 6.2 The participant agrees to release, discharge, indemnify, defend and hold harmless the Organiser (including its affiliate, officers, employees and agents) against any claim by any third party due to a breach of section 6.1.<br/>
 6.3 The participant hereby grants the Organizer a non-exclusive, irrevocable, freely assignable right, that is unrestricted in terms of time, geography and content, and for which sublicenses may be issued, to use the Contribution by way of all known and currently unknown types of use. The rights of use include – on a worldwide basis – the Organizer’s right to copy, modify, process, publish and market the Contribution and to publish the Contribution in prominent public media locations (including on Huawei’s and Vodacom’s websites, Huawei’s and Vodacom’s PR and marketing activities, print and in retail, globally). This grant of rights is free of charge and royalty-free.<br/>
@@ -68,17 +86,21 @@ By submitting an entry, participants agree to provide their personal information
 </p>
 <p>Huawei: 
 	<a href="http://consumer.huawei.com/za/privacy-policy/index.htm" target="_blank"> 
-	http://consumer.huawei.com/de/privacy-policy/index.htm
+	http://consumer.huawei.com/za/privacy-policy/index.htm
 	</a>
 </p>
 
 <p>Vodacom: 
 	<a href="http://www.Vodacom.com/content/index/misc/privacy-policy.html" target="_blank"> 
-	http://consumer.huawei.com/de/privacy-policy/index.htm
+	http://consumer.huawei.com/za/privacy-policy/index.htm
 	</a>
 </p>
+</p>
+
+
+
+<h2>8.Miscellaneous</h2>
 <p>
-8.Miscellaneous<br/>
 8.1 Except for any liability for death or personal injury caused by its negligence, fraud or any other liability that cannot be excluded by law, the Organizer (including its affiliates, officers, employees and agents) excludes all liability for any personal injury; or any loss or damage (including loss of opportunity); whether direct, indirect, special or consequential, arising in any way out of the Competition, including, but not limited to, where arising out of the following: any theft, unauthorized access or third party interference.<br/>
 8.2 The Organizer’s decisions regarding all promotional matters will be final, and no correspondence will be entered into.<br/>
 8.3 In the event of circumstances outside the reasonable control of the Organizer, or otherwise where fraud, abuse, and/or an error (human or technical) affects or could affect the proper operation of this promotion or the awarding of prizes, the Organizer reserves the right to cancel or amend these terms and conditions at any stage, but will endeavour to minimise the effect to participants in order to avoid undue disappointment.<br/>
