@@ -20,6 +20,11 @@ $this->title = $title;
                     <i class="fa fa-shopping-cart "></i> Stores
                     <span class="badge bg-red"><?= $stats['stores']?></span>
                 </a>
+
+   <!--              <a href="/admin/ $country->short /stats/newsletter?country= $country->short " class="btn btn-primary">
+                    <i class="fa fa-indent "></i> Newsletter list
+                </a> -->
+
                 <!-- Generate Countries list -->
                 <?php foreach ($countries as $c): ?>
                 <a href="/admin/<?= $c->short ?>/stats" style="height:35px;" class="btn btn-warning btn-app-country">
