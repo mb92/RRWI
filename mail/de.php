@@ -163,8 +163,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
                         <td style="text-align:center">
-                        <center><br/>
-                        <img src="<?= $path ?>/imgs/clean.png" width="1" height="19" style="display:block; margin:0; padding:0; border:none;"/>
+                        <center>
+                        <img src="<?= $path ?>/imgs/clean.png" width="1" height="38" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px; text-align:center;" class="mobile-font">
                           <b>DEIN PHOTO. DEIN TITELBILD.</b>
                         </font>
