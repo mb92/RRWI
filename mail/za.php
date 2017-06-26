@@ -145,7 +145,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <a href="<?= $links['share']; ?>">
                             <img src="<?= $path ?>/imgs/btn-share-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                             </a>
-                            <br/><br/>
+                            <img src="<?= $path ?>/imgs/clean.png" width="1" height="72" style="display:block; margin:0; padding:0; border:none;" /> 
                           </td>
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
@@ -305,10 +305,10 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       </tr>
                       <tr>
                         <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0">
-<!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>    -->
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>   
                         </td>
                         <td width="16" class="mobileOnTab" valign="middle" style="vertical-align:middle; font-size: 0">
- <!--                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/> -->
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
                         <td style="text-align:center; vertical-align:middle;" valign="middle">
 <!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="5" style="display:block; margin:0; padding:0; border:none;"/><br/> -->
@@ -318,7 +318,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                                 <u>Please click here to view terms and conditions</u></font>
                               </a>
                           <br/>
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="5" style="display:block; margin:0; padding:0; border:none;"/>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="2" style="display:block; margin:0; padding:0; border:none;"/>
 
                         </td>
                         <td width="40" class="mobileOffTab"></td>
