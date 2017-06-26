@@ -308,7 +308,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 <!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/> -->
                         </td>
                         <td style="text-align:center; vertical-align:middle;" valign="middle">
-                            <br/>
+                            <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;"><br/></font>
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
                                 <u>Please click here to view terms and conditions</u></font>
