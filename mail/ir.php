@@ -21,7 +21,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
-                        <td width="25%"></td>
+                        <td width="25%">
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="28" style="display:block; margin:0; padding:0; border:none;"/>
+                        </td>
                         <td style="text-align:center;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; font-size:11px; letter-spacing:1px;">
                               YOUR PERFECT SELFIE IS ATTACHED</font>
@@ -142,6 +144,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <a href="<?= $links['share']; ?>">
                             <img src="<?= $path ?>/imgs/btn-share-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                             </a>
+                            <img src="<?= $path ?>/imgs/clean.png" width="1" height="42" style="display:block; margin:0; padding:0; border:none;" />
                           </td>
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
@@ -296,25 +299,31 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <tr bgcolor="#1b1919">
                     <td class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
-                      <tr height="8">
-                        <td colspan="3"></td>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>   
+                        </td>
+                        <td></td>
                       </tr>
                       <tr>
-                        <td width="40" class="mobileOffTab"></td>
-                        <td width="16" class="mobileOnTab"></td>
-                        <td style="text-align:center;">
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="15" style="display:block; margin:0; padding:0; border:none;"/>
-
+                        <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0"></td>
+                        <td width="16" class="mobileOnTab" valign="middle" style="vertical-align:middle; font-size: 0"></td>
+                        <td style="text-align:center; vertical-align:middle;" valign="middle">
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
-                                <u>Please click here to view terms and conditions</u></font><br/>
+                                <u>Please click here to view terms and conditions</u></font>
                               </a>
-
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="15" style="display:block; margin:0; padding:0; border:none;"/>
-
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
+                      </tr>
+                        <tr>
+                        <td></td>
+                        <td>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="13" style="display:block; margin:0; padding:0; border:none;"/>   
+                        </td>
+                        <td></td>
                       </tr>
                       </table>
                     </td>
