@@ -301,6 +301,13 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
                       <tr>
+                        <td></td>
+                        <td>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>   
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
                         <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0">
 <!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>   --> 
                         </td>
@@ -308,16 +315,20 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 <!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/> -->
                         </td>
                         <td style="text-align:center; vertical-align:middle;" valign="middle">
-                            <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;"><br/></font>
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
                                 <u>Please click here to view terms and conditions</u></font>
                               </a>
-                        <br/>
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="2" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
+                      </tr>
+                        <tr>
+                        <td></td>
+                        <td>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>   
+                        </td>
+                        <td></td>
                       </tr>
                       </table>
                     </td>
