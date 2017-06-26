@@ -145,6 +145,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <a href="<?= $links['share']; ?>">
                             <img src="<?= $path ?>/imgs/btn-share-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                             </a>
+                            <br/><br/>
                           </td>
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
@@ -317,7 +318,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                                 <u>Please click here to view terms and conditions</u></font>
                               </a>
                           <br/>
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="7" style="display:block; margin:0; padding:0; border:none;"/>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="5" style="display:block; margin:0; padding:0; border:none;"/>
 
                         </td>
                         <td width="40" class="mobileOffTab"></td>
