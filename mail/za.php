@@ -298,7 +298,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                           </td>
                           <td class="mobileOffTab">
-                            <img src="<?= $path ?>/imgs/social-bg-2.jpg" width="282" height="40" style="display:block; margin:0; padding:0; border:none;"/>
+                            <img src="<?= $path ?>/imgs/social-bg-2.jpg" width="284" height="40" style="display:block; margin:0; padding:0; border:none;"/>
                           </td>
                         </tr>
                       </table>
