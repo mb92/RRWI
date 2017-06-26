@@ -311,14 +311,13 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
                         <td style="text-align:center; vertical-align:middle;" valign="middle">
-<!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="5" style="display:block; margin:0; padding:0; border:none;"/><br/> -->
+                            <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;"><br/><br/></font>
 
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
                                 <u>Please click here to view terms and conditions</u></font>
                               </a>
-                          <br/>
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="2" style="display:block; margin:0; padding:0; border:none;"/>
+                           <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;"><br/><br/></font>
 
                         </td>
                         <td width="40" class="mobileOffTab"></td>
