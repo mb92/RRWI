@@ -288,7 +288,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <tr bgcolor="#060000">
                     <td style="text-align:center; display:inline" class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#060000">
-                        <tr height="40" bgcolor="#060000">
+                        <tr height="38" bgcolor="#060000">
                           <td class="mobileOffTab" bgcolor="#060000"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
                           <td bgcolor="#060000"><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
                           <td bgcolor="#060000"><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
