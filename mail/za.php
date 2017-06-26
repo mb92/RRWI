@@ -300,9 +300,6 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <tr bgcolor="#1b1919">
                     <td class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
-                      <tr height="8">
-                        <td colspan="3"></td>
-                      </tr>
                       <tr>
                         <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0">
 <!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>   --> 
