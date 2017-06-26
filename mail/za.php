@@ -4,7 +4,7 @@ use yii\helpers\Url;
 $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
 ?>
-<img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=open_email&cs=newsletter&cm=email&cn=selfie-app" />
+<img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=open_email&cs=newsletter&cm=email&cn=selfie-app" style="border-color:#525252; display:block; margin:0; padding:0; border:none;"/>
 <center>
     <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#525252">
       <tr>
@@ -285,8 +285,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td style="text-align:center; display:inline" class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                         <tr height="38">
-                          <td class="mobileOffTab">
-                            <img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/>
+                          <td class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg">
+                            <!-- <img src="<?= /*$path*/ ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/> -->
                           </td>
                           <td width="59">
                             <a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
@@ -297,8 +297,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="51">
                             <a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                           </td>
-                          <td class="mobileOffTab">
-                            <img src="<?= $path ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/>
+                          <td class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg">
+                            <!-- <img src="<?= /*$path*/ ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/> -->
                           </td>
                         </tr>
                       </table>
