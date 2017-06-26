@@ -122,7 +122,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             We’ll choose a one selfie to win R1000 every Monday for 7 weeks, between 26 June and 7 August. At the end of the competition, one final selfie will be selected to win a Huawei P10. That winner will
                             be announced on 10 August.  
                           </p>
-                          <br/><br/>
+                          <br/>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
@@ -160,8 +160,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
                         <td style="text-align:center">
-                        <center>
-                        <img src="<?= $path ?>/imgs/clean.png" width="1" height="38" style="display:block; margin:0; padding:0; border:none;"/>
+                        <center><br/>
+                        <img src="<?= $path ?>/imgs/clean.png" width="1" height="19" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px; text-align:center;" class="mobile-font">
                           <b>MAKE EVERY SHOT A COVER SHOT</b>
                         </font>
@@ -304,14 +304,14 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
                         <td style="text-align:center;">
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="14" style="display:block; margin:0; padding:0; border:none;"/>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="15" style="display:block; margin:0; padding:0; border:none;"/>
 
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
                                 <u>Please click here to view terms and conditions</u></font><br/>
                               </a>
 
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="15" style="display:block; margin:0; padding:0; border:none;"/>
 
                         </td>
                         <td width="40" class="mobileOffTab"></td>
