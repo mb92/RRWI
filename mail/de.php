@@ -4,7 +4,7 @@ use yii\helpers\Url;
 $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
 ?>
-<img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=open_email&cs=newsletter&cm=email&cn=selfie-app" />
+<img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=open_email&cs=newsletter&cm=email&cn=selfie-app" style="display:block; margin:0; padding:0; border:none;"/>
 <center>
     <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#525252">
       <tr>
@@ -41,6 +41,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     </table>
                     </td>
                   </tr>
+
                   <tr>
                     <td width="600" class="mobile" style="font-family:MyriadLight, Arial, Helvetica; font-size:12px; line-height:18px;">
                       <img src="<?= $path ?>/imgs/red_bar.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
@@ -191,7 +192,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <tr bgcolor="#f2f2f2">
                       <td class="mobile">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tbody><tr bgcolor="#f2f2f2">
+                          <tr bgcolor="#f2f2f2">
                             <td width="207px" class="mobileOffTab">
                               <img src="<?= $path ?>/imgs/clean.png" width="207" height="1" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
@@ -208,7 +209,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/clean.png" width="57" height="1" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                           </tr>
-                        </tbody></table>
+                        </table>
                       </td>
                     </tr>
                     <!-- end: moccap -->
@@ -323,7 +324,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
                       </tr>
-                        <tr>
+                      <tr>
                         <td></td>
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="13" style="display:block; margin:0; padding:0; border:none;"/>   
@@ -336,7 +337,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <!-- end: Fotter -->
                 </table>
                 <!-- End Container -->
-              
+            </td>
+            </tr>
+          </table>  
         </td>
       </tr>
     </table>
