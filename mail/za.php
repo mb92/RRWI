@@ -308,12 +308,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td></td>
                       </tr>
                       <tr>
-                        <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0">
-<!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>   --> 
-                        </td>
-                        <td width="16" class="mobileOnTab" valign="middle" style="vertical-align:middle; font-size: 0">
-<!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/> -->
-                        </td>
+                        <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0"></td>
+                        <td width="16" class="mobileOnTab" valign="middle" style="vertical-align:middle; font-size: 0"></td>
                         <td style="text-align:center; vertical-align:middle;" valign="middle">
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
@@ -326,7 +322,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <tr>
                         <td></td>
                         <td>
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>   
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="13" style="display:block; margin:0; padding:0; border:none;"/>   
                         </td>
                         <td></td>
                       </tr>
