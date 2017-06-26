@@ -301,13 +301,13 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td colspan="3"></td>
                       </tr>
                       <tr>
-                        <td width="40" class="mobileOffTab">
+                        <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0">
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>   
                         </td>
-                        <td width="16" class="mobileOnTab">
+                        <td width="16" class="mobileOnTab" valign="middle" style="vertical-align:middle; font-size: 0">
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
-                        <td style="text-align:center;">
+                        <td style="text-align:center; vertical-align:middle;" valign="middle">
 <!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="15" style="display:block; margin:0; padding:0; border:none;"/> -->
 
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
