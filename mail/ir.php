@@ -124,6 +124,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <br/><br/>
                             Each week we’ll shortlist the five selfies with the most likes on Instagram. Our panel of judges will then select a weekly winner from that shortlist to receive a Huawei P10.
                           </p>
+                          <br/>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
