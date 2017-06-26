@@ -316,8 +316,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
                                 <u>Please click here to view terms and conditions</u></font>
                               </a>
-
-    <!--                       <img src="<?= $path ?>/imgs/clean.png" width="1" height="15" style="display:block; margin:0; padding:0; border:none;"/> -->
+                          <br/>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>
 
                         </td>
                         <td width="40" class="mobileOffTab"></td>
