@@ -312,7 +312,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
-                                <u>Please click here to view terms and conditions</u></font>
+                                <u>Please click here to view terms and conditions</u></font><br/>
                               </a>
 
     <!--                       <img src="<?= $path ?>/imgs/clean.png" width="1" height="15" style="display:block; margin:0; padding:0; border:none;"/> -->
