@@ -121,7 +121,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#Huawei<?= $country; ?></font> before 7th August.
 
                           <br/><br/>
-                            We’ll choose a one selfie to win R1000 every Monday for 7 weeks, between 26 June and 7 August. At the end of the competition, one final selfie will be selected to win a Huawei P10. That winner will
+                            We’ll choose one selfie to to win R1000 every Monday for 7 weeks, between 26 June and 7 August. At the end of the competition, one final selfie will be selected to win a Huawei P10. That winner will
                             be announced on 10 August.  
                           </p>
                           <br/>
