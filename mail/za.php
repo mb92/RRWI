@@ -21,7 +21,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
-                        <td width="25%"></td>
+                        <td width="25%">
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
+                        </td>
                         <td style="text-align:center;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; font-size:11px; letter-spacing:1px;">
                               YOUR PERFECT SELFIE IS ATTACHED</font>
@@ -302,10 +304,10 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       </tr>
                       <tr>
                         <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0">
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="40" style="display:block; margin:0; padding:0; border:none;"/>   
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="42" style="display:block; margin:0; padding:0; border:none;"/>   
                         </td>
                         <td width="16" class="mobileOnTab" valign="middle" style="vertical-align:middle; font-size: 0">
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="40" style="display:block; margin:0; padding:0; border:none;"/>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="42" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
                         <td style="text-align:center; vertical-align:middle;" valign="middle">
 <!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="15" style="display:block; margin:0; padding:0; border:none;"/> -->
