@@ -304,10 +304,10 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       </tr>
                       <tr>
                         <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0">
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="38" style="display:block; margin:0; padding:0; border:none;"/>   
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>   
                         </td>
                         <td width="16" class="mobileOnTab" valign="middle" style="vertical-align:middle; font-size: 0">
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="28" style="display:block; margin:0; padding:0; border:none;"/>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
                         <td style="text-align:center; vertical-align:middle;" valign="middle">
 <!--                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="15" style="display:block; margin:0; padding:0; border:none;"/> -->
