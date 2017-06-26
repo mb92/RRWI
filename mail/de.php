@@ -336,7 +336,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <!-- end: Fotter -->
                 </table>
                 <!-- End Container -->
-              
+            </td>
+            </tr>
+            </table>  
         </td>
       </tr>
     </table>
