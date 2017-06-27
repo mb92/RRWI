@@ -38,9 +38,10 @@ function watermark2($watermarkPath, $outImgPath) {
     $im = imagecreatefromjpeg($outImgPath);
 
     list($width, $height) = getimagesize($outImgPath);
-    list($widthWt, $heightWt) = getimagesize($outImgPath);
+    list($widthWt, $heightWt) = getimagesize($watermarkPath);
 
     $marge_right = ($width-$widthWt)-50;
+    
     $marge_bottom = 90;
     $sx = imagesx($stamp);
     $sy = imagesy($stamp);
