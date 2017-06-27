@@ -286,7 +286,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                         <tr height="38">
                           <td class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg">
-                            <!-- <img src="<?= /*$path*/ ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/> -->
+                            <!-- <img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/> -->
                           </td>
                           <td width="59">
                             <a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
@@ -298,7 +298,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                           </td>
                           <td class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg">
-                            <!-- <img src="<?= /*$path*/ ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/> -->
+                            <!-- <img src="<?= $path ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/> -->
                           </td>
                         </tr>
                       </table>
