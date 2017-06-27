@@ -35,9 +35,9 @@ function vdd($var) {
 function watermark2($watermarkPath, $outImgPath) {
 
     $stamp = imagecreatefrompng($watermarkPath);
-    $im = imagecreatefromjpeg($inputImg);
+    $im = imagecreatefromjpeg($outImgPath);
 
-    list($width, $height) = getimagesize($inputImg);
+    list($width, $height) = getimagesize($outImgPath);
     list($widthWt, $heightWt) = getimagesize($outImgPath);
 
     $marge_right = ($width-$widthWt)-50;
