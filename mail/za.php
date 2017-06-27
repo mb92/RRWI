@@ -282,7 +282,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <!-- end: grey row-->
 
                     <!-- socialButtons -->
-                    <tr bgcolor="#060000" height="40">
+                    <tr bgcolor="#060000" height="40" background="<?= $path ?>/imgs/social-bg-2.jpg">
                     <td style="text-align:center; display:inline" class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                         <tr height="40">

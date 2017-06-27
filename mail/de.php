@@ -24,7 +24,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td width="25%">
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="28" style="display:block; margin:0; padding:0; border:none;"/>
 <img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=open_email&cs=newsletter&cm=email&cn=selfie-app" style="border-color:#525252; display:block; margin:0; padding:0; border:none;"/>
-                          
+
                         </td>
                         <td style="text-align:center;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; font-size:11px; letter-spacing:1px;">
@@ -288,7 +288,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <!-- end: grey row-->
 
                     <!-- socialButtons -->
-                    <tr bgcolor="#060000">
+                    <tr bgcolor="#060000" height="40" background="<?= $path ?>/imgs/social-bg-2.jpg">
                     <td style="text-align:center; display:inline" class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#060000">
                         <tr height="38" bgcolor="#060000">
