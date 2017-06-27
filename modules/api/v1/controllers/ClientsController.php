@@ -454,11 +454,11 @@ class ClientsController extends ActiveController
 				switch ($data['country']) {
 					case 'DE':
 						return $this->redirect('../../unsub-de.php');
-						break;
+					break;
 					
 					default:
 						return $this->redirect('../../unsub.php');
-						break;
+					break;
 				}
 			} 
 				
