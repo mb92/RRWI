@@ -76,7 +76,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
     .mobile50{ width:150px!important; padding: 0 !important; }
     .center{ margin:0 auto !important; text-align:center !important; }
     .img{ width:100% !important; height:auto; }
-    *[class="mobileOff"] { width: 0px !important; display: none !important; visibility:hidden !important; font-size: 0 !important;}
+    *[class="mobileOff"] { width: 0px !important; display: none !important; visibility: hidden !important; overflow: hidden; line-height:0px; font-size: 0 !important;}
     *[class*="mobileOn"] { display: block !important; max-height:none !important; visibility: visible !important;}
   }
 
@@ -85,7 +85,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
   }
 
   @media only screen and (max-width: 639px){
-    .mobileOffTab {display:none !important; visibility: hidden !important; font-size: 0 !important;}
+    .mobileOffTab {display:none !important; visibility: hidden !important; overflow: hidden; line-height:0px; font-size: 0 !important;}
     .mobileOnTab {display:block !important; visibility: visible !important;}
     .mobile-head1 {font-size:16px !important;}
     .mobile-head2 {font-size:25px !important; line-height:20px;}
@@ -100,7 +100,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
     .mobile50{ width:150px!important; padding: 0 !important; }
     .center{ margin:0 auto !important; text-align:center !important; }
     .img{ width:300px !important; height:auto !important; }
-    *[class="mobileOff"] { width: 0px !important; display: none !important; visibility:hidden !important; font-size: 0 !important;}
+    *[class="mobileOff"] { width: 0px !important; display: none !important; visibility: hidden !important; overflow: hidden; line-height:0px; font-size: 0 !important;}
     *[class*="mobileOn"] { display: block !important; max-height:none !important; visibility:visible !important;}
   }
 
