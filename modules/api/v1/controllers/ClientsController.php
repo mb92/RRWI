@@ -451,7 +451,7 @@ class ClientsController extends ActiveController
 			$client->offers = "0";
 			$st = $client->save();
 			if ($st) {
-				switch ($data['country']) {
+				switch (encrypt_decrypt('decrypt', $data['country'])) {
 					case 'DE':
 						return $this->redirect('../../unsub-de.php');
 					break;
