@@ -285,7 +285,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td style="text-align:center; display:inline" class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                         <tr height="38">
-                          <td class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg"></td>
+                          <td class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg" style="background-image: url("<?= $path ?>/imgs/social-bg-2.jpg")"></td>
                           <td width="59">
                             <a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                           </td>
