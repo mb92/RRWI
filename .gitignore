@@ -34,3 +34,8 @@ tests/_support/_generated
 /config/params.php
 
 /temp/*
+
+# composer vendor dir
+/raports
+/raports/*
+/raports/csv/*
