@@ -291,14 +291,12 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <tr bgcolor="#060000" height="40" background="<?= $path ?>/imgs/social-bg-2.jpg">
                     <td style="text-align:center; display:inline" class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#060000">
-                        <tr height="38" bgcolor="#060000">
-                          <td class="mobileOffTab" bgcolor="#060000"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
-                          <td class="mobileOnTab" bgcolor="#060000" width="79"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="79" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
-                          <td bgcolor="#060000" width="59"><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td bgcolor="#060000" width="47"><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td bgcolor="#060000" width="51"><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
-                          <td class="mobileOnTab" width="78"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="78" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
+                        <tr height="40">
+                          <td><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
+                          <td width="59"><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td width="47"><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td width="51"><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
                         </tr>
                       </table>
                     </td>
