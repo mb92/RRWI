@@ -61,15 +61,9 @@ or <a href="https://www.instagram.com/huaweimobilero/" target="_blank">https://w
 <p>
 1.&nbsp;&nbsp;Participation in the competition is free of charges and fees and does not require the purchase of goods and/or services.<br/>
 2.&nbsp;&nbsp;The competition starts on the following dates for participating countries:<br/>
-Germany 27 June 2017 at 10.00. The deadline for entries is DATE TBC 2017 at 23:59 ("Entry Period“). Submissions received outside of this time frame will not be considered.<br/>
-Republic of Ireland 3rd  July 2017 at 09.00. The deadline for entries is 13th August 2017 at 23:59 ("Entry Period“). Submissions received outside of this time frame will not be considered.<br/>
-Czech Republic DATE TBC 2017 at 09.00. The deadline for entries is DATE TBC 2017 at 23:59 ("Entry Period“). Submissions received outside of this time frame will not be considered.<br/>
-Romania DATE TBC 2017 at 09.00. The deadline for entries is DATE TBC 2017 at 23:59 ("Entry Period“). Submissions received outside of this time frame will not be considered.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Republic of Ireland 3rd  July 2017 at 09.00. The deadline for entries is 13th August 2017 at 23:59 ("Entry Period“). Submissions received outside of this time frame will not be considered.<br/>
 3.&nbsp;&nbsp;During the Entry Period, the competition is open to all participants on Instagram who upload an image and use both of the following hashtags (entries that fail to include both hashtags will not be considered). The hashtag used must correspond directly to the country in which you are applying from ( for example: #P10SelfieVodafone  #DE – you must have taken and  uploaded your  photo from Germany):<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;i.&nbsp;&nbsp;Germany: #P10SelfieVodafone #DE<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;ii.&nbsp;&nbsp;Ireland: #P10SelfieVodafone #IR<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;iii.&nbsp;&nbsp;Romania: #P10SelfieVodafone #ROM<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;iv.&nbsp;&nbsp;Czech Republic: #P10SelfieVodafone #CZ<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Ireland: #P10SelfieVodafone #IR<br/>
 4.&nbsp;&nbsp;The entry must be your original work/your own selfie (see section 6.1 for further information). Modifying, enhancing or altering a third party’s pre-existing selfie does not qualify as your original work.<br/>
 5.&nbsp;&nbsp;If other persons can be identified in the photo apart from the participant, such photographs may only be submitted by the participant if the third party/parties has/have consented to this and there is no infringement upon any third party privacy or other rights.<br/>
 6.&nbsp;&nbsp;Submissions containing any defamatory, obscene, illegal, offensive, or any other unsuitable material will be disqualified and withdrawn by the participant. Submissions must be suitable to be published or used online by the Organizer.<br/>

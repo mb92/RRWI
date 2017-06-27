@@ -339,6 +339,7 @@ class StatsController extends Controller
         ]);
         
         return $pdf->render(); 
+        // return $pdf->Output(Yii::getAlias("@raports").'/filename.pdf','F');
     }
 
 

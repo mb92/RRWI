@@ -243,7 +243,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="48" style="display:block; margin:0; padding:0; border:none;"/>
                             <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center;" class="mobile-font">
-                              HUAWEI P10 ON VODACOM 4G<br/>
+                              HUAWEI P10 ON VODAFONE 4G<br/>
                             </font>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
