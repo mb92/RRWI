@@ -1,22 +1,15 @@
-<?php
-use yii\helpers\Html;
-use yii\helpers\Url;
 
-/* @var $this \yii\web\View view component instance */
-/* @var $message \yii\mail\MessageInterface the message being composed */
-/* @var $content string main view render result */
-
+<?php 
 $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
-
 ?>
-<?php $this->beginPage() ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=<?= Yii::$app->charset ?>">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="/css/animate.css">
 
   <title>Selfie Studio</title>
 
@@ -28,22 +21,22 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
     @font-face {
       font-family:Myriad;
-      src: url(<?php echo $path.'/dist/email/';?>_fonts/Myriad_Pro_Regular.ttf); 
+      src: url(_fonts/Myriad_Pro_Regular.ttf); 
     }
 
     @font-face {
       font-family: MyriadSemiBold;
-      src: url(<?php echo $path.'/dist/email/';?>_fonts/Myriad_Pro_Semibold.ttf);  
+      src: url(_fonts/Myriad_Pro_Semibold.ttf);  
     }
 
     @font-face {
       font-family: MyriadBold;
-      src: url(<?php echo $path.'/dist/email/';?>_fonts/Myriad_Pro_Bold.ttf);
+      src: url(_fonts/Myriad_Pro_Bold.ttf);
     }
 
     @font-face {
       font-family: MyriadLight;
-      src: url(<?php echo $path.'/dist/email/';?>_fonts/Myriad_Pro_Light.otf);
+      src: url(_fonts/Myriad_Pro_Light.otf);
     }
   }
 
@@ -76,7 +69,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
     .mobile50{ width:150px!important; padding: 0 !important; }
     .center{ margin:0 auto !important; text-align:center !important; }
     .img{ width:100% !important; height:auto; }
-    *[class="mobileOff"] { width: 0px !important; display: none !important; visibility: hidden !important; mso-hide: all !important; overflow: hidden !important; line-height:0px !important; font-size: 0 !important;}
+    *[class="mobileOff"] { width: 0px !important; display: none !important; visibility:hidden !important;}
     *[class*="mobileOn"] { display: block !important; max-height:none !important; visibility: visible !important;}
   }
 
@@ -85,7 +78,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
   }
 
   @media only screen and (max-width: 639px){
-    .mobileOffTab {display:none !important; visibility: hidden !important; mso-hide: all !important; overflow: hidden !important; line-height:0px !important; font-size: 0 !important;}
+    .mobileOffTab {display:none !important; visibility: hidden !important;}
     .mobileOnTab {display:block !important; visibility: visible !important;}
     .mobile-head1 {font-size:16px !important;}
     .mobile-head2 {font-size:25px !important; line-height:20px;}
@@ -100,24 +93,61 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
     .mobile50{ width:150px!important; padding: 0 !important; }
     .center{ margin:0 auto !important; text-align:center !important; }
     .img{ width:300px !important; height:auto !important; }
-    *[class="mobileOff"] { width: 0px !important; display: none !important; visibility: hidden !important; mso-hide: all !important; overflow: hidden !important; line-height:0px !important; font-size: 0 !important;}
+    *[class="mobileOff"] { width: 0px !important; display: none !important; visibility:hidden !important;}
     *[class*="mobileOn"] { display: block !important; max-height:none !important; visibility:visible !important;}
   }
 
   </style>
-      <?php $this->head() ?>
 </head>
 
-<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" style="margin:0; padding:0; background-color:#525252;">
-<!-- <img src="http://www.google-analytics.com/collect?v=1&tid=UA-12345678-1&cid=CLIENT_ID_NUMBER&t=event&ec=email&ea=open&el=recipient_id&cs=newsletter&cm=email&cn=Campaign_Name"/> -->
+<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" style="margin:0; padding:0; background-color:#525252;" class="animated fadeIn">
+  <center>
+    <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#525252" >
+      <tr>
+        <td align="center" valign="top">
+          <!-- Start Wrapper -->
+          <table width="600" cellpadding="0" cellspacing="0" border="0" class="wrapper" bgcolor="#FFFFFF">
+            <tr>
+              <td align="center" >
+                
+              <!-- Start Container -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" class="container">
+                  <tr>
+                    <td bgcolor="#525252" height="30px">
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="600" class="mobile" style="font-family:MyriadLight, Arial, Helvetica; font-size:12px; line-height:18px;">
+                      <img src="<?= $path ?>imgs/red_bar.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
+                    </td>
+                  </tr>
+
+
+                    <!-- Header1 - Big text -->
+                  <tr height="auto" bgcolor="#f2f2f2">
+                    <td class="mobile" style="overflow:hidden; background-color:#1b1919; color:#424344;">
+                      <center>
+                        <img src="<?= $path ?>imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
+    						<p style="font-size:26px;">Sie haben sich von unserer Mailingliste abgemeldet.</p>
+							<p style="font-size:16px; margin-top:0;">Es tut uns leid, dass Sie uns verlassen.<br/>
+								Wir sorgen dafür, dass alle Ihre persönlichen Daten gelöscht werden.
+							</p>	<br/>
+							<img src="<?= $path ?>imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
+                      </center>
+                    </td>
+                  </tr>
+                  <!-- end: Big text -->
 
 
 
-    <?php $this->beginBody() ?>
-    <?= $content ?>
- 
+                </table>
+                <!-- End Container -->
+              
+        </td>
+      </tr>
+    </table>
+  </center>
 
-<?php $this->endBody() ?>
 </body>
 </html>
-<?php $this->endPage() ?>

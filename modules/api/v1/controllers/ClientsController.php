@@ -364,8 +364,9 @@ class ClientsController extends ActiveController
 			$sesId = encrypt_decrypt('encrypt', $fileName);
 			$token = encrypt_decrypt('encrypt', "0b3d4f561329b5a5dfdbaff634280be9");
 			$clientId = encrypt_decrypt('encrypt', $client->email);
+			$country = encrypt_decrypt('encrypt', strtoupper($client->countryShortName));
 
-			$unsub = Url::to(['clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId], true);
+			$unsub = Url::to(['clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId.'&ct='.$country], true);
 		} else {
 			$unsub = '#';
 		}
@@ -435,6 +436,7 @@ class ClientsController extends ActiveController
 		$data['sesId'] = Yii::$app->request->get('s', false);
 		$data['client'] = Yii::$app->request->get('c', false);
 		$data['token'] = Yii::$app->request->get('t', false);
+		$data['country'] = Yii::$app->request->get('ct', false);
 
 			// Verify token
 			if (!verifyToken(encrypt_decrypt('decrypt', $data['token']))) return $this->redirect('../../error.php');
@@ -448,7 +450,18 @@ class ClientsController extends ActiveController
 			// Update offers status on 0 (unsubscribe)
 			$client->offers = "0";
 			$st = $client->save();
-			if ($st) return $this->redirect('../../unsub.php');
+			if ($st) {
+				switch (encrypt_decrypt('decrypt', $data['country'])) {
+					case 'DE':
+						return $this->redirect('../../unsub-de.php');
+					break;
+					
+					default:
+						return $this->redirect('../../unsub.php');
+					break;
+				}
+			} 
+				
 		}
 
 }

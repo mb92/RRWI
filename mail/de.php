@@ -4,7 +4,7 @@ use yii\helpers\Url;
 $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
 ?>
-<img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=open_email&cs=newsletter&cm=email&cn=selfie-app" />
+<!-- <img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=open_email&cs=newsletter&cm=email&cn=selfie-app" style="border-color:#525252; display:block; margin:0; padding:0; border:none;"/> -->
 <center>
     <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#525252">
       <tr>
@@ -21,7 +21,11 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
-                        <td width="25%"></td>
+                        <td width="25%">
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="28" style="display:block; margin:0; padding:0; border:none;"/>
+<img src="http://www.google-analytics.com/collect?v=1&tid=<?= $tid ?>&cid=<?= $cid ?>&t=event&ec=email&ea=open&el=open_email&cs=newsletter&cm=email&cn=selfie-app" style="border-color:#525252; display:block; margin:0; padding:0; border:none;"/>
+
+                        </td>
                         <td style="text-align:center;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; font-size:11px; letter-spacing:1px;">
                               DEIN PERFEKTES SELFIE ANBEI</font>
@@ -39,6 +43,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     </table>
                     </td>
                   </tr>
+
                   <tr>
                     <td width="600" class="mobile" style="font-family:MyriadLight, Arial, Helvetica; font-size:12px; line-height:18px;">
                       <img src="<?= $path ?>/imgs/red_bar.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
@@ -124,7 +129,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                           <br/><br/>
                             Jede Woche werden wir unter allen Teilnehmern die fünf Selfies mit den meisten Likes auswählen. Unsere Jury wird dann daraus den Gewinner der Woche ermitteln, der ein HUAWEI P10 gewinnt.  
-                          </p>
+                          </p><br/>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
@@ -146,6 +151,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <a href="<?= $links['share']; ?>">
                             <img src="<?= $path ?>/imgs/btn-share-now-de.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                             </a>
+                              <img src="<?= $path ?>/imgs/clean.png" width="1" height="42" style="display:block; margin:0; padding:0; border:none;" />
                           </td>
                           <td width="178" class="mobileOffTab"></td>
                           <td width="29" class="mobileOnTab"></td>
@@ -188,7 +194,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <tr bgcolor="#f2f2f2">
                       <td class="mobile">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tbody><tr bgcolor="#f2f2f2">
+                          <tr bgcolor="#f2f2f2">
                             <td width="207px" class="mobileOffTab">
                               <img src="<?= $path ?>/imgs/clean.png" width="207" height="1" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
@@ -205,7 +211,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/clean.png" width="57" height="1" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                           </tr>
-                        </tbody></table>
+                        </table>
                       </td>
                     </tr>
                     <!-- end: moccap -->
@@ -282,14 +288,14 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <!-- end: grey row-->
 
                     <!-- socialButtons -->
-                    <tr bgcolor="#060000">
+                    <tr bgcolor="#060000" height="40" background="<?= $path ?>/imgs/social-bg-2.jpg">
                     <td style="text-align:center; display:inline" class="mobile">
-                      <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
-                        <tr height="42">
+                      <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#060000">
+                        <tr height="40">
                           <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
-                          <td><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
-                          <td><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td width="59"><a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td width="47"><a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
+                          <td width="51"><a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a></td>
                           <td class="mobileOffTab"><img src="<?= $path ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
                         </tr>
                       </table>
@@ -301,25 +307,31 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <tr bgcolor="#1b1919">
                     <td class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
-                      <tr height="8">
-                        <td colspan="3"></td>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>   
+                        </td>
+                        <td></td>
                       </tr>
                       <tr>
-                        <td width="40" class="mobileOffTab"></td>
-                        <td width="16" class="mobileOnTab"></td>
-                        <td style="text-align:center;">
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="14" style="display:block; margin:0; padding:0; border:none;"/>
-
+                        <td width="40" class="mobileOffTab" valign="middle" style="vertical-align:middle; font-size: 0"></td>
+                        <td width="16" class="mobileOnTab" valign="middle" style="vertical-align:middle; font-size: 0"></td>
+                        <td style="text-align:center; vertical-align:middle;" valign="middle">
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
                                 <u>Please click here to view terms and conditions</u></font>
                               </a>
-
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
-
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="13" style="display:block; margin:0; padding:0; border:none;"/>   
+                        </td>
+                        <td></td>
                       </tr>
                       </table>
                     </td>
@@ -327,7 +339,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <!-- end: Fotter -->
                 </table>
                 <!-- End Container -->
-              
+            </td>
+            </tr>
+          </table>  
         </td>
       </tr>
     </table>

@@ -152,14 +152,14 @@ $this->title = $title;
                     <?php
                     if ($s->status == "1")
                     {
-                        echo '<a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image" 
+                        echo '<a href='.Url::toRoute(['site/image', 'n' => $s->sesId, 'big' => "1"]).' data-lightbox="image" 
                         data-title="'.$client->name.' - '. $s->created_at .'">
                         <img src="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="thumb-img-details" style="max-width:70px;"/></a>';
 
                         echo '<div class="btn-group-vertical pull-right">
-                           <a href='.Url::toRoute(['site/image', 'n' => $s->sesId]).' data-lightbox="image-preview" 
+                           <a href='.Url::toRoute(['site/image', 'n' => $s->sesId, 'big' => "1"]).' data-lightbox="image-preview" 
                             data-title="'.$client->name.' - '. $s->created_at .'" class="btn btn-info" title="Preview selfie"><i class="fa fa-search-plus"></i></a>
-                            <a href="'.Url::toRoute(['site/image', 'n' => $s->sesId]).'" class="btn btn-info" download="'.$s->sesId.'.jpg" title="Save image"><i class="fa fa-save"></i></a>
+                            <a href="'.Url::toRoute(['site/image', 'n' => $s->sesId, 'big' => "1"]).'" class="btn btn-info" download="'.$s->sesId.'.jpg" title="Save image"><i class="fa fa-save"></i></a>
                         </div>';
                     } else {
                         echo '<img src="'.@webroot.'/dist/img/no_photo.jpg" style="max-width:70px;" alt="no-selfie-available/>';

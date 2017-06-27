@@ -103,9 +103,10 @@ class SiteController extends Controller
     /**
      * This function mediates the display of images. Also, it re-generates an image when it is not on the current server
      * @param  string $n path's column from actions table or sesId
+     * @param string $big default is equal null, so functions returns thumb's image else if You define $big's param for eg. $big = "1" function returns big images from upload dir.
      * @return response    Return url link to image
      */
-    public static function actionImage($n)
+    public static function actionImage($n, $big=null)
     {
        
         //Regenerate image when image was remove
@@ -146,7 +147,12 @@ class SiteController extends Controller
         //Generate link to images
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/jpg');
-        \Yii::$app->response->data = file_get_contents($pathTemp);
+
+        if (!is_null($big))
+            \Yii::$app->response->data = file_get_contents($pathUpload);
+        else 
+            \Yii::$app->response->data = file_get_contents($pathTemp);
+
         return \Yii::$app->response;
     }
 }
