@@ -117,13 +117,13 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             </center>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                            To enter, all you need to do is share your Selfie Studio shot on <br/>
-                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodacom</font> and 
+                            <font color="#58595b">To enter, all you need to do is share your Selfie Studio shot on <br/>
+                            Instagram with</font> <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodacom</font> and 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#Huawei<?= $country; ?></font> before 7th August.
 
-                          <br/><br/>
+                          <br/><br/><font color="#58595b">
                             We’ll choose one selfie to to win R1000 every Monday for 7 weeks, between 26 June and 7 August. At the end of the competition, one final selfie will be selected to win a Huawei P10. That winner will
-                            be announced on 10 August.  
+                            be announced on 10 August.</font>
                           </p>
                           <br/>
                         </td>
