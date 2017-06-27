@@ -281,11 +281,11 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <!-- end: grey row-->
 
                     <!-- socialButtons -->
-                    <tr height="38">
+                    <tr height="40">
                     <td style="text-align:center; display:inline" class="mobile">
                       <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
-                        <tr height="38">
-                          <td height="38" class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg"></td>
+                        <tr height="40">
+                          <td height="40" class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg" bgcolor="#060000"></td>
                           <td width="59">
                             <a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                           </td>
@@ -295,7 +295,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="51">
                             <a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                           </td>
-                          <td height="38" class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg"></td>
+                          <td height="40" class="mobileOffTab" background="<?= $path ?>/imgs/social-bg-2.jpg" bgcolor="#060000"></td>
                         </tr>
                       </table>
                     </td>
