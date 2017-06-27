@@ -330,7 +330,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
                       </tr>
-                        <tr>
+                      <tr>
                         <td></td>
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="13" style="display:block; margin:0; padding:0; border:none;"/>   
