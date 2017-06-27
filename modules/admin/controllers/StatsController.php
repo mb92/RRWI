@@ -209,7 +209,7 @@ class StatsController extends Controller
 
 
         $clients = Clients::getFromCountry($countryId)->all();
-        $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;"><i>slefie-app</i></div>';
+        $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;"><i>selfie-app</i></div>';
         $content = $this->renderPartial('pdfFullRaport', ['title' => $smallTitle, 'clients' => $clients, 'countryName' => strtoupper($country->name)]);
 
         $pdf = new Pdf([
@@ -244,7 +244,7 @@ class StatsController extends Controller
 
 
         $clients = Clients::getFromCountry($countryId)->all();
-        $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;"><i>Simple raport slefie-app</i></div>';
+        $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;"><i>Simple raport selfie-app</i></div>';
         $content = $this->renderPartial('pdfSimplyRaport', ['title' => $smallTitle, 'clients' => $clients, 'countryName' => strtoupper($country->name)]);
 
         $pdf = new Pdf([
@@ -286,7 +286,7 @@ class StatsController extends Controller
 
         // vdd($client);
         $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;">
-            <i>Client details - slefie-app</i></div>';
+            <i>Client details - selfie-app</i></div>';
         $content = $this->renderPartial('pdfClientRaport', ['title' => $smallTitle, 'client' => $client, 'stats' => $stats]);
 
         $pdf = new Pdf([
@@ -323,7 +323,7 @@ class StatsController extends Controller
 
         // vdd($client);
         $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;">
-            <i>Store details - slefie-app</i></div>';
+            <i>Store details - selfie-app</i></div>';
         $content = $this->renderPartial('pdfStoreRaport', ['title' => $smallTitle, 'store' => $store, 'stats' => $stats]);
 
         $pdf = new Pdf([
