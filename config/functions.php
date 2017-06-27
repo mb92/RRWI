@@ -31,7 +31,14 @@ function vdd($var) {
     die();
 }
 
+function slug($string) {
 
+    $string = strtolower($string);
+    $string = str_replace(" ", "_", $string);
+    $string = str_replace(":", "-", $string);
+    $string = str_replace(";", "]", $string);
+    return $string;
+}
 function watermark2($watermarkPath, $outImgPath) {
 
     $stamp = imagecreatefrompng($watermarkPath);

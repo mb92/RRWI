@@ -257,13 +257,16 @@ class StatsController extends Controller
             'methods' => [ 
                 'SetHeader'=>['Date of generate: '. mysqltime() . ' ['.strtoupper($country->short).']'],
                 'SetFooter'=>['{PAGENO}'],
-            ]
+            ],
+            // 'destination' => Pdf::DEST_FILE,
         ]);
         
         // return the pdf output as per the destination setting
         // $pdf = Yii::$app->pdf;
         // $pdf->content = $content;
-        return $pdf->render(); 
+        // return $pdf->render(); 
+        $pdf->render()->Output('filename.pdf','D');
+        vdd("asd");
     }
 
 
@@ -344,28 +347,36 @@ class StatsController extends Controller
 
 
     public function actionNewsletter($country) {
+        $files = array();
+
+        foreach (glob(Yii::getAlias("@raports").'/csv/*.csv') as $file) 
+        {
+            unlink($file);
+        }
+
         $countryId = Countries::find()->where(['short' => $country])->one()['id'];
         
-        $list = Clients::find()->select(['email'])->innerJoinWith('sessionsapps',"sessionsapps.countryId = $countryId")->where(['offers' => "1"])->groupBy('clients.email')->all()->toArray();
-
+        // $list = Clients::find()->select(['email'])->innerJoinWith('sessionsapps',"sessionsapps.countryId = $countryId")->where(['offers' => "1"])->groupBy('clients.email')->all()->toArray();
+        $users = Yii::$app->db->createCommand('Select clients.email from clients right join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.countryId = '.$countryId.' and clients.offers = 1;')->queryAll();
         // Select clients.email from clients right join sessionsapps on sessionsapps.countryId = 1 where clients.offers = 1 group by clients.email;
+        $name = 'newsletter-'.$country.'__'.slug(mysqltime());
 
-        vdd($list);
-        // vdd($list[0]->client->email);
-        $file = Yii::getAlias("@temp").'/tmp/file.csv';
+        $file = Yii::getAlias("@raports").'/csv/'.$name.'.csv';
 
         $fp = fopen($file, 'w');
 
-        foreach ($list as $ses) {
+        foreach ($users as $user) {
 
-            fputcsv($fp, $list);
+            fputcsv($fp, $user);
         }
 
         fclose($fp);
 
         if (file_exists($file)) {
-            echo "i";
+            Yii::$app->response->sendFile($file);
         }
-        vdd($list);
+        else {
+            return $this->redirect(Yii::$app->request->referrer);
+        }
     }
 }
