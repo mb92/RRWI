@@ -211,12 +211,18 @@ class StatsController extends Controller
         $clients = Clients::getFromCountry($countryId)->all();
         $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;"><i>selfie-app</i></div>';
         $content = $this->renderPartial('pdfFullRaport', ['title' => $smallTitle, 'clients' => $clients, 'countryName' => strtoupper($country->name)]);
-
+        
+        $files = array();
+        foreach (glob(Yii::getAlias('@app').'/raports/pdf/*.pdf') as $file) 
+        {
+            unlink($file);
+        }
+        
         $pdf = new Pdf([
             // your html content input
             'content' => $content,  
             'options' => ['title' => 'Raport for '. strtoupper($country->name)],
-            'filename' => strtoupper($country->short) . '_' . 'full-raport_'. mysqltime() .'.pdf',
+            'filename' => $filename = slug(strtoupper($country->short) . '_' . 'full-raport_'. mysqltime() .'.pdf'),
             // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
              // call mPDF methods on the fly
             'methods' => [ 
@@ -231,7 +237,9 @@ class StatsController extends Controller
         // $pdf->content = $content;
         // We'll be outputting a PDF  
 
-        return $pdf->render(); 
+//        return $pdf->render(); 
+        $pdf->output($content, $file = Yii::getAlias('@app').'/raports/pdf/'.$filename, Pdf::DEST_FILE);
+        Yii::$app->response->sendFile($file);
     }
 
     public function actionSimplyraport()
@@ -246,24 +254,30 @@ class StatsController extends Controller
         $clients = Clients::getFromCountry($countryId)->all();
         $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;"><i>Simple raport selfie-app</i></div>';
         $content = $this->renderPartial('pdfSimplyRaport', ['title' => $smallTitle, 'clients' => $clients, 'countryName' => strtoupper($country->name)]);
-
+        
+        $files = array();
+        foreach (glob(Yii::getAlias('@app').'/raports/pdf/*.pdf') as $file) 
+        {
+            unlink($file);
+        }
+        
         $pdf = new Pdf([
             // your html content input
             'content' => $content,  
             'options' => ['title' => 'Raport for '. strtoupper($country->name)],
-            'filename' => strtoupper($country->short) . '_' . 'simple-raport_'. mysqltime() .'.pdf',
+            'filename' => $filename = slug(strtoupper($country->short) . '_' . 'simple-raport_'. mysqltime() .'.pdf'),
             // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
              // call mPDF methods on the fly
             'methods' => [ 
                 'SetHeader'=>['Date of generate: '. mysqltime() . ' ['.strtoupper($country->short).']'],
                 'SetFooter'=>['{PAGENO}'],
-            ]
+            ],
+            // 'destination' => Pdf::DEST_FILE,
         ]);
         
-        // return the pdf output as per the destination setting
-        // $pdf = Yii::$app->pdf;
-        // $pdf->content = $content;
-        return $pdf->render(); 
+//        return $pdf->render(); 
+        $pdf->output($content, $file = Yii::getAlias('@app').'/raports/pdf/'.$filename, Pdf::DEST_FILE);
+        Yii::$app->response->sendFile($file);
     }
 
 
@@ -288,12 +302,18 @@ class StatsController extends Controller
         $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;">
             <i>Client details - selfie-app</i></div>';
         $content = $this->renderPartial('pdfClientRaport', ['title' => $smallTitle, 'client' => $client, 'stats' => $stats]);
-
+        
+        $files = array();
+        foreach (glob(Yii::getAlias('@app').'/raports/pdf/*.pdf') as $file) 
+        {
+            unlink($file);
+        }
+        
         $pdf = new Pdf([
             // your html content input
             'content' => $content,  
             'options' => ['title' => $client->name],
-            'filename' => str_replace('@', '[at]', $client->email) . '_' . 'raport_'. mysqltime() .'.pdf',
+            'filename' => $filename = slug(str_replace('@', '[at]', $client->email) . '_' . 'raport_'. mysqltime() .'.pdf'),
             // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
              // call mPDF methods on the fly
             'methods' => [ 
@@ -305,7 +325,10 @@ class StatsController extends Controller
         // return the pdf output as per the destination setting
         // $pdf = Yii::$app->pdf;
         // $pdf->content = $content;
-        return $pdf->render(); 
+//        return $pdf->render(); 
+        
+        $pdf->output($content, $file = Yii::getAlias('@app').'/raports/pdf/'.$filename, Pdf::DEST_FILE);
+        Yii::$app->response->sendFile($file);
     }
 
 
@@ -320,7 +343,12 @@ class StatsController extends Controller
         $stats['interrupedSes'] = $store->countInterrupedSes();
         $stats['clients'] = $store->countClients();
         $stats['photos'] = $store->countDoneSes();
-
+        
+        $files = array();
+        foreach (glob(Yii::getAlias('@app').'/raports/pdf/*.pdf') as $file) 
+        {
+            unlink($file);
+        }
         // vdd($client);
         $smallTitle = '<div style="font-size:12px; position:absolute; float:right; right:55px;">
             <i>Store details - selfie-app</i></div>';
@@ -330,42 +358,51 @@ class StatsController extends Controller
             // your html content input
             'content' => $content,  
             'options' => ['title' => $store->name],
-            'filename' => str_replace('@', '[at]', $store->name) . '_' . 'raport_'. mysqltime() .'.pdf',
+            'filename' => $filename = slug(str_replace('@', '[at]', $store->name) . '_' . 'raport_'. mysqltime() .'.pdf'),
+            'destination' => Pdf::DEST_FILE,
              // call mPDF methods on the fly
             'methods' => [ 
                 'SetHeader'=>['Date of generate: '. mysqltime()],
                 'SetFooter'=>['{PAGENO}'],
             ]
         ]);
-        
-        return $pdf->render(); 
-        // return $pdf->Output(Yii::getAlias("@raports").'/filename.pdf','F');
+//        return $pdf->render(); 
+         $pdf->output($content, $file = Yii::getAlias('@app').'/raports/pdf/'.$filename, Pdf::DEST_FILE);
+
+         Yii::$app->response->sendFile($file);
     }
 
 
     public function actionNewsletter($country) {
+        $files = array();
+        foreach (glob(Yii::getAlias('@app').'/raports/csv/*.csv') as $file) 
+        {
+            unlink($file);
+        }
+
         $countryId = Countries::find()->where(['short' => $country])->one()['id'];
         
-        $list = Clients::find()->select(['email'])->innerJoinWith('sessionsapps',"sessionsapps.countryId = $countryId")->where(['offers' => "1"])->groupBy('clients.email')->all()->toArray();
-
+        // $list = Clients::find()->select(['email'])->innerJoinWith('sessionsapps',"sessionsapps.countryId = $countryId")->where(['offers' => "1"])->groupBy('clients.email')->all()->toArray();
+        $users = Yii::$app->db->createCommand('Select clients.email from clients right join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.countryId = '.$countryId.' and clients.offers = 1;')->queryAll();
         // Select clients.email from clients right join sessionsapps on sessionsapps.countryId = 1 where clients.offers = 1 group by clients.email;
+        $name = 'newsletter-'.$country.'__'.slug(mysqltime());
 
-        vdd($list);
-        // vdd($list[0]->client->email);
-        $file = Yii::getAlias("@temp").'/tmp/file.csv';
+        $file = Yii::getAlias('@app').'/raports/csv/'.$name.'.csv';
 
         $fp = fopen($file, 'w');
 
-        foreach ($list as $ses) {
+        foreach ($users as $user) {
 
-            fputcsv($fp, $list);
+            fputcsv($fp, $user);
         }
 
         fclose($fp);
 
         if (file_exists($file)) {
-            echo "i";
+            Yii::$app->response->sendFile($file);
         }
-        vdd($list);
+        else {
+            return $this->redirect(Yii::$app->request->referrer);
+        }
     }
 }
