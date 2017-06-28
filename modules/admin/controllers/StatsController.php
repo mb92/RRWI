@@ -239,7 +239,10 @@ class StatsController extends Controller
 
 //        return $pdf->render(); 
         $pdf->output($content, $file = Yii::getAlias('@app').'/raports/pdf/'.$filename, Pdf::DEST_FILE);
+        
+        Yii::$app->response->headers->add('Keep-Alive','timeout=5, max=99');
         Yii::$app->response->sendFile($file);
+//        vdd(Yii::$app->request);
     }
 
     public function actionSimplyraport()
