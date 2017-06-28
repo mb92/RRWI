@@ -375,7 +375,7 @@ class StatsController extends Controller
 
     public function actionNewsletter($country) {
         $files = array();
-        foreach (glob(Yii::getAlias("@raports").'/csv/*.csv') as $file) 
+        foreach (glob(Yii::getAlias('@app').'/raports/csv/*.csv') as $file) 
         {
             unlink($file);
         }
@@ -387,7 +387,7 @@ class StatsController extends Controller
         // Select clients.email from clients right join sessionsapps on sessionsapps.countryId = 1 where clients.offers = 1 group by clients.email;
         $name = 'newsletter-'.$country.'__'.slug(mysqltime());
 
-        $file = Yii::getAlias("@raports").'/csv/'.$name.'.csv';
+        $file = Yii::getAlias('@app').'/raports/csv/'.$name.'.csv';
 
         $fp = fopen($file, 'w');
 
