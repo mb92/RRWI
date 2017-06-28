@@ -147,7 +147,9 @@ class SiteController extends Controller
         //Generate link to images
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/jpg');
-
+        \Yii::$app->response->headers->add('Connection','Keep-Alive');
+        \Yii::$app->response->headers->add('Keep-Alive','timeout=5, max=99');
+        
         if (!is_null($big))
             \Yii::$app->response->data = file_get_contents($pathUpload);
         else 
