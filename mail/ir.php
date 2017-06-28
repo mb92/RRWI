@@ -172,7 +172,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         </center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                              The Huawei P10; co-engineered with Leica. An extraordinary fusion of art, culture and technology. A Phone with a soul, designed to help you take photo portraits like a pro, unleash your inner artist and change the way the world sees you.
+                              The Huawei P10; co-engineered with Leica. An extraordinary fusion of art, culture and technology. A phone with a soul, designed to help you take photo portraits like a pro, unleash your inner artist and change the way the world sees you.
                           </p>
                         </td>
                         <td width="40" class="mobileOffTab"></td>

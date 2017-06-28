@@ -123,7 +123,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                             Bitte denk an den 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodacom</font> und 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodafone</font> und 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">vor dem 5 August.</font>
 
