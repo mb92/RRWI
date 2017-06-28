@@ -36,6 +36,5 @@ tests/_support/_generated
 /temp/*
 
 # composer vendor dir
-/raports
-/raports/*
 /raports/csv/*
+/raports/pdf/*
