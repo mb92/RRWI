@@ -97,8 +97,8 @@ or <a href="https://www.instagram.com/huaweimobilero/" target="_blank">https://w
 <p>
 By submitting an entry, participants agree to provide their personal information which will be used and disclosed by the Organizer and its authorized agents for the purposes of competition administration and prize fulfilment. Personal information collected by the Organizer will be used by the Organizer and by Vodafone and are subject to the following Privacy Policies:<br/>
 <p>Huawei: 
-	<a href="http://consumer.huawei.com/de/privacy-policy/index.htm" target="_blank"> 
-	http://consumer.huawei.com/de/privacy-policy/index.htm
+	<a href="http://consumer.huawei.com/en/legal/privacy-policy/" target="_blank"> 
+	http://consumer.huawei.com/en/legal/privacy-policy/
 	</a>
 </p>
 
@@ -132,8 +132,7 @@ Vodafone:
 
 <div class="mobileOff">
 
-
-<p>1.&nbsp;&nbsp;Ireland:</p>
+<h2>8.&nbsp;&nbsp;Ireland:</h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0>
  <tr>
