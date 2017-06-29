@@ -63,7 +63,7 @@ function watermark2($watermarkPath, $outImgPath) {
 
     imagepng($im, $outImgPath);
     imagedestroy($im);
-
+    
     if (!file_exists($outImgPath)) 
     return true;
     else return false;
@@ -83,7 +83,10 @@ function watermark($watermarkPath, $outImgPath) {
 
     imagepng($im, $outImgPath);
     imagedestroy($im);
-
+    
+    $im = NULL;
+    unset($im);
+    
     if (!file_exists($outImgPath)) 
     return true;
     else return false;
@@ -109,7 +112,7 @@ function addWatermark($filename) {
 
     $stThumb = watermark($watermarkNameSm, $thumb);
     $stPhoto = watermark2($watermarkNameBg, $photo);
-
+    
     if (($stThumb = true) && ($stPhoto == true))
         return true;
     else return false;
@@ -203,10 +206,13 @@ function regPhoto($sesId) {
     fwrite($file, $binary);
     fclose($file);
     $binary=NULL;
+    unset($binary);
     
-    Image::thumbnail($uploadDir.'/'.$fileNameExt, 171, 300)->save($tempDir.'/'.$fileNameExt, ['quality' => 90]);
+    $thumb = Image::thumbnail($uploadDir.'/'.$fileNameExt, 171, 300)->save($tempDir.'/'.$fileNameExt, ['quality' => 90]);
     addWatermark($fileNameExt);
     
+    $thumb = NULL;
+    unset($thumb);
     if(file_exists($uploadDir.'/'.$fileNameExt) && file_exists($tempDir.'/'.$fileNameExt)) {
         return true;
     } else {return false; }
