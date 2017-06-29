@@ -202,6 +202,7 @@ function regPhoto($sesId) {
     // Create File
     fwrite($file, $binary);
     fclose($file);
+    $binary=NULL;
     
     Image::thumbnail($uploadDir.'/'.$fileNameExt, 171, 300)->save($tempDir.'/'.$fileNameExt, ['quality' => 90]);
     addWatermark($fileNameExt);
