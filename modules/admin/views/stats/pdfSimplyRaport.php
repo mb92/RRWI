@@ -47,8 +47,6 @@ use yii\helpers\Html;
 				<td style="text-align:center;">
 					<?php 
 					if ($s->status == "1") {
-//                                            $photoName = "../upload/'.$s->sesId.'.jpg";
-//                                            if (!file_exists($photoName)) regPhoto($s->sesId);
                                                 echo '<img src="../upload/'.$s->sesId.'.jpg" style="max-width:300px; margin:5px;"/>';
                                                 
 //                                           echo '<img src="'.Url::toRoute(['site/image', 'n' => $s->sesId, 'big' => "1"]).'" style="max-width:300px; margin:5px;"/>'; 
