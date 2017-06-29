@@ -5,6 +5,7 @@
  */
 use yii\helpers\VarDumper;
 use yii\helpers\FileHelper;
+use models\Actions;
 
 function verifyToken($sendToken) {
     $ourToken = "0b3d4f561329b5a5dfdbaff634280be9";
@@ -175,4 +176,25 @@ function remove_dir_attachment($attachPath) {
     $path = str_replace("/P10.jpg", "", $attachPath);
     if (is_null(FileHelper::removeDirectory($path))) return true;
     else return false;
+}
+
+
+function regPhoto($sesId) {
+    $imageB64 = Actions::find()->where(['path' => $sesId])->one()->base64;
+    // $filename = $sesId.'.jpg';
+    $filename = $sesId;
+    $ext = "jpg";
+    $fileNameExt = $filename.'.'.$ext;
+    // Decode Image
+    $binary=base64_decode($imageB64);
+    // header('Content-Type: bitmap; charset=utf-8');
+    // Images will be saved under 'www/upload/' folder
+    $file = fopen($uploadDir.'/'.$fileNameExt, 'wb');
+
+    // Create File
+    fwrite($file, $binary);
+    fclose($file);
+    
+    Image::thumbnail($uploadDir.'/'.$fileNameExt, 171, 300)->save($tempDir.'/'.$fileNameExt, ['quality' => 90]);
+    addWatermark($fileNameExt);
 }
