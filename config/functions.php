@@ -180,6 +180,9 @@ function remove_dir_attachment($attachPath) {
 
 
 function regPhoto($sesId) {
+    $uploadDir = Yii::getAlias("@upload");
+    $tempDir = Yii::getAlias("@temp");
+     
     $imageB64 = Actions::find()->where(['path' => $sesId])->one()->base64;
     // $filename = $sesId.'.jpg';
     $filename = $sesId;
