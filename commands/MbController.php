@@ -379,6 +379,8 @@ class MbController extends Controller
         echo 'Found sessions: '.$sessions->count()."\n";
         $regCount = 0;
 //        var_dump($sessions->all()[0]['sesId']);die();
+        
+        
         foreach ($sessions->all() as $ses) {
             
             if (is_null($ses['sesId'])) {
@@ -393,7 +395,9 @@ class MbController extends Controller
                
                if ($st == true) {$regCount += 1;}
             }
+            gc_collect_cycles ();
         }
+        
         echo "\nFinish\n\nRegenerate files: ".$regCount."\n";
     }
     // public function actionGenuser()
