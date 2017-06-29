@@ -91,7 +91,7 @@ use yii\helpers\Html;
 									?>	
 								</td>
 							</tr>
-                                                        <?php gc_collect_cycles (); ?>
+                                                        
 						<?php endforeach ?>
 <!-- 					<tr class="warning" style="height:20px;">
 					<td colspan="4" style="padding:10px; text-align:center;"></td>

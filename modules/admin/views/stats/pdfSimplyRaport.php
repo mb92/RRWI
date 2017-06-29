@@ -55,9 +55,7 @@ use yii\helpers\Html;
 				}
 					?>
 				</td>
-			<?php if ($key%2 == 0) echo "</tr>"; 
-                        gc_collect_cycles ();
-                        ?>
+			<?php if ($key%2 == 0) echo "</tr>"; ?>
 			<?php endforeach ?>
 
 	</tbody>
