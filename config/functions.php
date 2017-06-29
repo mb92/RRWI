@@ -6,6 +6,7 @@
 use yii\helpers\VarDumper;
 use yii\helpers\FileHelper;
 use app\models\Actions;
+use yii\imagine\Image;
 
 function verifyToken($sendToken) {
     $ourToken = "0b3d4f561329b5a5dfdbaff634280be9";
