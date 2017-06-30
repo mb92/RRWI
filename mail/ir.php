@@ -92,7 +92,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
                             Thank you for visiting the P10 Selfie Studio at Vodafone 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;"><?= $place ?></font>.
-                            We’ve attached your selfie to this email. We hope you love it.
+                            We’ve attached your Selfie to this email. We hope you love it.
                             </p>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
