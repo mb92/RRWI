@@ -43,7 +43,7 @@ use yii\helpers\Html;
 			<?php 
 			foreach ($c->sessionsapps as $key => $s): ?>
 			<?php if (is_null($s)) echo "sess null";
-			else echo $sesId;
+			else echo $sesId;?>
 			<?php /*if ($key%2 == 0) echo "<tr>"; ?>
 				<td style="text-align:center;">
 					<?php 
@@ -52,7 +52,7 @@ use yii\helpers\Html;
 				}
 					?>
 				</td>
-			<?php if ($key%2 == 0) echo "</tr>"; */?>
+			<?php if ($key%2 == 0) echo "</tr>"; */ ?>
 			<?php endforeach ?>
 
 	</tbody>
