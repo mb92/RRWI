@@ -249,7 +249,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
                               Style, craftmanship and innovation, all with the connectivity speed to match thanks to Vodacom’s 4G network. Discover more in store or online.
-                            </p>
+                            </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
                           <td width="40" class="mobileOffTab"></td>
