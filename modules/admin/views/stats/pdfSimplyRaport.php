@@ -41,10 +41,18 @@ use yii\helpers\Html;
 <table class="table table-bordered " repeat_header="1" autosize="1" style="margin-top:0;">
 	<tbody>
 			<?php 
+
+			
 			foreach ($c->sessionsapps as $key => $s): ?>
-			<?php if (is_null($s)) echo "sess null";
-			else echo $s->sesId;?>
-			<br/>
+                        <?php if ($s->status == "1") { ?>
+                           <td>
+                            <?php 
+                            echo '<img src="../upload/'.$s->sesId.'.jpg" style="max-width:300px; margin:5px;"/>';
+                            ?>
+                            </td>
+                           <td><?= $s->created_at ?></td>
+                        <?php }?>
+                           
 			<?php /*if ($key%2 == 0) echo "<tr>"; ?>
 				<td style="text-align:center;">
 					<?php 
