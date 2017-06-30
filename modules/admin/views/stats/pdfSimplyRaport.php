@@ -32,7 +32,6 @@ use yii\helpers\Html;
 <?php foreach ($clients as $key => $c): ?>
 <table class="table table-bordered" autosize="1" style="margin-bottom: 0px; margin-top:50px;">
     <tbody style="margin-bottom:0;">
-	<tbody style="margin-bottom:0;">
 		<tr class="info">
 			<td><?= $key+1?>: <b><?= $c->email ?></b></td>
 			<td><?= $c->name ?></td>
