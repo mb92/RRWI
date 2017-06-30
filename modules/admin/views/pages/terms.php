@@ -128,11 +128,10 @@ Vodafone:
 5.&nbsp;&nbsp;All legal relationships arising because or in connection with these terms and conditions and the competition are subject to German Law. Mandatory laws of the participant’s resident country explicitly applies.<br/>
 </p>
   
-<br/><br/>
 
 <div class="mobileOff">
 
-<h2>8.&nbsp;&nbsp;Ireland:</h2>
+<h2>9.&nbsp;&nbsp;Ireland:</h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0>
  <tr>
@@ -193,7 +192,7 @@ Vodafone:
 
 
 <div class="mobileOn">
-<p>1.&nbsp;&nbsp;Ireland:</p>
+<h2>9.&nbsp;&nbsp;Ireland:</h2>
 <p>Dundrum Town Centre, Dundrum Town Centre, Dundrum, Dublin 16</p>  
 <p>Mahon Point, 29 Mahon Point Shopping Centre, Mahon Point Industrial Estate, Mahon, Co.Cork</p>
 <p>Blanchardstown, unit 133, Blanchardstown Shopping Centre, Blanchardstown, Dublin</p>
