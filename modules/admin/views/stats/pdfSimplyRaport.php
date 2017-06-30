@@ -46,7 +46,7 @@ use yii\helpers\Html;
 				<td style="text-align:center;">
 					<?php 
 					if ($s->status == "1") {
-					echo '<img src="../upload/'.$s->sesId.'.jpg" style="max-width:300px; margin:5px;"/>';
+					//echo '<img src="../upload/'.$s->sesId.'.jpg" style="max-width:300px; margin:5px;"/>';
 				}
 					?>
 				</td>
