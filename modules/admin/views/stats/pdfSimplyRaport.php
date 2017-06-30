@@ -41,7 +41,7 @@ use yii\helpers\Html;
 <table class="table table-bordered " repeat_header="1" autosize="1" style="margin-top:0;">
 	<tbody>
 			<?php 
-			foreach ($c->sessionsapps as $key => $s): ?>
+			/*foreach ($c->sessionsapps as $key => $s): ?>
 			<?php if ($key%2 == 0) echo "<tr>"; ?>
 				<td style="text-align:center;">
 					<?php 
@@ -51,7 +51,7 @@ use yii\helpers\Html;
 					?>
 				</td>
 			<?php if ($key%2 == 0) echo "</tr>"; ?>
-			<?php endforeach ?>
+			<?php endforeach */?>
 
 	</tbody>
 </table>
