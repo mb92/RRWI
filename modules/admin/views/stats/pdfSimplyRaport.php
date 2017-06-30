@@ -45,12 +45,16 @@ use yii\helpers\Html;
 			
 			foreach ($c->sessionsapps as $key => $s): ?>
                         <?php if ($s->status == "1") { ?>
-                           <td>
-                            <?php 
-                            echo '<img src="../upload/'.$s->sesId.'.jpg" style="max-width:300px; margin:5px;"/>';
-                            ?>
-                            </td>
-                           <td><?= $s->created_at ?></td>
+                           <tr>
+                               <td>
+                                <?php 
+                                    echo '<img src="../upload/'.$s->sesId.'.jpg" style="max-width:300px; margin:5px;"/>';
+                                ?>
+                                </td>
+                                <td>
+                                    <?= $s->created_at ?>
+                                </td>
+                           </tr>
                         <?php }?>
                            
 			<?php /*if ($key%2 == 0) echo "<tr>"; ?>
