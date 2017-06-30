@@ -57,6 +57,11 @@ class PagesController extends Controller
         return $this->render($view);
     }
 
+    public function actionStores()
+    {   
+        $this->layout = false;
+        return $this->render('stores');
+    }
     // public function actionUnsub() 
     // {
     //     return $this->render('unsub');
