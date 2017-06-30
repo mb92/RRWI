@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<?php $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/stores/';?>
+
+<?php //$path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/stores/';?>
+
+<?php $path = 'https://'.$_SERVER['HTTP_HOST'].'/dist/stores/';?>
+
 <html lang="en">
 <head>
 
