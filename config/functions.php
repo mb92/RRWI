@@ -20,7 +20,9 @@ function verifyToken($sendToken) {
  * @return string current date and time Y-m-d H:i:s
  */
 function mysqltime() {
-   return date("Y-m-d H:i:s");
+   // return date("Y-m-d H:i:s");
+   // 
+   return date("Y-m-d H:i:s", strtotime('1 hour'));
 }
 
 /**
