@@ -5,6 +5,8 @@
  */
 use yii\helpers\VarDumper;
 use yii\helpers\FileHelper;
+use app\models\Actions;
+use yii\imagine\Image;
 
 function verifyToken($sendToken) {
     $ourToken = "0b3d4f561329b5a5dfdbaff634280be9";
@@ -18,7 +20,9 @@ function verifyToken($sendToken) {
  * @return string current date and time Y-m-d H:i:s
  */
 function mysqltime() {
-   return date("Y-m-d H:i:s");
+   // return date("Y-m-d H:i:s");
+   // 
+   return date("Y-m-d H:i:s", strtotime('1 hour'));
 }
 
 /**
@@ -61,7 +65,7 @@ function watermark2($watermarkPath, $outImgPath) {
 
     imagepng($im, $outImgPath);
     imagedestroy($im);
-
+    
     if (!file_exists($outImgPath)) 
     return true;
     else return false;
@@ -81,7 +85,10 @@ function watermark($watermarkPath, $outImgPath) {
 
     imagepng($im, $outImgPath);
     imagedestroy($im);
-
+    
+    $im = NULL;
+    unset($im);
+    
     if (!file_exists($outImgPath)) 
     return true;
     else return false;
@@ -97,15 +104,17 @@ function addWatermark($filename) {
     // $watermarkNameSm = '../web/dist/img/wt-2.png';
     // $watermarkNameBg= '../web/dist/img/wt-1.png';
     // 
-    $watermarkNameSm = '../web/dist/img/wt-2.png';
-    $watermarkNameBg= '../web/dist/img/wt-3-1.png';
-
-    $photo = Yii::getAlias("@upload").'/'.$filename;
-    $thumb = Yii::getAlias("@temp").'/'.$filename;
+    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-2.png';
+    $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-3-1.png';
+    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-2.png';
+    $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-3-1.png';
+    
+    $photo = Yii::getAlias("@app").'/upload/'.$filename;
+    $thumb = Yii::getAlias("@app").'/temp/'.$filename;
 
     $stThumb = watermark($watermarkNameSm, $thumb);
     $stPhoto = watermark2($watermarkNameBg, $photo);
-
+    
     if (($stThumb = true) && ($stPhoto == true))
         return true;
     else return false;
@@ -175,4 +184,38 @@ function remove_dir_attachment($attachPath) {
     $path = str_replace("/P10.jpg", "", $attachPath);
     if (is_null(FileHelper::removeDirectory($path))) return true;
     else return false;
+}
+
+
+function regPhoto($sesId) {
+    $uploadDir = Yii::getAlias("@app").'/upload/';
+    $tempDir = Yii::getAlias("@app").'/temp/';
+//    vdd(Actions::find()->where(['path' => 'n50c23b5e690830e9111ddd2bcd39z15'])->one()->base64);
+    $imageB64 = Actions::find()->where(['path' => $sesId])->one()->base64;
+    
+    // $filename = $sesId.'.jpg';
+    $filename = $sesId;
+    $ext = "jpg";
+    $fileNameExt = $filename.'.'.$ext;
+    
+    // Decode Image
+    $binary=base64_decode($imageB64);
+    // header('Content-Type: bitmap; charset=utf-8');
+    // Images will be saved under 'www/upload/' folder
+    $file = fopen($uploadDir.'/'.$fileNameExt, 'wb');
+
+    // Create File
+    fwrite($file, $binary);
+    fclose($file);
+    $binary=NULL;
+    unset($binary);
+    
+    $thumb = Image::thumbnail($uploadDir.'/'.$fileNameExt, 171, 300)->save($tempDir.'/'.$fileNameExt, ['quality' => 90]);
+    addWatermark($fileNameExt);
+    
+    $thumb = NULL;
+    unset($thumb);
+    if(file_exists($uploadDir.'/'.$fileNameExt) && file_exists($tempDir.'/'.$fileNameExt)) {
+        return true;
+    } else {return false; }
 }

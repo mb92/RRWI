@@ -124,7 +124,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                             Bitte denk an den 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#HuaweiP10Vodafone</font> und 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> bis zum 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">vor dem 5 August.</font>
 
                           <br/><br/>
@@ -255,7 +255,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
                               Innovation, Design und höchste Perfektion bei der Fertigung - das macht das HUAWEI P10 aus. Verbunden im besten High-Speed-Netz von Vodafone. <br/>
                               Hol Dir das neue HUAWEI P10 in Deinem Vodafone Shop oder online.
-                            </p>
+                            </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
                           <td width="40" class="mobileOffTab"></td>
@@ -320,7 +320,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td style="text-align:center; vertical-align:middle;" valign="middle">
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
-                                <u>Please click here to view terms and conditions</u></font>
+                                <u>Bitte klicken Sie hier um die allgemeinen Geschäftsbedingungen einzusehen</u></font>
                               </a>
                         </td>
                         <td width="40" class="mobileOffTab"></td>

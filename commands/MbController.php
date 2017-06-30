@@ -373,6 +373,33 @@ class MbController extends Controller
         echo "Links ZA was add\n";
     }
 
+    public function actionRegim() {
+        echo "Start regenerate\n";
+        $sessions = Sessionsapps::find()->where(['status' => "1"]);
+        echo 'Found sessions: '.$sessions->count()."\n";
+        $regCount = 0;
+//        var_dump($sessions->all()[0]['sesId']);die();
+        
+        
+        foreach ($sessions->all() as $ses) {
+            
+            if (is_null($ses['sesId'])) {
+                echo "\nNothing to regenerate\n";
+                break;
+            }
+                
+            $photoName = \Yii::getAlias("@app").'/upload/'.$ses['sesId'].'.jpg';
+            
+            if (!file_exists($photoName)) {
+               $st = regPhoto($ses['sesId']);
+               
+               if ($st == true) {$regCount += 1;}
+            }
+            gc_collect_cycles ();
+        }
+        
+        echo "\nFinish\n\nRegenerate files: ".$regCount."\n";
+    }
     // public function actionGenuser()
     // {
     //     $login = \Yii::$app->security->generateRandomKey(6);
