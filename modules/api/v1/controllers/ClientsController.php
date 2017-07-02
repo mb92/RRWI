@@ -78,6 +78,7 @@ class ClientsController extends ActiveController
 		// Get image string posted from Android App
 		// print_r(Yii::$app->request->post('offers'));
 		// die();
+                ini_set('max_execution_time', 0);
 		$name = Yii::$app->request->post('name', false);
 		$email = Yii::$app->request->post('email', false);
 		$token = Yii::$app->request->post('token', false);

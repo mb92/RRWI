@@ -86,10 +86,12 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
+                'stores'=>'/admin/pages/stores',
+                'terms-and-conditions'=>'/admin/pages/terms-and-conditions',
                 ['class' => 'yii\web\UrlRule', 'pattern' => '/admin', 'route' => '/admin/site/index'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'countries'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'languages'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'stores'],
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'countries'],
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'languages'],
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'stores'],
 
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'actions',
                     'extraPatterns' => ['POST create' => 'create']
