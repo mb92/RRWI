@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-
-<?php //$path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/stores/';?>
-
-<?php // $path = 'https://'.$_SERVER['HTTP_HOST'].'/dist/stores/';?>
-
 <?php $path = '//'.$_SERVER['HTTP_HOST'].'/dist/stores/';?>
-
-
 <html lang="en">
 <head>
 
@@ -25,6 +18,7 @@
 
 	<!-- GOOGLE FONT -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="<?= $path ?>css/style.css">
@@ -60,11 +54,14 @@
 					<li rel="tab5">ČESKÁ REPUBLIKA</li>
 				</ul>
 			</div>
+		</div>
+	<div class="content-for-tabs">
+		<div>		
 			<div class="tab_container">
 				<h3 class="d_active tab_drawer_heading" rel="tab1">DEUTSCHLAND</h3>
 
 				<div id="tab1" class="tab_content">
-				<!--<h2>Deutschland</h2>-->
+				<!--<h2>Tab 1 content</h2>-->
 					<p>
                                         Vodafone Adalbertstra&szlig;e, 
                                         Adalbertstr. 25a, 
@@ -278,7 +275,7 @@
 
 				<h3 class="tab_drawer_heading" rel="tab2">IRELAND</h3>
 				<div id="tab2" class="tab_content">
-                                    <!--<h2>Ireland:</h2>-->
+				<!--<h2>Tab 2 content</h2>-->
                                     <p>Dundrum Town Centre, Dundrum Town Centre, Dundrum, Dublin 16</p><br/>  
                                     <p>Mahon Point, 29 Mahon Point Shopping Centre, Mahon Point Industrial Estate, Mahon, Co.Cork</p><br/>
                                     <p>Blanchardstown, unit 133, Blanchardstown Shopping Centre, Blanchardstown, Dublin</p><br/>
@@ -287,13 +284,18 @@
 
 				<h3 class="tab_drawer_heading" rel="tab3">SOUTH AFRICA</h3>
 				<div id="tab3" class="tab_content">
-				<h2>Tab 3 content</h2>
-					<p>Nulla eleifend felis vitae velit tristique imperdiet. Etiam nec imperdiet elit. Pellentesque sem lorem, scelerisque sed facilisis sed, vestibulum sit amet eros.</p><br/>
+                                    <!--<h2>Tab 3 content</h2>-->
+                                    <p>GATEWAY SHOPPING CENTRE, 1 Palm Boulevard, Umhlanga, Kwa-Zulu Natal</p><br/>
+                                    <p>LIBERTY MIDLANDS MALL, 50 Sanctuary Road, Pietermaritzburg, Kwa-Zulu Natal</p><br/>
+                                    <p>CANAL WALK SHOPPING CENTRE, Lower Canal Walk Shopping Centre, Century City, Western Cape</p><br/>
+                                    <p>VODACOM WORLD, 082 Vodacom Boulevard, Voda Valley, Gauteng</p><br/>
+                                    <p>THE GLEN SHOPPING CENTRE, Corner Orpen and Letaba Street, Oakdene, Gauteng</p><br/>
 				</div>
 				<!-- #tab3 -->
 
 				<h3 class="tab_drawer_heading" rel="tab4">ROMÂNIA</h3>
 				<div id="tab4" class="tab_content">
+				<!--<h2>Tab 4 content</h2>-->
                                     <p>Retail Store Bucuresti Baneasa Mall, Shopping City Baneasa, Sos. Buc-Ploiesti nr. 42D etaj 1 aripa, MediaGalaxy, Bucuresti</p><br/>
                                     <p>Retail Store Bucuresti Mega Mall, Bd. Pierre de Coubertin, Nr. 3- 5 , Complex Comercial Mega Mall, Bucuresti</p><br/>
                                     <p>Retail Store Constanta City Mall, City Mall Constanta, str. Al. Lapusneanu, nr.116C, Constanta</p><br/>
@@ -304,6 +306,7 @@
 
 				<h3 class="tab_drawer_heading" rel="tab5">ČESKÁ REPUBLIKA</h3>
 				<div id="tab5" class="tab_content">
+				<!--<h2>Tab 5 content</h2>-->
                                     <p>Praha OC Letňany, Veselská 663, 199 00, Praha 9</p><br/>
                                     <p>Brno Masarykova, Masarykova 2,&nbsp; 602 00 Brno</p><br/>
                                     <p>Ostrava, Avion Shopping Park Rudná 114, 700 30 Ostrava-Zábřeh</p><br/>
@@ -325,8 +328,7 @@
 			</div>
 
 			<div class="footer-text">
-				<a href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/admin/pages/terms-and-conditions?c=ir'; ?>">
-				Please click here to view terms and conditions</a>
+				<a href="#">Please click here to view terms and conditions</a>
 			</div>
 
 			<div class="logo-vodafone">
