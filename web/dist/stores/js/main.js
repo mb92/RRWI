@@ -1,7 +1,6 @@
 // tabbed content
     // http://www.entheosweb.com/tutorials/css/tabs.asp
     $(".tab_content").hide();
-    $(".tab_content:first").show();
 
   /* if in tab mode */
     $("ul.tabs li").click(function() {
@@ -36,3 +35,22 @@
 	   to add border to right side
 	   of last tab */
 	$('ul.tabs li').last().addClass("tab_last");
+
+
+    if($(window).width() > 769) {
+      $(".tab_content:first").show();
+    } else {
+      $(".tab_drawer_heading").removeClass("d_active");
+    }
+
+    $(window).resize(function(){
+      if($(window).width() > 769) {
+        $(".tab_content:first").show();
+        $(".tab_drawer_heading").removeClass("d_active");
+        $('.tabs li').removeClass("active");
+        $('.tabs li').eq(0).addClass("active");
+      } else {
+        $(".tab_content").hide();
+        $(".tab_drawer_heading").removeClass("d_active");
+      }
+    });
