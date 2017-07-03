@@ -41,16 +41,22 @@
       $(".tab_content:first").show();
     } else {
       $(".tab_drawer_heading").removeClass("d_active");
+      $('body').addClass('mobile');
     }
 
     $(window).resize(function(){
       if($(window).width() > 769) {
+        $(".tab_content").hide();
         $(".tab_content:first").show();
         $(".tab_drawer_heading").removeClass("d_active");
         $('.tabs li').removeClass("active");
         $('.tabs li').eq(0).addClass("active");
+        $('body').removeClass('mobile');
       } else {
-        $(".tab_content").hide();
-        $(".tab_drawer_heading").removeClass("d_active");
+        if(!$('body').hasClass('mobile')) {
+          $('body').addClass('mobile');
+          $(".tab_content").hide();
+          $(".tab_drawer_heading").removeClass("d_active");
+        }
       }
     });
