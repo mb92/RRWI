@@ -93,7 +93,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
                             Danke für Deinen Besuch im HUAWEI P10 Selfie Studio in Deinem
-                            Vodafone Store. 
+                            Vodafone Store 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">
+                            <?= $place ?></font>. 
                             Wir schicken Dir anbei Dein Selfie und hoffen, es gefällt Dir.
                             </p>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
