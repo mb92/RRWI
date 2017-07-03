@@ -39,57 +39,11 @@ table {
   border-spacing: 0; }
 
 @font-face {
-  font-family: 'FrutigerNext LT Light';
-  src: url('../fonts/FrutigerNextLT-Light.eot');
-  src: url('../fonts/FrutigerNextLT-Light.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/FrutigerNextLT-Light.woff') format('woff'),
-    url('../fonts/FrutigerNextLT-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'FrutigerNext LT RegularCn';
-  src: url('../fonts/FrutigerNextLT-BoldCn.eot');
-  src: url('../fonts/FrutigerNextLT-BoldCn.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/FrutigerNextLT-BoldCn.woff') format('woff'),
-    url('../fonts/FrutigerNextLT-BoldCn.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'FrutigerNext LT Medium';
-  src: url('../fonts/FrutigerNextLT-Medium.eot');
-  src: url('../fonts/FrutigerNextLT-Medium.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/FrutigerNextLT-Medium.woff') format('woff'),
-    url('../fonts/FrutigerNextLT-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'FrutigerNext LT Bold';
-  src: url('../fonts/FrutigerNextLT-Bold.eot');
-  src: url('../fonts/FrutigerNextLT-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/FrutigerNextLT-Bold.woff') format('woff'),
-    url('../fonts/FrutigerNextLT-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'FrutigerNext LT LightCn';
-  src: url('../fonts/FrutigerNextLT-LightCn.eot');
-  src: url('../fonts/FrutigerNextLT-LightCn.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/FrutigerNextLT-LightCn.woff') format('woff'),
-    url('../fonts/FrutigerNextLT-LightCn.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
+  font-family: 'Frutiger';
+  src: url("../fonts/FrutigerNextLT-Medium.ttf"); }
 
 body {
-  font-family: 'FrutigerNext LT Medium', 'Lato', sans-serif;
+  font-family: "Frutiger", "Helvetica Neue", Helvetica, sans-serif;
   background-color: #333;
   height: 100%; }
 
@@ -102,31 +56,30 @@ body {
     margin: 0 auto; }
     @media only screen and (min-width: 768px) {
       .header-bg .header-center {
-        height: 200px;
+        height: 260px;
         width: 768px; } }
     .header-bg .header-center h1 {
       font-weight: bolder;
-      letter-spacing: 10px;
+      letter-spacing: 12px;
       color: #fff;
       text-align: center;
-      font-size: 25px;
+      font-size: 20px;
       padding-top: 30px;
-      padding-bottom:3px; }
+      padding-bottom: 10px; }
       @media only screen and (min-width: 768px) {
         .header-bg .header-center h1 {
           font-size: 70px;
-          padding-top: 30px;
-          padding-bottom: 5px; } }
+          padding-top: 50px;
+          padding-bottom: 10px; } }
     .header-bg .header-center h2 {
-      letter-spacing: 8px;
-      font-family: 'FrutigerNext LT LightCn', 'Lato', sans-serif;
+      letter-spacing: 12px;
       color: #fff;
       text-align: center;
       font-size: 16px;
       font-weight: lighter; }
       @media only screen and (min-width: 768px) {
         .header-bg .header-center h2 {
-          font-size: 55px; } }
+          font-size: 60px; } }
 
 .content-center-bg {
   width: 100%;
@@ -155,8 +108,8 @@ body {
             -ms-flex-pack: distribute;
                 justify-content: space-around;
             margin: 0;
-            padding-top: 25px;
-            padding-bottom: 25px;
+            padding-top: 40px;
+            padding-bottom: 40px;
             float: left;
             list-style: none;
             height: 32px;
@@ -169,8 +122,6 @@ body {
       margin: 0;
       cursor: pointer;
       padding: 0px 21px;
-      font-family: 'FrutigerNext LT Medium', 'Lato', sans-serif;
-      letter-spacing: 1px;
       height: 31px;
       line-height: 22px;
       border-top: 1px solid #333;
@@ -194,37 +145,36 @@ body {
       color: #333;
       border-bottom: 1px solid #fff;
       display: block; }
-    .content-for-tabs .tab_container {
+    .content-center-bg .content-center .tab_container {
+      position: absolute;
+      bottom: 120px;
+      top: 100px;
+      left:50%;
+      margin-left:-49%;
+      width:98%;
       border: 1px solid #333;
       border-top: none;
       clear: both;
-      background: #333; }
+      background: #333;
+      overflow: auto; }
       @media only screen and (min-width: 768px) {
-        .content-for-tabs .tab_container {
-          background: #f1f2f2;
-          border:0;
+        .content-center-bg .content-center .tab_container {
+          background: #fff;
           top: 373px;
           width: 768px;
           margin-left:-379px; } }
-    .content-for-tabs .tab_content {
+    .content-center-bg .content-center .tab_content {
       margin-left: 10px;
       margin: 10px;
-      background-color: #f1f2f2;
-      line-height: 1.6;
+      background-color: #fff;
       padding: 20px;
-      font-family: 'FrutigerNext LT Medium', 'Lato', sans-serif;
       display: none; }
-      @media only screen and (min-width: 768px) {
-      .content-for-tabs .tab_content {
-        padding: 20px 0;
-      }
-      }
-    .content-for-tabs .tab_drawer_heading {
+    .content-center-bg .content-center .tab_drawer_heading {
       display: none; }
     @media screen and (max-width: 767px) {
-      .content-for-tabs .tabs {
+      .content-center-bg .content-center .tabs {
         display: none; }
-      .content-for-tabs .tab_drawer_heading {
+      .content-center-bg .content-center .tab_drawer_heading {
         background-color: #ed1c24;
         color: #fff;
         border-top: 1px solid #000;
@@ -238,29 +188,16 @@ body {
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none; }
-      .content-center-bg .d_active {
+      .content-center-bg .content-center .d_active {
         background-color: #fff;
         color: #000; } }
 
-
-.content-for-tabs {
-  background: #f1f2f2;
-}
-
-.content-for-tabs .tab_container {
-  width:100%;
-  margin:0 auto;
-}
-@media only screen and (min-width: 768px) {
-  .content-for-tabs .tab_container {
-    width:768px;
-  }
-}
-
 .footer-bg {
+  position: absolute;
   width: 100%;
   height: 90px;
-  background-color: #1b1919; }
+  background-color: #1b1919;
+  bottom: 0; }
   @media only screen and (min-width: 768px) {
     .footer-bg {
       height: 120px; } }
