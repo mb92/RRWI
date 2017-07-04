@@ -58,6 +58,7 @@ class ActionsController extends ActiveController
 			// Yii::$app->response->statusCode = 204;
 			$result = "Bad content";
 		}
+                saveLog($session->countryId, "retake", $session['sesId']);
 		return $result;
 	}
 

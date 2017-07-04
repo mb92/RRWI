@@ -53,14 +53,22 @@ class SessionsappsController extends ActiveController
 
 		if (($api['sesId'] != false) && ($api['appId'] != false) && ($api['country'] != false) && ($api['storeId'] != false) && ($api['lang'] != false) && ($api['token'] != false))
 		{
-			//Verification of uniqueness sesId
+			$country = Countries::find()->where(['short' => $api['country']])->one();
+                        
+                        //Verification of uniqueness sesId
 			$checkSesId = Sessionsapps::find()->where(['sesId' => $api['sesId']])->one();
-			if (!is_null($checkSesId)) return "A session with this identifier already exists! Regenerete new sesId!";
+			if (!is_null($checkSesId)) {
+                            saveLog($country['id'], "not_create", $api['sesId'], "A session with this identifier already exists! Regenerete new sesId!");
+                            return "A session with this identifier already exists! Regenerete new sesId!";
+                        }
 			// Verify Tokeny
-			if (!verifyToken($api['token'])) return $result = "Bad Token";
+			if (!verifyToken($api['token'])) {
+                            saveLog($country['id'], "not_create", $api['sesId'], "Bad Token!");
+                            return $result = "Bad Token";
+                        }
 
 			// Yii::$app->response->statusCode = 200;
-			$country = Countries::find()->where(['short' => $api['country']])->one();
+//			$country = Countries::find()->where(['short' => $api['country']])->one();
 			$lang = Languages::find()->where(['short' => $api['lang']])->one();
 			$store = Stores::find()->where(['id' => $api['storeId']])->one();
 			$store->count ++;
@@ -80,13 +88,18 @@ class SessionsappsController extends ActiveController
 			$sv = $model->save();
 
 			if($sv) $result = "OK"; 
-			else $result = "Can't save data";
+			else {
+                            $result = "Can't save data";
+                            saveLog($country['id'], "Interrupted", $api['sesId'], "Can't save data");
+                        }
 			// print_r(Yii::$app->request->post());
 			// die();
 		} else {
 			// Yii::$app->response->statusCode = 204;
 			$result = "Bad content";
+                        saveLog($country['id'], "Interrupted", $api['sesId'], "Bad content");
 		}
+                saveLog($country['id'], "Interrupted", $api['sesId'], "Session was created");
 		return $result;
 	}
 	
