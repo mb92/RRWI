@@ -101,7 +101,7 @@ function watermark2($watermarkPath, $outImgPath) {
 }
 
 
-function watermark($watermarkPath, $outImgPath) {
+function watermarkThumb1($watermarkPath, $outImgPath) {
     $stamp = imagecreatefrompng($watermarkPath);
     $im = imagecreatefromjpeg($outImgPath);
 
@@ -122,6 +122,36 @@ function watermark($watermarkPath, $outImgPath) {
     return true;
     else return false;
 }
+
+
+function watermarkThumb2($watermarkPath, $outImgPath) {
+    $stamp = imagecreatefrompng($watermarkPath);
+    $im = imagecreatefromjpeg($outImgPath);
+
+    list($width, $height) = getimagesize($outImgPath);
+    list($widthWt, $heightWt) = getimagesize($watermarkPath);
+
+    $marge_right = ($width-$widthWt);
+    $marge_bottom = 10;
+    $sx = imagesx($stamp);
+    $sy = imagesy($stamp);
+
+    // Copy the stamp image onto our photo using the margin offsets and the photo 
+    // width to calculate positioning of the stamp. 
+    imagecopy($im, $stamp, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($stamp), imagesy($stamp));
+
+    imagepng($im, $outImgPath);
+    imagedestroy($im);
+    
+    $im = NULL;
+    unset($im);
+    
+    if (!file_exists($outImgPath)) 
+    return true;
+    else return false;
+}
+
+
 /**
  * This function add watermark to photos before send a email.
  * The function loads the source image (from "upload" directory) and watermark image ("web/dist/img") 
@@ -133,15 +163,16 @@ function addWatermark($filename) {
     // $watermarkNameSm = '../web/dist/img/wt-2.png';
     // $watermarkNameBg= '../web/dist/img/wt-1.png';
     // 
-    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-2.png';
+//    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-2.png';
     // $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-3-1.png';
-    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-2.png';
+    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1.png';
     $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4.png';
     
     $photo = Yii::getAlias("@app").'/upload/'.$filename;
     $thumb = Yii::getAlias("@app").'/temp/'.$filename;
 
-    $stThumb = watermark($watermarkNameSm, $thumb);
+//    $stThumb = watermarkThumb1($watermarkNameSm, $thumb);
+    $stThumb = watermarkThumb2($watermarkNameSm, $thumb);
     $stPhoto = watermark3($watermarkNameBg, $photo);
     
     if (($stThumb = true) && ($stPhoto == true))

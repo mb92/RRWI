@@ -390,6 +390,7 @@ class MbController extends Controller
                 
             $photoName = \Yii::getAlias("@app").'/upload/'.$ses['sesId'].'.jpg';
             
+            echo $ses['sesId']."\n";
             if (!file_exists($photoName)) {
                $st = regPhoto($ses['sesId']);
                

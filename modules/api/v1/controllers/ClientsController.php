@@ -221,7 +221,7 @@ class ClientsController extends ActiveController
 		//Verify action results
 		if ($result['client'] != "OK" && $result['image'] == "OK") unlink(Yii::getAlias("@upload").'/'.$fileNameExt);
                 
-                saveLog($ses->countryId, "results", $sesId, $result);
+                saveLog($ses->countryId, "results", $sesId, implode($result));
 		return $result;
 	}
 
