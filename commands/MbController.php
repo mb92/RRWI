@@ -401,6 +401,110 @@ class MbController extends Controller
         
         echo "\nFinish\n\nRegenerate files: ".$regCount."\n";
     }
+    
+    
+    
+    public function actionRmrows(){
+        
+//            03.07.2017 00:00:00 1
+//            04.07.2017 00:00:00 3
+//            22.06.2017 00:00:00 5
+        
+        $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-07-03 00:00:00"])->andWhere(['countryId' => 1])->all();
+        
+        foreach ($ses as $s) {
+            $res = Actions::deleteAll(['sessionsAppId' => $s->id]);
+            $up = \Yii::getAlias("@app").'/upload/'.$s['sesId'].'.jpg';
+            $tmp = \Yii::getAlias("@app").'/temp/'.$s['sesId'].'.jpg';
+            
+            if(file_exists($up)) unlink($up);
+            if(file_exists($tmp)) unlink($tmp);
+        }
+        
+        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-07-03 00:00:00"]);
+        
+        $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
+        $connection = \Yii::$app->getDb();
+        $command = $connection->createCommand($query);
+        $result = $command->queryAll();
+        
+        $st = Clients::deleteAll(['in', 'id', array_column($result, 'id')]);
+        
+        echo '1: Records: '.$res.'; Clients: '.$st."\n";
+        
+        
+        
+        
+        $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-07-04 00:00:00"])->andWhere(['countryId' => 3])->all();
+        
+        foreach ($ses as $s) {
+            $res = Actions::deleteAll(['sessionsAppId' => $s->id]);
+            $up = \Yii::getAlias("@app").'/upload/'.$s['sesId'].'.jpg';
+            $tmp = \Yii::getAlias("@app").'/temp/'.$s['sesId'].'.jpg';
+            
+            if(file_exists($up)) unlink($up);
+            if(file_exists($tmp)) unlink($tmp);
+        }
+        
+        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-07-04 00:00:00"]);
+        
+        $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
+        $connection = \Yii::$app->getDb();
+        $command = $connection->createCommand($query);
+        $result = $command->queryAll();
+        
+        $st = Clients::deleteAll(['in', 'id', array_column($result, 'id')]);
+        
+        echo '3: Records: '.$res.'; Clients: '.$st."\n";
+        
+        
+        
+        
+        
+        
+        
+        $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-06-22 00:00:00"])->andWhere(['countryId' => 5])->all();
+        
+        foreach ($ses as $s) {
+            $res = Actions::deleteAll(['sessionsAppId' => $s->id]);
+            $up = \Yii::getAlias("@app").'/upload/'.$s['sesId'].'.jpg';
+            $tmp = \Yii::getAlias("@app").'/temp/'.$s['sesId'].'.jpg';
+            
+            if(file_exists($up)) unlink($up);
+            if(file_exists($tmp)) unlink($tmp);
+        }
+        
+        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-06-22 00:00:00"]);
+        
+        $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
+        $connection = \Yii::$app->getDb();
+        $command = $connection->createCommand($query);
+        $result = $command->queryAll();
+        
+        $st = Clients::deleteAll(['in', 'id', array_column($result, 'id')]);
+        
+        echo '5: Records: '.$res.'; Clients: '.$st."\n";
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // public function actionGenuser()
     // {
     //     $login = \Yii::$app->security->generateRandomKey(6);
