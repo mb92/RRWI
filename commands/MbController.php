@@ -409,7 +409,8 @@ class MbController extends Controller
 //            03.07.2017 00:00:00 1
 //            04.07.2017 00:00:00 3
 //            22.06.2017 00:00:00 5
-        
+       
+    // RM for IR
         $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-07-03 00:00:00"])->andWhere(['countryId' => 1])->all();
         
         foreach ($ses as $s) {
@@ -419,9 +420,9 @@ class MbController extends Controller
             
             if(file_exists($up)) unlink($up);
             if(file_exists($tmp)) unlink($tmp);
+            
+            $s->delete();
         }
-        
-        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-07-03 00:00:00"]);
         
         $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
         $connection = \Yii::$app->getDb();
@@ -430,11 +431,11 @@ class MbController extends Controller
         
         $st = Clients::deleteAll(['in', 'id', array_column($result, 'id')]);
         
-        echo '1: Records: '.$res.'; Clients: '.$st."\n";
+        echo "IR: done\n";
+//     end IR   
         
         
-        
-        
+//       RM for DE
         $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-07-04 00:00:00"])->andWhere(['countryId' => 3])->all();
         
         foreach ($ses as $s) {
@@ -444,9 +445,9 @@ class MbController extends Controller
             
             if(file_exists($up)) unlink($up);
             if(file_exists($tmp)) unlink($tmp);
+            
+            $s->delete();
         }
-        
-        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-07-04 00:00:00"]);
         
         $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
         $connection = \Yii::$app->getDb();
@@ -455,14 +456,10 @@ class MbController extends Controller
         
         $st = Clients::deleteAll(['in', 'id', array_column($result, 'id')]);
         
-        echo '3: Records: '.$res.'; Clients: '.$st."\n";
+        echo "DE: done\n";
+//      end: DE
         
-        
-        
-        
-        
-        
-        
+//      RM for SA
         $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-06-22 00:00:00"])->andWhere(['countryId' => 5])->all();
         
         foreach ($ses as $s) {
@@ -472,9 +469,9 @@ class MbController extends Controller
             
             if(file_exists($up)) unlink($up);
             if(file_exists($tmp)) unlink($tmp);
+            
+            $s->delete();
         }
-        
-        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-06-22 00:00:00"]);
         
         $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
         $connection = \Yii::$app->getDb();
@@ -483,20 +480,10 @@ class MbController extends Controller
         
         $st = Clients::deleteAll(['in', 'id', array_column($result, 'id')]);
         
-        echo '5: Records: '.$res.'; Clients: '.$st."\n";
+        echo "SA: done\n";
+//        end: SA
+
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
