@@ -419,9 +419,11 @@ class MbController extends Controller
             
             if(file_exists($up)) unlink($up);
             if(file_exists($tmp)) unlink($tmp);
+            
+            $s->delete();
         }
         
-        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-07-03 00:00:00"]);
+//        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-07-03 00:00:00"]);
         
         $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
         $connection = \Yii::$app->getDb();
@@ -430,7 +432,9 @@ class MbController extends Controller
         
         $st = Clients::deleteAll(['in', 'id', array_column($result, 'id')]);
         
-        echo '1: Records: '.$res.'; Clients: '.$st."\n";
+        echo '1: done';
+        
+        
         
         
         
@@ -444,9 +448,11 @@ class MbController extends Controller
             
             if(file_exists($up)) unlink($up);
             if(file_exists($tmp)) unlink($tmp);
+            
+            $s->delete();
         }
         
-        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-07-04 00:00:00"]);
+//        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-07-04 00:00:00"]);
         
         $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
         $connection = \Yii::$app->getDb();
@@ -455,10 +461,7 @@ class MbController extends Controller
         
         $st = Clients::deleteAll(['in', 'id', array_column($result, 'id')]);
         
-        echo '3: Records: '.$res.'; Clients: '.$st."\n";
-        
-        
-        
+        echo '3: done';
         
         
         
@@ -472,9 +475,11 @@ class MbController extends Controller
             
             if(file_exists($up)) unlink($up);
             if(file_exists($tmp)) unlink($tmp);
+            
+            $s->delete();
         }
         
-        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-06-22 00:00:00"]);
+//        $res = Sessionsapps::deleteAll(['<', 'created_at', "2017-07-03 00:00:00"]);
         
         $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
         $connection = \Yii::$app->getDb();
@@ -483,20 +488,10 @@ class MbController extends Controller
         
         $st = Clients::deleteAll(['in', 'id', array_column($result, 'id')]);
         
-        echo '5: Records: '.$res.'; Clients: '.$st."\n";
+        echo '5: done';
+        
+
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
