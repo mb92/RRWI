@@ -6,6 +6,7 @@
 use yii\helpers\VarDumper;
 use yii\helpers\FileHelper;
 use app\models\Actions;
+use app\models\Countries;
 use yii\imagine\Image;
 
 function verifyToken($sendToken) {
@@ -246,4 +247,23 @@ function regPhoto($sesId) {
     if(file_exists($uploadDir.'/'.$fileNameExt) && file_exists($tempDir.'/'.$fileNameExt)) {
         return true;
     } else {return false; }
+}
+
+
+function saveLog($countryId, $status, $sesId, $message="*") {
+    $path = Yii::getAlias("@app").'/raports/ses_log/';
+    $countryShort = Countries::find()->where(['id' => $countryId])->one()['short'];
+    $logNameExt = $countryShort.'_'.date('Y-M-d').'.log';
+    if (strtolower($status) == "INTERRUPTED") $eol = PHP_EOL.PHP_EOL;
+    else $eol = PHP_EOL;
+
+    $txt = $eol.'[ '.date("H:i:s").' ] status:'.strtoupper($status).'; sesId:'.$sesId.'; message:'.$message.';';
+//    echo $logNameExt;
+
+    // if (!fileExists($lognameExt)) 
+    $logFile = fopen($path.$logNameExt, "a+") or die("Unable to open file!");
+
+    rewind($logFile);
+    fwrite($logFile, $txt);
+    fclose($logFile);
 }

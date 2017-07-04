@@ -153,9 +153,9 @@ class ClientsController extends ActiveController
 				$sv = false;
 			} else {
 				$rmimg= unlink(Yii::getAlias("@upload").'/'.$fileNameExt);
-				$results['image'] = "Created but must be removed";
+				$result['image'] = "Created but must be removed";
 				$result['client'] = "Error, problem with db";
-				return $results;
+				return $result;
 			}
 
 		// Save action "Take a picture" - tP
@@ -172,7 +172,7 @@ class ClientsController extends ActiveController
 				$sv = false;
 			} else {
 				$rmImg= unlink(Yii::getAlias("@upload").'/'.$fileNameExt);
-				$results['image'] = "Created but must be removed";
+				$result['image'] = "Created but must be removed";
 				$result['action'] = "Probelm with db";
 			}
 
@@ -183,6 +183,7 @@ class ClientsController extends ActiveController
 
 			if($sv) {
 				$result['finish'] = "OK";
+                                saveLog($ses->countryId, "done", $sesId, "client: ".$client->email);
 
 			// Send email for client
 				$emailStatus = $this->sendEmail($client, Yii::$app->params['email-username'], $sesId);
@@ -210,7 +211,7 @@ class ClientsController extends ActiveController
 				$rmImg= unlink(Yii::getAlias("@upload").'/'.$fileNameExt);
 				$ses->status = "0";
 				$sv = $ses->save();
-				$results['image'] = "Created but must be removed";
+				$result['image'] = "Created but must be removed";
 				$result['finish'] = "Error! Something was wrong! Session is finished but without client";	
 			}
 		} else {
@@ -219,6 +220,8 @@ class ClientsController extends ActiveController
 
 		//Verify action results
 		if ($result['client'] != "OK" && $result['image'] == "OK") unlink(Yii::getAlias("@upload").'/'.$fileNameExt);
+                
+                saveLog($ses->countryId, "results", $sesId, implode($result));
 		return $result;
 	}
 
