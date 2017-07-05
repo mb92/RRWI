@@ -411,7 +411,7 @@ class MbController extends Controller
 //            22.06.2017 00:00:00 5
        
     // RM for IR
-        $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-07-03 00:00:00"])->andWhere(['countryId' => 1])->all();
+        $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-07-03 00:00:00", 'countryId' => 1])->andWhere(['countryId' => 1])->all();
         
         foreach ($ses as $s) {
             $res = Actions::deleteAll(['sessionsAppId' => $s->id]);
@@ -436,7 +436,7 @@ class MbController extends Controller
 
         
 //       RM for DE
-        $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-07-04 00:00:00"])->andWhere(['countryId' => 3])->all();
+        $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-07-04 00:00:00", 'countryId' => 3])->andWhere(['countryId' => 3])->all();
         
         foreach ($ses as $s) {
             $res = Actions::deleteAll(['sessionsAppId' => $s->id]);
@@ -460,7 +460,7 @@ class MbController extends Controller
 //      end: DE
         
 //      RM for SA
-        $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-06-22 00:00:00"])->andWhere(['countryId' => 5])->all();
+        $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-06-22 00:00:00", 'countryId' => 5])->andWhere(['countryId' => 5])->all();
         
         foreach ($ses as $s) {
             $res = Actions::deleteAll(['sessionsAppId' => $s->id]);
