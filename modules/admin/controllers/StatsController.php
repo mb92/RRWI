@@ -95,9 +95,8 @@ class StatsController extends Controller
         $stats['retake'] = Actions::countRetakesFromCountry($countryId);
         $stats['stores'] = Stores::countStoresInCountry($countryId);
         $stats['customers'] = Clients::countClientFromCountry($countryId);
-        
         $countQuery = clone $sessions;
-        $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count(), 'urlManager' => Yii::$app->urlManager]);
+        $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count(), 'route'=> '/admin/'.$country->short.'/stats/index']);
         $models = $sessions->offset($pages->offset)->limit($pages->limit)->orderBy(['created_at' => SORT_DESC])->all();
         
 //        vdd($pages);
