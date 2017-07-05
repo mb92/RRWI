@@ -433,7 +433,7 @@ class MbController extends Controller
         
         echo "IR: done\n";
 //     end IR   
-        
+
         
 //       RM for DE
         $ses = Sessionsapps::find()->where(['<', 'created_at', "2017-07-04 00:00:00"])->andWhere(['countryId' => 3])->all();
@@ -448,7 +448,7 @@ class MbController extends Controller
             
             $s->delete();
         }
-        
+   
         $query = "select clients.* from clients left join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.id IS NULL group by clients.id;";
         $connection = \Yii::$app->getDb();
         $command = $connection->createCommand($query);
