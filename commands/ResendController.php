@@ -61,16 +61,25 @@ class ResendController extends Controller
         //     mkdir($logs);
         // }
 
-        foreach ($toResend as $key => $value) {
-
+        foreach ($toResend as $key => $value) 
+        {
             $sesId = $value->sesId;
 
-            $ClientsController = new ClientsController;
-            $emailStatus = $ClientsController->sendEmail($value->client, Yii::$app->params['email-username'], $sesId);
+//            $ClientsController = new ClientsController;
+//            $emailStatus = $ClientsController->sendEmail($value->client, Yii::$app->params['email-username'], $sesId);
+            
+            Yii::$app->controllerNamespace = "app\modules\api\v1\controllers";
+            $emailStatus = Yii::$app->runAction('/clients/sendEmail', ['client' => $value->client, 'from' => Yii::$app->params['email-username'], 'fileName' => $sesId]);
 
-			if ($emailStatus == "1") $st = "Resend to: ".$value->client->email;
-			else $st="Not sent";
+            
+			if ($emailStatus == "1") {
+                            $st = "Resend to: ".$value->client->email;
+                        } else {
+                            $st="Not sent"; 
+                        }
+                        
         	echo "Status: ".$st."\n\n";
+                saveLogResend($st.' created_at: '.$value["created_at"].';');
         }
 
     }

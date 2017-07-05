@@ -116,7 +116,7 @@ class Sessionsapps extends \yii\db\ActiveRecord
     }
 
     public static function toResend() {
-        return parent::find()->where(['emailStatus' => "0"]);
+        return parent::find()->where(['emailStatus' => "0", 'status' => 1]);
     }
 
     public function getRetakes()

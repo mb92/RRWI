@@ -298,3 +298,19 @@ function saveLog($countryId, $status, $sesId, $message="*") {
     fwrite($logFile, $txt);
     fclose($logFile);
 }
+
+function saveLogResend($msg) {
+    $path = Yii::getAlias("@app").'/raports/resend_mail/';
+    $logNameExt = date('Y-M-d').'.log';
+    $eol = PHP_EOL;
+
+    $txt = '[ '.date("H:i:s").' ] '.$msg;
+//    echo $logNameExt;
+
+    // if (!fileExists($lognameExt)) 
+    $logFile = fopen($path.$logNameExt, "a+") or die("Unable to open file!");
+
+    rewind($logFile);
+    fwrite($logFile, $txt);
+    fclose($logFile);
+}
