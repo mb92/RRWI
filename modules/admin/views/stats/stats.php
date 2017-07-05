@@ -2,6 +2,7 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
+use app\components\CustomeLinkPager;
 /* @var $this yii\web\View */
 
 $this->title = $title;
@@ -231,8 +232,9 @@ $this->title = $title;
 
     <!--// display pagination-->
 <center>
-<?php echo LinkPager::widget([
+<?php echo CustomeLinkPager::widget([
     'pagination' => $pages,
+    'absolute' => true
 ]);?>
 </center>
 
