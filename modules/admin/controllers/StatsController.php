@@ -97,9 +97,10 @@ class StatsController extends Controller
         $stats['customers'] = Clients::countClientFromCountry($countryId);
         
         $countQuery = clone $sessions;
-        $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
+        $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count(), 'route']);
         $models = $sessions->offset($pages->offset)->limit($pages->limit)->orderBy(['created_at' => SORT_DESC])->all();
         
+//        vdd($pages);
 //        return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country]);
         return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country, 'models' => $models, 'pages' => $pages]);
 
