@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
 
 $this->title = $title;
@@ -227,6 +228,13 @@ $this->title = $title;
     </div>
     <!-- /.modal-dialog -->
 </div>
+
+    <!--// display pagination-->
+<center>
+<?php echo LinkPager::widget([
+    'pagination' => $pages,
+]);?>
+</center>
 
 <script>
 $(document).ready(function() {

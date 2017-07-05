@@ -95,8 +95,14 @@ class StatsController extends Controller
         $stats['retake'] = Actions::countRetakesFromCountry($countryId);
         $stats['stores'] = Stores::countStoresInCountry($countryId);
         $stats['customers'] = Clients::countClientFromCountry($countryId);
-                
-        return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country]);
+        
+        $countQuery = clone $sessions;
+        $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
+        $models = $sessions->offset($pages->offset)->limit($pages->limit)->orderBy(['created_at' => SORT_DESC])->all();
+        
+//        return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country]);
+        return $this->render('stats', ['title' => $title, 'sessions' => $sessions->all(), 'stats' => $stats, 'countries' => $countries, 'country'=> $country, 'models' => $models, 'pages' => $pages]);
+
     }
 
 
@@ -110,9 +116,14 @@ class StatsController extends Controller
         $countries = Countries::find()->all();
         $title = "Clients from ". Countries::find()->Where(['id' => $countryId])->one()['name'];
 
-        $clients = Clients::getFromCountry($countryId)->all();
-
-        return $this->render('customers', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'clients' => $clients]);
+        $clients = Clients::getFromCountry($countryId);
+        
+//        $countQuery = clone $clients;
+//        $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
+//        $models = $clients->offset($pages->offset)->limit($pages->limit)->orderBy(['created_at' => SORT_DESC])->all();
+        
+//        return $this->render('customers', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'clients' => $clients->all(), 'models' => $models, 'pages' => $pages]);
+         return $this->render('customers', ['title' => $title, 'countries' => $countries, 'country'=> $country, 'clients' => $clients->all()]);
     }
 
 
@@ -388,7 +399,7 @@ class StatsController extends Controller
         $countryId = Countries::find()->where(['short' => $country])->one()['id'];
         
         // $list = Clients::find()->select(['email'])->innerJoinWith('sessionsapps',"sessionsapps.countryId = $countryId")->where(['offers' => "1"])->groupBy('clients.email')->all()->toArray();
-        $users = Yii::$app->db->createCommand('Select clients.email from clients right join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.countryId = '.$countryId.' and clients.offers = 1;')->queryAll();
+        $users = Yii::$app->db->createCommand('Select clients.email from clients right join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.countryId = '.$countryId.' and clients.offers = 1 group by clients.email;')->queryAll();
         // Select clients.email from clients right join sessionsapps on sessionsapps.countryId = 1 where clients.offers = 1 group by clients.email;
         $name = 'newsletter-'.$country.'__'.slug(mysqltime());
 

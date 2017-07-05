@@ -22,49 +22,54 @@ use yii\helpers\Url;
 
 <script>
    $('#table').DataTable({
-      "paging": true,
-      "lengthChange": true,
+//      "paging": true,
+//      "lengthChange": true,
       "searching": true,
       "ordering": true,
       "order": [[ 3, "desc" ]],
-      "info": true,
+//      "info": true,
       "autoWidth": false,
-      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-      "pagingType": "full_numbers",
-      dom: 'Bfrtip',
-        buttons: [
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ],
+//      "bPaginate": false,
+      "paging": false,
+      "bInfo": false,
+//      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+//      "pagingType": "full_numbers",
+//      dom: 'Bfrtip',
+//        buttons: [
+//            'excelHtml5',
+//            'csvHtml5',
+//            'pdfHtml5'
+//        ],
     });
 </script>
 
 <script>
    $('#tableBasic').DataTable({
-      "paging": true,
-      "lengthChange": true,
+//      "paging": true,
+//      "lengthChange": true,
       "searching": true,
       "ordering": true,
       "order": [[ 3, "desc" ]],
       "info": true,
       "autoWidth": false,
-      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-      "pagingType": "full_numbers",
+      "bInfo": false,
+//      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+//      "pagingType": "full_numbers",
     });
 </script>
 
 <script>
    $('#tableBasicCustomers').DataTable({
-      "paging": true,
-      "lengthChange": true,
+//      "paging": true,
+//      "lengthChange": true,
       "searching": true,
       "ordering": true,
       "order": [[ 2, "desc" ]],
       "info": true,
       "autoWidth": false,
-      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-      "pagingType": "full_numbers",
+      "bInfo": false,
+//      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+//      "pagingType": "full_numbers",
     });
 </script>
 
