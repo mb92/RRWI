@@ -48,7 +48,7 @@
                 Yii::$app->params['countryId'] = $c;
                 break;
             } else {
-                Yii::$app->params['countryId'] = NULL;
+                Yii::$app->params['countryId'] = 'ZA';
             }
         }
      }
