@@ -406,7 +406,8 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
  </tr>
  <tr>
   <td>
-  Vodafone-Shop Allee Center
+<!--  Vodafone-Shop Allee Center-->
+Vodafone Shop Iserlohn
   </td>
   <td>
   Richard-Matthai-Platz 1
@@ -490,7 +491,8 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
  </tr>
  <tr>
   <td>
-  Vodafone Shop Bad Neuenahr-Ahr
+<!--  Vodafone Shop Bad Neuenahr-Ahr-->
+  Vodafone store Unkel
   </td>
   <td>
   Hauptstr. 72
@@ -499,7 +501,7 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
   53474
   </td>
   <td>
-  Bad Neuenahr
+  Store Unkel
   </td>
  </tr>
  <tr>
@@ -700,7 +702,8 @@ N&uuml;rnberg</p>
 
 
 <p>
-Vodafone-Shop Allee Center, 
+<!--Vodafone-Shop Allee Center, -->
+Vodafone Shop Iserlohn
 Richard-Matthai-Platz 1, 
 59065, 
 Hamm</p>
@@ -742,10 +745,13 @@ Kaiserslautern</p>
 
 
 <p>
-Vodafone Shop Bad Neuenahr-Ahr, 
+<!--Vodafone Shop Bad Neuenahr-Ahr,--> 
+Vodafone store Unkel
 Hauptstr. 72, 
 53474, 
-Bad Neuenahr</p>
+<!--Bad Neuenahr-->
+Store Unkel
+</p>
 
 
 <p>
