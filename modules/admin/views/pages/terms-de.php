@@ -494,7 +494,7 @@ Wermingser Str. 2
  <tr>
   <td>
 <!--  Vodafone Shop Bad Neuenahr-Ahr-->
-  Vodafone store Unkel
+  Vodafone Store Unkel
   </td>
   <td>
 <!--  Hauptstr. 72-->
@@ -753,7 +753,7 @@ Kaiserslautern</p>
 
 <p>
 <!--Vodafone Shop Bad Neuenahr-Ahr,--> 
-Vodafone store Unkel
+Vodafone Store Unkel
 Anton-Limbach-Straße 3, 
 53572 
 Unkel

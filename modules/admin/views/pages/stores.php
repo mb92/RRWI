@@ -202,12 +202,16 @@
                                         N&uuml;rnberg</p><br/>
 
 
-                                        <p>
+<!--                                        <p>
                                         Vodafone-Shop Allee Center, 
                                         Richard-Matthai-Platz 1, 
                                         59065, 
-                                        Hamm</p><br/>
-
+                                        Hamm</p><br/>-->
+                                        <p>
+                                        Vodafone Shop Iserlohn,
+                                        Wermingser Str. 2, 
+                                        58636, 
+                                        Iserlohn</p><br/>
 
                                         <p>
                                         Vodafone Shop Hauptstr., 
@@ -244,11 +248,17 @@
                                         Kaiserslautern</p><br/>
 
 
-                                        <p>
+                                        <!--<p>
                                         Vodafone Shop Bad Neuenahr-Ahr, 
                                         Hauptstr. 72, 
                                         53474, 
-                                        Bad Neuenahr</p><br/>
+                                        Bad Neuenahr</p>-->
+                                        <p>
+                                        Vodafone store Unkel
+                                        Anton-Limbach-Straße 3, 
+                                        53572 
+                                        Unkel
+                                        </p><br/>
 
 
                                         <p>
