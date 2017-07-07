@@ -436,9 +436,12 @@ $countryId = Yii::$app->params['countryId'];
         $name = 'clients-'.$country['short'].'__'.slug(mysqltime());
         $file = Yii::getAlias('@app').'/raports/csv/'.$name.'.csv';
         $fp = fopen($file, 'w');
+<<<<<<< HEAD
         $headers = ['Email', 'NewsltStat', 'AllSes', 'InterSes'];
         fputcsv($fp, $headers);
         
+=======
+>>>>>>> c6c202066428746f3622413b72c06398226a7621
         foreach ($clients as $c) {
             $data = [
                 'Email' => $c->email,
