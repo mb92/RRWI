@@ -459,7 +459,7 @@ $countryId = Yii::$app->params['countryId'];
                     'Email' => $c->email,
                     'Newsletter' => $c->offers,
                     'AllSes' => count($c->sessionsapps),
-                    'InterSes' => (int)count($c->sessionsapps) - (int)Clients::getDoneSes($c->id)->count(),
+                    'InterSes' => count($c->sessionsapps) - count(Clients::getDoneSes($c->id)->count()),
                     'Retakes' => $rt
                 ];
        }
