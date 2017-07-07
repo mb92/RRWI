@@ -438,17 +438,30 @@ $countryId = Yii::$app->params['countryId'];
         
         $fp = fopen($file, 'w');
         
-        $headers = ['Email', 'NewsltStat', 'AllSes', 'InterSes'];
+        $headers = ['Email', 'NewsltStat', 'AllSes', 'InterSes', 'Retakes'];
         fputcsv($fp, $headers, ';');
         
         foreach ($clients as $c) {
+            $ses=0;
+            foreach ($c->sessionsapps as $key => $s) {
+                $rt=0;
+                if ($s->status == 0) $ses++;
+                
+                foreach ($s->actions as $action) 
+                    {
+                    if ($action['action'] == 'rT') {
+                            $rt ++;
+                    }
+                }
+                
             $data = [
-                'Email' => $c->email,
-                'Newsletter' => $c->offers,
-                'AllSes' => count($c->sessionsapps),
-                'InterSes' => count($c->sessionsapps) - count($c->getSessionsapps()->where(['status' => '0'])->all()),
-            ];
-  
+                    'Email' => $c->email,
+                    'Newsletter' => $c->offers,
+                    'AllSes' => count($c->sessionsapps),
+                    'InterSes' => $ses,
+                    'Retakes' => $rt
+                ];
+       }
 //            $data = [$c->email.';'.$c->offers.';'.count($c->sessionsapps).';'.count($c->getSessionsapps()->where(['status' => '0'])->all()).';'];
             fputcsv($fp, $data, ';');
         }
