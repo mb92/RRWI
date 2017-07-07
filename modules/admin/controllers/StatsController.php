@@ -435,13 +435,12 @@ $countryId = Yii::$app->params['countryId'];
         // Select clients.email from clients right join sessionsapps on sessionsapps.countryId = 1 where clients.offers = 1 group by clients.email;
         $name = 'clients-'.$country['short'].'__'.slug(mysqltime());
         $file = Yii::getAlias('@app').'/raports/csv/'.$name.'.csv';
-        $fp = fopen($file, 'w');
-<<<<<<< HEAD
-        $headers = ['Email', 'NewsltStat', 'AllSes', 'InterSes'];
-        fputcsv($fp, $headers);
         
-=======
->>>>>>> c6c202066428746f3622413b72c06398226a7621
+        $fp = fopen($file, 'w');
+        
+        $headers = ['Email', 'NewsltStat', 'AllSes', 'InterSes'];
+        fputcsv($fp, $headers, ';');
+        
         foreach ($clients as $c) {
             $data = [
                 'Email' => $c->email,
