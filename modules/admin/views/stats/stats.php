@@ -25,7 +25,11 @@ $this->title = $title;
                 <a href="/admin/<?= $country->short ?>/stats/newsletter?country=<?= $country->short ?>" class="btn btn-primary <?php if ($stats['customers'] == "0") echo "disabled"; ?> ">
                     <i class="fa fa-indent "></i> Newsletter list
                 </a>
-
+                
+                <a href="/admin/<?= $country->short ?>/stats/list" class="btn btn-primary">
+                    <i class="fa fa-address-book-o"></i>Export to CSV
+                </a>
+                
                 <!-- Generate Countries list -->
                 <?php foreach ($countries as $c): ?>
                 <a href="/admin/<?= $c->short ?>/stats" style="height:35px;" class="btn btn-warning btn-app-country">
