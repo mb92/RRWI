@@ -424,35 +424,32 @@ class StatsController extends Controller
     
     public function actionList()
     {
-        $countryId = Yii::$app->params['countryId'];
+$countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');
         $country = Countries::find()->where(['id'=>$countryId])->one();
-
         
         $clients = Clients::getFromCountry($countryId)->all();
  
 //        $users = Yii::$app->db->createCommand('Select clients.email from clients right join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.countryId = '.$countryId.' and clients.offers = 1 group by clients.email;')->queryAll();
         // Select clients.email from clients right join sessionsapps on sessionsapps.countryId = 1 where clients.offers = 1 group by clients.email;
         $name = 'clients-'.$country['short'].'__'.slug(mysqltime());
-
         $file = Yii::getAlias('@app').'/raports/csv/'.$name.'.csv';
-
         $fp = fopen($file, 'w');
-
+        $headers = ['Email', 'NewsltStat', 'AllSes', 'InterSes'];
+        fputcsv($fp, $headers);
+        
         foreach ($clients as $c) {
             $data = [
                 'Email' => $c->email,
                 'Newsletter' => $c->offers,
                 'AllSes' => count($c->sessionsapps),
-                'InterSes' => count($c->getSessionsapps()->where(['status' => '0'])->all()),
+                'InterSes' => count($c->sessionsapps) - count($c->getSessionsapps()->where(['status' => '0'])->all()),
             ];
   
 //            $data = [$c->email.';'.$c->offers.';'.count($c->sessionsapps).';'.count($c->getSessionsapps()->where(['status' => '0'])->all()).';'];
             fputcsv($fp, $data, ';');
         }
-
-
         fclose($fp);
 
         if (file_exists($file)) {
