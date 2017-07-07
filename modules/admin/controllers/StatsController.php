@@ -442,7 +442,7 @@ $countryId = Yii::$app->params['countryId'];
         fputcsv($fp, $headers, ';');
         
         foreach ($clients as $c) {
-            vdd(Clients::getDoneSes($c->id));
+//            vdd(Clients::getDoneSes($c->id));
             $ses=0;
             foreach ($c->sessionsapps as $key => $s) {
                 $rt=0;
