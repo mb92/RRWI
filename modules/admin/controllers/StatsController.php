@@ -442,6 +442,7 @@ $countryId = Yii::$app->params['countryId'];
         fputcsv($fp, $headers, ';');
         
         foreach ($clients as $c) {
+//            vdd($c->id);
             $ses=0;
             foreach ($c->sessionsapps as $key => $s) {
                 $rt=0;
@@ -458,7 +459,7 @@ $countryId = Yii::$app->params['countryId'];
                     'Email' => $c->email,
                     'Newsletter' => $c->offers,
                     'AllSes' => count($c->sessionsapps),
-                    'InterSes' => count($c->sessionsapps)-Clients::getDoneSes($c->id)->count(),
+                    'InterSes' => (int)count($c->sessionsapps) - (int)Clients::getDoneSes($c->id)->count(),
                     'Retakes' => $rt
                 ];
        }
