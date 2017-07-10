@@ -495,4 +495,196 @@ $countryId = Yii::$app->params['countryId'];
             return $this->redirect(Yii::$app->request->referrer);
         }
     }
+    
+    public function actionListstores()
+    {
+        $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+        $country = Countries::find()->where(['id'=>$countryId])->one();
+        
+        $stores = Stores::getFromCountry($countryId)->all();
+        
+        $clients = Clients::getFromCountry($countryId)->all();
+        
+        $globalStats['allLunches'] = 0;
+        $globalStats['retake'] = 0;
+        $globalStats['doneSes'] = 0;
+        $globalStats['interrupedSes'] = 0;
+        $globalStats['clients'] = 0;
+
+        $listStores[0] = ['storeName', 'allLunches', 'retake', 'doneSes', 'interrupedSes', 'clients'];
+        foreach ($stores as $key => $store) {
+            $stats['allLunches'] = $store->countAllSes($store->id);
+            $stats['retake'] = Stores::countRetakes($store->id);
+            $stats['doneSes'] = $store->countDoneSes();
+            $stats['interrupedSes'] = $store->countInterrupedSes();
+            $stats['clients'] = $store->countClients();
+            
+            $listStores[$key+1] = [$store->name, $stats['allLunches'], $stats['retake'], $stats['doneSes'], $stats['interrupedSes'], $stats['clients']];
+            
+            $globalStats['allLunches'] += $stats['allLunches'];
+            $globalStats['retake'] += $stats['retake'];
+            $globalStats['doneSes'] += $stats['doneSes'];
+            $globalStats['interrupedSes'] += $stats['interrupedSes'];
+            $globalStats['clients'] += $stats['clients'];
+            
+        }
+        
+//        $users = Yii::$app->db->createCommand('Select clients.email from clients right join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.countryId = '.$countryId.' and clients.offers = 1 group by clients.email;')->queryAll();
+        // Select clients.email from clients right join sessionsapps on sessionsapps.countryId = 1 where clients.offers = 1 group by clients.email;
+        $name = 'stores-'.$country['short'].'__'.slug(mysqltime());
+        $file = Yii::getAlias('@app').'/raports/csv/'.$name.'.csv';
+        
+        $fp = fopen($file, 'w');
+        fputcsv($fp, ["Delimiter is: ;"], ';');
+        fputcsv($fp, ["Global stores data for ".$country->short], ';');
+//     All launches
+        $totSes = ["ALL:", $globalStats['allLunches']];
+        fputcsv($fp, $totSes, ';');
+        
+//      DoneSes
+        $doneSes = ["DONE:", $globalStats['doneSes']];
+        fputcsv($fp, $doneSes, ';');
+        
+//      INTERRUPTED sessions
+        $intpd = ["INTERRUPTED:", $globalStats['interrupedSes']];
+        fputcsv($fp, $intpd, ';');
+        
+//     Total retakes
+        $rtSes = ['RETAKES:', $globalStats['retake']];
+        fputcsv($fp, $rtSes, ';');
+
+//     Total retakes
+        $clients = ['CLIENTS:', $globalStats['clients']];
+        fputcsv($fp, $clients, ';');
+        
+        fputcsv($fp, [" "], ';');
+        fputcsv($fp, [" "], ';');
+        
+        fputcsv($fp, ["Individual stores data"], ';');
+        
+//        Headers for cols
+        foreach ($listStores as $store) {
+            fputcsv($fp,  $store, ';');
+        }
+        
+        
+        fclose($fp);
+
+        if (file_exists($file)) {
+            Yii::$app->response->sendFile($file);
+        }
+        else {
+            return $this->redirect(Yii::$app->request->referrer);
+        }
+    }
+    
+    public function actionListsessions()
+    {
+        $countryId = Yii::$app->params['countryId'];
+        if (is_null($countryId)) 
+        return $this->redirect('site/error');
+        $country = Countries::find()->where(['id'=>$countryId])->one();
+        
+        $sess = Sessionsapps::find()->where(['countryId' => $country->id])->all();
+//        vdd($sess[3]->client);
+        
+        $name = 'sessions-'.$country['short'].'__'.slug(mysqltime());
+        $file = Yii::getAlias('@app').'/raports/csv/'.$name.'.csv';
+        
+        $fp = fopen($file, 'w');
+        fputcsv($fp, ["Delimiter is: ;"], ';');
+        
+        fputcsv($fp, ["Global sessions data for ".$country->short], ';');
+//     All launches
+        $totSes = ["ALL:", Sessionsapps::countSesForCountry($countryId)];
+        fputcsv($fp, $totSes, ';');
+        
+//      DoneSes
+        $doneSes = ["DONE:", Sessionsapps::countDoneSesForCountry($countryId)];
+        fputcsv($fp, $doneSes, ';');
+        
+//      INTERRUPTED sessions
+        $intpd = ["INTERRUPTED:", Sessionsapps::countInterruptedSesForCountry($countryId)];
+        fputcsv($fp, $intpd, ';');
+        
+//     Total retakes
+        $rtSes = ['RETAKES:', Actions::countRetakesFromCountry($countryId)];
+        fputcsv($fp, $rtSes, ';');
+        
+        fputcsv($fp, [" "], ';');
+        fputcsv($fp, [" "], ';');
+        
+        fputcsv($fp, ["Sessions data for ".$country->short], ';');
+//     All launches
+//        $totSes = ["ALL:", $globalStats['allLunches']];
+//        fputcsv($fp, $totSes, ';');
+        
+            $data = [
+                "storeName",
+                "lang",
+                "status",
+                "dateOf",
+                "client",
+                "newsletter",
+                "emailStatus",
+                "retakes",
+                "allSes",
+                "doneSes",
+                "interruptedSes"
+            ];
+        fputcsv($fp, $data, ';');
+        
+        foreach ($sess as $ses) {
+            if (!is_null($ses->client)) {
+                $client['name'] = $ses->client->name;
+                if ($ses->client->offers == "1") {
+                    $client['offers'] = "Yes";
+                } else {
+                    $client['offers'] = "No";
+                }
+            } else {
+                $client['name'] = $client['offers'] = "-";
+            }
+            
+            $retakes = Actions::find()->where(['sessionsAppId' => $ses->id])->count();
+
+            if ($ses->status == 1) $status = "Done"; else $status = "Interrupted";
+            if (!is_null($ses->created_at)) $date = $ses->created_at; else $date = "-";
+            if ($ses->emailStatus == 1) $emailStatus = "Send"; else $emailStatus = "Not send";
+           
+            if(isset($ses->language->short)) $lang = $ses->language->short; else $lang = "EN";  //Fix bugo on previous EN version
+ 
+            $store['name'] = $ses->store->name;
+            $store['allSes'] = $ses->store->countAllSes($ses->store->id);
+            $store['doneSes'] = $ses->store->countDoneSes();
+            $store['interrupted'] = $ses->store->countInterrupedSes();
+            
+            $data = [
+                $store['name'],
+                $lang,
+                $status,
+                $date,
+                $client['name'],
+                $client['offers'],
+                $emailStatus,
+                $retakes,
+                $store['allSes'],
+                $store['doneSes'],
+                $store['interrupted']
+            ];
+//            vdd($data);
+            fputcsv($fp,  $data, ';');
+        }
+        
+        fclose($fp);
+
+        if (file_exists($file)) {
+            Yii::$app->response->sendFile($file);
+        }
+        else {
+            return $this->redirect(Yii::$app->request->referrer);
+        }
+    }
 }
