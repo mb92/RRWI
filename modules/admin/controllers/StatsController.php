@@ -645,7 +645,8 @@ $countryId = Yii::$app->params['countryId'];
                     $client['offers'] = "No";
                 }
             } else {
-                $client['name'] = $client['offers'] = "-";
+                $client['email'] = "-";
+                $client['offers'] = "-";
             }
             
             $retakes = Actions::find()->where(['sessionsAppId' => $ses->id])->count();
