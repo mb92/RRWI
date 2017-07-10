@@ -161,7 +161,7 @@ $this->title = $title;
                     <?php if(isset($s->language->short)) {
                             echo $s->language->short;
                         } else {
-                            echo "IR";  //Fix bugo on previous EN version
+                            echo "EN";  //Fix bugo on previous EN version
                         } 
                     ?>  
                 </td>

@@ -653,7 +653,9 @@ $countryId = Yii::$app->params['countryId'];
             if ($ses->status == 1) $status = "Done"; else $status = "Interrupted";
             if (!is_null($ses->created_at)) $date = $ses->created_at; else $date = "-";
             if ($ses->emailStatus == 1) $emailStatus = "Send"; else $emailStatus = "Not send";
-            $lang = \app\models\Languages::find()->where(['id' => $ses->languageId])->one()['short'];
+           
+            if(isset($ses->language->short)) echo $ses->language->short; else echo "EN";  //Fix bugo on previous EN version
+ 
             $store['name'] = $ses->store->name;
             $store['allSes'] = $ses->store->countAllSes($ses->store->id);
             $store['doneSes'] = $ses->store->countDoneSes();
