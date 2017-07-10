@@ -437,6 +437,7 @@ $countryId = Yii::$app->params['countryId'];
         $file = Yii::getAlias('@app').'/raports/csv/'.$name.'.csv';
         
         $fp = fopen($file, 'w');
+        fputcsv($fp, ["Delimiter is: ;"], ';');
         fputcsv($fp, ["Global sessions data for ".$country->short], ';');
 //     All launches
         $totSes = ["ALL:", Sessionsapps::countSesForCountry($countryId)];

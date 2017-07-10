@@ -27,7 +27,7 @@ $this->title = $title;
                 </a>
                 
                 <a href="/admin/<?= $country->short ?>/stats/list" class="btn btn-primary">
-                    <i class="fa fa-address-book-o"></i>Export to CSV
+                    <i class="fa fa-book"></i> Export to CSV
                 </a>
                 
                 <!-- Generate Countries list -->
