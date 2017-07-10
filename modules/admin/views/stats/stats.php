@@ -13,21 +13,28 @@ $this->title = $title;
         <!-- APPLICATION BUTTONS -->
         <div class="box">
             <div class="box-body">
-                <a href="/admin/<?= $country->short ?>/stats/customers" class="btn btn-success">
-                    <i class="fa fa-users"></i> Customers
-                    <span class="badge bg-purple"><?= $stats['customers']?></span>
-                </a>
-                <a href="/admin/<?= $country->short ?>/stats/stores" class="btn btn-success">
-                    <i class="fa fa-shopping-cart "></i> Stores
-                    <span class="badge bg-red"><?= $stats['stores']?></span>
-                </a>
+                <div class="btn-group">
+                    <a href="/admin/<?= $country->short ?>/stats/customers" class="btn btn-success">
+                        <i class="fa fa-users"></i> Customers
+                        <span class="badge bg-purple"><?= $stats['customers']?></span>
+                    </a>
+
+                    <a href="/admin/<?= $country->short ?>/stats/list" class="btn btn-success" title="Download CSV raport">
+                        <i class="fa fa-download" style="height:18px;"></i>
+                    </a>
+                </div>
                 
+                <div class="btn-group">
+                    <a href="/admin/<?= $country->short ?>/stats/stores" class="btn btn-success">
+                        <i class="fa fa-shopping-cart "></i> Stores
+                        <span class="badge bg-red"><?= $stats['stores']?></span>
+                    </a>
+                    <a href="/admin/<?= $country->short ?>/stats/liststores" class="btn btn-success" title="Download CSV raport">
+                        <i class="fa fa-download" style="height:18px;"></i>
+                    </a>    
+                </div>
                 <a href="/admin/<?= $country->short ?>/stats/newsletter?country=<?= $country->short ?>" class="btn btn-primary <?php if ($stats['customers'] == "0") echo "disabled"; ?> ">
                     <i class="fa fa-indent "></i> Newsletter list
-                </a>
-                
-                <a href="/admin/<?= $country->short ?>/stats/list" class="btn btn-primary">
-                    <i class="fa fa-book"></i> Export to CSV
                 </a>
                 
                 <!-- Generate Countries list -->
