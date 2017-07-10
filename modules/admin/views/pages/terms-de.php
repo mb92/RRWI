@@ -498,7 +498,7 @@ Wermingser Str. 2
   </td>
   <td>
 <!--  Hauptstr. 72-->
-  Anton-Limbach-Straße 3, 
+  Anton - Limbach - Straße 1, 
   </td>
   <td>
 <!--  53474-->
@@ -754,7 +754,7 @@ Kaiserslautern</p>
 <p>
 <!--Vodafone Shop Bad Neuenahr-Ahr,--> 
 Vodafone Store Unkel
-Anton-Limbach-Straße 3, 
+Anton - Limbach - Straße 1, 
 53572 
 Unkel
 <!--Hauptstr. 72, 

@@ -255,7 +255,7 @@
                                         Bad Neuenahr</p>-->
                                         <p>
                                         Vodafone Store Unkel
-                                        Anton-Limbach-Straße 3, 
+                                        Anton - Limbach - Straße 1 
                                         53572 
                                         Unkel
                                         </p><br/>
