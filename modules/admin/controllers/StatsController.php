@@ -654,7 +654,7 @@ $countryId = Yii::$app->params['countryId'];
             if (!is_null($ses->created_at)) $date = $ses->created_at; else $date = "-";
             if ($ses->emailStatus == 1) $emailStatus = "Send"; else $emailStatus = "Not send";
            
-            if(isset($ses->language->short)) echo $ses->language->short; else echo "EN";  //Fix bugo on previous EN version
+            if(isset($ses->language->short)) $lang = $ses->language->short; else $lang = "EN";  //Fix bugo on previous EN version
  
             $store['name'] = $ses->store->name;
             $store['allSes'] = $ses->store->countAllSes($ses->store->id);
@@ -663,7 +663,7 @@ $countryId = Yii::$app->params['countryId'];
             
             $data = [
                 $store['name'],
-                $ses->language->short,
+                $lang,
                 $status,
                 $date,
                 $client['name'],
