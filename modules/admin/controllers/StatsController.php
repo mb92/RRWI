@@ -638,7 +638,7 @@ $countryId = Yii::$app->params['countryId'];
         
         foreach ($sess as $ses) {
             if (!is_null($ses->client)) {
-                $client['name'] = $ses->client->name;
+                $client['email'] = $ses->client->email;
                 if ($ses->client->offers == "1") {
                     $client['offers'] = "Yes";
                 } else {
@@ -666,7 +666,7 @@ $countryId = Yii::$app->params['countryId'];
                 $lang,
                 $status,
                 $date,
-                $client['name'],
+                $client['email'],
                 $client['offers'],
                 $emailStatus,
                 $retakes,
