@@ -430,17 +430,38 @@ $countryId = Yii::$app->params['countryId'];
         $country = Countries::find()->where(['id'=>$countryId])->one();
         
         $clients = Clients::getFromCountry($countryId)->all();
- 
+
 //        $users = Yii::$app->db->createCommand('Select clients.email from clients right join sessionsapps on sessionsapps.clientId = clients.id where sessionsapps.countryId = '.$countryId.' and clients.offers = 1 group by clients.email;')->queryAll();
         // Select clients.email from clients right join sessionsapps on sessionsapps.countryId = 1 where clients.offers = 1 group by clients.email;
         $name = 'clients-'.$country['short'].'__'.slug(mysqltime());
         $file = Yii::getAlias('@app').'/raports/csv/'.$name.'.csv';
         
         $fp = fopen($file, 'w');
+        fputcsv($fp, ["Delimiter is: ;"], ';');
+        fputcsv($fp, ["Global sessions data for ".$country->short], ';');
+//     All launches
+        $totSes = ["ALL:", Sessionsapps::countSesForCountry($countryId)];
+        fputcsv($fp, $totSes, ';');
         
+//      DoneSes
+        $doneSes = ["DONE:", Sessionsapps::countDoneSesForCountry($countryId)];
+        fputcsv($fp, $doneSes, ';');
+        
+//      INTERRUPTED sessions
+        $intpd = ["INTERRUPTED:", Sessionsapps::countInterruptedSesForCountry($countryId)];
+        fputcsv($fp, $intpd, ';');
+        
+//     Total retakes
+        $rtSes = ['RETAKES:', Actions::countRetakesFromCountry($countryId)];
+        fputcsv($fp, $rtSes, ';');
+        
+        fputcsv($fp, [" "], ';');
+        fputcsv($fp, [" "], ';');
+        
+        fputcsv($fp, ["Individual customer data"], ';');
+//        Headers for cols
         $headers = ['Email', 'NewsltStat', 'AllSes', 'Retakes'];
         fputcsv($fp, $headers, ';');
-        
         foreach ($clients as $c) {
 //            vdd(Clients::getDoneSes($c->id));
             $ses=0;
