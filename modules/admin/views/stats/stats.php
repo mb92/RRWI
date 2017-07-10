@@ -33,10 +33,16 @@ $this->title = $title;
                         <i class="fa fa-download" style="height:18px;"></i>
                     </a>    
                 </div>
-                <a href="/admin/<?= $country->short ?>/stats/newsletter?country=<?= $country->short ?>" class="btn btn-primary <?php if ($stats['customers'] == "0") echo "disabled"; ?> ">
-                    <i class="fa fa-indent "></i> Newsletter list
-                </a>
                 
+                <div class="btn-group">
+                <a href="/admin/<?= $country->short ?>/stats/newsletter?country=<?= $country->short ?>" class="btn btn-primary <?php if ($stats['customers'] == "0") echo "disabled"; ?> ">
+<!--                    <i class="fa fa-indent "></i> --> Newsletter list
+                </a>
+                    
+                <a href="/admin/<?= $country->short ?>/stats/listsessions" class="btn btn-primary">
+<!--                    <i class="fa fa-indent "></i> --> Sessions list
+                </a>
+                </div>
                 <!-- Generate Countries list -->
                 <?php foreach ($countries as $c): ?>
                 <a href="/admin/<?= $c->short ?>/stats" style="height:35px;" class="btn btn-warning btn-app-country">
