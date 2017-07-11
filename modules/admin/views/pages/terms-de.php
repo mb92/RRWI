@@ -99,17 +99,19 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
 4.&nbsp;&nbsp;Sollte eine Bestimmung dieser Teilnahmebedingungen durch ein Gesetz, eine Vorschrift, eine Anordnung oder eine Regulierung einer Regierung oder durch die endgültige Feststellung eines Gerichts einer zuständigen Gerichtsbarkeit unwirksam sein, so berührt diese Nichtigkeit die Vollstreckbarkeit sonstiger Bestimmungen nicht.<br/>
 5.&nbsp;&nbsp;Alle Rechtsverhältnisse, die sich aus oder im Zusammenhang mit diesen Bedingungen und dem Wettbewerb ergeben, unterliegen dem deutschen Recht. <br/>
 </p>
+<br/>
 
 
 
 
-
+<p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p>
+<br>
 
 <h2>2.&nbsp;&nbsp;Teilnehmende Vodafone Läden</h2>
 
 <div class="mobileOff">
 <p>
-&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;Germany:
+&nbsp;&nbsp;Germany:
 </p>
 <table cellspacing=0 cellpadding=0 width=0>
  <tr>

@@ -127,7 +127,9 @@ Vodafone:
 4.&nbsp;&nbsp;If any provision of these Conditions of Participation is held invalid by any law, rule, order or regulation of any government, or by the final determination of any court of a competent jurisdiction, such invalidity shall not affect the enforceability of any other provisions not held to be invalid.
 5.&nbsp;&nbsp;All legal relationships arising because or in connection with these terms and conditions and the competition are subject to German Law. Mandatory laws of the participant’s resident country explicitly applies.<br/>
 </p>
-  
+<br/>  
+<p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p>
+<br>
 
 <div class="mobileOff">
 
@@ -192,6 +194,7 @@ Vodafone:
 
 
 <div class="mobileOn">
+
 <h2>9.&nbsp;&nbsp;Ireland:</h2>
 <p>Dundrum Town Centre, Dundrum Town Centre, Dundrum, Dublin 16</p>  
 <p>Mahon Point, 29 Mahon Point Shopping Centre, Mahon Point Industrial Estate, Mahon, Co.Cork</p>

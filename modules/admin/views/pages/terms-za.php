@@ -107,3 +107,7 @@ By submitting an entry, participants agree to provide their personal information
 8.4 If any provision of these Conditions of Participation is held invalid by any law, rule, order or regulation of any government, or by the final determination of any court of a competent jurisdiction, such invalidity shall not affect the enforceability of any other provisions not held to be invalid.<br/>
 8.5 All legal relationships arising because or in connection with these terms and conditions and the competition are subject to  the laws of the Republic of South Africa.<br/>
 </p>
+
+<br/>
+<p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p>
+<br>
