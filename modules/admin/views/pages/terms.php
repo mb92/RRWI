@@ -126,12 +126,14 @@ Vodafone:
 3.&nbsp;&nbsp;In the event of circumstances outside the reasonable control of the Organizer, or otherwise where fraud, abuse, and/or an error (human or technical) affects or could affect the proper operation of this promotion or the awarding of prizes, the Organizer reserves the right to cancel or amend these terms and conditions at any stage, but will endeavour to minimise the effect to participants in order to avoid undue disappointment.<br/>
 4.&nbsp;&nbsp;If any provision of these Conditions of Participation is held invalid by any law, rule, order or regulation of any government, or by the final determination of any court of a competent jurisdiction, such invalidity shall not affect the enforceability of any other provisions not held to be invalid.
 5.&nbsp;&nbsp;All legal relationships arising because or in connection with these terms and conditions and the competition are subject to German Law. Mandatory laws of the participant’s resident country explicitly applies.<br/>
-</p>
-  
+</p> 
+
 
 <div class="mobileOff">
 
 <h2>9.&nbsp;&nbsp;Ireland:</h2>
+
+<p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0>
  <tr>
@@ -192,7 +194,9 @@ Vodafone:
 
 
 <div class="mobileOn">
+
 <h2>9.&nbsp;&nbsp;Ireland:</h2>
+<p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p><br/>
 <p>Dundrum Town Centre, Dundrum Town Centre, Dundrum, Dublin 16</p>  
 <p>Mahon Point, 29 Mahon Point Shopping Centre, Mahon Point Industrial Estate, Mahon, Co.Cork</p>
 <p>Blanchardstown, unit 133, Blanchardstown Shopping Centre, Blanchardstown, Dublin</p>

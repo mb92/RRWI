@@ -101,15 +101,11 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
 </p>
 
 
-
-
-
-
 <h2>2.&nbsp;&nbsp;Teilnehmende Vodafone Läden</h2>
-
+<p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p>
 <div class="mobileOff">
 <p>
-&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;Germany:
+&nbsp;&nbsp;Germany:
 </p>
 <table cellspacing=0 cellpadding=0 width=0>
  <tr>
@@ -559,6 +555,7 @@ Wermingser Str. 2
 
 
 <div class="mobileOn">
+<br/>    
 <p>
 NAME, 
 ADDRESSE, 
