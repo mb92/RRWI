@@ -708,7 +708,7 @@ N&uuml;rnberg</p>
 
 <p>
 <!--Vodafone-Shop Allee Center, -->
-Vodafone Shop Iserlohn
+Vodafone Shop Iserlohn, 
 Wermingser Str. 2, 58636 Iserlohn
 <!--Richard-Matthai-Platz 1, 
 59065, 
