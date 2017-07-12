@@ -187,6 +187,9 @@ class ClientsController extends ActiveController
 
 			// Send email for client
 				$emailStatus = $this->sendEmail($client, Yii::$app->params['email-username'], $sesId);
+                                
+//                                $emailStatus = Yii::$app->sender->sendEmail($client, Yii::$app->params['email-username'], $sesId);
+
 				// if email was sent then update emailStatus on 1
 				
 				if ($emailStatus === true) {

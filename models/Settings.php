@@ -49,6 +49,9 @@ class Settings extends \yii\db\ActiveRecord
 
     public static function getEmailLinks($countryCode)
     {
+//        It's set url for console function Sender::sendEmail(). params['url'] is defined in config/params.php.
+        if(!isset($_SERVER['HTTP_HOST'])) $_SERVER['HTTP_HOST'] = Yii::$app->params['url'];
+        
         $category = 'links '.$countryCode;
         $campSource = "selfie-app"; //This tells Google where traffic is coming from: march7-newsletter.
         $campMedium = "email"; // This tells Google what kind of source it’s coming from: email.

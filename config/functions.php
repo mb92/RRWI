@@ -9,6 +9,7 @@ use app\models\Actions;
 use app\models\Countries;
 use yii\imagine\Image;
 
+
 function verifyToken($sendToken) {
     $ourToken = "0b3d4f561329b5a5dfdbaff634280be9";
 
@@ -228,17 +229,18 @@ function rename_email_attachment($imgPath)
 
     $tmpDir = Yii::getAlias("@temp").'/tmp';
     $sesDir = $tmpDir."/".$sesId;
+    
+    if (file_exists($sesDir)) return $sesDir."/".$newImgName;
 
-    // if (!file_exists($tmpDir)) mkdir($tmpDir, '0777');
-    // if (!file_exists($sesDir)) mkdir($sesDir, '0777');
     if (!file_exists($tmpDir)) mkdir($tmpDir);
     if (!file_exists($sesDir)) mkdir($sesDir);
-    
+
     $cp = copy($imgPath, $sesDir."/".$newImgName);
 
     if ($cp) return $sesDir."/".$newImgName;
     else return false;
 }
+
 
 function remove_dir_attachment($attachPath) {
     $path = str_replace("/P10.jpg", "", $attachPath);

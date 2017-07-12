@@ -424,7 +424,13 @@ class StatsController extends Controller
     
     public function actionList()
     {
-$countryId = Yii::$app->params['countryId'];
+        $files = array();
+        foreach (glob(Yii::getAlias('@app').'/raports/csv/*.csv') as $file) 
+        {
+            unlink($file);
+        }
+        
+        $countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');
         $country = Countries::find()->where(['id'=>$countryId])->one();
@@ -498,6 +504,12 @@ $countryId = Yii::$app->params['countryId'];
     
     public function actionListstores()
     {
+        $files = array();
+        foreach (glob(Yii::getAlias('@app').'/raports/csv/*.csv') as $file) 
+        {
+            unlink($file);
+        }
+        
         $countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');
@@ -582,6 +594,12 @@ $countryId = Yii::$app->params['countryId'];
     
     public function actionListsessions()
     {
+        $files = array();
+        foreach (glob(Yii::getAlias('@app').'/raports/csv/*.csv') as $file) 
+        {
+            unlink($file);
+        }
+        
         $countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');

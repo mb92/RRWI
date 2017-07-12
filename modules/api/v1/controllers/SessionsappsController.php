@@ -39,7 +39,7 @@ class SessionsappsController extends ActiveController
 
 	public function actionRun() 
 	{
-		$result = "fail";
+                $result = "fail";
 		$api = Yii::$app->request->post();
 
 		$api['sesId'] = Yii::$app->request->post('sesId', false);
@@ -54,7 +54,7 @@ class SessionsappsController extends ActiveController
 		if (($api['sesId'] != false) && ($api['appId'] != false) && ($api['country'] != false) && ($api['storeId'] != false) && ($api['lang'] != false) && ($api['token'] != false))
 		{
 			$country = Countries::find()->where(['short' => $api['country']])->one();
-                        
+//                        		vdd("asd");
                         //Verification of uniqueness sesId
 			$checkSesId = Sessionsapps::find()->where(['sesId' => $api['sesId']])->one();
 			if (!is_null($checkSesId)) {
@@ -86,7 +86,7 @@ class SessionsappsController extends ActiveController
 			$model->languageId = $lang['id'];
 			$model->countryId = $country['id'];
 			$sv = $model->save();
-
+		
 			if($sv) $result = "OK"; 
 			else {
                             $result = "Can't save data";

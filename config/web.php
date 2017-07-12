@@ -69,9 +69,9 @@ $config = [
                 ],
             ],
 
-        // 'sender' => [
-        //     'class' => \app\components\Sender::class,
-        //     ],
+//        'sender' => [
+//            'class' => '\app\components\Sender',
+//        ],
 
         ],
         'db' => require(__DIR__ . '/db.php'),

@@ -21,6 +21,9 @@ $config = [
                 ],
             ],
         ],
+        'sender' => [
+            'class' => '\app\components\Sender',
+        ],
         'db' => $db,
     ],
     'params' => $params,

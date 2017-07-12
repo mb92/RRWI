@@ -53,7 +53,7 @@ class ResendController extends Controller
     }
 
     public function actionSend()
-    {
+    {  
         $toResend = Sessionsapps::toResend()->all();
         // var_dump();die();
         $logs = '../app/runtime/resend_logs';
@@ -67,10 +67,8 @@ class ResendController extends Controller
 
 //            $ClientsController = new ClientsController;
 //            $emailStatus = $ClientsController->sendEmail($value->client, Yii::$app->params['email-username'], $sesId);
-            
-            Yii::$app->controllerNamespace = "app\modules\api\v1\controllers";
-            $emailStatus = Yii::$app->runAction('/clients/sendEmail', ['client' => $value->client, 'from' => Yii::$app->params['email-username'], 'fileName' => $sesId]);
 
+            $emailStatus = Yii::$app->sender->sendEmail($value->client, Yii::$app->params['email-username'], $sesId, true);
             
 			if ($emailStatus == "1") {
                             $st = "Resend to: ".$value->client->email;
