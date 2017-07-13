@@ -74,11 +74,37 @@ class ResendController extends Controller
 //                            $st = "RSND to: ".$value->client->email;
                         } else {
                            $st = "NOT SEND to: ".$value->client->email;
+                            echo "Status: ".$st."\n\n";
+                            saveLogResend($st.' created_at: '.$value["created_at"].';');
                         }
                         
-        	echo "Status: ".$st."\n\n";
-                saveLogResend($st.' created_at: '.$value["created_at"].';');
         }
 
     }
+    
+    
+    
+    public function actionSe($email)
+    {  
+        $logs = '../app/runtime/resend_logs';
+        
+        $client = Clients::find()->where(['email' => $email])->one();
+//        vdd($email);
+        if(is_null($client)) echo "not found client";
+        
+        $ses = Sessionsapps::find()->where(['clientId' => $client->id, 'status' => 1, 'emailStatus' => "0"])->one();
+//        $ses = app\models\Sessionsapps::find()->where(['clientId' => $client->id])->one();
+//        vdd($ses);
+            $emailStatus = Yii::$app->sender->sendEmail($client, Yii::$app->params['email-username'], $ses->sesId, true);
+            
+			if ($emailStatus == "1") {
+//                            $st = "RSND to: ".$value->client->email;
+                        } else {
+                           $st = "NOT SEND to: ".$value->client->email;
+                            echo "Status: ".$st."\n\n";
+                            saveLogResend($st.' created_at: '.$value["created_at"].';');
+                        }
+                        
+    }
+
 }
