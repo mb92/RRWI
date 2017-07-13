@@ -71,9 +71,9 @@ class ResendController extends Controller
             $emailStatus = Yii::$app->sender->sendEmail($value->client, Yii::$app->params['email-username'], $sesId, true);
             
 			if ($emailStatus == "1") {
-                            $st = "Resend to: ".$value->client->email;
+//                            $st = "RSND to: ".$value->client->email;
                         } else {
-                            $st="Not sent"; 
+                           $st = "NOT SEND to: ".$value->client->email;
                         }
                         
         	echo "Status: ".$st."\n\n";

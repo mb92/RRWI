@@ -60,7 +60,7 @@ class Sender extends Component
         {
                 $subject = Yii::$app->params['email-subject'];
                 $fileNameExt = $fileName.'.jpg';
-
+                    
                 //Get store name
                 $storeId = $client->getSessionsapps()->where(['sesId' => $fileName])->one()->storeId;
                 $place = Stores::find()->where(['id' => $storeId])->one()->name;
@@ -71,9 +71,16 @@ class Sender extends Component
                 // Get thumb with watermark for template
                 $thumb =  Yii::getAlias("@temp").'/'.$fileNameExt;
 
+//                vdd($thumb);
                 //Create temporary file from upload dir into temp/tmp/<sesId>/P10.jpg - attachment must by short name. Always temporary image will be removed
-                $attachPath = rename_email_attachment($image);
-                //vdd($attachPath);
+                
+                
+                if ($cron == true) {
+                    $attachPath = str_replace("../", "", $image);
+                } else {
+                    $attachPath = rename_email_attachment($image);
+                }
+                
                 $message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
                                                                                                                 'name' => ucwords($client->name),
                                                                                                                 'cid' => $client->id."-".time(),
@@ -91,7 +98,7 @@ class Sender extends Component
                         /*->setHeaders([	'X-Confirm-Reading-To' => Yii::$app->params['email-notifications'], 
                                                         'Disposition-Notification-To' => Yii::$app->params['email-notifications']
                                                 ])*/
-                        //->attach($attachPath)
+                        ->attach($attachPath)
                         ->send();
 //                vdd($message);
                 // Remove thumbnail from "temp" directory
@@ -105,7 +112,7 @@ class Sender extends Component
                     if ($cron) 
                     {
                         $ses = Sessionsapps::find()->where(['sesId' => $fileName])->one();
-                        $ses->emailStatus = 1;
+                        $ses->emailStatus = "1";
                         $st = $ses->save();
                         
                         if ($st) $msg = "SEND to:".$client->email."__".$fileName;

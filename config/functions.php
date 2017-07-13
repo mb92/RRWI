@@ -235,15 +235,19 @@ function rename_email_attachment($imgPath)
     if (!file_exists($tmpDir)) mkdir($tmpDir);
     if (!file_exists($sesDir)) mkdir($sesDir);
 
-    $cp = copy($imgPath, $sesDir."/".$newImgName);
 
+    $cp = copy($imgPath, $sesDir."/".$newImgName);
+    
     if ($cp) return $sesDir."/".$newImgName;
     else return false;
 }
 
 
-function remove_dir_attachment($attachPath) {
+function remove_dir_attachment($attachPath, $cron=null) {
     $path = str_replace("/P10.jpg", "", $attachPath);
+    
+    if ($cron) $path = "../".$path;
+    
     if (is_null(FileHelper::removeDirectory($path))) return true;
     else return false;
 }
@@ -306,7 +310,7 @@ function saveLogResend($msg) {
     $logNameExt = date('Y-M-d').'.log';
     $eol = PHP_EOL;
 
-    $txt = '[ '.date("H:i:s").' ] '.$msg;
+    $txt = '[ '.date("H:i:s").' ] '.$msg.$eol;
 //    echo $logNameExt;
 
     // if (!fileExists($lognameExt)) 
