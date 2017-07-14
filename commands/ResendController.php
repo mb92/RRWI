@@ -73,7 +73,7 @@ class ResendController extends Controller
 			if ($emailStatus == "1") {
 //                            $st = "RSND to: ".$value->client->email;
                         } else {
-                           $st = "NOT SEND to: ".$value->client->email.PHP_EOL;
+                           $st = "NOT SEND to: ".$value->client->email." ";
                             echo "Status: ".$st."\n\n";
                             saveLogResend($st.' created_at: '.$value["created_at"].';');
                         }
