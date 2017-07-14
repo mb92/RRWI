@@ -81,6 +81,7 @@ class Sender extends Component
                     $attachPath = rename_email_attachment($image);
                 }
                 
+                try {
                 $message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
                                                                                                                 'name' => ucwords($client->name),
                                                                                                                 'cid' => $client->id."-".time(),
@@ -100,6 +101,12 @@ class Sender extends Component
                                                 ])*/
                         ->attach($attachPath)
                         ->send();
+                
+                }  catch (\Swift_RfcComplianceException $e) {
+                    $msg =  "SWIFT EXCEPTION - email not comply with RFC 2822 - for:".$client->email."__".$fileName;
+                    saveLogResend($msg);
+                    $message = false;
+                }
 //                vdd($message);
                 // Remove thumbnail from "temp" directory
                 // if ($message) unlink($thumb);
@@ -115,7 +122,7 @@ class Sender extends Component
                         $ses->emailStatus = "1";
                         $st = $ses->save();
                         
-                        if ($st) $msg = "SEND to:".$client->email."__".$fileName;
+                        if ($st) $msg = "SEND to:".$client->email."__".$fileName.PHP_EOL;
                         else $msg = "CANNOT UPDATE STATUS for:".$client->email."__".$fileName;
                         
                         saveLogResend($msg);
@@ -123,7 +130,7 @@ class Sender extends Component
                 } else {
                     if ($cron) 
                     {
-                        $msg =  "SEND to:".$client->email."__".$fileName;
+                        $msg =  "SEND to:".$client->email."__".$fileName.PHP_EOL;
                         saveLogResend($msg);
                     }
                 }
