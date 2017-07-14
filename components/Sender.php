@@ -134,7 +134,7 @@ class Sender extends Component
         {
             $msg =  "SWIFT EXCEPTION for:".$client->email."__".$fileName;
             saveLogResend($msg);    
-            return 401;
+//            return 401;
         }
     }
 }
