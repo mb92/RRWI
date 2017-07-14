@@ -103,7 +103,7 @@ class Sender extends Component
                         ->send();
                 
                 }  catch (\Swift_RfcComplianceException $e) {
-                    $msg =  "SWIFT EXCEPTION - email not comply with RFC 2822 - for:".$client->email."__".$fileName;
+                    $msg =  "SWIFT EXCEPTION - email not comply with RFC 2822 - for: ".$client->email." sesId:".$fileName;
                     saveLogResend($msg);
                     $message = false;
                 }
@@ -122,7 +122,7 @@ class Sender extends Component
                         $ses->emailStatus = "1";
                         $st = $ses->save();
                         
-                        if ($st) $msg = "SEND to:".$client->email."__".$fileName.PHP_EOL;
+                        if ($st) $msg = "SEND to: ".$client->email."__sesId:".$fileName.PHP_EOL;
                         else $msg = "CANNOT UPDATE STATUS for:".$client->email."__".$fileName;
                         
                         saveLogResend($msg);
@@ -130,7 +130,7 @@ class Sender extends Component
                 } else {
                     if ($cron) 
                     {
-                        $msg =  "SEND to:".$client->email."__".$fileName.PHP_EOL;
+                        $msg =  "SEND to: ".$client->email." sesId:".$fileName.PHP_EOL;
                         saveLogResend($msg);
                     }
                 }
@@ -139,7 +139,7 @@ class Sender extends Component
         } 
         catch (\Swift_TransportException $e) 
         {
-            $msg =  "SWIFT EXCEPTION for:".$client->email."__".$fileName;
+            $msg =  "SWIFT EXCEPTION for: ".$client->email." sesId:".$fileName;
             saveLogResend($msg);    
 //            return 401;
         }
