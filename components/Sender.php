@@ -81,6 +81,7 @@ class Sender extends Component
                     $attachPath = rename_email_attachment($image);
                 }
                 
+                try {
                 $message = Yii::$app->mailer->compose('email', ['imageFileName' => $thumb, 
                                                                                                                 'name' => ucwords($client->name),
                                                                                                                 'cid' => $client->id."-".time(),
@@ -100,6 +101,11 @@ class Sender extends Component
                                                 ])*/
                         ->attach($attachPath)
                         ->send();
+                
+                }  catch (\Swift_RfcComplianceException $e) {
+                    $msg =  "SWIFT EXCEPTION - email not comply with RFC 2822 - for:".$client->email."__".$fileName;
+                    saveLogResend($msg);
+                }
 //                vdd($message);
                 // Remove thumbnail from "temp" directory
                 // if ($message) unlink($thumb);
