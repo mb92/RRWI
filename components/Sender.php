@@ -76,7 +76,8 @@ class Sender extends Component
                 
                 
                 if ($cron == true) {
-                    $attachPath = str_replace("../", "", $image);
+                    $image = str_replace("../", "", $image);
+                    $attachPath = rename_email_attachment($image);
                 } else {
                     $attachPath = rename_email_attachment($image);
                 }
