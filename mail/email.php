@@ -19,6 +19,10 @@ switch ($country) {
         include "de.php";
     break;
 
+    case 'CZ':
+        include "cz.php";
+    break;
+
     default:
         include "ir.php";
     break;
