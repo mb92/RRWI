@@ -49,7 +49,11 @@ class PagesController extends Controller
             case 'de':
                 $view = 'terms-de';
             break;
-
+            
+            case 'cz':
+                $view = 'terms-cz';
+            break;
+        
             default:
                 $view = 'terms';
             break;
