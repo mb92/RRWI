@@ -130,7 +130,7 @@ class Sender extends Component
                 } else {
                     if ($cron) 
                     {
-                        $msg =  "SEND to: ".$client->email." sesId:".$fileName.PHP_EOL;
+                        $msg =  "NOT SEND to: ".$client->email." sesId:".$fileName.PHP_EOL;
                         saveLogResend($msg);
                     }
                 }
