@@ -33,6 +33,7 @@ V případě jakýchkoliv dotazů, připomínek či stížností kontaktujte př
 <br/><br/>
 </p>
 
+
 <h2>3.&nbsp;&nbsp;Způsobilost pro účast v soutěži</h2>
 <p>
 1.&nbsp;&nbsp;Soutěž je otevřená všem osobám, které jsou v době odeslání přihlášky (1) starší osmnácti let; (2) rezidenty České republiky; (3) mají veřejný účet na Instagramu, spojený s touto soutěží; (4) a jsou majiteli fotografie, pořízené zařízením Huawei P10 v některé ze selfie studií, umístěných ve vybraných prodejnách Vodafone. <br/>
@@ -61,6 +62,7 @@ Organizátor nenese zodpovědnost za jakékoliv neúplné či ztracené údaje, 
 Organizátor se vyhrazuje právo vyloučit ze soutěže každého, kdo poruší tato ustanovení, dopustí se manipulace se soutěží, neuvede pravdivé údaje a tím/nebo poškodí cizí práva. Vyloučení ze soutěže může 
 vést k anulaci výsledků a navrácení výher. V takovém případě bude vybrán nový vítěz podle bodu 5. <br/><br/>
 
+
 <b>Výhry, výběr a kontaktování výherců</b> <br/>
 Porota vytvořená firmou Huawei vybere takové příspěvky, které budou podle ní nejlépe splňovat následující kritéria: (1) obrázky s vysokou úrovní kreativity; (2) zachycující esenci kampaně „NÁZEV KAMPANĚ!“<br/>
 Porota nebude zahrnovat nezávislé odborníky. <br/>
@@ -81,6 +83,7 @@ Toto udělení práv je bezplatné a bez nároku na autorské odměny.<br/><br/>
 <b>Ochrana dat</b><br/>
 Přihláškou účastník souhlasí, že poskytne své osobní údaje, které budou organizátorem a jeho zmocněným zástupcem využívány a zveřejňovány pro účely řízení soutěže a doručení výher. 
 Osobní údaje shromážděné organizátorem budou použity organizátorem a firmou Vodafone a budou podléhat těmto zásadám ochrany osobních údajů:<br/>
+
 
 <p>Huawei: 
 	<a href="http://consumer.huawei.com/de/privacy-policy/index.htm" target="_blank"> 
@@ -110,8 +113,6 @@ Rozhodnutí organizátora týkající se veškerých propagačních záležitost
 V případě okolností, které nejsou organizátorem kontrolovatelné, nebo v případech, kdy podvod, zneužití a / nebo chyba (lidská nebo technického charakteru) ovlivňuje nebo může ovlivnit řádné fungování této promo akce nebo udělení cen, organizátor si vyhrazuje právo zrušit nebo změnit tyto podmínky v jakékoli fázi, ale bude se snažit minimalizovat dopad na účastníky, aby se zabránilo zbytečnému zklamání.<br/>
 Veškeré právní vztahy vzniklé v souvislosti s těmito podmínkami a soutěží podléhají českému právu. <br/>
 </p>
-
-
 
 
 <div class="mobileOff">
@@ -195,8 +196,3 @@ Veškeré právní vztahy vzniklé v souvislosti s těmito podmínkami a soutě�
 <br/>
 <br/>
 </div>
-
-
-
-
-
