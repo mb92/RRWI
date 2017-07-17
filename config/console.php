@@ -25,19 +25,19 @@ $config = [
             'class' => '\app\components\Sender',
         ],
         'db' => $db,
-//        'mailer' => [
-//            'class' => 'yii\swiftmailer\Mailer',
-//            'useFileTransport' => false,
-//            'enableSwiftMailerLogging' => true,
-//            'transport' => [
-//                'class' => 'Swift_SmtpTransport',
-//                'host' => $params['email-host'],
-//                'username' => $params['email-username'],
-//                'password' => $params['email-password'],
-//                'port' => $params['email-port'],
-//                'encryption' => $params['email-encryption'],
-//            ],
-//        ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'enableSwiftMailerLogging' => true,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => $params['email-host'],
+                'username' => $params['email-username'],
+                'password' => $params['email-password'],
+                'port' => $params['email-port'],
+                'encryption' => $params['email-encryption'],
+            ],
+        ],
     ],
     'params' => $params,
     /*
