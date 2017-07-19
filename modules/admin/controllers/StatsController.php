@@ -213,7 +213,7 @@ class StatsController extends Controller
     public function actionFullraport()
     {
 //        ini_set('memory_limit', '8589934592');
-        phpinfo(); die();
+//        phpinfo(); die();
         $countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');
