@@ -212,7 +212,7 @@ class StatsController extends Controller
 
     public function actionFullraport()
     {
-        php_info(); die();
+        phpinfo(); die();
         $countryId = Yii::$app->params['countryId'];
         if (is_null($countryId)) 
         return $this->redirect('site/error');
