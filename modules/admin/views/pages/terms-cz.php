@@ -46,9 +46,9 @@ V případě jakýchkoliv dotazů, připomínek či stížností kontaktujte př
 <h2>4.&nbsp;&nbsp;Účast v soutěži</h2>
 <p>
 1.&nbsp;&nbsp;Účast v soutěži je bezplatná a není podmíněna nákupem žádného výrobku ani služby<br/>
-2.&nbsp;&nbsp;Soutěž začíná tímto datem: DATUM! <br/>
+2.&nbsp;&nbsp;Soutěž začíná tímto datem: 26.7.2017! <br/>
 Fotky zaslané před tímto datem a časem, nebudou do soutěže zařazeny.  <br/>
-Soutěž končí tímto datem: DATUM!<br/>
+Soutěž končí tímto datem: 25.10.2017<br/>
 Fotky zaslané nebo doručené po tomto datu, nebudou do soutěže zařazeny. <br/>
 3.&nbsp;&nbsp;Během lhůty pro odesílání fotek je soutěž otevřená všem osobám, které na Instagram nahrají fotku, pořízenou v Selfie studiu  a zahrnou tyto hashtagy (pokud soutěžící nezahrne oba, přihláška nebude přijata): <br/> 
 &nbsp;&nbsp;&nbsp;&nbsp;i.&nbsp;&nbsp;#P10SelfieVodafone <br/> A <br/>
@@ -64,7 +64,7 @@ vést k anulaci výsledků a navrácení výher. V takovém případě bude vybr
 
 
 <b>Výhry, výběr a kontaktování výherců</b> <br/>
-Porota vytvořená firmou Huawei vybere takové příspěvky, které budou podle ní nejlépe splňovat následující kritéria: (1) obrázky s vysokou úrovní kreativity; (2) zachycující esenci kampaně „NÁZEV KAMPANĚ!“<br/>
+	Porota vytvořená firmou Huawei vybere takové příspěvky, které budou podle ní nejlépe splňovat následující kritéria: (1) obrázky s vysokou úrovní kreativity; (2)  zachycující esenci kampaně  „PERFEKTNÍ SELFIE“.<br/>
 Porota nebude zahrnovat nezávislé odborníky. <br/>
 Mezi fotografiemi vybere porota 1 účastníka každý týden, který vyhraje Huawei Bluetooth Speaker (Vítěz týdne) a 1 účastníka každý měsíc, který vyhraje smartphone Huawei P10 (Vítěz měsíce). Výhra bude doručena poštovní službou. <br/>
 Výherci budou kontaktování skrze oficiální kanály (Facebook, Twitter, Instagram) Huawei a účastí v soutěži souhlasí se zveřejněním svého jména. <br/>
