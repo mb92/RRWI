@@ -121,7 +121,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             K účasti v soutěži stačí pouze sdílet tuto selfie na Instagramu s hashtagy 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone </font> a 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font>
-                            před koncem soutěže [date].
+                            před koncem soutěže 25.10.2017.
 
                           <br/><br/>
                             Každý týden postoupí do finále 5 selfie s největším počtem srdíček (lajků) na Instagramu. 
