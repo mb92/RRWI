@@ -49,7 +49,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                   </tr>
                   <tr>
                     <td width="600" class="mobile" style="font-family:MyriadLight, Arial, Helvetica; font-size:12px; line-height:18px;">
-                      <img src="<?= $path ?>/imgs/women.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
+                      <img src="<?= $path ?>/imgs/women-3.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
                     </td>
                   </tr>
 
@@ -71,7 +71,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-family:MyriadLight, Arial, Helvetica; font-size:40px; letter-spacing:7px; color:#000;" class="mobile-head1">VYPADÁŠ </font><br/>
-                        <font style="font-family:MyriadSemibold, Arial, Helvetica; letter-spacing:10px; font-size:75px; color:#000;" class="mobile-head2">
+                        <font style="font-family:MyriadSemibold, Arial, Helvetica; letter-spacing:10px; font-size:68px; color:#000;" class="mobile-head2">
                           <b>ÚŽASNĚ!</b>
                         </font>
                       </center>
@@ -90,7 +90,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
-                            Děkujeme za návštěvu P10 Selfie studia ve Vodafone 
+                            Děkujeme za návštěvu P10 Selfie studia ve Vodafone <br/>
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;"><?= $place ?></font>.<br/>
                             Svoje selfie najdeš v příloze e-mailu, doufáme, že se Ti líbí.
                             </p>
@@ -201,7 +201,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/clean.png" width="57" height="1" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                             <td width="186px" align="center" style="text-align:center;">
-                              <img src="<?= $path ?>/imgs/phone.jpg" width="186" height="391" style="display:block; margin:0; padding:0; border:none;">
+                              <img src="<?= $path ?>/imgs/phone-3.jpg" width="186" height="391" style="display:block; margin:0; padding:0; border:none;">
                             </td>
                             <td width="207px" class="mobileOffTab">
                               <img src="<?= $path ?>/imgs/clean.png" width="207" height="1" style="display:block; margin:0; padding:0; border:none;"/>
