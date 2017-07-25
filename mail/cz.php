@@ -49,7 +49,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                   </tr>
                   <tr>
                     <td width="600" class="mobile" style="font-family:MyriadLight, Arial, Helvetica; font-size:12px; line-height:18px;">
-                      <img src="<?= $path ?>/imgs/women.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
+                      <img src="<?= $path ?>/imgs/women-3.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
                     </td>
                   </tr>
 
@@ -201,7 +201,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/clean.png" width="57" height="1" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                             <td width="186px" align="center" style="text-align:center;">
-                              <img src="<?= $path ?>/imgs/phone.jpg" width="186" height="391" style="display:block; margin:0; padding:0; border:none;">
+                              <img src="<?= $path ?>/imgs/phone-3.jpg" width="186" height="391" style="display:block; margin:0; padding:0; border:none;">
                             </td>
                             <td width="207px" class="mobileOffTab">
                               <img src="<?= $path ?>/imgs/clean.png" width="207" height="1" style="display:block; margin:0; padding:0; border:none;"/>
