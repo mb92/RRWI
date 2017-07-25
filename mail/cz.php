@@ -71,6 +71,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-family:MyriadLight, Arial, Helvetica; font-size:40px; letter-spacing:7px; color:#000;" class="mobile-head1">VYPADÁŠ </font><br/>
+                        <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-family:MyriadSemibold, Arial, Helvetica; letter-spacing:10px; font-size:68px; color:#000;" class="mobile-head2">
                           <b>ÚŽASNĚ!</b>
                         </font>
