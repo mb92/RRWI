@@ -53,7 +53,7 @@ $this->title = $title;
         <thead>
             <tr role="row">
                 <!-- Name -->
-                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 181px;" aria-sort="ascending">Name</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 181px;" aria-sort="ascending">Name (id)</th>
                 <!-- Counter -->
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Number of visits: activate to sort column ascending" style="width: 50px;">Number of visits</th>
                 <!-- Ses done --> 
@@ -64,7 +64,7 @@ $this->title = $title;
         </thead>
 		<tfoot>
 			<tr>
-            <th rowspan="1" colspan="1">Name</th>
+            <th rowspan="1" colspan="1">Name (id)</th>
 			<th rowspan="1" colspan="1">Number of visits</th>
             <th rowspan="1" colspan="1">Sessions Done</th>
             <th rowspan="1" colspan="1">Number of clients</th>
@@ -75,7 +75,7 @@ $this->title = $title;
     <?php foreach ($stores as $store): ?>
 
         <tr>
-            <td><a href="store-details?storeId=<?= $store->id ?>"><?= $store->name ?></a></td>
+            <td><a href="store-details?storeId=<?= $store->id ?>"><?= $store->name ?> (<?= $store->id ?>)</a></td>
             <td><?= $store->getSessionsapps()->count() ?></td>
             <td><?= $store->getSessionsapps()->where(['status' => '1'])->count() ?></td>
             <td><?= $store->countClients()?></td>

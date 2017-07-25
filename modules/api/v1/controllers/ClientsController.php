@@ -464,6 +464,10 @@ class ClientsController extends ActiveController
 						return $this->redirect('../../unsub-de.php');
 					break;
 					
+                                        case 'CZ':
+						return $this->redirect('../../unsub-cz.php');
+					break;
+                                    
 					default:
 						return $this->redirect('../../unsub.php');
 					break;
