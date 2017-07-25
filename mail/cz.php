@@ -126,7 +126,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 
                           <br/><br/>
                             Každý týden postoupí do finále 5 selfie s největším počtem srdíček (lajků) na Instagramu. 
-                            Naše porota pak z finalistů vybere každý týden výherce, který získá Huawei P10
+                            Naše porota pak z finalistů vybere každý měsíc výherce, který získá Huawei P10
                           </p>
                           <br/>
                         </td>
