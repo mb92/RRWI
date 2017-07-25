@@ -129,9 +129,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td class="mobile" style="overflow:hidden; background-color:#1b1919; color:#424344;">
                       <center>
                         <img src="<?= $path ?>imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
-    						<p style="font-size:26px;">You have unsubscribed from our mailing list.</p>
-							<p style="font-size:16px; margin-top:0;">We're sorry to see you go.<br/>
-								We will ensure that all your personal details are deleted.
+    						<p style="font-size:26px;">Proběhlo odhlášení ze seznamu příjemců.</p>
+							<p style="font-size:16px; margin-top:0;">Je nám líto, že odcházíte, ale můžeme <br/>
+                                                            Vás ujistit, že Vaše osobní data budou odstraněna.
 							</p>	<br/>
 							<img src="<?= $path ?>imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
                       </center>
