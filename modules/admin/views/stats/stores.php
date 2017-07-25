@@ -76,8 +76,8 @@ $this->title = $title;
 
         <tr>
             <td><a href="store-details?storeId=<?= $store->id ?>"><?= $store->name ?></a></td>
-            <td><?= $store->count ?></td>
-            <td><?= $store->getSessionsapps()->where(['status' => '0'])->count() ?></td>
+            <td><?= $store->getSessionsapps()->count() ?></td>
+            <td><?= $store->getSessionsapps()->where(['status' => '1'])->count() ?></td>
             <td><?= $store->countClients()?></td>
         </tr>
 

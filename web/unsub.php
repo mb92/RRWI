@@ -131,7 +131,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <img src="<?= $path ?>imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
     						<p style="font-size:26px;">You have unsubscribed from our mailing list.</p>
 							<p style="font-size:16px; margin-top:0;">We're sorry to see you go.<br/>
-								We will ensure that all your personal details are deleted.
+								We will ensure that all your personal details are deleted. FROM WEB
 							</p>	<br/>
 							<img src="<?= $path ?>imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
                       </center>
