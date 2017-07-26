@@ -125,8 +125,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             před koncem soutěže 25.10.2017.
 
                           <br/><br/>
-                            Každý týden postoupí do finále 5 selfie s největším počtem srdíček (lajků) na Instagramu. 
-                            Naše porota pak z finalistů vybere každý měsíc výherce, který získá Huawei P10
+                            Každý týden postoupí do finále 5 selfie s největším počtem srdíček (lajků) na Instagramu. 
+                            Naše porota pak z finalistů vybere každý týden výherce, který získá Huawei BT Speaker. 
+                            Každý měsíc bude vybrán jeden šťastlivec, který vyhraje Huawei P10.
                           </p>
                           <br/>
                         </td>

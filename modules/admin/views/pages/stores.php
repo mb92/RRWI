@@ -324,7 +324,7 @@
                                     <p>Praha OC Letňany, Veselská 663, 199 00, Praha 9</p><br/>
                                     <p>Brno Masarykova, Masarykova 2,&nbsp; 602 00 Brno</p><br/>
                                     <p>Ostrava, Avion Shopping Park Rudná 114, 700 30 Ostrava-Zábřeh</p><br/>
-                                    <p>Praha Stodůlky náměstí, Junkových 2, 15500 Praha 5</p><br/>
+                                    <p>Olomouc Ĺ antovka, Junkových 2, 15500 Praha 5</p><br/>
                                     <p>Chrudim Průmyslová 890, 53701 Chrudim, Czech Republic</p><br/>
 					<a href="#" class="top"></a>
 				</div>

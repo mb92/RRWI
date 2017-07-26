@@ -158,7 +158,7 @@ Veškeré právní vztahy vzniklé v souvislosti s těmito podmínkami a soutě�
 </tr>
 
 <tr>
-<td>Praha Stodůlky</td>
+<td>Olomouc Ĺ antovka</td>
 <td>Náměstí Junkových 2</td>
 <td>15500</td>
 <td>Praha 5</td>
@@ -189,7 +189,7 @@ Veškeré právní vztahy vzniklé v souvislosti s těmito podmínkami a soutě�
 
 <p>Ostrava, Avion Shopping Park, Rudná 114, 700 30 Ostrava-Zábřeh</p>
 
-<p>Praha Stodůlky, Náměstí Junkových 2, 15500 Praha 5</p>
+<p>Olomouc Ĺ antovka, Náměstí Junkových 2, 15500 Praha 5</p>
 
 <p>Chrudim, Průmyslová 890, 53701 Chrudim, Czech Republic</p>
 
