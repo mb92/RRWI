@@ -133,7 +133,11 @@ Vodafone:
 
 <h2>9.&nbsp;&nbsp;Ireland:</h2>
 
-<p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p>
+-->
+
+<p><a href="http://app.p10selfiestudio.com/stores-cw" target="_blank">http://app.p10selfiestudio.com/stores-cw</a></p>
+
+<!--
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0>
  <tr>
