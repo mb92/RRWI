@@ -288,7 +288,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <tr height="40">
                             <td class="mobileOffTab" width="55"><img src="<?= $path ?>/imgs/social-bg.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
                             <td class="mobileOffTab" style="color: #58595b; padding-top: 4px; font-size: 12px;">
-                                CALL FREE:<br/>0800 0496103
+                                CALL&nbsp;FREE&nbsp;-&nbsp;0800&nbsp;0496103
                             </td>
                             <td class="mobileOnTab" style="color: #58595b; padding-top: 4px; font-size: 14px; display:none; vertical-align:middle; font-size:12px">
                                 <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;" />   
