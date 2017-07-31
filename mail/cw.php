@@ -49,7 +49,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                   </tr>
                   <tr>
                     <td width="600" class="mobile" style="font-family:MyriadLight, Arial, Helvetica; font-size:12px; line-height:18px;">
-                      <img src="<?= $path ?>/imgs/women.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
+                      <img src="<?= $path ?>/imgs/women-cw.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
                     </td>
                   </tr>
 
