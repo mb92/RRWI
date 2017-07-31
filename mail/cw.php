@@ -120,6 +120,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                             To enter, all you need to do is share your Selfie Studio shot on <br/>
                             Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
+
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK</font> before 8th November.
 
                           <br/><br/>
@@ -252,7 +253,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
                               Make sure to order your Huawei P10 from Carphone Warehouse today. They compare the widest range of tariffs to find the right deal for you.<br/>
                               Call free 0800&nbsp;0496103 or visit your local Carphone Warehouse store to 
-                              <a href="<?= $links['store-locator'] ?>"> find out more</a>.
+                              <a href="<?= $links['store-locator'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline;"> 
+                                  <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline;">find out more</font>
+                              </a>.
 
                             </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
