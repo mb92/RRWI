@@ -253,8 +253,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
                               Make sure to order your Huawei P10 from Carphone Warehouse today. They compare the widest range of tariffs to find the right deal for you.<br/>
                               Call free 0800&nbsp;0496103 or visit your local Carphone Warehouse store to 
-                              <a href="<?= $links['store-locator'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline;"> 
-                                  <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline;">find out more</font>
+                              <a href="<?= $links['store-locator'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#ffffff; text-decoration:none;"> 
+                                  <u><font style="font-family:MyriadLight, Arial, Helvetica; color:#ffffff; text-decoration:none;">find out more</font></u>
                               </a>.
 
                             </p><br/>
