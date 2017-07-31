@@ -120,6 +120,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                             To enter, all you need to do is share your Selfie Studio shot on <br/>
                             Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
+
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK</font> before 8th November.
 
                           <br/><br/>
