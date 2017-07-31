@@ -290,9 +290,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <td class="mobileOffTab" style="color: #58595b; padding-top: 2px; font-size: 12px;">
                                 CALL&nbsp;FREE&nbsp;-&nbsp;0800&nbsp;0496103
                             </td>
-                            <td class="mobileOnTab" style="color: #58595b; padding-top: 4px; font-size: 14px; display:none; vertical-align:middle; font-size:12px">
-                                <img src="<?= $path ?>/imgs/clean.png" width="10" height="10" style="display:block; margin:0; padding:0; border:none;" />   
-                                &nbsp;&nbsp;CALL FREE:<br/>0800&nbsp;0496103
+                            <td class="mobileOnTab" style="color: #58595b; padding-top: 4px; font-size: 14px; display:none; vertical-align:middle; font-size:12px">  
+                                &nbsp;&nbsp;CALL FREE:<br/>&nbsp;&nbsp;0800&nbsp;0496103
                             </td>
                             <td width="55">
                               <a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
