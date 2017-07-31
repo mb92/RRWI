@@ -120,11 +120,19 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                             To enter, all you need to do is share your Selfie Studio shot on <br/>
                             Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
+<<<<<<< HEAD
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK</font> before 8th November.
 
                           <br/><br/>
                             Each week our judge will select the image that best captures the idea of the ‘Perfect Selfie’ in a unique and creative way. 
                             The winning photographer will receive a brand new Huawei P10, so every shot can be a cover shot.
+=======
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK</font> before 13th August.
+
+                          <br/><br/>
+                            Each week our judge will select the image that best captures the idea of the ‘Perfect Selfie’ in a unique, creative way. The winning photographer 
+                            will receive a brand new Huawei P10, so every shot can be a cover shot.
+>>>>>>> fb771af67439eb0bba4504b7584cb1f1bfa078c2
                           </p>
                           <br/>
                         </td>
@@ -253,6 +261,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               Make sure to order your Huawei P10 from Carphone Warehouse today. They compare the widest range of tariffs to find the right deal for you.<br/>
                               Call free 0800&nbsp;0496103 or visit your local Carphone Warehouse store to 
                               <a href="<?= $links['store-locator'] ?>"> find out more</a>.
+
                             </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
