@@ -146,11 +146,13 @@ class Settings extends \yii\db\ActiveRecord
             case 'CW':
                 $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['store'] = 'https://www.carphonewarehouse.com/huawei/p10.html#!colour=blue&capacity=64GB&dealType=pm&manufacturerId=2&&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
-                $links['location'] = 'https://www.carphonewarehouse.com/store-locator.html?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+//                $links['location'] = 'https://www.carphonewarehouse.com/store-locator.html?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'http://'.$_SERVER['HTTP_HOST'].'/stores-wc?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['facebook'] = 'https://www.facebook.com/huaweiuk?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['instagram'] = 'https://www.instagram.com/huaweimobileuk?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['twitter'] = 'https://twitter.com/huaweimobileuk?lang=en';
                 $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/terms-and-conditions?c=cw&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['store-locator'] = 'https://www.carphonewarehouse.com/store-locator.html?&utm_source=selfie-app&utm_medium=email&utm_campaign=selfie';
             break;
         
             default:

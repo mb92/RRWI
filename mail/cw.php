@@ -90,9 +90,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
-                            Thank you for visiting the P10 Selfie Studio at Vodafone 
+                            Thank you for visiting the P10 Selfie Studio at Carphone Warehouse
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;"><?= $place ?></font>.
-                            We’ve attached your Selfie to this email. We hope you love it.
+                             We’ve attached your selfie to this e-mail. We hope you love it.
                             </p>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
@@ -113,17 +113,18 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px;" class="mobile-font">
-                            <b>SHARE FOR A CHANCE <br/>TO WIN A HUAWEI P10</b>
+                            <b>SHARE <br/>TO WIN A HUAWEI P10</b>
                             </font>
                             </center>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                             To enter, all you need to do is share your Selfie Studio shot on <br/>
-                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone</font> and 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 13th August.
+                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK</font> before 8th November.
 
                           <br/><br/>
-                            Each week we’ll shortlist the five selfies with the most likes on Instagram. Our panel of judges will then select a weekly winner from that shortlist to receive a Huawei P10.
+                            Each week our judge will select the image that best captures the idea of the ‘Perfect Selfie’ in a unique and creative way. 
+                            The winning photographer will receive a brand new Huawei P10, so every shot can be a cover shot.
                           </p>
                           <br/>
                         </td>
@@ -167,12 +168,13 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <center><br/>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="38" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px; text-align:center;" class="mobile-font">
-                          <b>MAKE EVERY SHOT A COVER SHOT</b>
+                          <b>PICTURE PERFECTION, EVERY TIME</b>
                         </font>
                         </center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                              The Huawei P10; co-engineered with Leica. An extraordinary fusion of art, culture and technology. A phone with a soul, designed to help you take photo portraits like a pro, unleash your inner artist and change the way the world sees you.
+                              The Huawei P10’s front Leica camera is unique. With its automatic framing and natural bokeh effect features, it will transform every selfie you 
+                              take into a stunning self-portrait.
                           </p>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
@@ -243,12 +245,14 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="48" style="display:block; margin:0; padding:0; border:none;"/>
                             <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center;" class="mobile-font">
-                              HUAWEI P10 ON VODAFONE 4G<br/>
+                              HUAWEI P10 AT CARPHONE WAREHOUSE<br/>
                             </font>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
-                              Style, craftsmanship and innovation, all with the connectivity speed to match thanks to Vodafone’s 4G network. Discover more in store or online.
+                              Make sure to order your Huawei P10 from Carphone Warehouse today. They compare the widest range of tariffs to find the right deal for you.<br/>
+                              Call free 0800&nbsp;0496103 or visit your local Carphone Warehouse store to 
+                              <a href="<?= $links['store-locator'] ?>"> find out more</a>.
                             </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>

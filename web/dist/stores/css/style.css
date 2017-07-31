@@ -320,13 +320,21 @@ body {
       @media only screen and (min-width: 768px) {
         .footer-bg .footer .logo-vodafone {
           width: 25%;
-          height: 120px; } }
+          height: 120px; } 
+      
+        .cw-logo {
+            position: relative; 
+            height: 100%; 
+/*            width: auto !important;*/
+        }
+      }
       .footer-bg .footer .logo-vodafone img {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-item-align: end;
             align-self: flex-end;
         width: 45%; }
+        
 
 
 .top {
@@ -339,4 +347,19 @@ body {
   margin-left:-25px;
   background: url('../img/arrow.png') no-repeat;
   background-size: cover;
+}
+
+
+.cw-logo {
+    position: relative; 
+    height: 100%; 
+    width: auto !important;
+}
+
+@media only screen and (max-width: 545px) {
+    .cw-logo {
+        position: relative; 
+        height: 50%; 
+        margin-bottom: 22px;
+    }
 }
