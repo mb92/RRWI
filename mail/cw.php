@@ -253,6 +253,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               Make sure to order your Huawei P10 from Carphone Warehouse today. They compare the widest range of tariffs to find the right deal for you.<br/>
                               Call free 0800&nbsp;0496103 or visit your local Carphone Warehouse store to 
                               <a href="<?= $links['store-locator'] ?>"> find out more</a>.
+
                             </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
