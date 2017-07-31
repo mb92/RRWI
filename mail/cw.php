@@ -291,7 +291,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                                 CALL&nbsp;FREE&nbsp;-&nbsp;0800&nbsp;0496103
                             </td>
       
-                            <td class="mobileOnTab" style="color: #58595b; padding-top: 4px; padding-left:10px; font-size: 14px; display:none; vertical-align:middle; font-size:12px">
+                            <td class="mobileOnTab" style="color: #58595b; padding-top: 4px; padding-left:4px; font-size: 14px; display:none; vertical-align:middle; font-size:12px">
                                 <img src="<?= $path ?>/imgs/clean.png" width="1" height="2px" style="display:block; margin:0; padding:0; border:none;" />
                                 &nbsp;&nbsp;CALL FREE:<br/>&nbsp;&nbsp;0800&nbsp;0496103
                             </td>
