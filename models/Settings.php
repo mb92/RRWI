@@ -142,7 +142,17 @@ class Settings extends \yii\db\ActiveRecord
                 $links['instagram'] = 'https://www.instagram.com/huaweiza?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/terms-and-conditions?c=za&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
             break;
-
+        
+            case 'CW':
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['store'] = 'https://www.carphonewarehouse.com/huawei/p10.html#!colour=blue&capacity=64GB&dealType=pm&manufacturerId=2&&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'https://www.carphonewarehouse.com/store-locator.html?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['facebook'] = 'https://www.facebook.com/huaweiuk?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['instagram'] = 'https://www.instagram.com/huaweimobileuk?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['twitter'] = 'https://twitter.com/huaweimobileuk?lang=en';
+                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/terms-and-conditions?c=cw&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+            break;
+        
             default:
                 $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['store'] = 'http://shop.vodafone.ie/shop/phones/huawei-p10-bill-pay-black?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;

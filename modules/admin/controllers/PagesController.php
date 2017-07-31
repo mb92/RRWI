@@ -54,6 +54,10 @@ class PagesController extends Controller
                 $view = 'terms-cz';
             break;
         
+            case 'cw':
+                $view = 'terms-cw';
+            break;
+        
             default:
                 $view = 'terms';
             break;
@@ -65,6 +69,12 @@ class PagesController extends Controller
     {   
         $this->layout = false;
         return $this->render('stores');
+    }
+    
+    public function actionStoresCw()
+    {   
+        $this->layout = false;
+        return $this->render('stores-cw');
     }
     // public function actionUnsub() 
     // {
