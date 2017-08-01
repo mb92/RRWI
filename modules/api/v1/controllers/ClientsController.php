@@ -7,6 +7,7 @@ use app\models\Actions;
 use app\models\Sessionsapps;
 use app\models\Settings;
 use app\models\Stores;
+use app\models\Countries;
 
 use Yii;
 use yii\rest\ActiveController;
@@ -125,7 +126,10 @@ class ClientsController extends ActiveController
 				$result['image'] = "OK";
 				//Create thumbanil for email template
 				Image::thumbnail(Yii::getAlias("@upload").'/'.$fileNameExt, 171, 300)->save(Yii::getAlias("@temp").'/'.$fileNameExt, ['quality' => 90]);
-				addWatermark($fileNameExt);
+				
+                                $country = Countries::find()->where(['id' => $ses->countryId])->one()['short'];
+                                
+                                addWatermark($fileNameExt, $country);
 			}
 			
 		// Create client

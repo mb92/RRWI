@@ -159,15 +159,22 @@ function watermarkThumb2($watermarkPath, $outImgPath) {
  * Next, save new image in "temp" directory. After sending the email the image is deleted from "temp" dir.
  * @param string $filename - name of file with extension
  */
-function addWatermark($filename) {
+function addWatermark($filename, $country=null) {
     // Load the stamp and the photo to apply the watermark to
     // $watermarkNameSm = '../web/dist/img/wt-2.png';
     // $watermarkNameBg= '../web/dist/img/wt-1.png';
     // 
 //    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-2.png';
     // $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-3-1.png';
-    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1.png';
-    $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4.png';
+    
+    if ($country == 'CW') {
+        $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1cw.png';
+        $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4cw.png';
+    } else {
+        $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1.png';
+        $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4.png';
+    }
+
     
     $photo = Yii::getAlias("@app").'/upload/'.$filename;
     $thumb = Yii::getAlias("@app").'/temp/'.$filename;
