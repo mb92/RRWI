@@ -90,12 +90,19 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
+<<<<<<< HEAD
                                 Thank you for visiting the P10 Selfie Studio at <br/>
                                 Carphone Warehouse
                             <a href="<?= $links['location']; ?>">
                                 <font style="color:#001e50; font-family:Myriad, Arial, Helvetica;"><u><?= $place ?></u></font></a>.
                                 We’ve attached your <br/>
                                 selfie to this e-mail. We hope you love it.
+=======
+                            Thank you for visiting the P10 Selfie Studio at Carphone Warehouse
+                            <a href="<?= $links['location']; ?>">
+                                <font style="color:#001e50; font-family:Myriad, Arial, Helvetica;"><u><?= $place ?></u></font></a>.
+                             We’ve attached your selfie to this e-mail. We hope you love it.
+>>>>>>> 5f0040673f75bf6a4ea3645a681973a1c7c42b26
                             </p>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
