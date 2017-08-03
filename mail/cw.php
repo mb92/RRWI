@@ -258,18 +258,18 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
-                                Make sure to order your Huawei P10 from Carphone Warehouse today. <br/>
+                                Make sure to order your Huawei P10 from                               
+                                <a href="<?= $links['location']; ?>">
+                                    <font style="color:#001e50; font-family:Myriad, Arial, Helvetica;"><u>Carphone Warehouse</u></font>
+                                </a>today. <br/>
                                 They compare the widest range of tariffs to find the right deal for you.<br/><br/>
                               Call free 08000496103 or visit your local Carphone Warehouse store <br/>
                               to 
                               <a href="<?= $links['store-locator'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#ffffff; text-decoration:none;"> 
                                   <u><font style="font-family:MyriadLight, Arial, Helvetica; color:#ffffff; text-decoration:none;">find out more.</font></u>
                               </a>
-                              <br/>
-                              <br/>
-                              <a href="<?= $links['location']; ?>">
-                                    <font style="color:#001e50; font-family:Myriad, Arial, Helvetica;"><u>Your local Carphone Warehouse</u></font>
-                              </a>
+
+
                             </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
