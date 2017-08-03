@@ -264,7 +264,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                                 They compare the widest range of tariffs to find the right deal for you.<br/><br/>
                               Call free 08000496103 or visit your 
                                 <a href="<?= $links['location']; ?>">
-                                    <font style="color:#00779e; font-family:Myriad, Arial, Helvetica;">
+                                    <font style="color:#001e50; font-family:Myriad, Arial, Helvetica;">
                                         <u>local Carphone Warehouse store</u>
                                     </font>
                                 </a><br/>
