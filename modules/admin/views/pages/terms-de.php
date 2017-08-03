@@ -35,7 +35,7 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
 <h2>Teilnahme</h2>
 <p>
 1.&nbsp;&nbsp;Die Teilnahme an der Aktion ist kostenlos und erfordert nicht den Kauf von Gütern oder Dienstleistungen <br/>
-2.&nbsp;&nbsp;Der Wettbewerb beginnt am 7. Juli 2017 um 10.00 Uhr. Die Einsendeschlussfrist ist 5. August 2017 um 23:59 Uhr ("Einreisezeitraum"). Einreichungen, die außerhalb dieses Zeitrahmens eingegangen sind, werden nicht berücksichtigt.<br/>
+2.&nbsp;&nbsp;Der Wettbewerb beginnt am 7. Juli 2017 um 10.00 Uhr. Die Einsendeschlussfrist ist19. August 2017 um 23:59 Uhr ("Einreisezeitraum"). Einreichungen, die außerhalb dieses Zeitrahmens eingegangen sind, werden nicht berücksichtigt.<br/>
 3.&nbsp;&nbsp;Während des Einsendezeitraum steht Die Aktion für alle Teilnehmer auf Instagram offen, die ein Bild hochladen und beide der folgenden Hashtags verwenden (Einträge, die nicht beide Hashtags enthalten, werden nicht berücksichtigt). #P10SelfieVodafone #DE<br/>
 4.&nbsp;&nbsp;Die Eintragung muss Ihr eigenes Selfie sein (siehe Abschnitt 6.1 für weitere Informationen). Das Ändern, Verbessern oder Ändern eines vorbestehenden Selfie eines Dritten ist nicht als Ihre ursprüngliche Arbeit qualifiziert und von der Teilnahme ausgeschlossen. <br/>
 5.&nbsp;&nbsp;Wenn andere Personen im Foto abgesehen vom Teilnehmer identifiziert werden können, dürfen diese Fotografien nur vom Teilnehmer eingereicht werden, wenn der Dritte / die Parteien dies zugestimmt hat und keine Verletzung von Dritten Privatsphäre oder anderen Rechten vorliegt .<br/>
@@ -50,12 +50,12 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
 
 <h2>PREISE, VERLOSUNG UND BENACHRICHTIGUNG DER GEWINNER </h2>
 <p>
-1.&nbsp;&nbsp;Eine Jury von Huawei wählen die Einsendungen aus, die nach Ansicht der Jury am ursprünglichsten und kreativ den folgenden Beurteilungskriterien entspricht: 
+1.&nbsp;&nbsp;Eine Jury von Huawei wählen die Einsendungen aus, die nach Ansicht der Jury am ursprünglichsten und kreativ den folgenden Beurteilungskriterien entspricht:
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) Bilder von hoher kreativer Qualität; <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) das Wesen der Kampagne "TAKE YOUR PERFECT SELFIE".<br/>
 2.&nbsp;&nbsp;Die Jury besteht nicht aus unabhängigen Experten<br/>
-3.&nbsp;&nbsp;Zwischen dem 7. Juli 2017 und dem 5. August 2017 wird die Jury den Top 1 Eintrag auswählen, der jeweils ein Huawei P10 Smartphone ("Selfie Winner of the Week") erhält. Das Huawei P10 Smartphone wird jedem Selfie Gewinner der Woche per Post zugestellt.<br/>
+3.&nbsp;&nbsp;Zwischen dem 7. Juli 2017 und dem 19. August 2017 wird die Jury den Top 1 Eintrag.<br/>
 4.&nbsp;&nbsp;Die Gewinner der Woche werden über die offiziellen Huawei-Sozialkanäle Instagram und Facebook benachrichtigt und geben hiermit ihre Zustimmung zur Offenlegung ihrer Namen in den sozialen Netzwerken.<br/>
 5.&nbsp;&nbsp;Die angemeldeten Gewinner müssen ihren Preis innerhalb von sechs (6) Tagen nach Erhalt der Benachrichtigung über den Preis über offizielle Huawei Social Media Kanäle auf Facebook oder Instagram akzeptieren. Der Gewinner muss auf eine direkte Nachricht vom offiziellen Huawei-Konto mit seiner vollständigen Lieferadresse antworten. Wenn ein Gewinner seinen Preis in diesem Zeitraum nicht akzeptiert, verfällt sein Preis. In diesem Fall wird ein neuer Gewinner bestimmt.<br/>
 6.&nbsp;&nbsp;Jeder Gewinner ist damit einverstanden, das seine Einreichung nach dem Event für Werbliche Zwecke verwendet wird und an der Verwendung von Namen, Stimme, biographischen Informationen, deren Ähnlichkeit und Fotografien in einer solchen Werbung im Zusammenhang mit dieser Aktion teilzunehmen.<br/>
