@@ -92,8 +92,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                                 <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
                                     Thank you for visiting the P10 Selfie Studio at <br/>
                                     Carphone Warehouse
-                                <a href="<?= $links['location']; ?>">
-                                    <font style="color:#001e50; font-family:Myriad, Arial, Helvetica;"><u><?= $place ?></u></font></a>.
+                                    
+                                    <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;"><?= $place ?></font>.
                                     We’ve attached your <br/>
                                     selfie to this e-mail. We hope you love it.
                                 </p>
@@ -179,8 +179,10 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         </center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                              The Huawei P10’s front Leica camera is unique. With its automatic framing and natural bokeh effect features, it will transform every selfie you 
-                              take into a stunning self-portrait.
+                            The Huawei P10; co-engineered with Leica. An extraordinary fusion of <br/>
+                            art, culture and technology. A phone with a soul, designed to help<br/>
+                            you take photo portraits like a pro, to unleash your inner artist and <br/>
+                            change the way the world sees you.
                           </p>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
@@ -263,7 +265,11 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <a href="<?= $links['store-locator'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#ffffff; text-decoration:none;"> 
                                   <u><font style="font-family:MyriadLight, Arial, Helvetica; color:#ffffff; text-decoration:none;">find out more.</font></u>
                               </a>
-
+                              <br/>
+                              <br/>
+                              <a href="<?= $links['location']; ?>">
+                                    <font style="color:#001e50; font-family:Myriad, Arial, Helvetica;"><u>Your local Carphone Warehouse</u></font>
+                              </a>
                             </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
