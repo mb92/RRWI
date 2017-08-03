@@ -269,7 +269,6 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                                     </font>
                                 </a><br/>
                               to find out more.
-
                             </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
