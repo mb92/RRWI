@@ -90,9 +90,12 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
-                            Thank you for visiting the P10 Selfie Studio at Carphone Warehouse
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;"><?= $place ?></font>.
-                             We’ve attached your selfie to this e-mail. We hope you love it.
+                                Thank you for visiting the P10 Selfie Studio at <br/>
+                                Carphone Warehouse
+                            <a href="<?= $links['location']; ?>">
+                                <font style="color:#001e50; font-family:Myriad, Arial, Helvetica;"><u><?= $place ?></u></font></a>.
+                                We’ve attached your <br/>
+                                selfie to this e-mail. We hope you love it.
                             </p>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
@@ -113,7 +116,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px;" class="mobile-font">
-                            <b>SHARE <br/>TO WIN A HUAWEI P10</b>
+                            <b>SHARE FOR YOUR CHANCE TO WIN A<br/> HUAWEI P10</b>
                             </font>
                             </center>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
@@ -124,8 +127,10 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK</font> before 8th November.
 
                           <br/><br/>
-                            Each week our judge will select the image that best captures the idea of the ‘Perfect Selfie’ in a unique and creative way. 
-                            The winning photographer will receive a brand new Huawei P10, so every shot can be a cover shot.
+                          Each week our judge will select the image that best captures the <br/>
+                          idea of the ‘Perfect Selfie’ in a unique and creative way. <br/>
+                          The winning photographer will receive a brand new Huawei P10, so <br/>
+                          every shot can be a cover shot.
                           </p>
                           <br/>
                         </td>
@@ -169,7 +174,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <center><br/>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="38" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px; text-align:center;" class="mobile-font">
-                          <b>PICTURE PERFECTION, EVERY TIME</b>
+                          <b>MAKE EVERY SHOT A COVER SHOT</b>
                         </font>
                         </center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
@@ -245,14 +250,16 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="48" style="display:block; margin:0; padding:0; border:none;"/>
                             <center>
-                            <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center;" class="mobile-font">
-                              HUAWEI P10 AT CARPHONE WAREHOUSE<br/>
+                            <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center; font-weight:bold;" class="mobile-font">
+                            <b>HUAWEI P10 AT CARPHONE WAREHOUSE</b><br/>
                             </font>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
-                              Make sure to order your Huawei P10 from Carphone Warehouse today. They compare the widest range of tariffs to find the right deal for you.<br/>
-                              Call free 0800&nbsp;0496103 or visit your local Carphone Warehouse store to 
+                                Make sure to order your Huawei P10 from Carphone Warehouse today. <br/>
+                                They compare the widest range of tariffs to find the right deal for you.<br/><br/>
+                              Call free 08000496103 or visit your local Carphone Warehouse store <br/>
+                              to 
                               <a href="<?= $links['store-locator'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#ffffff; text-decoration:none;"> 
                                   <u><font style="font-family:MyriadLight, Arial, Helvetica; color:#ffffff; text-decoration:none;">find out more.</font></u>
                               </a>
@@ -294,7 +301,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <td style="text-align:center; display:inline" class="mobile">
                         <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                           <tr height="40">
-                            <td class="mobileOffTab" width="55"><img src="<?= $path ?>/imgs/social-bg.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
+                            <td class="mobileOffTab" width="75"><img src="<?= $path ?>/imgs/social-bg.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
                             <td class="mobileOffTab" style="color: #58595b; padding-top: 2px; font-size: 12px;">
                                 CALL&nbsp;FREE&nbsp;-&nbsp;0800&nbsp;0496103
                             </td>
@@ -312,11 +319,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <td width="57">
                               <a href="<?= $links['twitter']; ?>"><img src="<?= $path ?>/imgs/icon_twitter.jpg" width="57" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                             </td>
-                            <td width="40">
-                              <a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps.jpg" width="40" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
-                            </td>
                             <td class="mobileOffTab">
-                              <img src="<?= $path ?>/imgs/social-bg.jpg" width="170" height="40" style="display:block; margin:0; padding:0; border:none;"/>
+                              <img src="<?= $path ?>/imgs/social-bg.jpg" width="190" height="40" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                           </tr>
                         </table>
