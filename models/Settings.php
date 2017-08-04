@@ -142,6 +142,15 @@ class Settings extends \yii\db\ActiveRecord
                 $links['instagram'] = 'https://www.instagram.com/huaweiza?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/terms-and-conditions?c=za&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
             break;
+
+            case 'RO':
+                $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['store'] = 'https://www.vodacom.co.za/vodacom/shopping/devices?manufacturerId=2&&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'http://www.vodacom.co.za/vodacom/contact-us/find-a-store?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['facebook'] = 'https://www.facebook.com/HuaweimobileZA?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['instagram'] = 'https://www.instagram.com/huaweiza?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/terms-and-conditions?c=za&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+            break;
         
             case 'CW':
                 $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;

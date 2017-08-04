@@ -23,6 +23,10 @@ switch ($country) {
         include "cz.php";
     break;
     
+    case 'RO':
+        include "ro.php";
+    break;
+
     case 'CW':
         include "cw.php";
     break;

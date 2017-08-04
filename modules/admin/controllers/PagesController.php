@@ -53,6 +53,10 @@ class PagesController extends Controller
             case 'cz':
                 $view = 'terms-cz';
             break;
+            
+            case 'ro':
+                $view = 'terms-ro';
+            break;
         
             case 'cw':
                 $view = 'terms-cw';
