@@ -89,3 +89,4 @@ Edit the file `config/params.php` with real data for email account, for example:
 
 
 
+SIMPLY MANUAL IS IN web DIR

@@ -20,4 +20,4 @@ How to add new country?
 9. Add list of stores for the country into /web/dist/stores 
     If you want add dedicated page of stores you must create new action in the controller (PagesController - example for CW - stores in controller's file)
     In the next step you must edit config/web.php an add rules of route for new dedicated page:
-    urlManager -> rules -> 'stores-cw'=>'/admin/pages/stores-c'
+    urlManager -> rules -> 'stores-cw'=>'/admin/pages/stores-cw'
