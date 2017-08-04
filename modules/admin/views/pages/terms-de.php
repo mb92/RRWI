@@ -35,11 +35,7 @@ D-40549 Düsseldorf (im Folgenden „Vodafone“ genannt) </i>
 <h2>Teilnahme</h2>
 <p>
 1.&nbsp;&nbsp;Die Teilnahme an der Aktion ist kostenlos und erfordert nicht den Kauf von Gütern oder Dienstleistungen <br/>
-<<<<<<< HEAD
 2.&nbsp;&nbsp;Der Wettbewerb beginnt am 7. Juli 2017 um 10.00 Uhr. Die Einsendeschlussfrist ist 19. August 2017 um 23:59 Uhr ("Einreisezeitraum"). Einreichungen, die außerhalb dieses Zeitrahmens eingegangen sind, werden nicht berücksichtigt.<br/>
-=======
-2.&nbsp;&nbsp;Der Wettbewerb beginnt am 7. Juli 2017 um 10.00 Uhr. Die Einsendeschlussfrist ist19. August 2017 um 23:59 Uhr ("Einreisezeitraum"). Einreichungen, die außerhalb dieses Zeitrahmens eingegangen sind, werden nicht berücksichtigt.<br/>
->>>>>>> b051a39b1e357cc98f38dc30acb39c966d6f6461
 3.&nbsp;&nbsp;Während des Einsendezeitraum steht Die Aktion für alle Teilnehmer auf Instagram offen, die ein Bild hochladen und beide der folgenden Hashtags verwenden (Einträge, die nicht beide Hashtags enthalten, werden nicht berücksichtigt). #P10SelfieVodafone #DE<br/>
 4.&nbsp;&nbsp;Die Eintragung muss Ihr eigenes Selfie sein (siehe Abschnitt 6.1 für weitere Informationen). Das Ändern, Verbessern oder Ändern eines vorbestehenden Selfie eines Dritten ist nicht als Ihre ursprüngliche Arbeit qualifiziert und von der Teilnahme ausgeschlossen. <br/>
 5.&nbsp;&nbsp;Wenn andere Personen im Foto abgesehen vom Teilnehmer identifiziert werden können, dürfen diese Fotografien nur vom Teilnehmer eingereicht werden, wenn der Dritte / die Parteien dies zugestimmt hat und keine Verletzung von Dritten Privatsphäre oder anderen Rechten vorliegt .<br/>
