@@ -58,7 +58,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td style="text-align:center; font-size:16px; color:#000; font-family:MyriadLight, Arial, Helvetica;" class="mobile">
                       <center>
                       <img src="<?= $path ?>/imgs/clean.png" width="1" height="50" style="display:block; margin:0; padding:0; border:none;"/>
-                        Hi <font color="#ed1c24"><?= $name; ?></font>
+                        Buna <font color="#ed1c24"><?= $name; ?></font>
                       </center>
                     </td>
                   </tr>
@@ -70,9 +70,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td class="mobile" style="overflow:hidden; line-height:60px; color:#000;">
                       <center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
-                        <font style="font-family:MyriadLight, Arial, Helvetica; font-size:40px; letter-spacing:7px; color:#000;" class="mobile-head1">YOU'RE LOOKING</font>
+                        <font style="font-family:MyriadLight, Arial, Helvetica; font-size:40px; letter-spacing:7px; color:#000;" class="mobile-head1">ARATI</font>
                         <font style="font-family:MyriadSemibold, Arial, Helvetica; letter-spacing:10px; font-size:75px; color:#000;" class="mobile-head2">
-                          <b>INCREDIBLE</b>
+                          <b>INCREDIBIL</b>
                         </font>
                       </center>
                     </td>
@@ -90,10 +90,11 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
                             <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
-                            Thank you for visiting the P10 Selfie Studio at Vodafone 
+                            Iti multumim ca ai vizitat Vodafone P10 Selfie Studio 
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;"><?= $place ?></font>.
-                            We’ve attached your Selfie to this email. We hope you love it.
+                            Ti-am atasat selfie-ul in acest e-mail. Speram ca iti place <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;"><?= $place ?></font>.
                             </p>
+
                           <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
@@ -112,18 +113,18 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td width="16" class="mobileOnTab"></td>
                         <td>
                           <center>
-                            <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px;" class="mobile-font">
-                            <b>SHARE FOR A CHANCE <br/>TO WIN A HUAWEI P10</b>
+                            <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px;" class="mobile-font">                             
+                            <b>DISTRIBUIE PENTRU SANSA DE <br/>A GASTIGA UN HUAWEI P10</b>
                             </font>
                             </center>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                            To enter, all you need to do is share your Selfie Studio shot on <br/>
-                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone</font> and 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 13th August.
-
+                            Pentru a intra, tot ceea ce trebuie sa faci este sa distribui poza <br/>
+                            ta facuta in Selfie Studio pe Instagram, utilizand <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone</font> si
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> inainte 13th August.
                           <br/><br/>
-                            Each week we’ll shortlist the five selfies with the most likes on Instagram. Our panel of judges will then select a weekly winner from that shortlist to receive a Huawei P10.
+                            In fiecare saptamana o sa selectam cele cinci selfie-uri care au obtinut cele mai multe like-uri pe Instagram. 
+                            Juriul nostru va selecta apoi un castigator saptamanal din cei cinci, pentru a primi un Huawei P10.
                           </p>
                           <br/>
                         </td>
@@ -144,7 +145,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="29" class="mobileOnTab"></td>
                           <td width="243">
                             <a href="<?= $links['share']; ?>">
-                            <img src="<?= $path ?>/imgs/btn-share-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
+                            <img src="<?= $path ?>/imgs/btn-share-now-ro.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                             </a>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="42" style="display:block; margin:0; padding:0; border:none;" />
                           </td>
@@ -167,12 +168,12 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <center><br/>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="38" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px; text-align:center;" class="mobile-font">
-                          <b>MAKE EVERY SHOT A COVER SHOT</b>
+                          <b>FA FIECARE POZA, O POZA DE COPERTA</b>
                         </font>
                         </center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                              The Huawei P10; co-engineered with Leica. An extraordinary fusion of art, culture and technology. A phone with a soul, designed to help you take photo portraits like a pro, unleash your inner artist and change the way the world sees you.
+                              Huawei P10; Co-proiectat impreuna cu Leica. O fuziune extraordinara de arta, cultura si tehnologie. Un telefon cu un suflet, conceput pentru a va ajuta sa faceți portrete ca un profesionist, dezlantuiti artistul din interior dvs. si schimbati modul in care va vede lumea.
                           </p>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
@@ -243,12 +244,12 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="48" style="display:block; margin:0; padding:0; border:none;"/>
                             <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center;" class="mobile-font">
-                              HUAWEI P10 ON VODAFONE 4G<br/>
+                              HUAWEI P10 LA VODAFONE 4G<br/>
                             </font>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
-                              Style, craftsmanship and innovation, all with the connectivity speed to match thanks to Vodafone’s 4G network. Discover more in store or online.
+                              Stil, maiestrie si inovare, toate cu viteza de conectivitate care se potriveste multumita retelei 4G a Vodafone. Descoperiti mai multe in magazine sau online.
                             </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
@@ -268,7 +269,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="29" class="mobileOnTab"></td>
                             <td width="243">
                               <a href="<?= $links['store']; ?>">
-                              <img src="<?= $path ?>/imgs/btn-shop-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
+                              <img src="<?= $path ?>/imgs/btn-shop-now-ro.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                               </a>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="72" style="display:block; margin:0; padding:0; border:none;" /> 
                             </td>
