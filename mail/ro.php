@@ -251,7 +251,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
                               Stil, maiestrie si inovare, toate cu viteza de conectivitate care se potriveste multumita retelei 4G a Vodafone. Descoperiti mai multe in magazine sau online.
-                            </p><br/>
+                            </p>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
                           <td width="40" class="mobileOffTab"></td>
