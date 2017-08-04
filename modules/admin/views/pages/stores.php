@@ -309,11 +309,18 @@
 				<h3 class="tab_drawer_heading" rel="tab4">ROMÂNIA</h3>
 				<div id="tab4" class="tab_content">
 				<!--<h2>Tab 4 content</h2>-->
-                                    <p>Retail Store Bucuresti Baneasa Mall, Shopping City Baneasa, Sos. Buc-Ploiesti nr. 42D etaj 1 aripa, MediaGalaxy, Bucuresti</p><br/>
+<!--                                    <p>Retail Store Bucuresti Baneasa Mall, Shopping City Baneasa, Sos. Buc-Ploiesti nr. 42D etaj 1 aripa, MediaGalaxy, Bucuresti</p><br/>
                                     <p>Retail Store Bucuresti Mega Mall, Bd. Pierre de Coubertin, Nr. 3- 5 , Complex Comercial Mega Mall, Bucuresti</p><br/>
                                     <p>Retail Store Constanta City Mall, City Mall Constanta, str. Al. Lapusneanu, nr.116C, Constanta</p><br/>
                                     <p>Retail Store Cluj Polus Mall, Str. Avram Iancu, Nr. 492-500, parter,Floresti, Cluj-Napoca</p><br/>
-                                    <p>Retail Store Brasov, Str.Diaconu Coresi Nr.1, Brasov</p><br/>
+                                    <p>Retail Store Brasov, Str.Diaconu Coresi Nr.1, Brasov</p><br/>-->
+                                    
+                                    <p>Dealer Name,  Location, Adress, City</p><br/>
+                                    <p>Retail Store Brasov, Diaconu Coresi 1,  Brasov</p><br/>
+                                    <p>Retail Store Bucuresti Baneasa Mall, Shopping City Baneasa, Sos. Buc-Ploiesti nr. 42D etaj 1 aripa MediaGalaxy, Bucuresti</p><br/>
+                                    <p>Retail Store Bucuresti Mega Mall,  Bulevardul Pierre de Coubertin, nr.3-5,  Bucuresti</p><br/>
+                                    <p>Retail Store Constanta Tomis,  Bd. Tomis, nr. 216, bl. TD4A,  Constanta</p><br/>
+                                    <p>Retail Store Constanta City Mall,  Str. Alexandru Lapusneanu nr. 116C, Complex Comercial City Mall, Constanta</p><br/>
 					<a href="#" class="top"></a>
 				</div>
 				<!-- #tab4 -->

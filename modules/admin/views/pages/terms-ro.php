@@ -195,11 +195,14 @@ Vodafone:
 
 <div class="mobileOn">
 
-<h2>9.&nbsp;&nbsp;Ireland:</h2>
+<h2>9.&nbsp;&nbsp;Romania:</h2>
 <p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p><br/>
-<p>Dundrum Town Centre, Dundrum Town Centre, Dundrum, Dublin 16</p>  
-<p>Mahon Point, 29 Mahon Point Shopping Centre, Mahon Point Industrial Estate, Mahon, Co.Cork</p>
-<p>Blanchardstown, unit 133, Blanchardstown Shopping Centre, Blanchardstown, Dublin</p>
+<p>Dealer Name,  Location, Adress, City</p>
+<p>Retail Store Brasov, Diaconu Coresi 1,  Brasov</p>
+<p>Retail Store Bucuresti Baneasa Mall, Shopping City Baneasa, Sos. Buc-Ploiesti nr. 42D etaj 1 aripa MediaGalaxy, Bucuresti</p>
+<p>Retail Store Bucuresti Mega Mall,  Bulevardul Pierre de Coubertin, nr.3-5,  Bucuresti</p>
+<p>Retail Store Constanta Tomis,  Bd. Tomis, nr. 216, bl. TD4A,  Constanta</p>
+<p>Retail Store Constanta City Mall,  Str. Alexandru Lapusneanu nr. 116C, Complex Comercial City Mall, Constanta</p>
 
 <br/>
 <br/>
