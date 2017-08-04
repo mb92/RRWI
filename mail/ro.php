@@ -120,7 +120,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
                             Pentru a intra, tot ceea ce trebuie sa faci este sa distribui poza <br/>
-                            ta facuta in Selfie Studio pe Instagram, utilizand <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone</font> si
+                            ta facuta in Selfie Studio pe Instagram, utilizand <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone</font> <br/>
+                            si
                             <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> inainte 13th August.
                           <br/><br/>
                             In fiecare saptamana o sa selectam cele cinci selfie-uri care au obtinut cele mai multe like-uri pe Instagram. 
