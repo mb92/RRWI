@@ -13,6 +13,7 @@ How to add new country?
 6. Create T&C for the country into /modules/admin/views/pages/terms-shortcode.php (ex. terms-ir.php)
 
 7. Create Unsub message for the country into /web/unsub-shortcode.php (ex. unsub-ir.php) - default is english message in unsub.php
+    Must edit /modules/api/v1/controllers/ClientsControllers.php - add case instructions in 'unsub' function.
 
 8. Modify PagesController into /modules/admin/controllers - must add case instructions for T&C
 
