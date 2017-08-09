@@ -463,18 +463,10 @@ class ClientsController extends ActiveController
 			$st = $client->save();
 			if ($st) {
 				if($data['country'] == false) return $this->redirect('../../unsub.php');
-				switch (encrypt_decrypt('decrypt', $data['country'])) {
-					case 'DE':
-						return $this->redirect('../../unsub-de.php');
-					break;
-					
-                                        case 'CZ':
-						return $this->redirect('../../unsub-cz.php');
-					break;
-                                        
-                                        case 'RO':
-						return $this->redirect('../../unsub-ro.php');
-					break;
+				switch (encrypt_decrypt('decrypt', $data['country'])) {                                        
+     //                case 'CPW':
+					// 	return $this->redirect('../../unsub.php');
+					// break;
                                     
 					default:
 						return $this->redirect('../../unsub.php');

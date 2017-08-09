@@ -27,14 +27,14 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         </td>
                         <td style="text-align:center;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; font-size:11px; letter-spacing:1px;">
-                              SVOJE SELFIE NAJDEŠ V PŘÍLOZE E-MAILU, DOUFÁME, ŽE SE TI LÍBÍ</font>
+                              YOUR PERFECT SELFIE IS ATTACHED</font>
                         </td>
                         <td style="text-align:center;" width="25%">
                             <?php if ($unsub != "#") { 
                               echo '
                               <a href="'.$unsub.'" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
                               <font style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:9px; letter-spacing:1px;">
-                              Odhlásit odběr</font>
+                              unsubscribe</font>
                               </a>';
                           } ?>
                         </td>
@@ -49,7 +49,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                   </tr>
                   <tr>
                     <td width="600" class="mobile" style="font-family:MyriadLight, Arial, Helvetica; font-size:12px; line-height:18px;">
-                      <img src="<?= $path ?>/imgs/women-3.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
+                      <img src="<?= $path ?>/imgs/women-cw2.jpg" width="100%" height="auto" style="margin:0; padding:0; border:none; display:block;" border="0" class="imgClass" alt="" />
                     </td>
                   </tr>
 
@@ -58,7 +58,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td style="text-align:center; font-size:16px; color:#000; font-family:MyriadLight, Arial, Helvetica;" class="mobile">
                       <center>
                       <img src="<?= $path ?>/imgs/clean.png" width="1" height="50" style="display:block; margin:0; padding:0; border:none;"/>
-                        Ahoj <font color="#ed1c24"><?= $name; ?></font>
+                        Hi <font color="#ed1c24"><?= $name; ?></font>
                       </center>
                     </td>
                   </tr>
@@ -70,10 +70,9 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td class="mobile" style="overflow:hidden; line-height:60px; color:#000;">
                       <center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="20" style="display:block; margin:0; padding:0; border:none;"/>
-                        <font style="font-family:MyriadLight, Arial, Helvetica; font-size:40px; letter-spacing:7px; color:#000;" class="mobile-head1">VYPADÁŠ </font><br/>
-                        <img src="<?= $path ?>/imgs/clean.png" width="1" height="10" style="display:block; margin:0; padding:0; border:none;"/>
-                        <font style="font-family:MyriadSemibold, Arial, Helvetica; letter-spacing:10px; font-size:68px; color:#000;" class="mobile-head2">
-                          <b>ÚŽASNĚ!</b>
+                        <font style="font-family:MyriadLight, Arial, Helvetica; font-size:40px; letter-spacing:7px; color:#000;" class="mobile-head1">YOU'RE LOOKING</font>
+                        <font style="font-family:MyriadSemibold, Arial, Helvetica; letter-spacing:10px; font-size:75px; color:#000;" class="mobile-head2">
+                          <b>INCREDIBLE</b>
                         </font>
                       </center>
                     </td>
@@ -85,21 +84,24 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                     <td class="mobile">
 
                       <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                      <tr>
-                        <td width="40" class="mobileOffTab"></td>
-                        <td width="16" class="mobileOnTab"></td>
-                        <td>
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
-                            <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
-                            Děkujeme za návštěvu P10 Selfie studia ve Vodafone <br/>
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;"><?= $place ?></font>.<br/>
-                            Svoje selfie najdeš v příloze e-mailu, doufáme, že se Ti líbí.
-                            </p>
-                          <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
-                        </td>
-                        <td width="40" class="mobileOffTab"></td>
-                        <td width="16" class="mobileOnTab"></td>
-                      </tr>
+                        <tr>
+                            <td width="40" class="mobileOffTab"></td>
+                            <td width="16" class="mobileOnTab"></td>
+                            <td>
+                              <img src="<?= $path ?>/imgs/clean.png" width="1" height="34" style="display:block; margin:0; padding:0; border:none;"/>
+                                <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; font-size:16px; text-align:center; color:#58595b;">
+                                    Thank you for visiting the P10 Selfie Studio at <br/>
+                                    Carphone Warehouse
+                                    
+                                    <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;"><?= $place ?></font>.
+                                    We’ve attached your <br/>
+                                    selfie to this e-mail. We hope you love it.
+                                </p>
+                              <img src="<?= $path ?>/imgs/clean.png" width="1" height="30" style="display:block; margin:0; padding:0; border:none;"/>
+                            </td>
+                            <td width="40" class="mobileOffTab"></td>
+                            <td width="16" class="mobileOnTab"></td>
+                        </tr>
                       </table>
 
                     </td>
@@ -114,20 +116,21 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td>
                           <center>
                             <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px;" class="mobile-font">
-                            <b>SDÍLET A ZÍSKEJ ŠANCI <br/>VYHRÁT HUAWEI P10</b> 
+                            <b>SHARE FOR YOUR CHANCE TO WIN A<br/> HUAWEI P10</b>
                             </font>
                             </center>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                            K účasti v soutěži stačí pouze sdílet tuto selfie na Instagramu s hashtagy 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieVodafone </font> a 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font>
-                            před koncem soutěže 25.10.2017.
+                            To enter, all you need to do is share your Selfie Studio shot on <br/>
+                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
+
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 8th November.
 
                           <br/><br/>
-                            Každý týden postoupí do finále 5 selfie s největším počtem srdíček (lajků) na Instagramu. 
-                            Naše porota pak z finalistů vybere každý týden výherce, který získá Huawei BT Speaker. 
-                            Každý měsíc bude vybrán jeden šťastlivec, který vyhraje Huawei P10.
+                          Each week our judge will select the image that best captures the <br/>
+                          idea of the ‘Perfect Selfie’ in a unique and creative way. <br/>
+                          The winning photographer will receive a brand new Huawei P10, so <br/>
+                          every shot can be a cover shot.
                           </p>
                           <br/>
                         </td>
@@ -148,7 +151,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="29" class="mobileOnTab"></td>
                           <td width="243">
                             <a href="<?= $links['share']; ?>">
-                            <img src="<?= $path ?>/imgs/btn-share-now-cz.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
+                            <img src="<?= $path ?>/imgs/btn-share-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                             </a>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="42" style="display:block; margin:0; padding:0; border:none;" />
                           </td>
@@ -171,14 +174,15 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <center><br/>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="38" style="display:block; margin:0; padding:0; border:none;"/>
                         <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#000; letter-spacing:2px; text-align:center;" class="mobile-font">
-                          <b>ZACHYŤ DOKONALOST OKAMŽIKU</b>
+                          <b>MAKE EVERY SHOT A COVER SHOT</b>
                         </font>
                         </center>
                         <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                              Huawei P10; vyvinutý ve spolupráci s Leica. Výjimečné spojení umění, <br/>
-                              tradice a technologie. Telefon s duší, který vám umožní fotit jako profesionál. <br/>
-                              Dejte prostor svému uměleckému citu a změňte způsob, jak vás vidí svět.
+                            The Huawei P10; co-engineered with Leica. An extraordinary fusion of <br/>
+                            art, culture and technology. A phone with a soul, designed to help<br/>
+                            you take photo portraits like a pro, to unleash your inner artist and <br/>
+                            change the way the world sees you.
                           </p>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
@@ -203,7 +207,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <img src="<?= $path ?>/imgs/clean.png" width="57" height="1" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                             <td width="186px" align="center" style="text-align:center;">
-                              <img src="<?= $path ?>/imgs/phone-3.jpg" width="186" height="391" style="display:block; margin:0; padding:0; border:none;">
+                              <img src="<?= $path ?>/imgs/phone.jpg" width="186" height="391" style="display:block; margin:0; padding:0; border:none;">
                             </td>
                             <td width="207px" class="mobileOffTab">
                               <img src="<?= $path ?>/imgs/clean.png" width="207" height="1" style="display:block; margin:0; padding:0; border:none;"/>
@@ -248,14 +252,23 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="48" style="display:block; margin:0; padding:0; border:none;"/>
                             <center>
-                            <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center;" class="mobile-font">
-                              HUAWEI P10 NA VODAFONE 4G<br/>
+                            <font style="font-size:19px; font-family:MyriadBold, Arial, Helvetica; color:#fff; letter-spacing:2px; text-align:center; font-weight:bold;" class="mobile-font">
+                            <b>HUAWEI P10 AT CARPHONE WAREHOUSE</b><br/>
                             </font>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
                             </center>
                             <p style="font-family:MyriadLight, Arial, Helvetica; color:#fff; text-align:center; font-size:16px;">
-                              Styl, řemeslná zručnost a inovace, vše ve spojení díky Vodafone 4G síti. <br/>
-                              Získejte vice informací v prodejnách nebo online.
+                                Make sure to order your Huawei P10 from                               
+                                Carphone Warehouse today. <br/>
+
+                                They compare the widest range of tariffs to find the right deal for you.<br/><br/>
+                              Call free 08000496103 or visit your 
+                                <a href="<?= $links['location']; ?>">
+                                    <font style="color:#001e50; font-family:Myriad, Arial, Helvetica;">
+                                        <u>local Carphone Warehouse store</u>
+                                    </font>
+                                </a><br/>
+                              to find out more.
                             </p><br/>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="32" style="display:block; margin:0; padding:0; border:none;" class="mobileOffTab"/> 
                           </td>
@@ -275,7 +288,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           <td width="29" class="mobileOnTab"></td>
                             <td width="243">
                               <a href="<?= $links['store']; ?>">
-                              <img src="<?= $path ?>/imgs/btn-shop-now-cz.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
+                              <img src="<?= $path ?>/imgs/btn-shop-now.jpg" width="243" height="54" style="display:block; margin:0; padding:0; border:none;"/>
                               </a>
                               <img src="<?= $path ?>/imgs/clean.png" width="1" height="72" style="display:block; margin:0; padding:0; border:none;" /> 
                             </td>
@@ -293,20 +306,26 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                       <td style="text-align:center; display:inline" class="mobile">
                         <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" >
                           <tr height="40">
-                            <td class="mobileOffTab">
-                              <img src="<?= $path ?>/imgs/social-bg-2.jpg" width="219" height="40" style="display:block; margin:0; padding:0; border:none;"/>
+                            <td class="mobileOffTab" width="75"><img src="<?= $path ?>/imgs/social-bg.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></td>
+                            <td class="mobileOffTab" style="color: #58595b; padding-top: 2px; font-size: 12px;">
+                                CALL&nbsp;FREE&nbsp;-&nbsp;0800&nbsp;0496103
                             </td>
-                            <td width="59">
-                              <a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram-2.jpg" width="59" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
+      
+                            <td class="mobileOnTab" style="color: #58595b; padding-top: 4px; padding-left:4px; font-size: 14px; display:none; vertical-align:middle; font-size:12px; text-align:left;">
+                                <img src="<?= $path ?>/imgs/clean.png" width="1" height="2px" style="display:block; margin:0; padding:0; border:none;" />
+                                CALL FREE:<br/>0800&nbsp;0496103
+                            </td>
+                            <td width="55">
+                              <a href="<?= $links['instagram']; ?>"><img src="<?= $path ?>/imgs/icon_instagram.jpg" width="55" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                             </td>
                             <td width="47">
-                              <a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb-2.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
+                              <a href="<?= $links['facebook']; ?>"><img src="<?= $path ?>/imgs/icon_fb.jpg" width="47" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                             </td>
-                            <td width="51">
-                              <a href="<?= $links['location']; ?>"><img src="<?= $path ?>/imgs/icon_maps-2.jpg" width="51" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
+                            <td width="57">
+                              <a href="<?= $links['twitter']; ?>"><img src="<?= $path ?>/imgs/icon_twitter.jpg" width="57" height="40" style="display:block; margin:0; padding:0; border:none;"/></a>
                             </td>
                             <td class="mobileOffTab">
-                              <img src="<?= $path ?>/imgs/social-bg-2.jpg" width="224" height="40" style="display:block; margin:0; padding:0; border:none;"/>
+                              <img src="<?= $path ?>/imgs/social-bg.jpg" width="190" height="40" style="display:block; margin:0; padding:0; border:none;"/>
                             </td>
                           </tr>
                         </table>
@@ -331,7 +350,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                         <td style="text-align:center; vertical-align:middle;" valign="middle">
                               <a href="<?= $links['terms'] ?>" style="font-family:MyriadLight, Arial, Helvetica; color:#9fa0a1; text-decoration:underline; font-size:10px;">
                                 <font style="font-family:MyriadLight, Arial, Helvetica; color:#969696; text-decoration:underline; font-size:10px;">
-                                <u>Prosím klikněte zde pro pravidla a podmínky</u></font>
+                                <u>Please click here to view terms and conditions</u></font>
                               </a>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
