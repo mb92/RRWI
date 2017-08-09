@@ -14,9 +14,9 @@ use app\assets\AppAsset;
 <!-- Logo -->
 <a href="<?= \Yii::$app->homeUrl;?>" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>A</b>PP</span>
+    <span class="logo-mini"><b>CP</b>W</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Selfie</b>APP</span>
+    <span class="logo-lg"><b>Selfie</b>CPW</span>
 </a>
 
 
