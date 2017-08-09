@@ -124,7 +124,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             To enter, all you need to do is share your Selfie Studio shot on <br/>
                             Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK</font> before 8th November.
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#<?= $country; ?></font> before 8th November.
 
                           <br/><br/>
                           Each week our judge will select the image that best captures the <br/>
