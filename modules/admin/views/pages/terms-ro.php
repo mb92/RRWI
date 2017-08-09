@@ -4,101 +4,95 @@ $this->title = 'Terms and Conditions';
 
 
 
-<h1>CONDITIONS OF PARTICIPATION FOR THE HUAWEI & VODAFONE SELFIE STUDIO COMPETITION </h1>
+<h1>CONDIȚII DE PARTICIPARE LA CONCURSUL HUAWEI & VODAFONE SELFIE STUDIO</h1>
 
 
 <p>
 
-<h2>1.&nbsp;&nbsp;Scope of application</h2>
+<h2>1.&nbsp;&nbsp;Scopul aplicatiei</h2>
 <p>
-1.&nbsp;&nbsp;By entering your email address and/or the competition, the participant accepts these condition<br/>
+1.&nbsp;&nbsp;Prin participarea la Concurs si/sau introducerea adresei de e-mail in aplicația Concursului  participanții acceptă condițiile acesteia.<br/>
 </p>
 
-<h2>2.&nbsp;&nbsp;Organizer</h2>
+<h2>2.&nbsp;&nbsp;Organizatorul</h2>
 <p>
-1.&nbsp;&nbsp;The organizer of the competition is Huawei Technologies Duesseldorf GmbH (herein: “Organizer”)<br/>
-2.&nbsp;&nbsp;The Organizer is working in partnership with Vodafone Procurement Company S.à r.l.. <br/>
-3.&nbsp;&nbsp;This competition is not sponsored, endorsed or administered by, or associated with, Facebook or Instagram. Participants shall comply with the terms of service, community guidelines or other applicable policies for user submissions and/or uploads located at: <br/>
+1.&nbsp;&nbsp;Organizatorul Concursului  este Huawei Technologies Dusseldorf GmbH ( denumit in continuare “Organizatorul”)<br/>
+2.&nbsp;&nbsp;Pentru această activitate Organizatorul lucrează in parteneriat cu Vodafone Limited.<br/>
+3.&nbsp;&nbsp;Această competiție nu este sponsorizată, susținută sau administrată de sau in asociație cu Facebook ori Instagram. Participanții se vor supune regulilor competiției, regulilor comunității sau altor politici in vigoare referitoare la materialele incărcate/publicate la:<br/>
 <a href="https://www.facebook.com/legal/terms" target="_blank">https://www.facebook.com/legal/terms </a>
-for Facebook and 
+for Facebook and <br/>
 <a href="http://instagram.com/about/legal/terms/# " target="_blank">http://instagram.com/about/legal/terms/# </a>
-for Instagram. Submissions that violate the applicable terms of service or guidelines shall be disqualified. Participants in the competition completely release Facebook and Instagram from any possible claims. All information regarding the competition is solely provided by the Organizer. In cases of any questions, suggestions or complaint, please contact the Organizer at:<br/><br/>
+for Instagram. Materialele depuse care incalcă regulile si condițiile menționate vor fi descalificate din concurs. Participanții la Concurs eliberează Facebook și Instagram de orice raspundere. Toate informațiile referitoare la competiție sunt transmise in exclusivitate de către Organizator. Pentru intrebări, sugestii sau plangeri vă rugăm sa contactați Organizatorul la:<br/></br>
 
-<b>Germany:</b> <br/>
-<a href="https://www.facebook.com/HuaweiMobileDE/" target="_blank">https://www.facebook.com/HuaweiMobileDE/ </a> 
-or <a href="https://www.instagram.com/huaweimobilede/" target="_blank">https://www.instagram.com/huaweimobilede/.</a>
-<br/><br/>
-
-
-<b>Ireland: </b> <br/>
-<a href="https://www.facebook.com/huaweimobileie/" target="_blank">https://www.facebook.com/huaweimobileie/ </a> 
-or <a href="https://instagram.com/huaweimobileie" target="_blank">https://instagram.com/huaweimobileie </a>
-<br/><br/>
-
-
-<b>Czech Republic: </b>
-<a href="https://www.facebook.com/HuaweiMobileCZSK/" target="_blank">https://www.facebook.com/HuaweiMobileCZSK/</a> 
-or <a href="https://www.instagram.com/huaweimobileczsk/" target="_blank">https://www.instagram.com/huaweimobileczsk/</a>
-<br/><br/>
-
-<b>Romania: </b>
+<b>Romania: </b><br/>
 <a href="https://www.facebook.com/HuaweimobileRO/" target="_blank">https://www.facebook.com/HuaweimobileRO/</a> 
 or <a href="https://www.instagram.com/huaweimobilero/" target="_blank">https://www.instagram.com/huaweimobilero/</a>
 <br/><br/>
 </p>
 
-
-<h2>3.&nbsp;&nbsp;Eligibility for Participation</h2>
+<h2>3.&nbsp;&nbsp;Conditii de participare</h2>
 <p>
-1.&nbsp;&nbsp;The competition is open to all persons who, at the date of entry, are (1) aged 18 years or over; (2) who are resident in one of the following countries: Germany, Republic of Ireland, Czech Republic and Romania; (3) has a public Instagram account used in connection with this Competition; and (4) possess a photo taken on the Huawei P10 from inside the Huawei Selfie Booths located in participating Vodafone Stores as listed in the section: 9.0 Participating Vodafone Stores.  <br/>
-2.&nbsp;&nbsp;The Organizer’s employees, employees of cooperation partners who are or were involved in creating or implementing the competition, and each their immediate family members are excluded from participation.<br/>
-3.&nbsp;&nbsp;Participation is only possible on one’s own behalf and joint submissions are not allowed. There is a restriction on one entry per person per competition.<br/>
+1.&nbsp;&nbsp;Competiția este deschisă tuturor persoanelor care, la data intrării, sunt (1) în vârstă de 18 ani sau mai mult; (2) care au reședința în una din următoarele țări: Germania, Republica Irlanda, Republica Cehă și România; (3) au un cont public Instagram utilizat în legătură cu această competiție; Și (4) posedă o fotografie făcută cu Huawei P10 din interiorul cabinelor Huawei Selfie situate în magazinele Vodafone participante.<br/>
+2.&nbsp;&nbsp;Angajații Organizatorului, angajații partenerilor Organizatorului care sunt sau au fost implicați în crearea sau implementarea concursului și fiecare membru al familiilor imediate ale acestora sunt excluși de la participare.<br/>
+3.&nbsp;&nbsp;Participarea este posibilă numai în nume propriu, iar participarea în comun nu este permisă. Există o restricție privind o singură intrare de persoană pe concurs.<br/>
 </p>
 
 
 
-<h2>4.&nbsp;&nbsp;Participation</h2>
+<h2>4.&nbsp;&nbsp;Participarea</h2>
 <p>
-1.&nbsp;&nbsp;Participation in the competition is free of charges and fees and does not require the purchase of goods and/or services.<br/>
-2.&nbsp;&nbsp;The competition starts on the following dates for participating countries:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Republic of Ireland 3rd  July 2017 at 09.00. The deadline for entries is 13th August 2017 at 23:59 ("Entry Period“). Submissions received outside of this time frame will not be considered.<br/>
-3.&nbsp;&nbsp;During the Entry Period, the competition is open to all participants on Instagram who upload an image and use both of the following hashtags (entries that fail to include both hashtags will not be considered). The hashtag used must correspond directly to the country in which you are applying from ( for example: #P10SelfieVodafone  #DE – you must have taken and  uploaded your  photo from Germany):<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Ireland: #P10SelfieVodafone #IR<br/>
-4.&nbsp;&nbsp;The entry must be your original work/your own selfie (see section 6.1 for further information). Modifying, enhancing or altering a third party’s pre-existing selfie does not qualify as your original work.<br/>
-5.&nbsp;&nbsp;If other persons can be identified in the photo apart from the participant, such photographs may only be submitted by the participant if the third party/parties has/have consented to this and there is no infringement upon any third party privacy or other rights.<br/>
-6.&nbsp;&nbsp;Submissions containing any defamatory, obscene, illegal, offensive, or any other unsuitable material will be disqualified and withdrawn by the participant. Submissions must be suitable to be published or used online by the Organizer.<br/>
-7.&nbsp;&nbsp;Participants can only enter this competition individually. Only one entry per person is permitted. If more than one entry is submitted, only the participant’s first submission will be considered.<br/>
-8.&nbsp;&nbsp;The Organizer accepts no responsibility for incomplete, incorrectly completed, lost or delayed entries to the prize draw or for any malfunctions or failures in the software that has been designed to maintain the participant’s details.<br/>
-9.&nbsp;&nbsp;The Organizer reserves the right to exclude a participant who violates these Conditions of Participation, tampers with the competition, or makes false representations or statements that violate applicable law or infringe third-party rights. If a participant is excluded, prizes and benefits may be subsequently revoked and reclaimed. In this case, a new winner may be determined pursuant to the procedure in section 5.<br/>
+1.&nbsp;&nbsp;Participarea la concurs este gratuită și nu necesită achitarea de bunuri și / sau servicii<br/>
+2.&nbsp;&nbsp;TCompetiția începe la următoarele date pentru țările participante:<br/>
+<b>Germania:</b>
+XXX 2017 la ora 10:00. Data finala pentru trimiterea pozei este XXXX 2017 la ora 23:59 ( “Perioada de inscriere”). Inscrierile in afara perioadei de inscriere nu vor fi luate in considerare.<br/>
+
+<b>Irlanda:</b>
+XXXX 2017 la ora 09:00. Data finala pentru trimiterea pozei este XXXX 2017 la ora 23:59 ( “Perioada de inscriere”). Inscrierile in afara perioadei de inscriere nu vor fi luate in considerare.<br/>
+
+<b>Cehia:</b>
+XXXX 2017 la ora 09:00. Data finala pentru trimiterea pozei este XXXX 2017 la ora 23:59 ( “Perioada de inscriere”). Inscrierile in afara perioadei de inscriere nu vor fi luate in considerare.<br/>
+
+<b>Romania:</b>
+XXXX 2017 la ora 09:00. Data finala pentru trimiterea pozei este XXXX 2017 la ora 23:59 ( “Perioada de inscriere”). Inscrierile in afara perioadei de inscriere nu vor fi luate in considerare.<br/>
+<br/>
+3.&nbsp;&nbsp;În timpul perioadei de înscriere, concursul este deschis tuturor participanților la Instagram care încarcă o imagine și utilizează ambele hashtag-uri (intrările care nu includ ambele hashtag-uri nu vor fi luate în considerare):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#P10SelfieVodafone #RO<br/>
+4.&nbsp;&nbsp;Înscrierea trebuie să fie lucrarea dvs. originală / propriul dumneavoastră selfie (vezi secțiunea 6.1 pentru mai multe informații). Modificarea, îmbunătățirea sau sau transformarea unui selfie preexistent al unui terț nu se califică drept o lucrare originală.<br/>
+5.&nbsp;&nbsp;Dacă alte persoane pot fi identificate în fotografie, în afară de participant, astfel de fotografii pot fi prezentate de către participant numai dacă terța parte / părțile a / au acceptat acest lucru și nu există nicio încălcare a drepturilor de confidențialitate sau a altor drepturi ale terților.<br/>
+6.&nbsp;&nbsp;Prezentările care conțin orice material defăimător, obscen, ilegal, ofensator sau orice alt material necorespunzător vor fi descalificate și retrase de participant. Propunerile trebuie să fie adecvate publicării sau utilizării online de către Organizator.<br/>
+7.&nbsp;&nbsp;Participanții pot participa doar individual la concurs. Este permisă o singură intrare per persoană. Dacă sunt depuse mai multe înregistrări, va fi luată în considerare numai prima depunere a participantului<br/>
+8.&nbsp;&nbsp;Organizatorul nu își asumă nicio responsabilitate pentru intrările incomplete, incorect realizate, pierdute sau întârziate la tragerea la sorți sau pentru orice defecțiuni ale software-ului care a fost proiectat pentru a păstra detaliile participantului.<br/>
+9.&nbsp;&nbsp;Organizatorul își rezervă dreptul de a exclude un participant care încalcă aceste Condiții de Participare, stârnește concurența sau face reprezentari sau declarații false care încalcă legea aplicabilă sau încalcă drepturile terților. Dacă un participant este exclus, premiile și beneficiile pot fi ulterior revocate și recuperate. În acest caz, un nou câștigător va fi stabilit în conformitate cu procedura din secțiunea 5.<br/>
 </p>
 
 
 
-
-<h2>5.&nbsp;&nbsp;Prizes, determination and notification of winners</h2>
+<h2>5.&nbsp;&nbsp;Premiile, stabilirea si notificarea castigatorilor.</h2>
 <p>
-1.&nbsp;&nbsp;Judges from Huawei will select entries which in the opinion of the judges most originally and creatively captures the following judging criteria: (1) images of high creative quality; and (2) capture the essence of the campaign “TAKE YOUR PERFECT SELFIE”.<br/>
-2.&nbsp;&nbsp;The judging panel will not include independent experts.<br/>
-3.&nbsp;&nbsp;Between the 3rd July 2017 and 13th August 2017, the judges will select the top 1 entry from each participating country per week who will each receive a Huawei P10 smartphone (“Selfie Winner of the Week”). The Huawei P10 smartphone will be delivered to each Selfie Winner of the Week by post. <br/>
-4.&nbsp;&nbsp;The winners from each stage will be notified via the official Huawei social channels Instagram and Facebook and hereby give their consent to the disclosure of their names in the social networks.<br/>
-5.&nbsp;&nbsp;The notified winners must accept their prize within six (6) days after receiving the notification of the prize by way of official Huawei social media channels on Facebook or Instagram. The winner must respond to a direct message from the official Huawei account with their full delivery address. If a winner fails to accept his/her prize within this period, his/her prize shall be forfeited. In this case a new winner will be determined pursuant to the selection procedure in section 5.<br/>
-6.&nbsp;&nbsp;Each winner agrees to take part in reasonable post-event publicity and to the use of their names, voice, biographical information, their likeness and photographs in such publicity in connection with this Competition.<br/>
-7.&nbsp;&nbsp;The Organizer does not accept any responsibility if you are not able to take up the prize.<br/>
+1.&nbsp;&nbsp;Juriul Huawei va selecta înregistrări care, în opinia juraților, captează, original și creativ, următoarele criterii de evaluare: (1) imagini de înaltă calitate creativă; și (2) surprind cel mai bine esența campaniei “SELFIE-UL TAU PERFECT”<br/>
+2.&nbsp;&nbsp;Juriul nu va cuprinde experți independenți.<br/>
+3.&nbsp;&nbsp;Între data XXX 2017 și data XXX 2017, juriul va selecta o intrare câstigătoare din fiecare ară participantă pe săptămână, care va primi fiecare câte un smartphone Huawei P10 ("Selfie Winner of the Week"). Smartphone-ul Huawei P10 va fi livrat fiecarui castigator al saptamanii prin posta.<br/>
+4.&nbsp;&nbsp;Câștigătorii de la fiecare etapă vor fi anunțați prin intermediul canalelor sociale oficiale ale Huawei  Instagram si Facebook și prin participare la Concurs își dau acordul pentru dezvăluirea numelor lor în rețelele sociale<br/>
+5.&nbsp;&nbsp;Câștigătorii notificați trebuie să-și accepte premiul în termen de șase (6) zile de la primirea notificării premiului prin intermediul canalelor oficiale sociale Huawei, pe Facebook sau Instagram. În cazul în care un câștigător nu își acceptă premiul în această perioadă, premiul său va fi reținut. În acest caz, un nou câștigător va fi stabilit în conformitate cu procedura de selecție din secțiunea 5.
+<br/>
+6.&nbsp;&nbsp;Fiecare câștigător este de acord să participe la o publicitate rezonabilă după eveniment și la folosirea numelor, a vocii, a informațiilor biografice, a asemănării și a fotografiilor acestora în legătură cu această competiție.<br/>
+7.&nbsp;&nbsp;Organizatorul nu își asumă nicio responsabilitate dacă nu reușiți să vă revendicați premiul.<br/>
 </p>
 
-<h2>6.&nbsp;&nbsp;Rights of Use</h2>
+<h2>6.&nbsp;&nbsp;Drepturile de utilizare</h2>
 <p>
-1.&nbsp;&nbsp;The participant warrants that each of his/her submitted photograph entries (herein together: “Contribution”) is free of third party rights, in particular free of copyrights, logos and other intellectual property rights (e. g. patents, trademarks, design rights, know-how etc.), and that the participant has the right to grant a license to the Organizer pursuant to section 6.3.<br/>
-2.&nbsp;&nbsp;The participant agrees to release, discharge, indemnify, defend and hold harmless the Organiser (including its affiliate, officers, employees and agents) against any claim by any third party due to a breach of section 6.1.<br/>
-3.&nbsp;&nbsp;The participant hereby grants the Organizer a non-exclusive, irrevocable, freely assignable right, that is unrestricted in terms of time, geography and content, and for which sublicenses may be issued, to use the Contribution by way of all known and currently unknown types of use. The rights of use include – on a worldwide basis – the Organizer’s right to copy, modify, process, publish and market the Contribution and to publish the Contribution in prominent public media locations (including on Huawei’s and Vodafone’s websites, Huawei’s and Vodafone’s PR and marketing activities, print and in retail, globally). This grant of rights is free of charge and royalty-free.<br/>
+1.&nbsp;&nbsp;Participantul garantează că fiecare din fotografiile sale (în continuare: "Contribuția") este liberă de drepturi ale terților, în special fără drepturi de autor, logo-uri și alte drepturi de proprietate intelectuală (de exemplu brevete, Know-how etc.) și că participantul are dreptul de a acorda o licență organizatorului în conformitate cu secțiunea 6.3.<br/>
+2.&nbsp;&nbsp;Participantul este de acord să-l apere și să-l ptotejeze pe Organizator (inclusiv afiliatul, ofițerii, angajații și agenții acestuia) împotriva oricărei reclamații din partea unei terțe părți din cauza încălcării secțiunii 6.1<br/>
+3.&nbsp;&nbsp;Participantul acordă Organizatorului un drept neexclusiv, irevocabil și liber de cesionat, care este nerestricționat din punct de vedere al timpului, geografiei și conținutului și pentru care pot fi emise sublicențe, să utilizeze Contribuția prin intermediul tuturor modurilor cunoscute și înca necunoscute de utilizare. Drepturile de utilizare includ - pe plan mondial - dreptul Organizatorului de a copia, modifica, procesa, publica și comercializa Contribuția și de a publica Contribuția în locații publice importante (inclusiv pe site-urile Huawei și Vodafone,  in activitatile dePR și marketing ale Huawei și Vodafone și în comerțul cu amănuntul, la nivel global). Această acordare de drepturi este gratuită.<br/>
 </p>
 
-<h2>7.&nbsp;&nbsp;Data Protection</h2>
+<h2>7.&nbsp;&nbsp;Protectia datelor</h2>
 <p>
-By submitting an entry, participants agree to provide their personal information which will be used and disclosed by the Organizer and its authorized agents for the purposes of competition administration and prize fulfilment. Personal information collected by the Organizer will be used by the Organizer and by Vodafone and are subject to the following Privacy Policies:<br/>
+Prin depunerea unei înscrieri, participanții sunt de acord să furnizeze informațiile personale care vor fi folosite și dezvăluite de Organizator și de agenții săi autorizați în scopul administrării Concursului și alacordarii premiilor. Informațiile personale colectate de Organizator vor fi utilizate de Organizator și 
+de Vodafone și vor fi supuse următoarelor Politici de confidențialitate:<br/><br/>
 <p>Huawei: 
 	<a href="http://consumer.huawei.com/en/legal/privacy-policy/" target="_blank"> 
-	http://consumer.huawei.com/en/legal/privacy-policy/
+	http://consumer.huawei.com/ro/privacy-policy/index.htm
 	</a>
 </p>
 
@@ -119,24 +113,24 @@ Vodafone:
 
 
 
-<h2>8.&nbsp;&nbsp;Miscellaneous</h2>
+<h2>8.&nbsp;&nbsp;Diverse</h2>
 <p>
-1.&nbsp;&nbsp;Except for any liability for death or personal injury caused by its negligence, fraud or any other liability that cannot be excluded by law, the Organizer (including its affiliates, officers, employees and agents) excludes all liability for any personal injury; or any loss or damage (including loss of opportunity); whether direct, indirect, special or consequential, arising in any way out of the Competition, including, but not limited to, where arising out of the following: any theft, unauthorized access or third party interference.<br/>
-2.&nbsp;&nbsp;The Organizer’s decisions regarding all promotional matters will be final, and no correspondence will be entered into.<br/>
-3.&nbsp;&nbsp;In the event of circumstances outside the reasonable control of the Organizer, or otherwise where fraud, abuse, and/or an error (human or technical) affects or could affect the proper operation of this promotion or the awarding of prizes, the Organizer reserves the right to cancel or amend these terms and conditions at any stage, but will endeavour to minimise the effect to participants in order to avoid undue disappointment.<br/>
-4.&nbsp;&nbsp;If any provision of these Conditions of Participation is held invalid by any law, rule, order or regulation of any government, or by the final determination of any court of a competent jurisdiction, such invalidity shall not affect the enforceability of any other provisions not held to be invalid.
-5.&nbsp;&nbsp;All legal relationships arising because or in connection with these terms and conditions and the competition are subject to German Law. Mandatory laws of the participant’s resident country explicitly applies.<br/>
+1.&nbsp;&nbsp;Cu excepția răspunderii pentru deces sau vătămare corporală cauzată de neglijență, fraudă sau orice altă răspundere care nu poate fi exclusă prin lege, Organizatorul (inclusiv afiliații, ofițerii, angajații și agenții săi) exclude orice răspundere pentru pierderea reputației, pierdere sau daune (inclusiv pierderea de oportunitate); Indiferent dacă este directă, indirectă, specială sau consecventă, care rezultă în orice mod din Concurs, inclusiv, dar fără a se limita la, în cazul în care rezultă din următoarele: orice furt, acces neautorizat sau intervenia unei terțe parti.<br/>
+2.&nbsp;&nbsp;Deciziile Organizatorului cu privire la toate aspectele promoționale vor fi definitive și nu vor fi încheiate alte acorduri.<br/>
+3.&nbsp;&nbsp;În cazul unor circumstanțe care nu sunt supuse controlului rezonabil al Organizatorului sau în cazurile în care fraudarea, abuzul șș / sau o eroare (umană sau tehnică) afectează sau ar putea afecta buna funcționare a acestei promoții sau acordarea de premii, Organizatorul rezervă dreptul de a anula sau modifica acești termeni șș condiții în orice moment, dar se va strădui să minimizeze efectul asupra participanților pentru a evita dezamăgirea<br/>
+4.&nbsp;&nbsp; În cazul în care orice dispoziție din aceste condiții de participare este declarată nevalabilă prin orice lege, normă, ordonanță sau reglementare a oricărui guvern sau prin hotărârea definitivă a oricărei instanțe dintr-o jurisdicție competentă, această invaliditate nu va afecta aplicabilitatea oricăror alte dispoziții care nu sunt considerate invalide.<br/>
+5.&nbsp;&nbsp;Toate relațiile juridice apărute din cauza sau în legătură cu acești termeni și condiții și cu concurența fac obiectul Legii Române.<br/>
+</p>
 
-</p> 
 
 <div class="mobileOff">
 
-<h2>9.&nbsp;&nbsp;Ireland:</h2>
+<h2>9.&nbsp;&nbsp;Romania:</h2>
 
 <p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0>
- <tr>
+<!-- <tr>
   <td>NAME
   </td>
   <td>ADDRESS LINE 1
@@ -147,41 +141,45 @@ Vodafone:
   </td>
   <td>COUNTY
   </td>
- </tr>
+ </tr>-->
  <tr>
-  <td>Dundrum Town Centre
+  <td>Retail Store Brasov
   </td>
-  <td>Dundrum Town Centre
+  <td>Diaconu Coresi 1
   </td>
-  <td>Dundrum 
-  </td>
-  <td>Dublin 16
-  </td>
-  <td>&nbsp;
+  <td>Brasov
   </td>
  </tr>
  <tr>
-  <td>Mahon Point
+  <td>Retail Store Bucuresti Baneasa Mall
   </td>
-  <td>29 Mahon Point Shopping Centre
+  <td>Shopping City Baneasa, Sos. Buc-Ploiesti nr. 42D etaj 1 aripa MediaGalaxy
   </td>
-  <td>Mahon Point Industrial Estate
-  </td>
-  <td>Mahon 
-  </td>
-  <td>Co.Cork
+  <td>Bucuresti
   </td>
  </tr>
- <tr>
-  <td>Blanchardstown
+  <tr>
+  <td>Retail Store Bucuresti Mega Mall
   </td>
-  <td>unit 133
+  <td>Bulevardul Pierre de Coubertin, nr.3-5
   </td>
-  <td>Blanchardstown Shopping Centre
+  <td>Bucuresti
   </td>
-  <td>Blanchardstown
+ </tr>
+   <tr>
+  <td>Retail Store Constanta Tomis
   </td>
-  <td>Dublin
+  <td>Bd. Tomis, nr. 216, bl. TD4A
+  </td>
+  <td>Constanta
+  </td>
+ </tr>
+    <tr>
+  <td>Retail Store Constanta City Mall
+  </td>
+  <td>Str. Alexandru Lapusneanu nr. 116C, Complex Comercial City Mall
+  </td>
+  <td>Constanta
   </td>
  </tr>
 </table>
@@ -197,12 +195,12 @@ Vodafone:
 
 <h2>9.&nbsp;&nbsp;Romania:</h2>
 <p><a href="http://app.p10selfiestudio.com/stores" target="_blank">http://app.p10selfiestudio.com/stores</a></p><br/>
-<p>Dealer Name,  Location, Adress, City</p>
+<!--<p>Dealer Name,  Location, Adress, City</p>-->
 <p>Retail Store Brasov, Diaconu Coresi 1,  Brasov</p>
 <p>Retail Store Bucuresti Baneasa Mall, Shopping City Baneasa, Sos. Buc-Ploiesti nr. 42D etaj 1 aripa MediaGalaxy, Bucuresti</p>
 <p>Retail Store Bucuresti Mega Mall,  Bulevardul Pierre de Coubertin, nr.3-5,  Bucuresti</p>
 <p>Retail Store Constanta Tomis,  Bd. Tomis, nr. 216, bl. TD4A,  Constanta</p>
-<p>Retail Store Constanta City Mall,  Str. Alexandru Lapusneanu nr. 116C, Complex Comercial City Mall, Constanta</p>
+<p>Retail Store Constanta City Mall,  Str. Alexandru Lapusneanu nr. 116C, Complex Comercial City Mall, Constanta</p
 
 <br/>
 <br/>
