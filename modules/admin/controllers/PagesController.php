@@ -35,35 +35,15 @@ class PagesController extends Controller
     
     public function actionTermsAndConditions($c=null) 
     {
-        if (!isset($c)) return $this->render('404');
+        // if (!isset($c)) return $this->render('404');
 
         switch ($c) {
-            case 'za':
-                $view = 'terms-za';
-            break;
-
-            case 'sa':
-                $view = 'terms-za';
-            break;
-
-            case 'de':
-                $view = 'terms-de';
-            break;
-            
-            case 'cz':
-                $view = 'terms-cz';
-            break;
-            
-            case 'ro':
-                $view = 'terms-ro';
-            break;
-        
-            case 'cw':
-                $view = 'terms-cw';
+            case 'cpw':
+                $view = 'terms-cpw';
             break;
         
             default:
-                $view = 'terms';
+                $view = 'terms-cpw';
             break;
         }
         return $this->render($view);
@@ -72,14 +52,9 @@ class PagesController extends Controller
     public function actionStores()
     {   
         $this->layout = false;
-        return $this->render('stores');
+        return $this->render('stores-cpw');
     }
     
-    public function actionStoresCw()
-    {   
-        $this->layout = false;
-        return $this->render('stores-cw');
-    }
     // public function actionUnsub() 
     // {
     //     return $this->render('unsub');

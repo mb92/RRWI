@@ -11,8 +11,9 @@ use yii\imagine\Image;
 
 
 function verifyToken($sendToken) {
-    $ourToken = "0b3d4f561329b5a5dfdbaff634280be9";
-
+    // $ourToken = "0b3d4f561329b5a5dfdbaff634280be9";
+    $ourToken = "f7289db929eaec50a588fe348e2edacf";
+    
     if ($ourToken == $sendToken) return true;
     else return false;
 }

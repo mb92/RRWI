@@ -11,28 +11,12 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
 <?php 
 //Read specifics content for select country
 switch ($country) {
-    case 'ZA':
-        include "za.php";
-    break;
-
-    case 'DE':
-        include "de.php";
-    break;
-
-    case 'CZ':
-        include "cz.php";
-    break;
-    
-    case 'RO':
-        include "ro.php";
-    break;
-
-    case 'CW':
-        include "cw.php";
+    case 'CPW':
+        include "cpw.php";
     break;
 
     default:
-        include "ir.php";
+        include "cpw.php";
     break;
 }
 

@@ -190,7 +190,7 @@
 			</div>
 
 			<div class="logo-vodafone">
-				<img src="<?= $path ?>img/cw2.png" alt="carphone" class="cw-logo">
+				<img src="<?= $path ?>img/cw3.png" alt="carphone" class="cw-logo">
 			</div>
 
 		</div>

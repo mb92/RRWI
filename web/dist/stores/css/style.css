@@ -354,12 +354,14 @@ body {
     position: relative; 
     height: 100%; 
     width: auto !important;
+    padding-right:50px;
 }
 
-@media only screen and (max-width: 545px) {
+@media only screen and (max-width: 670px) {
     .cw-logo {
         position: relative; 
         height: 50%; 
         margin-bottom: 22px;
+        padding-right:50px;
     }
 }
