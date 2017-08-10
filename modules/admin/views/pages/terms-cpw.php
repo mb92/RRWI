@@ -1,7 +1,7 @@
 <?php
 $this->title = 'Terms and Conditions';
 ?>
-
+<center>
 <h2>CONDITIONS OF PARTICIPATION FOR THE HUAWEI &amp; CARPHONE WAREHOUSE SELFIE STUDIO COMPETITION</h2>
 </center>
 
@@ -109,10 +109,9 @@ Carphone Warehouse:
 <p><b>Appendix 1Participating Carphone Warehouse Stores:</b></p>
 
 <div class="mobileOff">
-<p><a href="http://app.p10selfiestudio.com/stores-cw" target="_blank">http://app.p10selfiestudio.com/stores-cw</a></p>
-<br/><br/>
+<p><a href="http://cpwapp.p10selfiestudio.com/stores" target="_blank">http://cpwapp.p10selfiestudio.com/stores</a></p>
 
-<h2>9.&nbsp;&nbsp;England</h2>
+<h2>England</h2>
 <table width="100%">
 	<tr>
 		<td>Store Name</td>
@@ -122,249 +121,274 @@ Carphone Warehouse:
 
 	<tr>
 		<td>Basildon Great Oaks</td>
-		<td> Unit 2 Great Oaks Retail Park, Broadmayne Road</td>
+		<td>Unit 2 Great Oaks Retail Park, Broadmayne Road</td>
 		<td>SS14 1GB</td>
 	</tr>
 
 	<tr>
 		<td>Greenford</td>
-		<td> Unit 2 Westway Cross Retail Park, Greenford Road</td>
+		<td>Unit 2 Westway Cross Retail Park, Greenford Road</td>
 		<td>UB6 0UW</td>
 	</tr>
 
 	<tr>
 		<td>Reading Broad Street</td>
-		<td> 120 - 121 Broad Street, Reading</td>
+		<td>120 - 121 Broad Street, Reading</td>
 		<td>RG1 2BD</td>
 	</tr>
 
 	<tr>
 		<td>Southampton Above Bar</td>
-		<td> 38 Above Bar Street, South Hampton</td>
+		<td>38 Above Bar Street, South Hampton</td>
 		<td>SO14 7DR</td>
 	</tr>
 
 	<tr>
 		<td>Doncaster Frenchgate</td>
-		<td> 6 North Mall Gallery, Frenchgate Centre</td>
+		<td>6 North Mall Gallery, Frenchgate Centre</td>
 		<td>DN1 1SR</td>
 	</tr>
 
 	<tr>
 		<td>Oldbury</td>
-		<td> Unit A Oldbury Green Retail Park</td>
+		<td>Unit A Oldbury Green Retail Park</td>
 		<td>B69 3DD</td>
 	</tr>
 
 	<tr>
 		<td>Southport Kew</td>
-		<td> Unit 2 Kew Retail Park, Southport</td>
+		<td>Unit 2 Kew Retail Park, Southport</td>
 		<td>PR8 6JU</td>
 	</tr>
 
 	<tr>
 		<td>Sheffield Fargate</td>
-		<td> 12 Fargate, Sheffield</td>
+		<td>12 Fargate, Sheffield</td>
 		<td>S1 2HE</td>
 	</tr>
 
 	<tr>
 		<td>Leeds Briggate</td>
-		<td> 52 - 53 Briggate, Leeds</td>
+		<td>52 - 53 Briggate, Leeds</td>
 		<td>LS1 6HD </td>
 	</tr>
 
 	<tr>
 		<td>Stockport Portwood</td>
-		<td> Unit B Garfield, Great Portwood Street, Stockport</td>
+		<td>Unit B Garfield, Great Portwood Street, Stockport</td>
 		<td>SK1 2AS</td>
 	</tr>
 
 	<tr>
 		<td>Bluewater Lower</td>
-		<td> Unit L007 Lower Rose Mall, Bluewater Shopping Centre</td>
+		<td>Unit L007 Lower Rose Mall, Bluewater Shopping Centre</td>
 		<td>DA9 9SH</td>
 	</tr>
 
 	<tr>
 		<td>Brighton Churchill Square</td>
-		<td> 37 Churchill Square, Brighton</td>
+		<td>37 Churchill Square, Brighton</td>
 		<td>BN1 2TD</td>
 	</tr>
 
 	<tr>
 		<td>Gateshead Metro Centre Lower Yellow</td>
-		<td> 44 Garden Walk, Metro Centre, Newcastle</td>
+		<td>44 Garden Walk, Metro Centre, Newcastle</td>
 		<td>NE11 9YG</td>
 	</tr>
 
 	<tr>
 		<td>Portsmouth Commercial Road</td>
-		<td> 150 Commercial Road, Portsmouth</td>
+		<td>150 Commercial Road, Portsmouth</td>
 		<td>PO1 1EX</td>
 	</tr>
 
 	<tr>
 		<td>Saffron Walden</td>
-		<td> 8 King Street, Saffron Walden, Essex</td>
+		<td>8 King Street, Saffron Walden, Essex</td>
 		<td>CB10 1ES</td>
 	</tr>
 
 	<tr>
 		<td>Wood Green Mall</td>
-		<td> Unit 51/52 Wood Green Shopping City, High Road, London</td>
+		<td>Unit 51/52 Wood Green Shopping City, High Road, London</td>
 		<td>N22 6YA</td>
 	</tr>
 
 	<tr>
 		<td>Bristol Broadmead</td>
-		<td> 74-76 Broadmead, Union Street, Bristol</td>
+		<td>74-76 Broadmead, Union Street, Bristol</td>
 		<td>BS1 3DS</td>
 	</tr>
 
 	<tr>
 		<td>Trafford Centre Lower</td>
-		<td> Unit L73 Lower Level, The Trafford Centre, Manchester</td>
+		<td>Unit L73 Lower Level, The Trafford Centre, Manchester</td>
 		<td>M17 8AA</td>
 	</tr>
 
 	<tr>
 		<td>Leeds White Rose</td>
-		<td> Unit 21 White Rose Shopping Centre</td>
+		<td>Unit 21 White Rose Shopping Centre</td>
 		<td>LS11 8LL</td>
 	</tr>
 
 	<tr>
 		<td>White City (Westfield Shopping Centre)</td>
-		<td> Unit 1065 - 1066 Westfield London Shopping Centre</td>
+		<td>Unit 1065 - 1066 Westfield London Shopping Centre</td>
 		<td>W12 7GB</td>
 	</tr>
 
 	<tr>
 		<td>Petersfield (The Square)</td>
-		<td> 8 The Square, Petersfield</td>
+		<td>8 The Square, Petersfield</td>
 		<td>GU32 3HW</td>
 	</tr>
 
 	<tr>
 		<td>Salisbury New Canal</td>
-		<td> 44- 48 New Canal</td>
+		<td>44- 48 New Canal</td>
 		<td>SP1 2AQ</td>
 	</tr>
 
 	<tr>
 		<td>Blackpool Houndshill Shopping Centre</td>
-		<td> Unit N20 Houndshill shopping Centre, Blackpool</td>
+		<td>Unit N20 Houndshill shopping Centre, Blackpool</td>
 		<td>FY1 4HU</td>
 	</tr>
 
 	<tr>
 		<td>Luton Arndale</td>
-		<td> 77-79 Luton Arndale Centre</td>
+		<td>77-79 Luton Arndale Centre</td>
 		<td>LU1 2TE</td>
 	</tr>
 
 	<tr>
 		<td>Taunton Fore Street</td>
-		<td>  34 Fore Street, Taunton</td>
+		<td>34 Fore Street, Taunton</td>
 		<td>TA1 1HR</td>
 	</tr>
 
 	<tr>
 		<td>Brent Cross</td>
-		<td> Unit V4, Brent Cross Shopping Centre, London</td>
+		<td>Unit V4, Brent Cross Shopping Centre, London</td>
 		<td>NW4 3FG</td>
 	</tr>
 
 	<tr>
 		<td>Exeter (Princesshay)</td>
-		<td> Unit SU29, 5 Eastgate, Princesshay, Exeter</td>
+		<td>Unit SU29, 5 Eastgate, Princesshay, Exeter</td>
 		<td>EX1 1GB</td>
 	</tr>
 
 	<tr>
 		<td>Bristol (Longwell Green)</td>
-		<td> U1A Gallagher Retail Park, Longwell Green, Bristol</td>
+		<td>U1A Gallagher Retail Park, Longwell Green, Bristol</td>
 		<td>BS30 7DY</td>
 	</tr>
 
 	<tr>
 		<td>Sheffield (Meadowhall Shopping Centre)</td>
-		<td> 81 High Street, Upper Mall, Meadowhall Centre, Sheffield</td>
+		<td>81 High Street, Upper Mall, Meadowhall Centre, Sheffield</td>
 		<td>S9 1EN</td>
 	</tr>
 
 	<tr>
 		<td>Plymouth (Drakes Circus)</td>
-		<td> Unit 8 (SU12) Drakes Circus Shopping Mall, Plymouth</td>
+		<td>Unit 8 (SU12) Drakes Circus Shopping Mall, Plymouth</td>
 		<td>PL1 1EA</td>
 	</tr>
 
 	<tr>
 		<td>Leeds Trinity Shopping Centre</td>
-		<td> Unit 59 Leeds Trinity Shopping Centre, Leeds</td>
+		<td>Unit 59 Leeds Trinity Shopping Centre, Leeds</td>
 		<td>LS1 5AT</td>
 	</tr>
 
 	<tr>
 		<td>Woking</td>
-		<td> Unit 53 The Peacock Shopping Centre, Woking</td>
+		<td>Unit 53 The Peacock Shopping Centre, Woking</td>
 		<td>GU21 6GD</td>
 	</tr>
 
 	<tr>
 		<td>Norwich (Chapelfield)</td>
-		<td> Unit 114 Chapelfield Shopping Centre, Norwich</td>
+		<td>Unit 114 Chapelfield Shopping Centre, Norwich</td>
 		<td>NR2 1SH</td>
 	</tr>
 
 	<tr>
 		<td>Coventry (Business Park)</td>
-		<td> Unit C, Coventry Business Park, Vanguard Avenue, Coventry</td>
+		<td>Unit C, Coventry Business Park, Vanguard Avenue, Coventry</td>
 		<td>CV5 6UA</td>
 	</tr>
 
 	<tr>
 		<td>Leicester Fosse Park</td>
-		<td> Unit 3B Fosse North Shopping Park, Leicester</td>
+		<td>Unit 3B Fosse North Shopping Park, Leicester</td>
 		<td>LE19 1HX</td>
 	</tr>
 
 	<tr>
 		<td>Durham Arnison</td>
-		<td> Unit 1-2, Arnison Retail Park, Durham</td>
+		<td>Unit 1-2, Arnison Retail Park, Durham</td>
 		<td>DH1 5GB</td>
 	</tr>
 
 	<tr>
 		<td>Ormskirk (Moor St)</td>
-		<td> 37 Moor Street, Ormskirk, Lancashire</td>
+		<td>37 Moor Street, Ormskirk, Lancashire</td>
 		<td>L39 2AA</td>
 	</tr>
 
 	<tr>
 		<td>Milton Keynes (Eldergate)</td>
-		<td> Unit A, Elder Gate Centre, Milton Keynes</td>
+		<td>Unit A, Elder Gate Centre, Milton Keynes</td>
 		<td>MK9 1EN</td>
 	</tr>
 
 	<tr>
 		<td>Norwich (Riverside Retail Park)</td>
-		<td> Unit 2B Riverside Retail Park, Norwich</td>
+		<td>Unit 2B Riverside Retail Park, Norwich</td>
 		<td>NR1 1WR</td>
 	</tr>
 
 	<tr>
 		<td>Grimsby (Freshney Place)</td>
-		<td> 46-48 Friargate, Freshney Place Shopping Centre, Grimsby</td>
+		<td>46-48 Friargate, Freshney Place Shopping Centre, Grimsby</td>
 		<td>DN31 1QQ</td>
 	</tr>
+
+	<tr>
+		<td>Southampton Hedge End Retail Park</td>
+		<td>Unit 3 Hedge End Retail Park, Charles Watts Way, Southampton</td>
+		<td>SO30 4RT </td>
+	</tr>
+
+	<tr>
+		<td>Hull Kingston Park</td>
+		<td>Unit 6 Kingston Retail Park, Kingston Road, Hull</td>
+		<td>HU1 2TX</td>
+	</tr>
+
+	<tr>
+		<td>Grantham High Street</td>
+		<td>44 High Street, Grantham
+		<td>NG31 6NE</td>
+	</tr>
+
+	<tr>
+		<td>Great Yarmouth</td>
+		<td>Unit 2 Gapton Hall Road, Great Yarmouth</td>
+		<td>NR31 0NL</td>
+	</tr>
+
 </table>
 
 
 
 
-<h2>10.&nbsp;&nbsp;Scotland</h2>
+<h2>Scotland</h2>
 <table width="100%">
 	<tr>
 		<td>Store Name</td>
@@ -373,20 +397,26 @@ Carphone Warehouse:
 	</tr>
 
 	<tr>
+		<td>Edinburgh Fort Kinnaird</td>
+		<td>Unit 22 Kinnaird Shopping Centre, Edinburgh</td>
+		<td>EH15 3RD</td>
+	</tr>
+	
+	<tr>
 		<td>Aberdreen Union Square</td>
-		<td> Unit GS3, 18 Ground Level Mall,  Union Square, Aberdeen</td>
+		<td>Unit GS3, 18 Ground Level Mall,  Union Square, Aberdeen</td>
 		<td>AB11 5PN</td>
 	</tr>
 
 	<tr>
 		<td>Glasgow Braehead Centre</td>
-		<td> Unit 41 Braehead Shopping Centre, Kings Inch Road, Glasgow</td>
+		<td>Unit 41 Braehead Shopping Centre, Kings Inch Road, Glasgow</td>
 		<td>G51 4BP</td>
 	</tr>
 
 	<tr>
 		<td>Glasgow Forge Pod</td>
-		<td> Unit 15 The Forge Retail Park, Gallowgate, Glasgow</td>
+		<td>Unit 15 The Forge Retail Park, Gallowgate, Glasgow</td>
 		<td>G31 4EB</td>
 	</tr>
 </table>
@@ -394,7 +424,7 @@ Carphone Warehouse:
 
 
 
-<h2>11.&nbsp;&nbsp;Wales</h2>
+<h2>Wales</h2>
 <table width="100%">
 	<tr>
 		<td>Store Name</td>
@@ -404,13 +434,13 @@ Carphone Warehouse:
 
 	<tr>
 		<td>Neath</td>
-		<td> Unit 1 Angel Place, Neath</td>
+		<td>Unit 1 Angel Place, Neath</td>
 		<td>SA11 1RQ</td>
 	</tr>
 </table>
 
 
-<h2>13.&nbsp;&nbsp;Northern Ireland</h2>
+<h2>Northern Ireland</h2>
 <table width="100%">
 	<tr>
 		<td>Store Name</td>
@@ -419,7 +449,7 @@ Carphone Warehouse:
 	</tr>
 	<tr>
 		<td>Bangor (Bloomfield)</td>
-		<td> Unit18 Bloomfield Shopping Centre, Bangor, Unit18 Bloomfield Shopping Centre, Bangor</td>
+		<td>Unit18 Bloomfield Shopping Centre, Bangor, Unit18 Bloomfield Shopping Centre, Bangor</td>
 		<td>BT19 7HB</td>
 	</tr>
 </table>
@@ -430,9 +460,7 @@ Carphone Warehouse:
 
 <p><a href="http://app.p10selfiestudio.com/stores-cw" target="_blank">http://app.p10selfiestudio.com/stores-cw</a></p><br/>
 
-<h2>9.&nbsp;&nbsp;England:</h2>
-<p>Store Name, Address, Postcode</p>
-
+<h2>England:</h2>
 <p>Basildon Great Oaks, Unit 2 Great Oaks Retail Park, Broadmayne Road, SS14 1GB</p>
 
 <p>Greenford, Unit 2 Westway Cross Retail Park, Greenford Road, UB6 0UW</p>
@@ -513,28 +541,39 @@ Carphone Warehouse:
 
 <p>Grimsby (Freshney Place), 46-48 Friargate, Freshney Place Shopping Centre, Grimsby, DN31 1QQ</p>
 
+<p>Southampton Hedge End Retail Park, Unit 3 Hedge End Retail Park, Charles Watts Way, Southampton, SO30 4RT</p>
+
+<p>Hull Kingston Park, Unit 6 Kingston Retail Park, Kingston Road, Hull, HU1 2TX</p>
+
+<p>Grantham High Street, 44 High Street, Grantham, NG31 6NE</p>
+
+<p>Great Yarmouth, Unit 2 Gapton Hall Road, Great Yarmouth, NR31 0NL</p>
 
 <br/><br/>
 
-<h2>10.&nbsp;&nbsp;Scotland</h2>
+
+
+
+<h2>Scotland</h2>
 <p>Aberdreen Union Square, Unit GS3, 18 Ground Level Mall, Union Square, Aberdeen, AB11 5PN</p>
+
+<p>Edinburgh Fort Kinnaird, Unit 22 Kinnaird Shopping Centre, Edinburgh, EH15 3RD</p>
 
 <p>Glasgow Braehead Centre, Unit 41 Braehead Shopping Centre, Kings Inch Road, Glasgow, G51 4BP</p>
 
 <p>Glasgow Forge Pod, Unit 15 The Forge Retail Park, Gallowgate, Glasgow, G31 4EB</p>
 
 
+<br/><br/>
+
+<h2>Wales</h2>
+<p>Neath, Unit 1 Angel Place, Neath, SA11 1RQ</p>
 
 
 <br/><br/>
 
-<h2>11.&nbsp;&nbsp;Wales</h2>
-<p>Neath, Unit 1 Angel Place, Neath, SA11 1RQ</p>
-
-
-<h2>11.&nbsp;&nbsp;Northern Ireland</h2>
+<h2>Northern Ireland</h2>
 <p>Bangor (Bloomfield), Unit18 Bloomfield Shopping Centre, Bangor, Unit18 Bloomfield Shopping Centre, Bangor, BT19 7HB</p>
-
 <br/>
 <br/>
 </div>
