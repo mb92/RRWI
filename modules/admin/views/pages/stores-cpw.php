@@ -102,7 +102,7 @@
 
                                         <p>Petersfield (The Square), 8 The Square, Petersfield, GU32 3HW</p><br/>
 
-                                        <p>Salisbury New Canal, 44- 48 New Canal, SP1 2AQ</p><br/>
+                                        <p>New Canal Salisbury, 44- 48 New Canal, SP1 2AQ</p><br/>
 
                                         <p>Blackpool Houndshill Shopping Centre, Unit N20 Houndshill shopping Centre, Blackpool, FY1 4HU</p><br/>
 
@@ -175,7 +175,7 @@
                                 <h3 class="tab_drawer_heading" rel="tab4">NORTHERN IRELAND</h3>
 				<div id="tab3" class="tab_content">
 				<!--<h2>Tab 4 content</h2>-->
-                                    <p>Bangor (Bloomfield), Unit18 Bloomfield Shopping Centre, Bangor, Unit18 Bloomfield Shopping Centre, Bangor, BT19 7HB</p></br>
+                                    <p>Bangor (Bloomfield), Unit18 Bloomfield Shopping Centre, Bangor, BT19 7HB</p></br>
 				</div>
 				<!-- #tab4 -->
 
