@@ -141,8 +141,8 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                           Huawei P10, so every shot can be a cover shot.
                           <br/><br/>
 
-                          <span style="font-size:12px;">Entries are limited to strictly one Selfie Shot per person, per weekly competition.
-                              <a href="<?= $links['terms'] ?>" style="font-size:12px;"><u><b>Terms apply.</b></u></a>
+                          <span style="font-size:12px; color:#58595b;">Entries are limited to strictly one Selfie Shot per person, per weekly competition.<br/>
+                              <a href="<?= $links['terms'] ?>" style="font-size:12px; color:#58595b;"><u><b>Terms apply.</b></u></a>
                           </span>
                           </p>
                           <br/>
