@@ -67,7 +67,7 @@ class Settings extends \yii\db\ActiveRecord
                 $links['facebook'] = 'https://www.facebook.com/huaweiuk?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['instagram'] = 'https://www.instagram.com/huaweimobileuk?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['twitter'] = 'https://twitter.com/huaweimobileuk?lang=en';
-                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/terms-and-conditions?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['terms'] = 'http://'.$_SERVER['HTTP_HOST'].'/tcs?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['store-locator'] = 'https://www.carphonewarehouse.com/store-locator.html?&utm_source=selfie-app&utm_medium=email&utm_campaign=selfie';
             break;
         

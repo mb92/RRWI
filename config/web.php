@@ -88,7 +88,7 @@ $config = [
             'rules' => [
                 'stores'=>'/admin/pages/stores',
                 // 'stores'=>'/admin/pages/stores-cpw',
-                'terms-and-conditions'=>'/admin/pages/terms-and-conditions',
+                'tcs'=>'/admin/pages/terms-and-conditions',
                 ['class' => 'yii\web\UrlRule', 'pattern' => '/admin', 'route' => '/admin/site/index'],
 //                ['class' => 'yii\rest\UrlRule', 'controller' => 'countries'],
 //                ['class' => 'yii\rest\UrlRule', 'controller' => 'languages'],
