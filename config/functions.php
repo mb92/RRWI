@@ -167,16 +167,19 @@ function addWatermark($filename, $country=null) {
     // 
 //    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-2.png';
     // $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-3-1.png';
-    
-//    if ($country == 'CPW') {
-//        $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1cw.png';
-//        $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4cw.png';
-//    } else {
+ /*   
+    if ($country == 'CW') {
         $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1cw.png';
         $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4cw.png';
-//    }
-
+    } else {
+        $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1.png';
+        $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4.png';
+    }
+*/
     
+        $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1cw.png';
+        $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4cw.png';
+        
     $photo = Yii::getAlias("@app").'/upload/'.$filename;
     $thumb = Yii::getAlias("@app").'/temp/'.$filename;
 
