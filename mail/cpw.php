@@ -146,7 +146,7 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                               <a href="<?= $links['terms'] ?>" style="font-size:12px; color:#58595b;"><u><b>Terms apply.</b></u></a>
                           </font>
                           </p>
-                          <br/>
+                          <br/><br/>
                         </td>
                         <td width="40" class="mobileOffTab"></td>
                         <td width="16" class="mobileOnTab"></td>
