@@ -168,7 +168,7 @@ function addWatermark($filename, $country=null) {
 //    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-2.png';
     // $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-3-1.png';
     
-    if ($country == 'CW') {
+    if ($country == 'CPW') {
         $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1cw.png';
         $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4cw.png';
     } else {
