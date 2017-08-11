@@ -120,11 +120,15 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             </font>
                             </center>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
+                             
+                            
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                            To enter, all you need to do is share your Selfie Studio shot on <br/>
-                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
+                             To enter our weekly competition, all you need to do is share your Selfie Studio shot on Instagram with <br/>
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
 
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK<?php  // echo $country; ?></font> before 8th November.
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK<?php  // echo $country; ?></font> 
+                            Weekly competitions start at 09:00 on Thursdays and close at 23:59 on Wednesdays.
+                            The last weekly competition will close at 23:59 on Wednesday 8 November 2017
 
                           <br/><br/>
                           Each week our judge will select the image that best captures the <br/>
