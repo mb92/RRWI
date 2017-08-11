@@ -120,17 +120,30 @@ $path = 'http://'.$_SERVER['HTTP_HOST'].'/dist/email/';
                             </font>
                             </center>
                             <img src="<?= $path ?>/imgs/clean.png" width="1" height="6" style="display:block; margin:0; padding:0; border:none;"/>
+                             
+                            
                           <p style="font-family:Myriad, Arial, Helvetica; line-height:20px; color:#58595b; text-align:center;font-size:16px;">
-                            To enter, all you need to do is share your Selfie Studio shot on <br/>
-                            Instagram with <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
-
-                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK<?php  // echo $country; ?></font> before 8th November.
+                             To enter our weekly competition, all you need to do is share your<br/> 
+                             Selfie Studio shot on Instagram with 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#P10SelfieStudio</font> and 
+                            <font style="color:#ee1c24; font-family:Myriad, Arial, Helvetica;">#UK<?php  // echo $country; ?></font>.<br/>
+                            
+                            Weekly competitions start at 09:00 on Thursdays and close at 23:59 <br/>
+                            on Wednesdays. The last weekly competition will close at 23:59 on <br/>
+                            Wednesday 8 November 2017.
 
                           <br/><br/>
-                          Each week our judge will select the image that best captures the <br/>
-                          idea of the ‘Perfect Selfie’ in a unique and creative way. <br/>
-                          The winning photographer will receive a brand new Huawei P10, so <br/>
-                          every shot can be a cover shot.
+                          Each week our judges will select a winning image based on creative <br/>
+                          merit that captures the essence of ‘THE PERFECT SELFIE’.
+                          
+                          <br/><br/>
+                          The winning Selfie Studio shot will be rewarded with a brand new <br/>
+                          Huawei P10, so every shot can be a cover shot.
+                          <br/><br/>
+
+                          <span style="font-size:12px;">Entries are limited to strictly one Selfie Shot per person, per weekly competition.
+                              <a href="<?= $links['terms'] ?>" style="font-size:12px;"><u><b>Terms apply.</b></u></a>
+                          </span>
                           </p>
                           <br/>
                         </td>
