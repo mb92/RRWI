@@ -102,7 +102,7 @@
 
                                         <p>Petersfield (The Square), 8 The Square, Petersfield, GU32 3HW</p><br/>
 
-                                        <p>New Canal Salisbury, 44- 48 New Canal, SP1 2AQ</p><br/>
+                                        <p>New Canal Salisbury, 44- 48 New Canal, Salisbury, SP1 2AQ</p><br/>
 
                                         <p>Blackpool Houndshill Shopping Centre, Unit N20 Houndshill shopping Centre, Blackpool, FY1 4HU</p><br/>
 

@@ -19,7 +19,7 @@ $this->title = 'Terms and Conditions';
 3.&nbsp;&nbsp;This competition is not sponsored, endorsed or administered by, or associated with, Facebook or Instagram. Participants shall comply with the terms of service, community guidelines or other applicable policies for user submissions and/or uploads located at:<br/>
 <a href="https://www.facebook.com/legal/terms" target="_blank">https://www.facebook.com/legal/terms </a>
 for Facebook <br/>
-and <a href="http://instagram.com/about/legal/terms/# " target="_blank">http://instagram.com/about/legal/terms/# </a> for Instagram.<br/><br/>
+and <a href="http://instagram.com/about/legal/terms/# " target="_blank">http://instagram.com/about/legal/terms/# </a> for Instagram.<br/>
 Submissions that violate the applicable terms of service or guidelines shall be disqualified. Participants in the competition completely release Facebook and Instagram from any possible claims. All information regarding the competition is solely provided by the Organizer. In cases of any questions, suggestions or complaint, please contact the Organizer at: Instagram:<br/>
 
 <a href="<a href="https://www.instagram.com/huaweimobileuk" target="_blank">https://www.instagram.com/huaweimobileuk </a> <br/>
@@ -83,8 +83,8 @@ or Facebook <a href="https://www.facebook.com/huaweiuk" target="_blank">https://
 <p>
 By submitting an entry, participants agree to provide their personal information which will be used and disclosed by the Organizer and its authorized agents for the purposes of competition administration and Prize fulfilment. Personal information collected by the Organizer will be used by the Organizer and by Carphone Warehouse and are subject to the following Privacy Policies:<br/>
 <p>Huawei: 
-	<a href="http://consumer.huawei.com/de/privacy-policy/index.htm" target="_blank"> 
-	http://consumer.huawei.com/de/privacy-policy/index.htm
+	<a href="http://consumer.huawei.com/en/legal/privacy-policy/" target="_blank"> 
+	http://consumer.huawei.com/en/legal/privacy-policy/
 	</a>
 </p>
 
@@ -249,7 +249,7 @@ Carphone Warehouse:
 
 	<tr>
 		<td>New Canal Salisbury</td>
-		<td>44- 48 New Canal</td>
+		<td>44- 48 New Canal, Salisbury</td>
 		<td>SP1 2AQ</td>
 	</tr>
 
@@ -442,7 +442,7 @@ Carphone Warehouse:
 </table>
 
 
-<h2>Northern Ireland</h2>
+<!-- <h2>Northern Ireland</h2>
 <table width="100%">
 	<tr>
 		<td>Store Name</td>
@@ -454,7 +454,7 @@ Carphone Warehouse:
 		<td>Unit18 Bloomfield Shopping Centre, Bangor</td>
 		<td>BT19 7HB</td>
 	</tr>
-</table>
+</table> -->
 </div>
 
 
@@ -505,7 +505,7 @@ Carphone Warehouse:
 
 <p>Petersfield (The Square), 8 The Square, Petersfield, GU32 3HW</p>
 
-<p>New Canal Salisbury, 44- 48 New Canal, SP1 2AQ</p>
+<p>New Canal Salisbury, 44- 48 New Canal, Salisbury, SP1 2AQ</p>
 
 <p>Blackpool Houndshill Shopping Centre, Unit N20 Houndshill shopping Centre, Blackpool, FY1 4HU</p>
 
@@ -565,6 +565,8 @@ Carphone Warehouse:
 
 <p>Glasgow Forge Pod, Unit 15 The Forge Retail Park, Gallowgate, Glasgow, G31 4EB</p>
 
+<p>Edinburgh Ocean Terminal, Unit RU26 Ocean Terminal Shopping Centre Edinburgh, EH6 6LZ</p>
+
 
 <br/><br/>
 
@@ -572,10 +574,10 @@ Carphone Warehouse:
 <p>Neath, Unit 1 Angel Place, Neath, SA11 1RQ</p>
 
 
-<br/><br/>
+<!-- <br/><br/>
 
 <h2>Northern Ireland</h2>
-<p>Bangor (Bloomfield), Unit18 Bloomfield Shopping Centre, Bangor, BT19 7HB</p>
+<p>Bangor (Bloomfield), Unit18 Bloomfield Shopping Centre, Bangor, BT19 7HB</p> -->
 <br/>
 <br/>
 </div>
