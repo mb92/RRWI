@@ -15,7 +15,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "~2.0.5",
+        "yiisoft/yii2": ">=2.0.6@stable",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "kartik-v/yii2-mpdf": "*",
@@ -46,6 +46,7 @@
                     "web/assets": "0777",
                     "upload": "0777",
                     "temp": "0777",
+                    "temp/tmp": "0777",
                     "yii": "0755"
                 }
             ],

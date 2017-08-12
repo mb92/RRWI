@@ -1,0 +1,91 @@
+/* simple pages css sheet*/
+
+body {
+	background-color: #525252;
+	color: #424344;
+}
+
+h1 {
+	font-size: 14px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.top {
+	margin-top: 20px;
+}
+
+#banner {
+	padding: 0px;
+	background-color: #1b1919;
+}
+
+#content {
+	background-color: #1b1919;
+	padding-left: 45px;
+	padding-right: 45px;
+	padding-bottom: 45px;
+}
+
+#content p {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+a {
+	color: #424344;
+}
+
+a:hover {
+	color: #ed1b24;
+}
+
+table, tr, td, th {
+	border: 1px solid #333 !important;
+	font-size:12px;
+}
+
+td, th {
+	padding:2px;
+}
+
+th {
+	text-align:center;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 13px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#title-p {
+	margin-top:30px !important;
+}
+
+@media screen and (max-width: 994px) {
+    body {
+        background-color: #1b1919;
+    }
+}
+
+
+.mobileOff {
+    display: block;
+}
+
+.mobileOn {
+    display: none;
+}
+
+@media screen and (max-width: 438px) {
+    .mobileOff {
+        display: none;
+    }
+	
+	.mobileOn {
+        display: block;
+    }
+
+}

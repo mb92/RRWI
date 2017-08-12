@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : xaamp
 Source Server Version : 50505
 Source Host           : localhost:3306
-Source Database       : selfie-app
+Source Database       : selfie-cpw
 
 Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-06-15 01:28:36
+Date: 2017-08-09 14:07:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -61,17 +61,12 @@ CREATE TABLE `countries` (
   `name` varchar(255) DEFAULT NULL,
   `short` varchar(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of countries
 -- ----------------------------
-INSERT INTO `countries` VALUES ('1', 'England', 'EN');
-INSERT INTO `countries` VALUES ('2', 'Portugal', 'PT');
-INSERT INTO `countries` VALUES ('3', 'Germany', 'DE');
-INSERT INTO `countries` VALUES ('4', 'Romania', 'RO');
-INSERT INTO `countries` VALUES ('5', 'South Africa', 'ZA');
-INSERT INTO `countries` VALUES ('6', 'Czech Republic', 'CZ');
+INSERT INTO `countries` VALUES ('1', 'Carphone Warehouse', 'CPW');
 
 -- ----------------------------
 -- Table structure for `languages`
@@ -87,12 +82,7 @@ CREATE TABLE `languages` (
 -- ----------------------------
 -- Records of languages
 -- ----------------------------
-INSERT INTO `languages` VALUES ('1', 'English', 'EN');
-INSERT INTO `languages` VALUES ('2', 'Portuguese', 'PT');
-INSERT INTO `languages` VALUES ('3', 'German', 'DE');
-INSERT INTO `languages` VALUES ('4', 'Romanian', 'RO');
-INSERT INTO `languages` VALUES ('5', 'South African English', 'ZA');
-INSERT INTO `languages` VALUES ('6', 'Czech', 'CZ');
+INSERT INTO `languages` VALUES ('1', 'English', 'UK');
 
 -- ----------------------------
 -- Table structure for `sessionsapps`
@@ -155,11 +145,61 @@ CREATE TABLE `stores` (
   PRIMARY KEY (`id`),
   KEY `shopcountry` (`countryId`),
   CONSTRAINT `shopcountry` FOREIGN KEY (`countryId`) REFERENCES `countries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of stores
 -- ----------------------------
+INSERT INTO `stores` VALUES ('1', 'Bolton Middlebrook', '1', '0');
+INSERT INTO `stores` VALUES ('3', 'Basildon Great Oaks', '1', '0');
+INSERT INTO `stores` VALUES ('4', 'Telford Forge Pod', '1', '0');
+INSERT INTO `stores` VALUES ('5', 'Greenford', '1', '0');
+INSERT INTO `stores` VALUES ('7', 'Southampton Hedge End Retail Park', '1', '0');
+INSERT INTO `stores` VALUES ('8', 'Hull Kingston Park', '1', '0');
+INSERT INTO `stores` VALUES ('9', 'Birmingham New Street', '1', '0');
+INSERT INTO `stores` VALUES ('10', 'Reading Broad Street', '1', '0');
+INSERT INTO `stores` VALUES ('11', 'Southampton Above Bar', '1', '0');
+INSERT INTO `stores` VALUES ('12', 'Grantham High Street', '1', '0');
+INSERT INTO `stores` VALUES ('13', 'Tonbridge', '1', '0');
+INSERT INTO `stores` VALUES ('14', 'Doncaster Frenchgate', '1', '0');
+INSERT INTO `stores` VALUES ('15', 'St Helens Ravenhead Pod', '1', '0');
+INSERT INTO `stores` VALUES ('16', 'Edinburgh Fort Kinnaird', '1', '0');
+INSERT INTO `stores` VALUES ('17', 'Oldbury', '1', '0');
+INSERT INTO `stores` VALUES ('18', 'Southport Kew', '1', '0');
+INSERT INTO `stores` VALUES ('19', 'Sheffield Fargate', '1', '0');
+INSERT INTO `stores` VALUES ('20', 'Leeds Briggate', '1', '0');
+INSERT INTO `stores` VALUES ('21', 'Great Yarmouth', '1', '0');
+INSERT INTO `stores` VALUES ('22', 'Stockport Portwood', '1', '0');
+INSERT INTO `stores` VALUES ('23', 'Poole Falkland Square', '1', '0');
+INSERT INTO `stores` VALUES ('24', 'Bluewater Lower', '1', '0');
+INSERT INTO `stores` VALUES ('25', 'Merry Hill Centre Upper', '1', '0');
+INSERT INTO `stores` VALUES ('26', 'Brighton Churchill Square', '1', '0');
+INSERT INTO `stores` VALUES ('27', 'Gateshead Metro Centre Lower Yellow', '1', '0');
+INSERT INTO `stores` VALUES ('28', 'Haywards Heath', '1', '0');
+INSERT INTO `stores` VALUES ('29', 'Portsmouth Commercial Road', '1', '0');
+INSERT INTO `stores` VALUES ('30', 'Edinburgh Ocean Terminal', '1', '0');
+INSERT INTO `stores` VALUES ('31', 'Hornchurch', '1', '0');
+INSERT INTO `stores` VALUES ('32', 'Saffron Walden', '1', '0');
+INSERT INTO `stores` VALUES ('33', 'Manchester Arndale', '1', '0');
+INSERT INTO `stores` VALUES ('34', 'Wood Green Mall', '1', '0');
+INSERT INTO `stores` VALUES ('35', 'Bristol Broadmead', '1', '0');
+INSERT INTO `stores` VALUES ('37', 'Trafford Centre Lower', '1', '0');
+INSERT INTO `stores` VALUES ('38', 'Leeds White Rose', '1', '0');
+INSERT INTO `stores` VALUES ('39', 'White City', '1', '0');
+INSERT INTO `stores` VALUES ('40', 'St Neots', '1', '0');
+INSERT INTO `stores` VALUES ('41', 'Petersfield', '1', '0');
+INSERT INTO `stores` VALUES ('42', 'Belfast Castle Court', '1', '0');
+INSERT INTO `stores` VALUES ('43', 'Paignton', '1', '0');
+INSERT INTO `stores` VALUES ('44', 'Salisbury New Canal', '1', '0');
+INSERT INTO `stores` VALUES ('45', 'Blackpool Houndshill Centre', '1', '0');
+INSERT INTO `stores` VALUES ('46', 'Luton Arndale', '1', '0');
+INSERT INTO `stores` VALUES ('47', 'Taunton Fore Street', '1', '0');
+INSERT INTO `stores` VALUES ('48', 'Cardiff Capital', '1', '0');
+INSERT INTO `stores` VALUES ('49', 'Brent Cross', '1', '0');
+INSERT INTO `stores` VALUES ('50', 'Glasgow Braehead Centre', '1', '0');
+INSERT INTO `stores` VALUES ('51', 'Glasgow Forge Pod', '1', '0');
+INSERT INTO `stores` VALUES ('52', 'Aberdeen Union Square', '1', '0');
+INSERT INTO `stores` VALUES ('53', 'Neath', '1', '0');
 
 -- ----------------------------
 -- Table structure for `users`

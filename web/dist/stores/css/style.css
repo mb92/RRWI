@@ -15,7 +15,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 body {
-  line-height: 1; }
+  line-height: 1; 
+  overflow-x: hidden;
+}
 
 ol, ul {
   list-style: none; }
@@ -296,10 +298,10 @@ body {
       width: 30%;
       height: 90px;
       float: left; }
-      @media only screen and (min-width: 768px) {
+/*      @media only screen and (min-width: 768px) {
         .footer-bg .footer .footer-text {
           width: 50%;
-          height: 120px; } }
+          height: 120px; } }*/
       .footer-bg .footer .footer-text a {
         -ms-flex-item-align: center;
             -ms-grid-row-align: center;
@@ -309,7 +311,7 @@ body {
           opacity: .7; }
         .footer-bg .footer .footer-text a:active {
           opacity: .5; }
-    .footer-bg .footer .logo-vodafone {
+    .footer-bg .footer .logo-carphone {
       width: 35%;
       height: 90px;
       float: right;
@@ -317,18 +319,18 @@ body {
       display: flex;
       -ms-flex-pack: end;
           justify-content: flex-end; }
-      @media only screen and (min-width: 768px) {
-        .footer-bg .footer .logo-vodafone {
+/*      @media only screen and (min-width: 768px) {
+        .footer-bg .footer .logo-carphone {
           width: 25%;
           height: 120px; } 
       
         .cw-logo {
             position: relative; 
             height: 100%; 
-/*            width: auto !important;*/
+            width: auto !important;
         }
-      }
-      .footer-bg .footer .logo-vodafone img {
+      }*/
+      .footer-bg .footer .logo-carphone img {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-item-align: end;
@@ -352,14 +354,113 @@ body {
 
 .cw-logo {
     position: relative; 
-    height: 100%; 
-    width: auto !important;
+    /*height: 100%;*/ 
+    max-height: 93px;
+    width: auto;
+    padding-right:50px;
 }
 
-@media only screen and (max-width: 545px) {
+/*@media only screen and (max-width: 670px) {
     .cw-logo {
         position: relative; 
         height: 50%; 
         margin-bottom: 22px;
+        padding-right:50px;
+    }
+}*/
+
+
+
+.mb-footer {
+	position: absolute;
+	width:100%;
+	background-color: #3b3a3b;
+	height: 120px;
+	display: table;
+}
+
+a {
+	color: #f2f2f2;
+	font-size: 12px;
+}
+
+.mb-logo-huawei, .mb-logo-carphone {
+	width: 30%;
+	height: 100%;
+	position:relative;
+	background: inherit;
+	display: table-cell;
+        vertical-align:middle;
+}
+
+.mb-text {
+    text-align:center;
+    display: table-cell;
+    vertical-align: middle;
+ }
+
+
+.mb-logo-huawei {
+    /*float: left;*/
+    text-align:left;
+    vertical-align: top;
+    padding-top: 20px;
+}
+
+.mb-logo-carphone {
+    /*float:right;*/
+    text-align:right;
+    padding-top: 20px;
+}
+
+.mb-logo-huawei > img {
+    position: relative;
+    max-height: 80px;
+    max-width: 80px;
+    padding-left: 60px;
+}
+
+.mb-logo-carphone > img {
+    position: relative;
+    max-height: 80px;
+    width: auto;
+}
+
+
+@media only screen and (max-width: 698px) {
+    .mb-logo-huawei > img {
+        position: relative;
+        max-height: 80px;
+        max-width: 80px;
+        padding-left: 0px;
+    }
+
+    .mb-logo-huawei {
+        text-align:center;
+    }
+    
+    .mb-logo-carphone > img {
+        position: relative;
+        max-height: 50px;
+        width: auto;
+    }
+    
+    .cw-logo {
+        padding-right:20px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .mb-logo-huawei > img {
+        position: relative;
+        max-height: 80px;
+        max-width: 80px;
+        padding-left: 0px;
+    }
+    
+    .mb-logo-huawei {
+        vertical-align:middle;
+        text-align:center;
     }
 }
