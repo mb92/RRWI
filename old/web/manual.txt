@@ -1,0 +1,23 @@
+How to add new country?
+1. Login to CMS and add new Country and Stores (short code should be taken from ISO standards).
+
+2. Prepare flag (size: 200x125) and puts icon into /web/dist/img/flags directory. Name of icon must be SHORT_CODE.jpg (ex. IR.jpg)
+
+3. Add links for email tempalte in /models/Settings (create case instruction)
+
+4. Create email template dedicated for the country /mail/SHORT_NAME.php (ex. IR.php) 
+    Recommended copying and modification of existing email's template.
+
+5. Add case instruction into email.php (In this place the email's template is attached)
+
+6. Create T&C for the country into /modules/admin/views/pages/terms-shortcode.php (ex. terms-ir.php)
+
+7. Create Unsub message for the country into /web/unsub-shortcode.php (ex. unsub-ir.php) - default is english message in unsub.php
+    Must edit /modules/api/v1/controllers/ClientsControllers.php - add case instructions in 'unsub' function.
+
+8. Modify PagesController into /modules/admin/controllers - must add case instructions for T&C
+
+9. Add list of stores for the country into /web/dist/stores 
+    If you want add dedicated page of stores you must create new action in the controller (PagesController - example for CW - stores in controller's file)
+    In the next step you must edit config/web.php an add rules of route for new dedicated page:
+    urlManager -> rules -> 'stores-cw'=>'/admin/pages/stores-cw'

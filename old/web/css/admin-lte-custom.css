@@ -1,0 +1,115 @@
+#w0 > .container {
+	width: 100% !important;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+    color: #fff;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+img.country-box {
+    width:100px !important;
+}
+
+.btn-country-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 101px;
+    width: 60px;
+    padding: 10px;
+    border: none;
+    padding-top: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h3.widget-user-username, h5.widget-user-desc {
+    margin-left: 136px !important;
+}
+
+h5.widget-user-desc {
+    color: #999;
+}
+
+.btn-export {
+    margin-right: 5px;
+}
+
+.dt-buttons {
+    float: left;
+}
+
+.dt-buttons::before {
+    content: "Export options: ";
+}
+
+.pagination {
+    border-radius:0px !important;
+}
+
+img.dt.img-circle {
+    max-width: 50px !important;
+}
+
+#horizontal-btns {
+    margin-bottom: 20px;
+}
+
+.summary-title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 7px;
+}
+
+.spacing-left-icon {
+    margin-right:12px;
+}
+
+.thumb-img-details {
+    max-width: 60px;
+    margin-right: 5px;
+    border-radius: 6px;
+}
+
+.btn-app-album {
+    margin-right: 3px;
+}
+
+.thumb-img-album {
+    max-width: 15%;
+}
+
+.thumb-img-album:hover {
+    opacity:0.7;
+}
+
+.btn-group-vertical>a {
+    padding: 3px;
+    width: 30px;
+}
+
+.btn {
+    margin-top:2px !important;
+}

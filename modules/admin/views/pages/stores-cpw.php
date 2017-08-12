@@ -50,7 +50,7 @@
 					<li class="active" rel="tab1">ENGLAND</li>
 					<li rel="tab2">SCOTLAND</li>
 					<li rel="tab3">WALES</li>
-                                        <li rel="tab3">N.IRELAND</li>
+                    <!-- <li rel="tab3">N.IRELAND</li> -->
 				</ul>
 			</div>
 		</div>
@@ -185,67 +185,19 @@
 	</div>
 
             
-        <div class="mb-footer">
+    <div class="mb-footer">
 	    <div class="mb-logo-huawei">
 	            <img src="<?= $path ?>img/huawei-color.png" alt="huwaei">
 	    </div>
 
 	    <div class="mb-text">
-	            <a href="#" targe="_blank">Please click here to view terms and conditions</a>
+	           <?= '<a href="http://'. $_SERVER['HTTP_HOST'] .'/tcs" targe="_blank">Please click here to view terms and conditions</a>';?>
 	    </div>
 
 	    <div class="mb-logo-carphone">
 	            <img src="<?= $path ?>img/cw3.png" alt="carphone" class="cw-logo">
 	    </div>
 	</div>    
-            
-        <footer class="footer-bg" style="display:none;">
-            <div class="footer">
-
-                    <div class="mb-logo-huawei">
-                            <img src="<?= $path ?>img/huawei-color.png" alt="huwaei">
-                    </div>
-
-                    <div class="footer-text">
-                            <?= '<a href="http://'. $_SERVER['HTTP_HOST'] .'/terms-and-conditions?c=cw" targe="_blank">Please click here to view terms and conditions</a>';?>
-                    </div>
-
-                    <div class="mb-logo-carphone">
-                            <img src="<?= $path ?>img/cw3.png" alt="carphone" class="cw-logo">
-                    </div>
-
-            </div>
-	</footer>
-            
-            
-            <div></div>
-            
-            
-	<footer class="footer-bg" style="display:none;">
-		<div class="footer">
-
-			<div class="logo-huawei">
-				<img src="<?= $path ?>img/huawei-color.png" alt="huwaei">
-			</div>
-
-			<div class="footer-text">
-				<?= '<a href="http://'. $_SERVER['HTTP_HOST'] .'/terms-and-conditions?c=cw" targe="_blank">Please click here to view terms and conditions</a>';?>
-			</div>
-
-			<div class="logo-carphone">
-				<img src="<?= $path ?>img/cw3.png" alt="carphone" class="cw-logo">
-			</div>
-
-		</div>
-	</footer>
-
-
-
-
-
-
-
-
 
 
 	<!--jQuery JavaScript Library -->
