@@ -141,7 +141,7 @@ Carphone Warehouse:
 
 	<tr>
 		<td>Southampton Above Bar</td>
-		<td>38 Above Bar Street, Southampton</td>
+		<td>38 Above Bar Street, Southampton22</td>
 		<td>SO14 7DR</td>
 	</tr>
 
