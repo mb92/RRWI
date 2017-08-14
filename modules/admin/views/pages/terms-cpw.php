@@ -140,6 +140,12 @@ Carphone Warehouse:
 	</tr>
 
 	<tr>
+		<td>Salisbury New Canal</td>
+		<td>44-48 New Canal, Salisbury</td>
+		<td>SP1 2AQ</td>
+	</tr>
+
+	<tr>
 		<td>Southampton Above Bar</td>
 		<td>38 Above Bar Street, Southampton</td>
 		<td>SO14 7DR</td>
@@ -245,12 +251,6 @@ Carphone Warehouse:
 		<td>Petersfield (The Square)</td>
 		<td>8 The Square, Petersfield</td>
 		<td>GU32 3HW</td>
-	</tr>
-
-	<tr>
-		<td>New Canal Salisbury</td>
-		<td>44- 48 New Canal, Salisbury</td>
-		<td>SP1 2AQ</td>
 	</tr>
 
 	<tr>

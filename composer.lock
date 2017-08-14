@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "788d0f5e751d9e23fd4becf0c7d071e6",
+    "content-hash": "f55f36c20a50784facc8f931fe395caf",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -56,7 +56,38 @@
             ]
         },
         {
-            "name": "bower-asset/inputmask",
+            "name": "bower-asset/jquery",
+            "version": "2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery/jquery-dist.git",
+                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/c0185ab7c75aab88762c5aae780b9d83b80eda72",
+                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/jquery.js",
+                "bower-asset-ignore": [
+                    "package.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "keywords": [
+                "browser",
+                "javascript",
+                "jquery",
+                "library"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery.inputmask",
             "version": "3.3.7",
             "source": {
                 "type": "git",
@@ -112,37 +143,6 @@
                 "jquery",
                 "mask",
                 "plugins"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery",
-            "version": "2.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/c0185ab7c75aab88762c5aae780b9d83b80eda72",
-                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "dist/jquery.js",
-                "bower-asset-ignore": [
-                    "package.json"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "keywords": [
-                "browser",
-                "javascript",
-                "jquery",
-                "library"
             ]
         },
         {
@@ -643,12 +643,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "e0ec3fd79fec8f86857c6f1b0ab6a3b69a1ebb15"
+                "reference": "e8a71970b33410591f664f72dba6bd755fa7bf55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/e0ec3fd79fec8f86857c6f1b0ab6a3b69a1ebb15",
-                "reference": "e0ec3fd79fec8f86857c6f1b0ab6a3b69a1ebb15",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/e8a71970b33410591f664f72dba6bd755fa7bf55",
+                "reference": "e8a71970b33410591f664f72dba6bd755fa7bf55",
                 "shasum": ""
             },
             "require": {
@@ -689,25 +689,25 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-08-02 17:03:33"
+            "time": "2017-08-10 12:25:50"
         },
         {
             "name": "yiisoft/yii2",
-            "version": "dev-master",
+            "version": "2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "f345402ad62f6dfe4dfa919448a0f9c87885d4e1"
+                "reference": "70acbecc75cb26b6cd66d16be0b06e4b73db190d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/f345402ad62f6dfe4dfa919448a0f9c87885d4e1",
-                "reference": "f345402ad62f6dfe4dfa919448a0f9c87885d4e1",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/70acbecc75cb26b6cd66d16be0b06e4b73db190d",
+                "reference": "70acbecc75cb26b6cd66d16be0b06e4b73db190d",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/inputmask": "~3.2.2 | ~3.3.5",
                 "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+                "bower-asset/jquery.inputmask": "~3.2.2 | ~3.3.5",
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1",
                 "cebe/markdown": "~1.0.0 | ~1.1.0",
@@ -789,7 +789,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2017-08-08 09:53:42"
+            "time": "2017-06-05T14:33:41+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -1302,12 +1302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "a0f4fa03080a163e1cab74e1539471e73d485174"
+                "reference": "e70d9612d9108ec07476f7c304f14b8e583b6494"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/a0f4fa03080a163e1cab74e1539471e73d485174",
-                "reference": "a0f4fa03080a163e1cab74e1539471e73d485174",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/e70d9612d9108ec07476f7c304f14b8e583b6494",
+                "reference": "e70d9612d9108ec07476f7c304f14b8e583b6494",
                 "shasum": ""
             },
             "require": {
@@ -1344,7 +1344,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2017-08-07T15:48:15+00:00"
+            "time": "2017-08-10T09:58:44+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -2761,12 +2761,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "86c76efc1ac932bd9d95091c4d3403c2f41e4a02"
+                "reference": "0e283478c2d68c9bf9cc52592ad1ef1834083a85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/86c76efc1ac932bd9d95091c4d3403c2f41e4a02",
-                "reference": "86c76efc1ac932bd9d95091c4d3403c2f41e4a02",
+                "url": "https://api.github.com/repos/symfony/console/zipball/0e283478c2d68c9bf9cc52592ad1ef1834083a85",
+                "reference": "0e283478c2d68c9bf9cc52592ad1ef1834083a85",
                 "shasum": ""
             },
             "require": {
@@ -2823,7 +2823,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-08-03T09:34:20+00:00"
+            "time": "2017-08-10T07:07:17+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -2884,12 +2884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "3be4178b917facf66a0a4e93e665b15bdc8688c6"
+                "reference": "50bda5b4b8641616d45254c6855bcd45f2f64187"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/3be4178b917facf66a0a4e93e665b15bdc8688c6",
-                "reference": "3be4178b917facf66a0a4e93e665b15bdc8688c6",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/50bda5b4b8641616d45254c6855bcd45f2f64187",
+                "reference": "50bda5b4b8641616d45254c6855bcd45f2f64187",
                 "shasum": ""
             },
             "require": {
@@ -2932,7 +2932,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-08-07T12:30:49+00:00"
+            "time": "2017-08-10T07:07:17+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -3416,7 +3416,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "yiisoft/yii2": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

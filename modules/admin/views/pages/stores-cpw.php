@@ -102,8 +102,6 @@
 
                                         <p>Petersfield (The Square), 8 The Square, Petersfield, GU32 3HW</p><br/>
 
-                                        <p>New Canal Salisbury, 44- 48 New Canal, Salisbury, SP1 2AQ</p><br/>
-
                                         <p>Blackpool Houndshill Shopping Centre, Unit N20 Houndshill shopping Centre, Blackpool, FY1 4HU</p><br/>
 
                                         <p>Luton Arndale, 77-79 Luton Arndale Centre, LU1 2TE</p><br/>
@@ -140,8 +138,10 @@
 
                                         <p>Grimsby (Freshney Place), 46-48 Friargate, Freshney Place Shopping Centre, Grimsby, DN31 1QQ</p><br/>
 
-                                        <p>Southampton Hedge End Retail Park, Unit 3 Hedge End Retail Park, Charles Watts Way, Southampton, SO30 4RT</p><br/>
+                                        <p>Salisbury New Canal, 44-48 New Canal, Salisbury, SP1 2AQ</p><br/>
 
+                                        <p>Southampton Hedge End Retail Park, Unit 3 Hedge End Retail Park, Charles Watts Way, Southampton, SO30 4RT</p><br/>
+ 
                                         <p>Hull Kingston Park, Unit 6 Kingston Retail Park, Kingston Road, Hull, HU1 2TX</p><br/>
 
                                         <p>Grantham High Street, 44 High Street, Grantham, NG31 6NE</p><br/>
@@ -197,7 +197,7 @@
 	    </div>
 
 	    <div class="mb-logo-carphone">
-	            <img src="<?= $path ?>img/cw3.png" alt="carphone" class="cw-logo">
+	            <img src="<?= $path ?>img/CPW_LOGO_STACKED_CENTRE_RGB.png" alt="carphone" class="cw-logo">
 	    </div>
 	</div>    
 
