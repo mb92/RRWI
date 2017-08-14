@@ -373,10 +373,11 @@ class ClientsController extends ActiveController
 		// Generate unsumscribe link
 		if ($client->offers == "1") {
 			$sesId = encrypt_decrypt('encrypt', $fileName);
-			$token = encrypt_decrypt('encrypt', "0b3d4f561329b5a5dfdbaff634280be9");
+			$token = encrypt_decrypt('encrypt', "f7289db929eaec50a588fe348e2edacf");
 			$clientId = encrypt_decrypt('encrypt', $client->email);
+			
 			$country = encrypt_decrypt('encrypt', strtoupper($client->countryShortName));
-
+			vdd($country);
 			$unsub = Url::to(['clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId.'&ct='.$country], true);
 		} else {
 			$unsub = '#';

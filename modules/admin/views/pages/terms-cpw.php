@@ -474,14 +474,14 @@ Carphone Warehouse:
 
 <p><a href="http://cpwapp.p10selfiestudio.com/stores" target="_blank">http://cpwapp.p10selfiestudio.com/stores</a></p><br/>
 
-<h2>123England:</h2>
+<h2>England:</h2>
 <p>Basildon Great Oaks, Unit 2 Great Oaks Retail Park, Broadmayne Road, SS14 1GB</p>
 
 <p>Greenford, Unit 2 Westway Cross Retail Park, Greenford Road, UB6 0UW</p>
 
 <p>Reading Broad Street, 120 - 121 Broad Street, Reading, RG1 2BD</p>
 
-<p>Southampton Above Bar, 38 Above Bar Street, Southampton123, SO14 7DR</p>
+<p>Southampton Above Bar, 38 Above Bar Street, Southampton, SO14 7DR</p>
 
 <p>Doncaster Frenchgate, 6 North Mall Gallery, Frenchgate Centre, DN1 1SR</p>
 
