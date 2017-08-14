@@ -377,7 +377,7 @@ class ClientsController extends ActiveController
 			$clientId = encrypt_decrypt('encrypt', $client->email);
 			
 			$country = encrypt_decrypt('encrypt', strtoupper($client->countryShortName));
-			vdd($country);
+			// vdd($country);
 			$unsub = Url::to(['clients/unsub?&t='.$token.'&s='.$sesId.'&c='.$clientId.'&ct='.$country], true);
 		} else {
 			$unsub = '#';
