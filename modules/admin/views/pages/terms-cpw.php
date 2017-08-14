@@ -146,6 +146,12 @@ Carphone Warehouse:
         </tr>
 
 	<tr>
+		<td>Salisbury New Canal</td>
+		<td>44-48 New Canal, Salisbury</td>
+		<td>SP1 2AQ</td>
+	</tr>
+
+	<tr>
 		<td>Southampton Above Bar</td>
 		<td>38 Above Bar Street, Southampton</td>
 		<td>SO14 7DR</td>
@@ -251,12 +257,6 @@ Carphone Warehouse:
 		<td>Petersfield (The Square)</td>
 		<td>8 The Square, Petersfield</td>
 		<td>GU32 3HW</td>
-	</tr>
-
-	<tr>
-		<td>New Canal Salisbury</td>
-		<td>44- 48 New Canal, Salisbury</td>
-		<td>SP1 2AQ</td>
 	</tr>
 
 	<tr>
@@ -481,7 +481,7 @@ Carphone Warehouse:
 
 <p>Reading Broad Street, 120 - 121 Broad Street, Reading, RG1 2BD</p>
 
-<p>Southampton Above Bar, 38 Above Bar Street, Southampton, SO14 7DR</p>
+<p>Southampton Above Bar, 38 Above Bar Street, Southampton22, SO14 7DR</p>
 
 <p>Doncaster Frenchgate, 6 North Mall Gallery, Frenchgate Centre, DN1 1SR</p>
 
