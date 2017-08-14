@@ -63,7 +63,7 @@ class Settings extends \yii\db\ActiveRecord
                 $links['share'] = 'http://instagram.com?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['store'] = 'https://www.carphonewarehouse.com/huawei/p10.html#!colour=blue&capacity=64GB&dealType=pm&manufacturerId=2&&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
 //                $links['location'] = 'https://www.carphonewarehouse.com/store-locator.html?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
-                $links['location'] = 'http://'.$_SERVER['HTTP_HOST'].'/stores?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
+                $links['location'] = 'https://www.carphonewarehouse.com/store-locator.html?cid=EMAIL_Acquisition_SamsungGalaxyS8CoralBlue_Launch_June%2030,%202017_samsung_galaxy_S8_in-store&ppc=56';
                 $links['facebook'] = 'https://www.facebook.com/huaweiuk?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['instagram'] = 'https://www.instagram.com/huaweimobileuk?&utm_source='.$campSource.'&utm_medium='.$campMedium.'&utm_campaign='.$campName;
                 $links['twitter'] = 'https://twitter.com/huaweimobileuk?lang=en';
