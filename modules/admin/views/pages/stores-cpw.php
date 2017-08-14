@@ -161,6 +161,8 @@
                                         <p>Glasgow Braehead Centre, Unit 41 Braehead Shopping Centre, Kings Inch Road, Glasgow, G51 4BP</p><br/>
 
                                         <p>Glasgow Forge Pod, Unit 15 The Forge Retail Park, Gallowgate, Glasgow, G31 4EB</p><br/>
+
+                                        <p>Edinburgh Ocean Terminal, Unit RU26 Ocean Terminal Shopping Centre Edinburgh, EH6 6LZ</p><br/>
 					<a href="#" class="top"></a>
 				</div>
 				<!-- #tab2 -->

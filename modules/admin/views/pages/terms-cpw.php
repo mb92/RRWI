@@ -421,6 +421,12 @@ Carphone Warehouse:
 		<td>Unit 15 The Forge Retail Park, Gallowgate, Glasgow</td>
 		<td>G31 4EB</td>
 	</tr>
+
+	<tr>
+		<td>Edinburgh Ocean Terminal</td>
+		<td>Unit RU26 Ocean Terminal Shopping Centre Edinburgh</td>
+		<td>EH6 6LZ</td>
+	</tr>
 </table>
 
 
