@@ -139,6 +139,12 @@ Carphone Warehouse:
 		<td>RG1 2BD</td>
 	</tr>
 
+        <tr>
+                <td>Salisbury New Canal</td>
+                <td>44-48 New Canal, Salisbury</td>
+                <td>SP1 2AQ</td>
+        </tr>
+
 	<tr>
 		<td>Southampton Above Bar</td>
 		<td>38 Above Bar Street, Southampton</td>
