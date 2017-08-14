@@ -66,7 +66,7 @@
 
                                         <p>Reading Broad Street, 120 - 121 Broad Street, Reading, RG1 2BD</p><br/>
 
-                                        <p>Southampton Above Bar, 38 Above Bar Street, South Hampton, SO14 7DR</p><br/>
+                                        <p>Southampton Above Bar, 38 Above Bar Street, Southampton, SO14 7DR</p><br/>
 
                                         <p>Doncaster Frenchgate, 6 North Mall Gallery, Frenchgate Centre, DN1 1SR</p><br/>
 
