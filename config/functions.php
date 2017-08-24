@@ -49,6 +49,43 @@ function slug($string) {
     return $string;
 }
 
+/**
+ * Watermark for image size 1224x1632 
+ * @param type $watermarkPath
+ * @param type $outImgPath
+ * @return boolean
+ */
+function watermark4($watermarkPath, $outImgPath) {
+
+    $stamp = imagecreatefrompng($watermarkPath);
+    $im = imagecreatefromjpeg($outImgPath);
+
+    list($width, $height) = getimagesize($outImgPath);
+    list($widthWt, $heightWt) = getimagesize($watermarkPath);
+
+    $marge_right = ($width-$widthWt);
+    $marge_bottom = 45;
+    $sx = imagesx($stamp);
+    $sy = imagesy($stamp);
+
+    // Copy the stamp image onto our photo using the margin offsets and the photo 
+    // width to calculate positioning of the stamp. 
+    imagecopy($im, $stamp, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($stamp), imagesy($stamp));
+
+    imagepng($im, $outImgPath, 9);
+    imagedestroy($im);
+    
+    $image = imagecreatefrompng($outImgPath);
+    imagejpeg($image, $outImgPath, 100);
+    imagedestroy($image);
+//    imagejpeg($outImgPath, $outImgPath);
+//    imagedestroy($outImgPath);
+    
+    if (!file_exists($outImgPath)) 
+    return true;
+    else return false;
+}
+
 
 function watermark3($watermarkPath, $outImgPath) {
 
@@ -176,16 +213,17 @@ function addWatermark($filename, $country=null) {
         $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4.png';
     }
 */
-    
-        $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1cw.png';
-        $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4cw.png';
-        
     $photo = Yii::getAlias("@app").'/upload/'.$filename;
     $thumb = Yii::getAlias("@app").'/temp/'.$filename;
-
+    
+    $watermarkNameSm = Yii::getAlias("@app").'/web/dist/img/wt-4-1cw.png';
+    $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-5cw.png';
+    list($width, $height) = getimagesize($photo);
+    if ($width >= 2448 && $height >= 3264) $watermarkNameBg= Yii::getAlias("@app").'/web/dist/img/wt-4cw.png';
+    
 //    $stThumb = watermarkThumb1($watermarkNameSm, $thumb);
     $stThumb = watermarkThumb2($watermarkNameSm, $thumb);
-    $stPhoto = watermark3($watermarkNameBg, $photo);
+    $stPhoto = watermark4($watermarkNameBg, $photo);
     
     if (($stThumb = true) && ($stPhoto == true))
         return true;
