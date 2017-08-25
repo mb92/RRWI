@@ -31,6 +31,7 @@ $config = [
             'class' => '\app\components\Generator',
         ],
         'db' => $db,
+        
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'useFileTransport' => false,
