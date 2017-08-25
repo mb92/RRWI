@@ -89,7 +89,7 @@ class StatsController extends Controller
 
         $sessions = Sessionsapps::find()->where(['countryId' => $countryId]);
 
-        $stats['allLunches'] = $sessions->count();
+        $stats['allLunches'] = Sessionsapps::find()->where(['countryId' => $countryId])->count();
         $stats['doneSes'] = Sessionsapps::countDoneSesForCountry($countryId);
         $stats['interrupedSes'] = Sessionsapps::countInterruptedSesForCountry($countryId);
         $stats['retake'] = Actions::countRetakesFromCountry($countryId);

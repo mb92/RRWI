@@ -97,7 +97,7 @@ class ClientsController extends ActiveController
 		// Verify token
 			if (!verifyToken($token)) return $result['token'] = "fail";
 			else $result['token'] = "OK";
-
+                
 		// Found sesssion information
 			$ses = Sessionsapps::find()->where(['sesId' => $sesId])->one();
 			if (is_null($ses)) return $result['action'] = "Session not found";
@@ -131,7 +131,7 @@ class ClientsController extends ActiveController
                                 
                                 addWatermark($fileNameExt, $country);
 			}
-			
+		
 		// Create client
 			$client = Clients::find()->where(['email' => $email])->one();
 			// vdd($client);

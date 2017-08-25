@@ -270,27 +270,30 @@ function encrypt_decrypt($action, $string) {
 }
 
 
-function rename_email_attachment($imgPath)
+function rename_email_attachment($imgPath, $cron=null)
 {
-    $sesId = substr($imgPath, strlen(Yii::getAlias("@upload"))+1, 32);
+    $sesId = substr($imgPath, strlen(Yii::getAlias("@upload"))+1, 29);
     $img = $sesId.".jpg";
     $newImgName = "P10.jpg";
-
     $tmpDir = Yii::getAlias("@temp").'/tmp';
+    if ($cron) $tmpDir = str_replace("../", "", $tmpDir);
     $sesDir = $tmpDir."/".$sesId;
     
-    if (file_exists($sesDir)) return $sesDir."/".$newImgName;
-
     if (!file_exists($tmpDir)) mkdir($tmpDir);
-    if (!file_exists($sesDir)) mkdir($sesDir);
-
-
+    
+    if (file_exists($sesDir)) return $sesDir."/".$newImgName;
+    else if (!file_exists($sesDir)) mkdir($sesDir);
+    
+    
+    
+    if ($cron) $imgPath = str_replace("../", "", $imgPath);
+    
+    
     $cp = copy($imgPath, $sesDir."/".$newImgName);
     
     if ($cp) return $sesDir."/".$newImgName;
     else return false;
 }
-
 
 function remove_dir_attachment($attachPath, $cron=null) {
     $path = str_replace("/P10.jpg", "", $attachPath);

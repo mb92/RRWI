@@ -70,13 +70,14 @@ class Sender extends Component
 
                 // Get thumb with watermark for template
                 $thumb =  Yii::getAlias("@temp").'/'.$fileNameExt;
+
 //                vdd($thumb);
                 //Create temporary file from upload dir into temp/tmp/<sesId>/P10.jpg - attachment must by short name. Always temporary image will be removed
                 
                 
                 if ($cron == true) {
                     $image = str_replace("../", "", $image);
-                    $attachPath = rename_email_attachment($image, true);
+                    $attachPath = rename_email_attachment($image);
                 } else {
                     $attachPath = rename_email_attachment($image);
                 }

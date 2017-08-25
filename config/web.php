@@ -74,6 +74,12 @@ $config = [
 //        ],
 
         ],
+        'reportsgen' => [
+            'class' => '\app\components\Reportsgen',
+        ],
+        'generator' => [
+            'class' => '\app\components\Generator',
+        ],
         'db' => require(__DIR__ . '/db.php'),
 
         // 'formatter'  => [

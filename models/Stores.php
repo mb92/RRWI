@@ -121,10 +121,57 @@ class Stores extends \yii\db\ActiveRecord
             // vdd($store->getSessionsApps()->join('INNER JOIN', 'actions', 'sessionsapps.id')->where(['actions.action' => 'rT'])->all());
         return $query;
     }
-
+    
+    
     public static function countClientsForCountry($countryId) {
         $query = Self::getFromCountry($countryId)->joinWith('sessionsapps')->join("RIGHT JOIN", 'clients', 'clients.id')->where(['not', ['clientId' => null]])->groupBy(['clientId'])->count();
         return $query;
     }
     
+//    STATS FOR PERIODICS RAPORTS
+    public function countAllSesForPeriod($storeId, $from, $to) {
+        return Self::getSessionsapps()
+                ->where(['storeId' => $storeId])
+                ->andWhere(['>', 'sessionsapps.created_at', $from])
+                ->andWhere(['<', 'sessionsapps.created_at', $to])
+                ->count();
+    }
+    
+    
+    public static function countRetakesForPeriod($storeId, $from, $to) {
+       $query = Actions::find()->where(['action' => 'rT'])
+            ->joinWith('sessionsApp')
+            // ->join('INNER JOIN', 'sessionsapps', 'sessionsapps.id = actions.sessionsAppId')
+            ->andWhere(['sessionsapps.storeId' => $storeId ])
+            ->andWhere(['>', 'sessionsapps.created_at', $from])
+            ->andWhere(['<', 'sessionsapps.created_at', $to])
+            ->count();
+        return $query;
+    }
+    
+    
+    public function countDoneSesForPeriod($from, $to) {
+        return Self::getSessionsapps()->where(['status' => "1"])
+                ->andWhere(['>', 'sessionsapps.created_at', $from])
+                ->andWhere(['<', 'sessionsapps.created_at', $to])
+                ->count();
+    }
+    
+    
+    public function countInterrupedSesForPeriod($from, $to) {
+        return Self::getSessionsapps()->where(['status' => "0"])
+                ->andWhere(['>', 'sessionsapps.created_at', $from])
+                ->andWhere(['<', 'sessionsapps.created_at', $to])
+                ->count();
+    }
+    
+    
+    public function countClientsForPeriod($from, $to) {
+        return Self::getSessionsapps()
+                ->join("RIGHT JOIN", 'clients', 'clients.id')
+                ->where(['not', ['clientId' => null]])
+                ->andWhere(['>', 'sessionsapps.created_at', $from])
+                ->andWhere(['<', 'sessionsapps.created_at', $to])
+                ->groupBy(['clientId'])->count();
+    }
 }

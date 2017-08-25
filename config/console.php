@@ -24,20 +24,26 @@ $config = [
         'sender' => [
             'class' => '\app\components\Sender',
         ],
-        'db' => $db,
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
-            'enableSwiftMailerLogging' => true,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => $params['email-host'],
-                'username' => $params['email-username'],
-                'password' => $params['email-password'],
-                'port' => $params['email-port'],
-                'encryption' => $params['email-encryption'],
-            ],
+        'reportsgen' => [
+            'class' => '\app\components\Reportsgen',
         ],
+        'generator' => [
+            'class' => '\app\components\Generator',
+        ],
+        'db' => $db,
+//        'mailer' => [
+//            'class' => 'yii\swiftmailer\Mailer',
+//            'useFileTransport' => false,
+//            'enableSwiftMailerLogging' => true,
+//            'transport' => [
+//                'class' => 'Swift_SmtpTransport',
+//                'host' => $params['email-host'],
+//                'username' => $params['email-username'],
+//                'password' => $params['email-password'],
+//                'port' => $params['email-port'],
+//                'encryption' => $params['email-encryption'],
+//            ],
+//        ],
     ],
     'params' => $params,
     /*
