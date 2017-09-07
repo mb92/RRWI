@@ -113,3 +113,77 @@ img.dt.img-circle {
 .btn {
     margin-top:2px !important;
 }
+
+
+
+/* PANEL CONTROL*/
+.table-control {
+    width: 100%;
+    min-width:320px;
+}
+
+.btn-control {
+    width: 46px;
+    height: 46px;
+    padding-top: 12px;
+    margin:5px;
+    z-index: 21;
+}
+
+.input-control {
+   width: 45px !important;
+   vertical-align: middle !important;
+}
+
+.input-align-center {
+    width: 100%;
+    text-align: center;
+}
+
+#move-z-input-dn, #move-z-input-up {
+    margin-left: 5px;
+}
+
+.videostreaming {
+    width: 480px;
+    height: 320px;
+}
+
+.top-btns {
+    margin-bottom: 40px;
+}
+
+.top-btns > .btn-danger {
+    margin-left: 5px;
+}
+
+.move-top-btn {
+    height: 60px;
+}
+
+.move-top-btn > a, .temp-top-btn > a {
+    margin:5px;
+}
+
+.temp-top-btn > .btn {
+    min-width: 80px;
+    font-weight: bold;
+}
+.fa-exclamation-triangle  {
+    color: yellow;
+    margin-right: 10px;
+}
+
+.col-md-6 {
+    min-width: 525px;
+}
+
+/*box-video-streaming {
+    width: 480px;
+    height: 320px;
+}*/
+.videostreaming {
+    width: 480px;
+    height: 320px;
+    border: 3px solid #ccc;
+}

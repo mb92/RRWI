@@ -12,10 +12,6 @@ use yii\helpers\BaseFileHelper;
 use yii\helpers\Url;
 use yii\imagine\Image;
 
-use app\models\Clients;
-use app\models\Actions;
-use app\models\Sessionsapps;
-use app\models\Countries;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
@@ -73,15 +69,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        // vdd(Yii::$app->timeZone);
-        $countries = Countries::find()->all();
-        $stats['globalLunches'] = Sessionsapps::countAllSes();
-        $stats['globalDoneSes'] = Sessionsapps::countDoneSes();
-        $stats['globalInterrupedSes'] = Sessionsapps::countInterruptedSes();
-        $stats['retake'] = Actions::countAllRetakes();
-        // $clients = Clients::find()->all();
-        // vdd($clients);
-        return $this->render('index', ['countries' => $countries, 'stats' => $stats]);
+        return $this->render('index', []);
     }
 
     /**
@@ -90,12 +78,9 @@ class SiteController extends Controller
      */
     public function actionTest()
     {
-        // $fcm = Yii::$app->sender->test();
-
-        // vdd($fcm);
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/png');
-        \Yii::$app->response->data = file_get_contents('../upload/lorem.jpg');
+        \Yii::$app->response->data = file_get_contents('../dist/img/no_photo.jpg');
         return \Yii::$app->response;
     }
 
@@ -106,55 +91,18 @@ class SiteController extends Controller
      * @param string $big default is equal null, so functions returns thumb's image else if You define $big's param for eg. $big = "1" function returns big images from upload dir.
      * @return response    Return url link to image
      */
-    public static function actionImage($n, $big=null)
+    public static function actionImage($n)
     {
-       
-        //Regenerate image when image was remove
-        $uploadDir = Yii::getAlias("@upload");
-        $tempDir = Yii::getAlias("@temp");
-
-        $pathUpload = $uploadDir.'/'.$n.'.jpg';
-        $pathTemp = $tempDir.'/'.$n.'.jpg';
-
-        if (!file_exists($pathUpload) or (!file_exists($pathTemp))) {
-            $imageB64 = Actions::find()->where(['path' => $n])->one()->base64;
-            // $filename = $sesId.'.jpg';
-            $filename = $n;
-            $ext = "jpg";
-            $fileNameExt = $filename.'.'.$ext;
-            // Decode Image
-            $binary=base64_decode($imageB64);
-            // header('Content-Type: bitmap; charset=utf-8');
-            // Images will be saved under 'www/upload/' folder
-            $file = fopen($uploadDir.'/'.$fileNameExt, 'wb');
-
-            // Create File
-            fwrite($file, $binary);
-            fclose($file);
-
-            Image::thumbnail($uploadDir.'/'.$fileNameExt, 171, 300)->save($tempDir.'/'.$fileNameExt, ['quality' => 90]);
-                addWatermark($fileNameExt);
-            
-            // return Yii::$app->getResponse()->redirect(Yii::$app->getRequest()->getUrl());
-        }
-
-        if (!file_exists($pathTemp)) {
-            Image::thumbnail($uploadDir.'/'.$fileNameExt, 171, 300)->save($tempDir.'/'.$fileNameExt, ['quality' => 90]);
-                addWatermark($fileNameExt);
-        }
-
-
+        $n='no_photo.jpg';
+        
         //Generate link to images
         \Yii::$app->response->format = yii\web\Response::FORMAT_RAW;
         \Yii::$app->response->headers->add('content-type','image/jpg');
         \Yii::$app->response->headers->add('Connection','Keep-Alive');
         \Yii::$app->response->headers->add('Keep-Alive','timeout=5, max=99');
         
-        if (!is_null($big))
-            \Yii::$app->response->data = file_get_contents($pathUpload);
-        else 
-            \Yii::$app->response->data = file_get_contents($pathTemp);
-
+        \Yii::$app->response->data = file_get_contents('../dist/img/'.$n);
+        
         return \Yii::$app->response;
     }
 }

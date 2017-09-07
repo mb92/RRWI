@@ -30,6 +30,8 @@ AppAsset::register($this);
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     
+    <script src="https://use.fontawesome.com/0bf619f68d.js"></script>
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
@@ -45,7 +47,7 @@ AppAsset::register($this);
     page. However, you can choose any other skin. Make sure you
     apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="/dist/css/skins/skin-purple.min.css">
     <link rel="stylesheet" href="/css/admin-lte-custom.css">
     <link rel="stylesheet" href="/css/custom.css">
     <link rel="stylesheet" href="/css/site.css">
@@ -59,7 +61,7 @@ AppAsset::register($this);
     <![endif]-->
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini">
 <?php $this->beginBody() ?>
 
 <div class="wrapper">

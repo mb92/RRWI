@@ -53,7 +53,7 @@ use yii\helpers\Html;
 <?php $this->beginBody() ?>
 <div class="login-box">
   <div class="login-logo">
-    <a href="/index2.html"><b>Selfie</b>APP</a>
+    <a href="/index2.html"><b>RepRap</b> Web Interface</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

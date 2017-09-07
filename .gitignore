@@ -29,9 +29,7 @@ phpunit.phar
 tests/_output/*
 tests/_support/_generated
 
-/upload/*
 /config/db.php
 /config/params.php
 
-/temp/*
 

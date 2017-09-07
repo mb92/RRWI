@@ -3,4 +3,4 @@
      
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; Selfie-CPW-app <?= date('Y') ?>.</strong> All rights reserved.
+    <strong>RepRap Web Interface 2017</strong> by <a href="http://mborowiec.eu" target="_blank">Maciej Borowiec</a>.

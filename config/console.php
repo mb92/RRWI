@@ -24,12 +24,7 @@ $config = [
         'sender' => [
             'class' => '\app\components\Sender',
         ],
-        'reportsgen' => [
-            'class' => '\app\components\Reportsgen',
-        ],
-        'generator' => [
-            'class' => '\app\components\Generator',
-        ],
+        
         'db' => $db,
         
         'mailer' => [

@@ -8,7 +8,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log', 'app\extensions\DynamicRoutes'],
+    'bootstrap' => ['log', /*'app\extensions\DynamicRoutes'*/],
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
@@ -20,15 +20,15 @@ $config = [
     'defaultRoute' => '/admin/site',
     'homeUrl' => '/admin/site',
     'components' => [
-        'pdf' => [
-            'class' => Pdf::classname(),
-            'format' => Pdf::FORMAT_A4,
-            'orientation' => Pdf::ORIENT_PORTRAIT,
-            'destination' => Pdf::DEST_FILE,
-            'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
-            // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
-            // refer settings section for all configuration options
-        ],
+//        'pdf' => [
+//            'class' => Pdf::classname(),
+//            'format' => Pdf::FORMAT_A4,
+//            'orientation' => Pdf::ORIENT_PORTRAIT,
+//            'destination' => Pdf::DEST_FILE,
+//            'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+//            // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
+//            // refer settings section for all configuration options
+//        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'xxxxxxxxxx',
@@ -74,12 +74,7 @@ $config = [
 //        ],
 
         ],
-        'reportsgen' => [
-            'class' => '\app\components\Reportsgen',
-        ],
-        'generator' => [
-            'class' => '\app\components\Generator',
-        ],
+
         'db' => require(__DIR__ . '/db.php'),
 
         // 'formatter'  => [
@@ -92,23 +87,17 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
-                'stores'=>'/admin/pages/stores',
-                // 'stores'=>'/admin/pages/stores-cpw',
-                'tcs'=>'/admin/pages/terms-and-conditions',
-                ['class' => 'yii\web\UrlRule', 'pattern' => '/admin', 'route' => '/admin/site/index'],
-//                ['class' => 'yii\rest\UrlRule', 'controller' => 'countries'],
-//                ['class' => 'yii\rest\UrlRule', 'controller' => 'languages'],
-//                ['class' => 'yii\rest\UrlRule', 'controller' => 'stores'],
 
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions',
-                    'extraPatterns' => ['POST create' => 'create']
-                ],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'clients',
-                    'extraPatterns' => ['POST create' => 'create', 'POST upload' => 'upload', 'POST unsub' => 'unsub']
-                ],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'sessionsapps',
-                    'extraPatterns' => ['POST create' => 'create']
-                ],
+                 'test'=>'/admin/pages/test',
+
+                ['class' => 'yii\web\UrlRule', 'pattern' => '/admin', 'route' => '/admin/site/index'],
+
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions',
+//                    'extraPatterns' => ['POST create' => 'create']
+//                ],
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'clients',
+//                    'extraPatterns' => ['POST create' => 'create', 'POST upload' => 'upload', 'POST unsub' => 'unsub']
+//                ],
             ],
         ],
     ],
