@@ -62,19 +62,19 @@ $('#bed-temp').on('input', function() {
                         </td>
                         <td align="center" width="40px">
                             <input type="number" onchange="setLS('moveStepY+', $(this).val())" value="10" id="move-y-input-up" class="input-control"/><br/>
-                            <button type="button" onClick="moveAxis('Y', '+')" class="btn btn-control bg-olive"><i class="fa fa-arrow-up"></i><sub>y</sub></button>
+                            <button type="button" onClick="moveAxis('Y', '+')" class="btn btn-control bg-olive"><i class="fa fa-arrow-up fa-move-right-icon"></i><sub>y</sub></button>
                         </td>
                         <td align="left" width="110px">
                             <div>
                                 <input type="number" value="5" id="move-z-input-up" class="input-control"/>
                             </div>
-                            <button type="button"  class="btn btn-control bg-orange"><i class="fa fa-arrow-up"></i><sub>z</sub></button>
+                            <button type="button"  class="btn btn-control bg-orange"><i class="fa fa-arrow-up fa-move-right-icon"></i><sub>z</sub></button>
                         </td>
                         <td align="center" width="40px">
                             <div class="input-align-center">
                                 <input type="number" onchange="setLS('moveStepE+', $(this).val())" value="2" id="move-e-input-up" class="input-control"/>
                             </div>
-                            <button type="button" onClick="moveAxis('E', '+')" class="btn btn-control bg-maroon"><i class="fa fa-arrow-up"></i><sub>e</sub></button>
+                            <button type="button" onClick="moveAxis('E', '+')" class="btn btn-control bg-maroon"><i class="fa fa-arrow-up fa-move-right-icon"></i><sub>e</sub></button>
                         </td>
                     </tr>
                     
@@ -96,17 +96,17 @@ $('#bed-temp').on('input', function() {
                         <tr>
                             <td></td>
                             <td align="center">
-                                <button type="button"  class="btn btn-control bg-olive"><i class="fa fa-arrow-down"></i><sub>y</sub></button><br/>                                
+                                <button type="button"  class="btn btn-control bg-olive"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>y</sub></button><br/>                                
                                 <input type="number" value="-10" id="move-y-input-dn" class="input-control"/>
                             </td>
                             <td align="left" width="132px">
-                                <button type="button"  class="btn btn-control bg-orange"><i class="fa fa-arrow-down"></i><sub>z</sub></button>
+                                <button type="button"  class="btn btn-control bg-orange"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>z</sub></button>
                                 <div >
                                     <input type="number" value="-5" id="move-z-input-dn" class="input-control"/>
                                 </div>
                             </td>
                             <td align="center">
-                                <button type="button"  class="btn btn-control bg-maroon"><i class="fa fa-arrow-down"></i><sub>e</sub></button>
+                                <button type="button"  class="btn btn-control bg-maroon"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>e</sub></button>
                                 <div class="input-align-center">
                                     <input type="number" value="-2" id="move-e-input-dn" class="input-control"/>
                                 </div>
