@@ -20,15 +20,13 @@ $config = [
     'defaultRoute' => '/admin/site',
     'homeUrl' => '/admin/site',
     'components' => [
-//        'pdf' => [
-//            'class' => Pdf::classname(),
-//            'format' => Pdf::FORMAT_A4,
-//            'orientation' => Pdf::ORIENT_PORTRAIT,
-//            'destination' => Pdf::DEST_FILE,
-//            'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
-//            // 'cssFile' => '@web/bootstrap/css/bootstrap.css',
-//            // refer settings section for all configuration options
-//        ],
+        'authServer' => [
+            'class' => \jakim\authserver\Server::class,
+            'grantTypes' => [
+                'password' => \jakim\authserver\grants\PasswordCredentials::class,
+                'refresh_token' => \jakim\authserver\grants\RefreshToken::class,
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'xxxxxxxxxx',
@@ -51,6 +49,9 @@ $config = [
                 'class' => 'yii\swiftmailer\Mailer',
                 'useFileTransport' => false,
                 'enableSwiftMailerLogging' => true,
+                'messageConfig' => [
+                    'from' => $params['email-username'],
+                ],
                 'transport' => [
                     'class' => 'Swift_SmtpTransport',
                     'host' => $params['email-host'],
@@ -58,8 +59,16 @@ $config = [
                     'password' => $params['email-password'],
                     'port' => $params['email-port'],
                     'encryption' => $params['email-encryption'],
-                                ],
+                    'streamOptions' => [
+                        'ssl' => [
+                            'allow_self_signed' => true,
+                            'verify_peer' => false,
+                            'verify_peer_name' => false,
+                        ],
                     ],
+                ],
+                                
+            ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -116,6 +125,15 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
+        'generators' => [
+            'crud' => [
+                'class' => \yii\gii\generators\crud\Generator::class,
+                'template' => 'adminLte2',
+                'templates' => [
+                    'adminLte2' => '@vendor/jakim-pj/yii2-gii-adminLte2/generators/crud/',
+                ],
+            ],
+        ],
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
     ];

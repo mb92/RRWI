@@ -15,7 +15,7 @@ class ModuleAsset extends AssetBundle
         'css/main.css',
     ];
 
-    // public $depends = [
-    //     AdminLteAsset::class,
-    // ];
+    public $depends = [
+        AdminLteAsset::class,
+    ];
 }

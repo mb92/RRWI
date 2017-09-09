@@ -1,17 +1,34 @@
 <?php
 
 use yii\db\Migration;
+use yii\base\Security;
 
 class m170505_104039_create_tables extends Migration
 {
     public function safeUp()
     {
-
+        $this->createTable('user', [
+            'id' => $this->primaryKey()->unsigned(),
+            'email' => $this->string()->unique()->notNull(),
+            'auth_key' => $this->string()->unique(),
+            'access_token' => $this->string()->unique(),
+            'refresh_token' => $this->string()->unique(),
+            'password' => $this->string(),
+            'password_reset_token' => $this->string()->unique(),
+            'updated_at' => $this->timestamp(),
+            'created_at' => $this->integer(),
+        ]);
+        
+         $this->insert('user', [
+            'email' => 'mb.fizyka@gmail.com',
+            'password' => Yii::$app->getSecurity()->generatePasswordHash('polok91'),
+        ]);
     }
 
     public function safeDown()
     {
-        echo "m170505_104039_create_tables cannot be reverted.\n";
+        $this->delete('user', ['id' => 1]);
+        $this->dropTable('user');
 
         return false;
     }

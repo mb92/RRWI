@@ -23,9 +23,9 @@ $fieldOptions2 = [
 <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
 <?= $form
-    ->field($model, 'email', $fieldOptions1)
+    ->field($model, 'username', $fieldOptions1)
     ->label(false)
-    ->textInput(['placeholder' => $model->getAttributeLabel('email')]) ?>
+    ->textInput(['placeholder' => $model->getAttributeLabel('username')]) ?>
 
 <?= $form
     ->field($model, 'password', $fieldOptions2)
@@ -33,11 +33,12 @@ $fieldOptions2 = [
     ->passwordInput(['placeholder' => $model->getAttributeLabel('password')]) ?>
 
 <div class="row">
-    <div class="col-xs-8">
-        <?= $form->field($model, 'rememberMe')->checkbox() ?>
+    <div class="col-xs-6">
+        <?php echo Html::submitButton('Reset password', ['class' => 'btn btn-default btn-block btn-flat', 'name' => 'reset-button']) ?>
+        <?php //echo $form->field($model, 'rememberMe')->checkbox() ?>
     </div>
 
-    <div class="col-xs-4">
+    <div class="col-xs-6">
         <?= Html::submitButton('Sign in', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
     </div>
 </div>
@@ -45,5 +46,6 @@ $fieldOptions2 = [
 
 <?php ActiveForm::end(); ?>
 
-<?= Html::a('I forgot my password', ['request-password-reset']) ?>
+<?php //echo Html::a('I forgot my password', ['request-password-reset']); ?>
 <br>
+

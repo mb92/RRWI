@@ -18,8 +18,9 @@
         "yiisoft/yii2": ">=2.0.6@stable",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "kartik-v/yii2-mpdf": "*",
-        "yiisoft/yii2-imagine": "*"
+        "yiisoft/yii2-imagine": "*",
+        "jakim-pj/yii2-gii-adminlte2": "^1.0",
+        "jakim-pj/yii2-authserver": "^1.0@beta"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
