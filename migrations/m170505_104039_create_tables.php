@@ -15,13 +15,14 @@ class m170505_104039_create_tables extends Migration
             'refresh_token' => $this->string()->unique(),
             'password' => $this->string(),
             'password_reset_token' => $this->string()->unique(),
-            'updated_at' => $this->timestamp(),
-            'created_at' => $this->integer(),
+            'updated_at' => $this->timestamp()->defaultValue(mysqltime()),
+            'created_at' => $this->timestamp(),
         ]);
         
          $this->insert('user', [
             'email' => 'mb.fizyka@gmail.com',
             'password' => Yii::$app->getSecurity()->generatePasswordHash('polok91'),
+            'created_at' => mysqltime()
         ]);
     }
 

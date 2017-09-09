@@ -17,7 +17,6 @@ use yii\behaviors\TimestampBehavior;
  * @property string $password_reset_token
  * @property string $updated_at
  * @property string $created_at
- * @property string $user_role_id
  *
  * @property UserRole $userRole
  */
@@ -46,12 +45,10 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         return [
             [['email'], 'required'],
             [['updated_at'], 'safe'],
-            [['user_role_id', 'created_at'], 'integer'],
             [['email', 'auth_key', 'password', 'password_reset_token'], 'string', 'max' => 255],
             [['email'], 'unique'],
             [['auth_key'], 'unique'],
             [['password_reset_token'], 'unique'],
-            [['user_role_id'], 'exist', 'skipOnError' => true, 'targetClass' => UserRole::className(), 'targetAttribute' => ['user_role_id' => 'id']],
         ];
     }
 
@@ -68,7 +65,6 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             'password_reset_token' => 'Password Reset Token',
             'updated_at' => 'Updated At',
             'created_at' => 'Created At',
-            'user_role_id' => 'User Role ID',
         ];
     }
 
@@ -81,7 +77,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     {
         $this->password = \Yii::$app->security->generatePasswordHash($password);
         $this->password_reset_token = null;
-
+        $this->updated_at = mysqltime();
         return $this;
     }    
     

@@ -165,7 +165,7 @@ img.dt.img-circle {
     height: 60px;
 }
 
-.move-top-btn > a, .temp-top-btn > a {
+.move-top-btn > .btn, .temp-top-btn > .btn {
     margin:5px;
 }
 

@@ -11,7 +11,8 @@
         <li class="header">Settings:</li>
 
         <li><a href="#"><i class="fa fa-cogs"></i> <span>General</span></a></li>
-        <li><a href="#"><i class="fa fa-user-circle-o"></i> <span>Profile</span></a></li>
+        <li><a href="/admin/user/update?id=<?= Yii::$app->user->getId(); ?>"><i class="fa fa-user-circle-o"></i> <span>Change login</span></a></li>
+        <li><a href="/admin/user/changepassword?id=<?= Yii::$app->user->getId(); ?>"><i class="fa fa-key"></i> <span>Change password</span></a></li
         
         <li class="header">Additional info:</li>
 
