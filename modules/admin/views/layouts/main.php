@@ -65,7 +65,6 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrapper">
-
 <!-- HEADER ******************************************************************************************* -->
     <!-- Main Header -->
     <header class="main-header">
@@ -91,7 +90,8 @@ AppAsset::register($this);
         <?php include('header.php'); ?>
         </section>
 
-        <!-- Main content -->
+        <!-- Main content --><div id="loading"></div>
+
         <section id="main-content" class="content">
             <?= $content ?>
         </section>

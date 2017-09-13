@@ -8,12 +8,13 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\helpers\FileHelper;
 /**
  * SettingsController implements the CRUD actions for Settings model.
  */
 class SettingsController extends Controller
 {
+    protected $fileName = "_printer_on.txt";
     /**
      * @inheritdoc
      */
@@ -86,8 +87,10 @@ class SettingsController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             // return $this->redirect(['view', 'id' => $model->id]);
+            
             $this->redirect(\Yii::$app->urlManager->createUrl("admin/settings"));
         } else {
+            echo "<script>localStorage.clear();</script>";
             return $this->render('update', [
                 'model' => $model,
             ]);
@@ -122,4 +125,44 @@ class SettingsController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
+//CONTROLL POWER ADAPTER
+    public function actionTurnOn() 
+    {
+        // vdd(FileHelper::findFiles(Yii::getAlias('@app/temp'), 'test.txt'));
+        // $fileName = "_printer_on.txt";
+        // vdd($this->fileName);
+        if (file_exists(Yii::getAlias('@app/temp'.'/'.$this->fileName))) {
+           return Yii::$app->session->setFlash('success', 'Printer is running');
+        }
+
+        // Get home path where are necessary dirs on files
+        $homePath = Settings::getHomeRrwiPath()->value;
+        if ($homePath[strlen($homePath)-1] != "/") $homePath = $homePath."/";
+
+        //create file in temp 
+        $fp = fopen($this->fileName,"wb");
+        fwrite($fp,mysqltime());
+        fclose($fp);
+ 
+        return Yii::$app->session->setFlash('success', 'Power on');
+    }
+
+
+    public function actionTurnOff() 
+    {
+        if (!file_exists(Yii::getAlias('@app/temp'.'/'.$this->fileName))) {
+           return Yii::$app->session->setFlash('success', 'Printer is not running');
+        }
+        // Get home path where are necessary dirs on files
+        $homePath = Settings::getHomeRrwiPath()->value;
+        if ($homePath[strlen($homePath)-1] != "/") $homePath = $homePath."/";
+        {
+        //create file in temp 
+            unlink(Yii::getAlias('@app/temp'.'/'.$this->fileName));
+            return Yii::$app->session->setFlash('success', 'Power off');
+        }
+    }
+
 }

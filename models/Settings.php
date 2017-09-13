@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use yii\db\BaseActiveRecord;
 use Yii;
 
 /**
@@ -51,5 +52,64 @@ class Settings extends \yii\db\ActiveRecord
             'value' => Yii::t('app', 'Value'),
             'description' => Yii::t('app', 'Description'),
         ];
+    }
+
+    public static function loadSettingsToLocalStorage() 
+    {
+        $list = Self::find()->select(['slug', 'value'])->all();
+
+        foreach ($list as $l) {
+            echo '<script>localStorage.setItem("'. $l->slug.'", "'.$l->value .'");</script>';
+        }
+
+        Yii::$app->session->setFlash('settings', 'loaded');
+    }
+
+    public static function checkAdapterStatus() {
+        return Self::find()->select('value')->where(['slug' => 'external_power_adapter'])->one()->value;
+    }
+
+    public static function getHomeRrwiPath() {
+        return Self::find()->select('value')->where(['slug' => 'home_path'])->one();
+    }
+
+    public static function getCameraUrl() 
+    {
+        $baseUrl = Self::find()->select('value')->where(['slug' => 'base_url'])->one()->value;
+        $camPort = Self::find()->select('value')->where(['slug' => 'port_rrwi-cam'])->one()->value;
+
+        return $baseUrl.':'.$camPort;
+    }
+    public static function loadControlParams() 
+    {
+        $cookies = Yii::$app->request->cookies;
+        if (!is_null($cookies->getValue('loadParams'))) {
+            return true;
+        }
+
+        echo '<script>localStorage.setItem("_turnOn", "");</script>';
+        echo '<script>localStorage.setItem("_startPrinting", "");</script>';
+        echo '<script>localStorage.setItem("_hotend", "");</script>';
+        echo '<script>localStorage.setItem("_bed", "");</script>';
+
+        echo '<script>localStorage.setItem("moveStepX+", "10");</script>';
+        echo '<script>localStorage.setItem("moveStepX-", "-10");</script>';
+
+        echo '<script>localStorage.setItem("moveStepY+", "10");</script>';
+        echo '<script>localStorage.setItem("moveStepY-", "-10");</script>';
+
+        echo '<script>localStorage.setItem("moveStepZ+", "5");</script>';
+        echo '<script>localStorage.setItem("moveStepZ-", "-5");</script>';
+
+        echo '<script>localStorage.setItem("moveStepE+", "2");</script>';
+        echo '<script>localStorage.setItem("moveStepE-", "-2");</script>';
+
+        $cookies = Yii::$app->response->cookies;
+        $cookies->add(new \yii\web\Cookie([
+            'name' => 'loadParams',
+            'value' => 'loaded',
+        ]));
+
+        return true;
     }
 }

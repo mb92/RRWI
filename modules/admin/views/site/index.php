@@ -17,15 +17,22 @@ $('#bed-temp').on('input', function() {
 });
 </script>
 
+<?php if (!is_null($messages)) { ?>
+<div class="row">
+    <div class="col-sm-12">
+        <?= $messages ?>
+    </div>
+</div>
+<?php } ?>
 
 <div class="row">
     <div class="col-md-12">
         <div class="top-btns">
             <button type="button"  class="btn btn-lg btn-primary"><i class="fa fa-upload"></i> Upload file</button>
             
-            <button type="button"  class="btn btn-lg btn-danger pull-right" ><i class="fa fa-exclamation-triangle"></i> Emergency Stop! </button>
+            <button type="button"  id="btn-emergency" class="btn btn-lg btn-danger pull-right" onClick="emergencyStop();"><i class="fa fa-exclamation-triangle"></i> Emergency Stop! </button>
             <button type="button"  id="btn-turn-on-printer" class="btn btn-lg btn-success pull-right" onClick="turnOnPrinter();"><i class="fa fa-toggle-on"></i> Turn on printer</button>
-            <button type="button"  id="btn-turn-off-printer" class="btn btn-lg btn-warning pull-right" onClick="turnOffPrinter();"style="display:none;"><i class="fa fa-toggle-off"></i> Turn off printer</button>
+            <button type="button"  id="btn-turn-off-printer" class="btn btn-lg btn-warning pull-right" onClick="turnOffPrinter();" style="display:none;"><i class="fa fa-toggle-off"></i> Turn off printer</button>
         </div>
     </div>
 </div>
@@ -41,8 +48,8 @@ $('#bed-temp').on('input', function() {
             </div>
             <div class="box-body text-center">
                 <div class="move-top-btn">
-                    <button type="button"  class="btn btn-danger pull-left"><i class="fa fa-stop-circle-o"></i> Stop motors</button>
-                    <button type="button"  class="btn btn-warning pull-left"><i class="fa fa-refresh"></i> Reset printer</button>
+                    <button type="button" onClick="sendAjax('off', 'get')" class="btn btn-danger pull-left"><i class="fa fa-stop-circle-o"></i> Stop motors</button>
+                    <button type="button" onClick="sendAjax('reset', 'get')" class="btn btn-warning pull-left"><i class="fa fa-refresh"></i> Reset printer</button>
                     <button type="button"  id="btn-printing-stop" class="btn btn-danger pull-right" onClick="printing('stop');" style="display:none"><i class="fa fa-stop"></i> Stop</button>
                     <button type="button"  id="btn-printing-play" class="btn btn-success pull-right" onClick="printing('play');"><i class="fa fa-play"></i> Start printing!</button>
                     <button type="button"  id="btn-printing-pause" class="btn btn-default pull-right" onClick="printing('pause');" style="display:none"><i class="fa fa-pause"></i> Pause</button>
@@ -61,14 +68,14 @@ $('#bed-temp').on('input', function() {
                             <b>Bed:</b> xx <sup>o</sup>C
                         </td>
                         <td align="center" width="40px">
-                            <input type="number" onchange="setLS('moveStepY+', $(this).val())" value="10" id="move-y-input-up" class="input-control"/><br/>
+                            <input type="number" onchange="setLS('moveStepY+', $(this).val())" value="10" min="0" max="200" id="move-y-input-up" class="input-control"/><br/>
                             <button type="button" onClick="moveAxis('Y', '+')" class="btn btn-control bg-olive"><i class="fa fa-arrow-up fa-move-right-icon"></i><sub>y</sub></button>
                         </td>
                         <td align="left" width="110px">
                             <div>
-                                <input type="number" value="5" id="move-z-input-up" class="input-control"/>
+                                <input type="number" value="5" onchange="setLS('moveStepZ+', $(this).val())" min="0" max="280" id="move-z-input-up" class="input-control"/>
                             </div>
-                            <button type="button"  class="btn btn-control bg-orange"><i class="fa fa-arrow-up fa-move-right-icon"></i><sub>z</sub></button>
+                            <button type="button" onClick="moveAxis('Z', '+')" class="btn btn-control bg-orange"><i class="fa fa-arrow-up fa-move-right-icon"></i><sub>z</sub></button>
                         </td>
                         <td align="center" width="40px">
                             <div class="input-align-center">
@@ -80,13 +87,13 @@ $('#bed-temp').on('input', function() {
                     
                     <tr>
                             <td align="right">
-                                <input type="number" value="-10" id="move-x-input-dn" class="input-control"/>
-                                <button type="button"  class="btn btn-control btn-info"><i class="fa fa-arrow-left"></i><sub>x</sub></button>
+                                <input type="number" value="-10" onchange="setLS('moveStepX-', $(this).val())" min="-200" max="0" id="move-x-input-dn" class="input-control"/>
+                                <button type="button" onClick="moveAxis('X', '-')" class="btn btn-control btn-info"><i class="fa fa-arrow-left"></i><sub>x</sub></button>
                             </td>
                             <td align="center"></td>
                             <td align="left">
-                                <button type="button"  class="btn btn-control btn-info"><i class="fa fa-arrow-right"></i><sub>x</sub></button>
-                                <input type="number" value="10" id="move-x-input-up" class="input-control"/>
+                                <button type="button" onClick="moveAxis('X', '+')" class="btn btn-control btn-info"><i class="fa fa-arrow-right"></i><sub>x</sub></button>
+                                <input type="number" onchange="setLS('moveStepX+', $(this).val())" value="10" min="0" max="200" id="move-x-input-up" class="input-control"/>
                             </td>
                             <td valign="middle" style="padding-top: 24px;">
                                 Extruder
@@ -96,19 +103,19 @@ $('#bed-temp').on('input', function() {
                         <tr>
                             <td></td>
                             <td align="center">
-                                <button type="button"  class="btn btn-control bg-olive"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>y</sub></button><br/>                                
-                                <input type="number" value="-10" id="move-y-input-dn" class="input-control"/>
+                                <button type="button" onClick="moveAxis('Y', '-')" class="btn btn-control bg-olive"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>y</sub></button><br/>                                
+                                <input type="number" onchange="setLS('moveStepY-', $(this).val())" value="-10"  min="-200" max="0" id="move-y-input-dn" class="input-control"/>
                             </td>
                             <td align="left" width="132px">
-                                <button type="button"  class="btn btn-control bg-orange"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>z</sub></button>
+                                <button type="button" onClick="moveAxis('Z', '-')" class="btn btn-control bg-orange"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>z</sub></button>
                                 <div >
-                                    <input type="number" value="-5" id="move-z-input-dn" class="input-control"/>
+                                    <input type="number" value="-5" onchange="setLS('moveStepZ-', $(this).val())" min="-250" max="0" id="move-z-input-dn" class="input-control"/>
                                 </div>
                             </td>
                             <td align="center">
-                                <button type="button"  class="btn btn-control bg-maroon"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>e</sub></button>
+                                <button type="button" onClick="moveAxis('E', '-')" class="btn btn-control bg-maroon"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>e</sub></button>
                                 <div class="input-align-center">
-                                    <input type="number" value="-2" id="move-e-input-dn" class="input-control"/>
+                                    <input type="number" onchange="setLS('moveStepE-', $(this).val())" value="-2" id="move-e-input-dn" class="input-control"/>
                                 </div>
                             </td>
                         </tr>
@@ -135,7 +142,7 @@ $('#bed-temp').on('input', function() {
               </div>
             </div>
             <div class="box-body text-center">
-              <iframe class="videostreaming" src="http://google.pl" scrolling="no"></iframe>
+              <iframe class="videostreaming" src="<?= $camera ?>" scrolling="no"></iframe>
             </div>
             <!-- /.box-body -->
           </div>
@@ -184,7 +191,7 @@ $('#bed-temp').on('input', function() {
                                     <label>Bed:</label> 
                                     <input oninput="rangeInputBedTemp.value=amount.value" id="box" type="text" value="0" name="amount" for="rangeInputBedTemp" oninput="amount.value=rangeInputBedTemp.value" class="input-control" readonly/>
                                     <sup> o</sup>C
-                                    <input id="range-bedtemp" type="range" onchange="setLS('bedSetTemp', $(this).val())" name="rangeInputBedTemp" min="0" step="1" max="120" value="0" class="white" oninput="amount.value=rangeInputBedTemp.value" />
+                                    <input id="range-bedtemp" type="range" onchange="setLS('bedSetTemp', $(this).val())" name="rangeInputBedTemp" min="0" step="1" max="100" value="0" class="white" oninput="amount.value=rangeInputBedTemp.value" />
                                 </form>
                             </td>
                             <td>
@@ -200,6 +207,10 @@ $('#bed-temp').on('input', function() {
             </div>
         </div>
     </div>
+
+    <div id="getinfo" class="col-md-6 col-sm-12">
+        <button type"button" onclick="getInfo();">Get info</button>
+    </div>
 </div>
 
 
@@ -213,28 +224,53 @@ $('#bed-temp').on('input', function() {
     console.log(dd);
 }
 
-
 function setLS(name, val) {
     var dd = localStorage.setItem(name, val);
     console.log(dd);
 }
 
-function getLS(name, val) {
-    var dd = localStorage.getItem(name, val);
+function getLS(name) {
+    var dd = localStorage.getItem(name);
     console.log(dd);
     return dd;
 }
-//$(document).on('#bed-temp change', '#bed-temp', function() {
-//    $('#text-bed-temp').html( $(this).val() );
-//});    
+
+function getInfo() {
+    var message = sendAjax('gettemp', 'get');
+    $('#getinfo').append('<p>' + message + '</p>');
+    console.log(message);
+}
+
+$( window ).load(function() {
+    var adapter = getLS('external_power_adapter');
+    console.log(adapter);
+    if (!adapter) {
+        $('#btn-turn-on-printer').css('display', 'none');
+        $('#btn-emergency').css('display', 'none');
+    } 
+    
+    var turnOn = getLS('_turnOn');
+    if (turnOn == 1) {
+        $('#btn-turn-on-printer').css('display', 'none');
+        $('#btn-turn-off-printer').css('display', 'block');
+    }
+    
+    sendAjax('gettemp', 'get');
+    // console.log(sendAjax('status', 'get'));
+});
 
 
+// if (typeof console  != "undefined") 
+//     if (typeof console.log != 'undefined')
+//         console.olog = console.log;
+//     else
+//         console.olog = function() {};
 
-//    
-//function readVal() {
-//    document.getElementById('text-bed-temp').value = document.getElementById('bed-temp').value;
-//    return console.log('Works');
-//}   
+// console.log = function(message) {
+//     console.olog(message);
+//     $('#debugDiv').append('<p>' + message + '</p>');
+// };
+// console.error = console.debug = console.info =  console.log  
 
 </script>
 

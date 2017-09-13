@@ -14,7 +14,7 @@ use yii\imagine\Image;
 
 use app\models\LoginForm;
 use app\models\ContactForm;
-
+use app\models\Settings;
 
 class SiteController extends Controller
 {
@@ -69,7 +69,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index', []);
+        Settings::loadControlParams();
+
+        if (!Yii::$app->session->hasFlash('settings')) 
+        {
+            Settings::loadSettingsToLocalStorage();
+        }
+
+        $camUrl = Settings::getCameraUrl();
+        $messages = Yii::$app->session->getFlash('success');
+                
+        return $this->render('index', ['camera' => $camUrl, 'messages' => $messages]);
     }
 
     /**

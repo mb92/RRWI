@@ -9,13 +9,50 @@ console.log("Panel control");
 
 
 function turnOnPrinter() {
-    $('#btn-turn-on-printer').css('display', 'none');
-    $('#btn-turn-off-printer').css('display', 'block');
+    sendAjax('turnOn', 'get');
+    $.ajax('/admin/settings/turn-on',{
+        method: 'get'
+    }).then(function(resp){
+        console.log(resp);
+        setLS('_turnOn', 1);
+        $('#btn-turn-on-printer').css('display', 'none');
+        $('#btn-turn-off-printer').css('display', 'block');
+        
+    }).fail(function(err){
+        console.log(err);
+    });
 }
 
 function turnOffPrinter() {
-    $('#btn-turn-on-printer').css('display', 'block');
-    $('#btn-turn-off-printer').css('display', 'none');
+        sendAjax('turnOff', 'get');
+        $.ajax('/admin/settings/turn-off',{
+        method: 'get'
+    }).then(function(resp){
+        console.log(resp);
+        setLS('_turnOn', 0);
+        $('#btn-turn-on-printer').css('display', 'block');
+        $('#btn-turn-off-printer').css('display', 'none');
+        
+    }).fail(function(err){
+        console.log(err);
+    });
+}
+
+function emergencyStop() {
+    var baseUrl = getLS('base_url') + "/";
+            $('#btn-turn-off-printer').css('display', 'none');
+        $('#btn-turn-on-printer').css('display', 'block');
+    setLS('_turnOn', 0);
+    $.ajax(baseUrl + 'rrwi/stop.php',{
+        method: 'get'
+    }).then(function(){
+//        console.log(resp);
+        
+//        sendAjax('reset', 'get');
+
+    }).fail(function(err){
+        console.log(err);
+    });
 }
 
 function printing(action) {
@@ -41,18 +78,16 @@ function printing(action) {
 
 
 function sendAjax(url, method) {
-    var baseUrl = "http://192.168.1.6:3000/";
+    var baseUrl = getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
     $.ajax(baseUrl+url,{
         dataType: 'json',
         method: method
     }).then(function(resp){
         console.log(resp);
-    }).catch(function(err){
+    }).fail(function(err){
         console.log(err);
     });
 }
-
-
 
 function setHotendTemp() {
     var val = getLS('hotendSetTemp');

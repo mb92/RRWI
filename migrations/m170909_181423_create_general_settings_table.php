@@ -49,6 +49,30 @@ class m170909_181423_create_general_settings_table extends Migration
             ]);
             $id++;
 
+        $param = 'External power adapter';
+        $val = "true";
+        $desc = "Adapter with relay for power control. Allows you to remotely control the printer power.";
+            $this->insert($tableName, [
+                'id' => $id,
+                'param' => $param,
+                'slug' => slug($param),
+                'value' => $val,
+                'description' => $desc
+            ]);
+            $id++;
+            
+        // $param = 'Auto power';
+        // $val = "true";
+        // $desc = "Automatically power up the printer at logIn.";
+        //     $this->insert($tableName, [
+        //         'id' => $id,
+        //         'param' => $param,
+        //         'slug' => slug($param),
+        //         'value' => $val,
+        //         'description' => $desc
+        //     ]);
+        //     $id++;
+
         $param = 'Api doc';
         $val = "http://192.168.1.6/api";
         $desc = "Link to the documentation of api node application.";
@@ -73,9 +97,9 @@ class m170909_181423_create_general_settings_table extends Migration
             ]);
             $id++;
 
-        $param = 'Upload file location';
-        $val = "/home/pi/rrwi/tmp";
-        $desc = "Destination path for upload files for printing (*.gcode)";
+        $param = 'Home path';
+        $val = "/home/pi/rrwi";
+        $desc = "Home dir on raspi with directory of project rrwi";
             $this->insert($tableName, [
                 'id' => $id,
                 'param' => $param,
@@ -109,93 +133,93 @@ class m170909_181423_create_general_settings_table extends Migration
             ]);
             $id++;
 
-        $param = 'X len';
-        $val = "200";
-        $desc = "Maximum length of the X axis [mm]";
-            $this->insert($tableName, [
-                'id' => $id,
-                'param' => $param,
-                'slug' => slug($param),
-                'value' => $val,
-                'description' => $desc
-            ]);
-            $id++;
+        // $param = 'X len';
+        // $val = "200";
+        // $desc = "Maximum length of the X axis [mm]";
+        //     $this->insert($tableName, [
+        //         'id' => $id,
+        //         'param' => $param,
+        //         'slug' => slug($param),
+        //         'value' => $val,
+        //         'description' => $desc
+        //     ]);
+        //     $id++;
 
-        $param = 'Y len';
-        $val = "200";
-        $desc = "Maximum length of the Y axis [mm]";
-            $this->insert($tableName, [
-                'id' => $id,
-                'param' => $param,
-                'slug' => slug($param),
-                'value' => $val,
-                'description' => $desc
-            ]);
-            $id++;
-
-
-        $param = 'Z len';
-        $val = "200";
-        $desc = "Maximum length of the Z axis [mm]";
-            $this->insert($tableName, [
-                'id' => $id,
-                'param' => $param,
-                'slug' => slug($param),
-                'value' => $val,
-                'description' => $desc
-            ]);
-            $id++;
+        // $param = 'Y len';
+        // $val = "200";
+        // $desc = "Maximum length of the Y axis [mm]";
+        //     $this->insert($tableName, [
+        //         'id' => $id,
+        //         'param' => $param,
+        //         'slug' => slug($param),
+        //         'value' => $val,
+        //         'description' => $desc
+        //     ]);
+        //     $id++;
 
 
-        $param = 'E step';
-        $val = "2";
-        $desc = "Default length of step E axis [mm]";
-            $this->insert($tableName, [
-                'id' => $id,
-                'param' => $param,
-                'slug' => slug($param),
-                'value' => $val,
-                'description' => $desc
-            ]);
-            $id++;
+        // $param = 'Z len';
+        // $val = "200";
+        // $desc = "Maximum length of the Z axis [mm]";
+        //     $this->insert($tableName, [
+        //         'id' => $id,
+        //         'param' => $param,
+        //         'slug' => slug($param),
+        //         'value' => $val,
+        //         'description' => $desc
+        //     ]);
+        //     $id++;
 
 
-        $param = 'X step';
-        $val = "10";
-        $desc = "Default length of step X axis [mm]";
-            $this->insert($tableName, [
-                'id' => $id,
-                'param' => $param,
-                'slug' => slug($param),
-                'value' => $val,
-                'description' => $desc
-            ]);
-            $id++;
-
-        $param = 'Y step';
-        $val = "10";
-        $desc = "Default length of step Y axis [mm]";
-            $this->insert($tableName, [
-                'id' => $id,
-                'param' => $param,
-                'slug' => slug($param),
-                'value' => $val,
-                'description' => $desc
-            ]);
-            $id++;
+        // $param = 'E step';
+        // $val = "2";
+        // $desc = "Default length of step E axis [mm]";
+        //     $this->insert($tableName, [
+        //         'id' => $id,
+        //         'param' => $param,
+        //         'slug' => slug($param),
+        //         'value' => $val,
+        //         'description' => $desc
+        //     ]);
+        //     $id++;
 
 
-        $param = 'Z step';
-        $val = "5";
-        $desc = "Default length of step Z axis [mm]";
-            $this->insert($tableName, [
-                'id' => $id,
-                'param' => $param,
-                'slug' => slug($param),
-                'value' => $val,
-                'description' => $desc
-            ]);
-            $id++;
+        // $param = 'X step';
+        // $val = "10";
+        // $desc = "Default length of step X axis [mm]";
+        //     $this->insert($tableName, [
+        //         'id' => $id,
+        //         'param' => $param,
+        //         'slug' => slug($param),
+        //         'value' => $val,
+        //         'description' => $desc
+        //     ]);
+        //     $id++;
+
+        // $param = 'Y step';
+        // $val = "10";
+        // $desc = "Default length of step Y axis [mm]";
+        //     $this->insert($tableName, [
+        //         'id' => $id,
+        //         'param' => $param,
+        //         'slug' => slug($param),
+        //         'value' => $val,
+        //         'description' => $desc
+        //     ]);
+        //     $id++;
+
+
+        // $param = 'Z step';
+        // $val = "5";
+        // $desc = "Default length of step Z axis [mm]";
+        //     $this->insert($tableName, [
+        //         'id' => $id,
+        //         'param' => $param,
+        //         'slug' => slug($param),
+        //         'value' => $val,
+        //         'description' => $desc
+        //     ]);
+        //     $id++;
 
     }
 
