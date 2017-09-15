@@ -47,7 +47,7 @@
                     "web/assets": "0755",
                     "yii": "0755",
                     "upload": "0755",
-                    "temp": "0755",
+                    "temp": "0755"
                 }
             ],
             "generateCookieValidationKey": [

@@ -6,15 +6,15 @@ defined('YII_ENV') or define('YII_ENV', 'dev');
 
 //header("Access-Control-Allow-Origin: *");
 
-if (!file_exists("../temp")) 
-{
-	mkdir("../temp");
-}
-
-if (!file_exists("../upload")) 
-{
-	mkdir("../upload");
-}
+//if (!file_exists("../temp")) 
+//{
+//	mkdir("../temp");
+//}
+//
+//if (!file_exists("../upload")) 
+//{
+//	mkdir("../upload");
+//}
 
 
 

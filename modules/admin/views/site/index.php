@@ -142,7 +142,7 @@ $('#bed-temp').on('input', function() {
               </div>
             </div>
             <div class="box-body text-center">
-              <iframe class="videostreaming" src="<?= $camera ?>" scrolling="no"></iframe>
+              <iframe class="videostreaming" id="camera" src="<?= $camera ?>" scrolling="no"></iframe>
             </div>
             <!-- /.box-body -->
           </div>
@@ -210,6 +210,7 @@ $('#bed-temp').on('input', function() {
 
     <div id="getinfo" class="col-md-6 col-sm-12">
         <button type"button" onclick="getInfo();">Get info</button>
+        <button type"button" onclick="sendAjax('', 'get');">test</button>
     </div>
 </div>
 
@@ -255,7 +256,7 @@ $( window ).load(function() {
         $('#btn-turn-off-printer').css('display', 'block');
     }
     
-    sendAjax('gettemp', 'get');
+    $( "#camera" ).contents().find( "body" ).css( "background-color", "#BADA55" );
     // console.log(sendAjax('status', 'get'));
 });
 

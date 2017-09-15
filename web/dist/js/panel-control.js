@@ -83,7 +83,7 @@ function sendAjax(url, method) {
         dataType: 'json',
         method: method
     }).then(function(resp){
-        console.log(resp);
+        console.log('cycki', resp);
     }).fail(function(err){
         console.log(err);
     });
