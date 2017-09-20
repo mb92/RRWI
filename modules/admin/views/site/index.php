@@ -31,8 +31,8 @@ $('#bed-temp').on('input', function() {
             <button type="button"  class="btn btn-lg btn-primary"><i class="fa fa-upload"></i> Upload file</button>
             
             <button type="button"  id="btn-emergency" class="btn btn-lg btn-danger pull-right" onClick="emergencyStop();"><i class="fa fa-exclamation-triangle"></i> Emergency Stop! </button>
-            <button type="button"  id="btn-turn-on-printer" class="btn btn-lg btn-success pull-right" onClick="turnOnPrinter();"><i class="fa fa-toggle-on"></i> Turn on printer</button>
-            <button type="button"  id="btn-turn-off-printer" class="btn btn-lg btn-warning pull-right" onClick="turnOffPrinter();" style="display:none;"><i class="fa fa-toggle-off"></i> Turn off printer</button>
+            <button type="button"  id="btn-turn-on-printer" class="btn btn-lg btn-success pull-right" onClick="turnOnPrinter();"><i class="fa fa-toggle-off"></i> Turn on printer</button>
+            <button type="button"  id="btn-turn-off-printer" class="btn btn-lg btn-warning pull-right" onClick="turnOffPrinter();" style="display:none;"><i class="fa fa-toggle-on"></i> Turn off printer</button>
         </div>
     </div>
 </div>
@@ -142,7 +142,7 @@ $('#bed-temp').on('input', function() {
               </div>
             </div>
             <div class="box-body text-center">
-              <iframe class="videostreaming" id="camera" src="<?= $camera ?>" scrolling="no"></iframe>
+              <iframe class="videostreaming" id="camera" src="<?php echo $camera; ?>" scrolling="no"></iframe>
             </div>
             <!-- /.box-body -->
           </div>
@@ -166,9 +166,9 @@ $('#bed-temp').on('input', function() {
                             <td colspan="2">
                                 <div class="temp-top-btn pull-left">
                                     <label>Turn off: </label>
-                                    <button type="button" onClick="sendAjax('settemp/0', 'post')" class="btn btn-default text-light-blue">Hotend</button>
-                                    <button type="button" onClick="sendAjax('bedtemp/0', 'post')" class="btn btn-default text-green">Bed</button>
-                                    <button type="button" onClick="sendAjax('cooldown', 'get')" class="btn btn-default text-red">All</button>
+                                    <button type="button" onClick="sendAjax('settemp/0', 'post');setLS('_hotend', 0);" class="btn btn-default text-light-blue">Hotend</button>
+                                    <button type="button" onClick="sendAjax('bedtemp/0', 'post');setLS('_bed', 0);" class="btn btn-default text-green">Bed</button>
+                                    <button type="button" onClick="sendAjax('cooldown', 'get');setLS('_hotend', 0);setLS('_bed', 0);" class="btn btn-default text-red">All</button>
                                 </div>
                             </td>
                         </tr>
@@ -178,7 +178,7 @@ $('#bed-temp').on('input', function() {
                                     <label>Hotend: </label>
                                     <input oninput="rangeInputHotend.value=amount.value" id="box" type="text" value="0" name="amount" for="rangeInputHotend" oninput="amount.value=rangeInputHotend.value" class="input-control" readonly/>
                                     <sup> o</sup>C    
-                                    <input id="range-hotend" type="range" onchange="setLS('hotendSetTemp', $(this).val())" name="rangeInputHotend" min="0" step="1" max="250" value="0" class="white" oninput="amount.value=rangeInputHotend.value">
+                                    <input id="range-hotend" type="range" onchange="setLS('hotendSetTemp', $(this).val()); setLS('_hotend', $(this).val());" name="rangeInputHotend" min="0" step="1" max="250" value="0" class="white" oninput="amount.value=rangeInputHotend.value">
                                 </form>
                             </td>
                             <td width="60px">
@@ -191,7 +191,7 @@ $('#bed-temp').on('input', function() {
                                     <label>Bed:</label> 
                                     <input oninput="rangeInputBedTemp.value=amount.value" id="box" type="text" value="0" name="amount" for="rangeInputBedTemp" oninput="amount.value=rangeInputBedTemp.value" class="input-control" readonly/>
                                     <sup> o</sup>C
-                                    <input id="range-bedtemp" type="range" onchange="setLS('bedSetTemp', $(this).val())" name="rangeInputBedTemp" min="0" step="1" max="100" value="0" class="white" oninput="amount.value=rangeInputBedTemp.value" />
+                                    <input id="range-bedtemp" type="range" onchange="setLS('bedSetTemp', $(this).val());setLS('_bed', $(this).val());" name="rangeInputBedTemp" min="0" step="1" max="100" value="0" class="white" oninput="amount.value=rangeInputBedTemp.value" />
                                 </form>
                             </td>
                             <td>

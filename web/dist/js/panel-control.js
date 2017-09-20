@@ -10,7 +10,7 @@ console.log("Panel control");
 
 function turnOnPrinter() {
     sendAjax('turnOn', 'get');
-    $.ajax('/admin/settings/turn-on',{
+    $.ajax('admin/settings/turn-on',{
         method: 'get'
     }).then(function(resp){
         console.log(resp);
@@ -25,13 +25,15 @@ function turnOnPrinter() {
 
 function turnOffPrinter() {
         sendAjax('turnOff', 'get');
-        $.ajax('/admin/settings/turn-off',{
+        $.ajax('admin/settings/turn-off',{
         method: 'get'
     }).then(function(resp){
         console.log(resp);
         setLS('_turnOn', 0);
-        $('#btn-turn-on-printer').css('display', 'block');
+        setLS('_hotend', 0);
+        setLS('_bed', 0);
         $('#btn-turn-off-printer').css('display', 'none');
+        $('#btn-turn-on-printer').css('display', 'block');
         
     }).fail(function(err){
         console.log(err);
@@ -39,20 +41,29 @@ function turnOffPrinter() {
 }
 
 function emergencyStop() {
+    sendAjax('cooldown', 'get');
+    sendAjax('off', 'get');
     var baseUrl = getLS('base_url') + "/";
-            $('#btn-turn-off-printer').css('display', 'none');
+        $('#btn-turn-off-printer').css('display', 'none');
         $('#btn-turn-on-printer').css('display', 'block');
-    setLS('_turnOn', 0);
-    $.ajax(baseUrl + 'rrwi/stop.php',{
+        setLS('_turnOn', 0);
+        setLS('_hotend', 0);
+        setLS('_bed', 0);
+    $.ajax('admin/settings/turn-off',{
         method: 'get'
-    }).then(function(){
-//        console.log(resp);
-        
-//        sendAjax('reset', 'get');
-
+    }).then(function(resp){
+        console.log(resp);   
+        $.ajax(baseUrl + 'rrwi/stop.php',{
+            method: 'get'
+        }).then(function(){
+            console.log('Adapter was turned off');
+        }).fail(function(err){
+            console.log(err);
+        });  
     }).fail(function(err){
         console.log(err);
     });
+
 }
 
 function printing(action) {
@@ -83,7 +94,7 @@ function sendAjax(url, method) {
         dataType: 'json',
         method: method
     }).then(function(resp){
-        console.log('cycki', resp);
+        console.log(resp);
     }).fail(function(err){
         console.log(err);
     });
@@ -93,12 +104,32 @@ function setHotendTemp() {
     var val = getLS('hotendSetTemp');
     sendAjax('settemp/'+ val, 'post');
     console.log("Heating hotend to " + val + "deg of C");
+
+    $.ajax('admin/settings/set-hotend-temp?temp='+val,{
+        method: 'get'
+    }).then(function(resp){
+        console.log(resp);
+        setLS('_hotend', val);
+        
+    }).fail(function(err){
+        console.log(err);
+    });
 }
 
 function setBedTemp() {
     var val = getLS('bedSetTemp');
     sendAjax('bedtemp/'+ val, 'post');
     console.log("Heating bed to " + val + "deg of C");
+    
+    $.ajax('admin/settings/set-bed-temp?temp='+val,{
+        method: 'get'
+    }).then(function(resp){
+        console.log(resp);
+        setLS('_bed', val);
+        
+    }).fail(function(err){
+        console.log(err);
+    });
 }
 
 function hotendOff() {

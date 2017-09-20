@@ -71,11 +71,11 @@ class SiteController extends Controller
     {
         Settings::loadControlParams();
 
-        if (!Yii::$app->session->hasFlash('settings')) 
-        {
-            Settings::loadSettingsToLocalStorage();
-        }
-
+//        if (!Yii::$app->session->hasFlash('settings')) 
+//        {
+//            Settings::loadSettingsToLocalStorage();
+//        }
+//
         $camUrl = Settings::getCameraUrl();
         $messages = Yii::$app->session->getFlash('success');
                 

@@ -4,6 +4,7 @@ namespace app\models;
 
 use yii\db\BaseActiveRecord;
 use Yii;
+use app\models\Sessions;
 
 /**
  * This is the model class for table "settings".
@@ -54,17 +55,6 @@ class Settings extends \yii\db\ActiveRecord
         ];
     }
 
-    public static function loadSettingsToLocalStorage() 
-    {
-        $list = Self::find()->select(['slug', 'value'])->all();
-
-        foreach ($list as $l) {
-            echo '<script>localStorage.setItem("'. $l->slug.'", "'.$l->value .'");</script>';
-        }
-
-        Yii::$app->session->setFlash('settings', 'loaded');
-    }
-
     public static function checkAdapterStatus() {
         return Self::find()->select('value')->where(['slug' => 'external_power_adapter'])->one()->value;
     }
@@ -80,17 +70,33 @@ class Settings extends \yii\db\ActiveRecord
 
         return $baseUrl.':'.$camPort;
     }
+    
+    public static function loadSettingsFromDB() 
+    {
+        $list = Self::find()->select(['slug', 'value'])->all();
+
+        foreach ($list as $l) {
+            echo '<script>localStorage.setItem("'. $l->slug.'", "'.$l->value .'");</script>';
+        }
+        
+//        Self::loadControlParams();
+        
+        Yii::$app->session->setFlash('settings', 'loaded');
+    }
+    
     public static function loadControlParams() 
     {
         $cookies = Yii::$app->request->cookies;
         if (!is_null($cookies->getValue('loadParams'))) {
             return true;
         }
-
-        echo '<script>localStorage.setItem("_turnOn", "");</script>';
-        echo '<script>localStorage.setItem("_startPrinting", "");</script>';
-        echo '<script>localStorage.setItem("_hotend", "");</script>';
-        echo '<script>localStorage.setItem("_bed", "");</script>';
+        
+        $session = Sessions::getParams();
+        
+        echo '<script>localStorage.setItem("_turnOn", "'.$session['turnOn'].'");</script>';
+        echo '<script>localStorage.setItem("_startPrinting", "'.$session['printStart'].'");</script>';
+        echo '<script>localStorage.setItem("_hotend", "'.$session['hotendTemp'].'");</script>';
+        echo '<script>localStorage.setItem("_bed", "'.$session['bedTemp'].'");</script>';
 
         echo '<script>localStorage.setItem("moveStepX+", "10");</script>';
         echo '<script>localStorage.setItem("moveStepX-", "-10");</script>';
@@ -104,6 +110,9 @@ class Settings extends \yii\db\ActiveRecord
         echo '<script>localStorage.setItem("moveStepE+", "2");</script>';
         echo '<script>localStorage.setItem("moveStepE-", "-2");</script>';
 
+        Self::loadSettingsFromDB();
+
+        
         $cookies = Yii::$app->response->cookies;
         $cookies->add(new \yii\web\Cookie([
             'name' => 'loadParams',

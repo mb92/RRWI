@@ -4,6 +4,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use app\models\Settings;
+use app\models\Sessions;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -125,44 +126,57 @@ class SettingsController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-
-
+    
 //CONTROLL POWER ADAPTER
     public function actionTurnOn() 
     {
-        // vdd(FileHelper::findFiles(Yii::getAlias('@app/temp'), 'test.txt'));
-        // $fileName = "_printer_on.txt";
-        // vdd($this->fileName);
-        if (file_exists(Yii::getAlias('@app/temp'.'/'.$this->fileName))) {
-           return Yii::$app->session->setFlash('success', 'Printer is running');
-        }
-
-        // Get home path where are necessary dirs on files
-        $homePath = Settings::getHomeRrwiPath()->value;
-        if ($homePath[strlen($homePath)-1] != "/") $homePath = $homePath."/";
-
-        //create file in temp 
-        $fp = fopen($this->fileName,"wb");
-        fwrite($fp,mysqltime());
-        fclose($fp);
- 
-        return Yii::$app->session->setFlash('success', 'Power on');
+        $status = Sessions::updateParam(1, 'turnOn', 1);
+        
+        if ($status)
+            return Yii::$app->session->setFlash('success', 'Power on');
+        else
+            return Yii::$app->session->setFlash('error', 'Power cannot be turn on');
     }
 
 
     public function actionTurnOff() 
     {
-        if (!file_exists(Yii::getAlias('@app/temp'.'/'.$this->fileName))) {
-           return Yii::$app->session->setFlash('success', 'Printer is not running');
-        }
-        // Get home path where are necessary dirs on files
-        $homePath = Settings::getHomeRrwiPath()->value;
-        if ($homePath[strlen($homePath)-1] != "/") $homePath = $homePath."/";
-        {
-        //create file in temp 
-            unlink(Yii::getAlias('@app/temp'.'/'.$this->fileName));
+        $status1 = Sessions::updateParam(1, 'turnOn', '0');
+        $status2 = Sessions::updateParam(1, 'bedTemp', '0');
+        $status3 = Sessions::updateParam(1, 'hotendTemp', '0');
+        
+        if ($status1 && $status2 && $status3)
             return Yii::$app->session->setFlash('success', 'Power off');
-        }
+        else
+            return Yii::$app->session->setFlash('error', 'Power cannot be turn off');
     }
-
+    
+    public function actionSetHotendTemp($temp) 
+    {
+        $status = Sessions::updateParam(1, 'hotendTemp', $temp);
+        
+        if ($status)
+            return Yii::$app->session->setFlash('success', 'Temp of hotend was saved');
+        else
+            return Yii::$app->session->setFlash('error', 'Temp of hotend was not saved');
+    }
+    
+    
+    public function actionSetBedTemp($temp) 
+    {
+        $status = Sessions::updateParam(1, 'bedTemp', $temp);
+        
+        if ($status)
+            return Yii::$app->session->setFlash('success', 'Temp of bed was saved');
+        else
+            return Yii::$app->session->setFlash('error', 'Temp of bed was not saved');
+    }
+    
+//    public function actionLoad () 
+//    {
+//       $params = Sessions::getParams();
+//        
+//       
+//       vdd($params);
+//    }
 }
