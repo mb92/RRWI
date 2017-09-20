@@ -66,6 +66,35 @@ function emergencyStop() {
 
 }
 
+
+function resetPrinter() {
+    sendAjax('cooldown', 'get');
+    sendAjax('off', 'get');
+    sendAjax('reset', 'get');
+    setLS('_turnOn', 0);
+        setLS('_hotend', 0);
+        setLS('_bed', 0);
+        setLS('hotendSetTemp', 0);
+        setLS('bedSetTemp', 0);
+        document.getElementById("range-bedtemp").value=0; 
+        document.getElementById("range-hotend").value=0;
+        document.getElementById("boxhotend").value=0;
+        document.getElementById("boxbed").value=0;
+    var baseUrl = getLS('base_url') + "/";
+        $('#btn-turn-off-printer').css('display', 'none');
+        $('#btn-turn-on-printer').css('display', 'block');
+        
+    $.ajax('admin/settings/turn-off',{
+        method: 'get'
+    }).then(function(resp){
+        console.log(resp);    
+    }).fail(function(err){
+        console.log(err);
+    });
+
+}
+
+
 function printing(action) {
     if (action == 'play') {
         $('#btn-printing-play').css('display', 'none');
@@ -144,6 +173,22 @@ function bedOff() {
     sendAjax('bedtemp/off', 'post');
     $('#range-bedtemp').val(0);
     console.log("Bed is cooling down");
+}
+
+function turnOffHotend() {
+    sendAjax('settemp/0', 'post');
+    setLS('hotendSetTemp', 0);
+    document.getElementById("range-hotend").value=0;
+    document.getElementById("boxhotend").value=0;
+    setHotendTemp();
+}
+
+function turnOffBed() {
+    sendAjax('bedtemp/0', 'post');
+    setLS('bedSetTemp', 0);
+    document.getElementById("range-bedtemp").value=0; 
+    document.getElementById("boxbed").value=0;
+    setBedTemp();
 }
 
 function moveAxis(axis, direction) {

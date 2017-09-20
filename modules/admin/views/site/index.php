@@ -49,7 +49,7 @@ $('#bed-temp').on('input', function() {
             <div class="box-body text-center">
                 <div class="move-top-btn">
                     <button type="button" onClick="sendAjax('off', 'get')" class="btn btn-danger pull-left"><i class="fa fa-stop-circle-o"></i> Stop motors</button>
-                    <button type="button" onClick="sendAjax('reset', 'get')" class="btn btn-warning pull-left"><i class="fa fa-refresh"></i> Reset printer</button>
+                    <button type="button" onClick="resetPrinter()" class="btn btn-warning pull-left"><i class="fa fa-refresh"></i> Reset printer</button>
                     <button type="button"  id="btn-printing-stop" class="btn btn-danger pull-right" onClick="printing('stop');" style="display:none"><i class="fa fa-stop"></i> Stop</button>
                     <button type="button"  id="btn-printing-play" class="btn btn-success pull-right" onClick="printing('play');"><i class="fa fa-play"></i> Start printing!</button>
                     <button type="button"  id="btn-printing-pause" class="btn btn-default pull-right" onClick="printing('pause');" style="display:none"><i class="fa fa-pause"></i> Pause</button>
@@ -166,9 +166,9 @@ $('#bed-temp').on('input', function() {
                             <td colspan="2">
                                 <div class="temp-top-btn pull-left">
                                     <label>Turn off: </label>
-                                    <button type="button" onClick="sendAjax('settemp/0', 'post');setLS('_hotend', 0);" class="btn btn-default text-light-blue">Hotend</button>
-                                    <button type="button" onClick="sendAjax('bedtemp/0', 'post');setLS('_bed', 0);" class="btn btn-default text-green">Bed</button>
-                                    <button type="button" onClick="sendAjax('cooldown', 'get');setLS('_hotend', 0);setLS('_bed', 0);" class="btn btn-default text-red">All</button>
+                                    <button type="button" onClick="turnOffHotend();" class="btn btn-default text-light-blue">Hotend</button>
+                                    <button type="button" onClick="turnOffBed();" class="btn btn-default text-green">Bed</button>
+                                    <button type="button" onClick="sendAjax('cooldown', 'get');turnOffBed();turnOffHotend();" class="btn btn-default text-red">All</button>
                                 </div>
                             </td>
                         </tr>
@@ -176,7 +176,7 @@ $('#bed-temp').on('input', function() {
                             <td align="right">
                                 <form>
                                     <label>Hotend: </label>
-                                    <input oninput="rangeInputHotend.value=amount.value" id="box" type="text" value="0" name="amount" for="rangeInputHotend" oninput="amount.value=rangeInputHotend.value" class="input-control" readonly/>
+                                    <input oninput="rangeInputHotend.value=amount.value" id="boxhotend" type="text" value="0" name="amount" for="rangeInputHotend" oninput="amount.value=rangeInputHotend.value" class="input-control" readonly/>
                                     <sup> o</sup>C    
                                     <input id="range-hotend" type="range" onchange="setLS('hotendSetTemp', $(this).val()); setLS('_hotend', $(this).val());" name="rangeInputHotend" min="0" step="1" max="250" value="0" class="white" oninput="amount.value=rangeInputHotend.value">
                                 </form>
@@ -189,7 +189,7 @@ $('#bed-temp').on('input', function() {
                             <td align="right">
                                 <form>
                                     <label>Bed:</label> 
-                                    <input oninput="rangeInputBedTemp.value=amount.value" id="box" type="text" value="0" name="amount" for="rangeInputBedTemp" oninput="amount.value=rangeInputBedTemp.value" class="input-control" readonly/>
+                                    <input oninput="rangeInputBedTemp.value=amount.value" id="boxbed" type="text" value="0" name="amount" for="rangeInputBedTemp" oninput="amount.value=rangeInputBedTemp.value" class="input-control" readonly/>
                                     <sup> o</sup>C
                                     <input id="range-bedtemp" type="range" onchange="setLS('bedSetTemp', $(this).val());setLS('_bed', $(this).val());" name="rangeInputBedTemp" min="0" step="1" max="100" value="0" class="white" oninput="amount.value=rangeInputBedTemp.value" />
                                 </form>
@@ -209,22 +209,14 @@ $('#bed-temp').on('input', function() {
     </div>
 
     <div id="getinfo" class="col-md-6 col-sm-12">
-        <button type"button" onclick="getInfo();">Get info</button>
-        <button type"button" onclick="sendAjax('', 'get');">test</button>
+        <button type="button" onclick="getInfo();">Get info</button>
+        <button type="button" onclick="sendAjax('', 'get');">test</button>
     </div>
 </div>
 
 
 <script src="/dist/js/panel-control.js"></script>
 <script>
-//    $(this).val()
-    function test(dd) {
-//    var dd = $('#range-bedtemp').val();
-//    localStorage.setItem('test', 'cycki');
-//    dd = localStorage.getItem('test');
-    console.log(dd);
-}
-
 function setLS(name, val) {
     var dd = localStorage.setItem(name, val);
     console.log(dd);
@@ -256,22 +248,17 @@ $( window ).load(function() {
         $('#btn-turn-off-printer').css('display', 'block');
     }
     
+    var bedTemp = getLS('_bed');
+    var hotendTemp = getLS('_hotend');
+    document.getElementById("range-bedtemp").value=bedTemp; 
+    document.getElementById("range-hotend").value=hotendTemp;
+    document.getElementById("boxhotend").value=hotendTemp;
+    document.getElementById("boxbed").value=bedTemp;
+    
     $( "#camera" ).contents().find( "body" ).css( "background-color", "#BADA55" );
     // console.log(sendAjax('status', 'get'));
 });
 
-
-// if (typeof console  != "undefined") 
-//     if (typeof console.log != 'undefined')
-//         console.olog = console.log;
-//     else
-//         console.olog = function() {};
-
-// console.log = function(message) {
-//     console.olog(message);
-//     $('#debugDiv').append('<p>' + message + '</p>');
-// };
-// console.error = console.debug = console.info =  console.log  
 
 </script>
 
