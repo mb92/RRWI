@@ -28,7 +28,7 @@ $('#bed-temp').on('input', function() {
 <div class="row">
     <div class="col-md-12">
         <div class="top-btns">
-            <button type="button"  class="btn btn-lg btn-primary"><i class="fa fa-upload"></i> Upload file</button>
+            <a href="/admin/files/create" class="btn btn-lg btn-primary"><i class="fa fa-upload"></i> Upload file</a>
             
             <button type="button"  id="btn-emergency" class="btn btn-lg btn-danger pull-right" onClick="emergencyStop();"><i class="fa fa-exclamation-triangle"></i> Emergency Stop! </button>
             <button type="button"  id="btn-turn-on-printer" class="btn btn-lg btn-success pull-right" onClick="turnOnPrinter();"><i class="fa fa-toggle-off"></i> Turn on printer</button>
@@ -233,31 +233,31 @@ function getInfo() {
     $('#getinfo').append('<p>' + message + '</p>');
     console.log(message);
 }
-
-$( window ).load(function() {
-    var adapter = getLS('external_power_adapter');
-    console.log(adapter);
-    if (!adapter) {
-        $('#btn-turn-on-printer').css('display', 'none');
-        $('#btn-emergency').css('display', 'none');
-    } 
-    
-    var turnOn = getLS('_turnOn');
-    if (turnOn == 1) {
-        $('#btn-turn-on-printer').css('display', 'none');
-        $('#btn-turn-off-printer').css('display', 'block');
-    }
-    
-    var bedTemp = getLS('_bed');
-    var hotendTemp = getLS('_hotend');
-    document.getElementById("range-bedtemp").value=bedTemp; 
-    document.getElementById("range-hotend").value=hotendTemp;
-    document.getElementById("boxhotend").value=hotendTemp;
-    document.getElementById("boxbed").value=bedTemp;
-    
-    $( "#camera" ).contents().find( "body" ).css( "background-color", "#BADA55" );
-    // console.log(sendAjax('status', 'get'));
-});
+//
+//$( window ).load(function() {
+//    var adapter = getLS('external_power_adapter');
+//    console.log(adapter);
+//    if (!adapter) {
+//        $('#btn-turn-on-printer').css('display', 'none');
+//        $('#btn-emergency').css('display', 'none');
+//    } 
+//    
+////    var turnOn = getLS('_turnOn');
+////    if (turnOn == 1) {
+////        $('#btn-turn-on-printer').css('display', 'none');
+////        $('#btn-turn-off-printer').css('display', 'block');
+////    }
+//    
+//    var bedTemp = getLS('_bed');
+//    var hotendTemp = getLS('_hotend');
+//    document.getElementById("range-bedtemp").value=bedTemp; 
+//    document.getElementById("range-hotend").value=hotendTemp;
+//    document.getElementById("boxhotend").value=hotendTemp;
+//    document.getElementById("boxbed").value=bedTemp;
+//    
+//    $( "#camera" ).contents().find( "body" ).css( "background-color", "#BADA55" );
+//    // console.log(sendAjax('status', 'get'));
+//});
 
 
 </script>

@@ -69,6 +69,9 @@ $config = [
                 ],
                                 
             ],
+//            'formatter' => [
+//                'datetimeFormat' => 'MM/dd/yyyy HH:mm:ss',
+//            ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -99,14 +102,14 @@ $config = [
 
                  'test'=>'/admin/pages/test',
 
-                ['class' => 'yii\web\UrlRule', 'pattern' => '/admin', 'route' => '/admin/site/index'],
+//                ['class' => 'yii\web\UrlRule', 'pattern' => '/admin', 'route' => '/admin/site/index'],
 
 //                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions',
-//                    'extraPatterns' => ['POST create' => 'create']
+//                    'extraPatterns' => ['GET create' => 'create']
 //                ],
-//                ['class' => 'yii\rest\UrlRule', 'controller' => 'clients',
-//                    'extraPatterns' => ['POST create' => 'create', 'POST upload' => 'upload', 'POST unsub' => 'unsub']
-//                ],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions',
+                    'extraPatterns' => ['GET upload' => 'upload']
+                ],
             ],
         ],
     ],

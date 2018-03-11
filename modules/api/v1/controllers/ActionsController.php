@@ -4,14 +4,13 @@ namespace app\modules\api\v1\controllers;
 
 use Yii;
 use yii\rest\ActiveController;
+use app\modules\admin\models\Files;
 
 /**
 * 
 */
 class ActionsController extends ActiveController
 {
-	public $modelClass = 'app\models\Actions';
-
 	public function behaviors()
     {
         return [
@@ -27,18 +26,24 @@ class ActionsController extends ActiveController
     
     public function actionRun() {
 		$result = "fail";
-		$api = Yii::$app->request->post();
-		// print_r(Yii::$app->request->post());
-		// die();
-                
-//		$api['sesId'] = Yii::$app->request->post('sesId', false);
-//		$api['token'] = Yii::$app->request->post('token', false);
-//		$api['action'] = Yii::$app->request->post('action', false);
+//		$api = Yii::$app->request->post();
+//		// print_r(Yii::$app->request->post());
+//		// die();
+//                
+////		$api['sesId'] = Yii::$app->request->post('sesId', false);
+////		$api['token'] = Yii::$app->request->post('token', false);
+////		$api['action'] = Yii::$app->request->post('action', false);
 
 		
 		return $result;
 	}
-
-
+//
+    public function actionUpload()
+    {
+        vdd('asd');
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $users = Files::find()->all();
+        return $users;
+    }
 
 }

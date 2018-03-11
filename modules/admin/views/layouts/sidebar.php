@@ -7,7 +7,7 @@
     <ul class="sidebar-menu">
         <li><a href="<?= Yii::$app->getHomeUrl() ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li><a href="<?= Yii::$app->getHomeUrl() ?>"><i class="fa fa-cubes"></i> <span>Prints</span></a></li>
-        <li><a href="<?= Yii::$app->getHomeUrl() ?>"><i class="fa fa-files-o"></i> <span>Files</span></a></li>
+        <li><a href="/admin/files"><i class="fa fa-files-o"></i> <span>Files</span></a></li>
         <li class="header">Settings:</li>
 
         <li><a href="/admin/settings"><i class="fa fa-cogs"></i> <span>General</span></a></li>

@@ -10,7 +10,7 @@ console.log("Panel control");
 
 function turnOnPrinter() {
     sendAjax('turnOn', 'get');
-    $.ajax('admin/settings/turn-on',{
+    $.ajax('/admin/settings/turn-on',{
         method: 'get'
     }).then(function(resp){
         console.log(resp);
