@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= Html::a('Add file', ['create'], ['class' => 'btn btn-success animated fadeIn']) ?>
         </p>
         <?= GridView::widget([
-            'options' => ['class' => 'animated'],
+            'options' => ['class' => 'animated', 'id' => 'table-files'],
             'dataProvider' => $dataProvider,
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
@@ -53,3 +53,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ]); ?>
     </div>
 </div>
+
+<script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="/dist/js/files.js"></script>

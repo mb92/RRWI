@@ -198,3 +198,4 @@ function moveAxis(axis, direction) {
      sendAjax('move/' + axis + '/' + steps, 'post');
      console.log("The Axis " + axis + "is shifted by " + steps + " steps");
 }
+

@@ -4,6 +4,7 @@ namespace app\modules\admin\models;
 
 use yii\db\BaseActiveRecord;
 use Yii;
+use yii\helpers\Url;
 use app\models\Sessions;
 use yii\behaviors\TimestampBehavior;
 
@@ -106,5 +107,51 @@ class Files extends \yii\db\ActiveRecord
             ];
     }
     
-
+    
+    public static function getAll()
+    {
+        return Self::find()->all();
+    }
+    
+    
+    protected static function getFileByID($id)
+    {
+        return Self::find()->where(['id' => $id])->one();
+    }
+    
+    
+    private static function encodeFileToB64($file) 
+    {   
+        if (empty($file)) return false;
+        
+//        $path = Url::to('@webroot/upload/'.$file->name);
+            
+        $path = Files::getDestPath().DIRECTORY_SEPARATOR.$file->name;
+          
+//        vdd($path);
+        
+        
+        if (empty($path)) return false;
+        
+        $b64 = base64_encode(file_get_contents($path));
+        
+        return $b64;
+    }
+    
+    
+    public static function prepareDataForRequest($id)
+    {
+        $file = Self::getFileByID($id);
+        
+        $b64 = Self::encodeFileToB64($file);
+        
+        if (!$b64) return false;
+        
+        $array = [
+            'b64' => $b64, 
+            'name' => $file->name,
+        ];
+        
+        return $array;
+    }
 }

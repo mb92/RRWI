@@ -191,3 +191,7 @@ img.dt.img-circle {
     height: 320px;
     border: 3px solid #ccc;
 }
+
+.show-send-file-button {
+    background-color: red;
+}

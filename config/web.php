@@ -102,14 +102,14 @@ $config = [
 
                  'test'=>'/admin/pages/test',
 
-//                ['class' => 'yii\web\UrlRule', 'pattern' => '/admin', 'route' => '/admin/site/index'],
-
+                ['class' => 'yii\web\UrlRule', 'pattern' => '/admin', 'route' => '/admin/site/index'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions', 'extraPatterns' => ['GET run' => 'run']],
 //                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions',
 //                    'extraPatterns' => ['GET create' => 'create']
 //                ],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions',
-                    'extraPatterns' => ['GET upload' => 'upload']
-                ],
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'actions',
+//                    'extraPatterns' => ['GET upload' => 'upload']
+//                ],
             ],
         ],
     ],

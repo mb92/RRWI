@@ -21,7 +21,8 @@
         "yiisoft/yii2-imagine": "*",
         "jakim-pj/yii2-gii-adminlte2": "^1.0",
         "jakim-pj/yii2-authserver": "^1.0@beta",
-        "kartik-v/yii2-widget-fileinput": "@dev"
+        "kartik-v/yii2-widget-fileinput": "@dev",
+        "yiisoft/yii2-httpclient": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
