@@ -46,8 +46,8 @@ class ActionsController extends ActiveController
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         
-//        vdd(Yii::$app->request->post());
-
+       vdd(Yii::$app->request->post());
+        
         $fileID = (int) Yii::$app->request->post('fileID', false);
         
         $request_data = Files::prepareDataForRequest($fileID);
@@ -55,7 +55,7 @@ class ActionsController extends ActiveController
 //                vdd($request_data);
 
         
-        $url = "http://192.168.1.11:3000/upload";
+        $url = "http://192.168.1.9:3000/upload";
 //        $url = "http://rrwi.loc/v1/actions/send";
 
         $json = json_encode($request_data);

@@ -233,6 +233,11 @@ function getInfo() {
     $('#getinfo').append('<p>' + message + '</p>');
     console.log(message);
 }
+
+
+$( document ).ready(function() {
+    checkConnection();
+    });
 //
 //$( window ).load(function() {
 //    var adapter = getLS('external_power_adapter');

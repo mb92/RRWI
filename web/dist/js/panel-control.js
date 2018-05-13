@@ -7,6 +7,18 @@
 
 console.log("Panel control");
 
+function checkConnection() {
+    var ip = $('iframe').attr('src');
+    ip = ip.substring(0,ip.length - 5)
+    console.log(ip);
+    $.ajax(ip, {
+        method: 'get'
+    }).then(function(resp){
+        console.log(resp.status);
+    }).fail(function(err){
+        console.log(err);
+    });
+}
 
 function turnOnPrinter() {
     sendAjax('turnOn', 'get');

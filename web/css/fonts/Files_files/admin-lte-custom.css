@@ -193,16 +193,7 @@ img.dt.img-circle {
 }
 
 .send-file-btn {
+    background-color: pink;
     position: absolute;
     left: 10px;
-    text-align: center; 
-}
-
-.send-file-btn span {
-    color: #fff;
-    position: relative;
-    display: block;
-    top: calc(50% - 12px);
-    font-size: 16px;
-    font-weight: 600;
 }
