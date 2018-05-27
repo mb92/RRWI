@@ -28,9 +28,9 @@ AppAsset::register($this);
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    
-    <script src="https://use.fontawesome.com/0bf619f68d.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -61,15 +61,19 @@ AppAsset::register($this);
     <![endif]-->
 </head>
 
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini" style="background-image: url(/dist/img/login_page3.jpg) !important;
+    background-size: cover !important;">
 <?php $this->beginBody() ?>
 
 <div class="wrapper">
 <!-- HEADER ******************************************************************************************* -->
     <!-- Main Header -->
-    <header class="main-header">
+<header class="main-header">
         <?php include('top-nav.php'); ?>
     </header>
+
+
+
 
 <!-- SIDEBAR ******************************************************************************************* -->
     <!-- Left side column. contains the logo and sidebar -->

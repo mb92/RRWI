@@ -1,3 +1,17 @@
+body .login-page {
+    background-image: url(/dist/img/login_page3.jpg) !important;
+    background-size: cover !important;
+}
+
+div.login-logo a {
+    color: #fff !important;
+}
+
+.login-box-body {
+    -webkit-box-shadow: -1px 0px 24px 3px #d2d6de;
+    -moz-box-shadow: -1px 0px 24px 3px #d2d6de;
+    box-shadow: -1px 0px 24px 3px #d2d6de;
+}
 #w0 > .container {
 	width: 100% !important;
 }
@@ -205,4 +219,76 @@ img.dt.img-circle {
     top: calc(50% - 12px);
     font-size: 16px;
     font-weight: 600;
+}
+
+.lock {
+    position: absolute;
+    z-index: 50;
+    background-color: #333;
+    width: 100%;
+    height: 1024px;
+    opacity: 0.95;
+    left: 0;
+    top: 0;
+}
+
+.lock div {
+    z-index: 9999999;
+    position: absolute;
+    color: #fff;
+    width: 320px;
+    height: 120px;
+    left: calc(50% - 60px);
+    top: calc(50% - 300px);
+    text-align: center;
+    font-size: 24px;
+    line-height: 60px;
+}
+
+#w0 > .container {
+    display: none;
+}
+
+.fas, .far {
+    padding-right:5px !important;
+}
+
+.fa {
+    padding-right:2px !important;
+}
+
+.fa-pulse {
+    padding: 0px !important;
+}
+
+#error-connection  span {
+    font-size: 16px;
+    display: block;
+    margin-top: -34px;
+}
+
+.skin-purple .wrapper {
+    overflow: hidden;
+}
+
+.media-form .btn {
+    margin-top: 0px !important;
+}
+
+#panelLock div {
+    text-align: center;
+}
+
+#panelLock p {
+    text-align: center;
+    font-size: 22px;
+}
+
+.lock-icon {
+    font-size: 140px;
+    margin-top:30px;
+}
+
+#panel-control {
+    display:none;
 }

@@ -11,11 +11,11 @@ $this->title = 'Dashboard';
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-<script>
+<!-- <script>
 $('#bed-temp').on('input', function() {
   $(this).next('#text-bed-temp').html(this.value);
 });
-</script>
+</script> -->
 
 <?php if (!is_null($messages)) { ?>
 <div class="row">
@@ -24,6 +24,15 @@ $('#bed-temp').on('input', function() {
     </div>
 </div>
 <?php } ?>
+
+
+<div class="lock animated">
+    <div>
+        <span id="connecting">Connecting with Raspberry Pi <br/><i class="fas fa-spinner fa-pulse 3x"></i></span>
+        <span id="error-connection" style="display: none;">Connection error <span>cannot connectiong with Raspberry Pi</span></span>
+        <button onClick="window.location.reload()" id="refresh_btn" style="display: none;" class="btn btn-default">Try again</button>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-12">
@@ -37,19 +46,32 @@ $('#bed-temp').on('input', function() {
     </div>
 </div>
 
+
+<div class="row" id="panelLock">
+    <div class="col-sm-12" >
+        <p class="animated zoomIn">
+            Turn ON the power for Your printer! Click green button, please.
+        </p>
+        <span id="lock-ico" class="lock-icon"><i class="fas fa-lock"></i></span>
+    </div>
+</div>
+
+ 
+<div id="panel-control">        
 <div class="row">
     <div class="col-md-6 col-sm-12">
+
         <div class="box box-info box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-arrows"></i> Move control</h3>
+              <h3 class="box-title"><i class="fas fa-arrows-alt"></i> Move control</h3>
               <div class="box-tools pull-right">
               </div>
               
             </div>
             <div class="box-body text-center">
                 <div class="move-top-btn">
-                    <button type="button" onClick="sendAjax('off', 'get')" class="btn btn-danger pull-left"><i class="fa fa-stop-circle-o"></i> Stop motors</button>
-                    <button type="button" onClick="resetPrinter()" class="btn btn-warning pull-left"><i class="fa fa-refresh"></i> Reset printer</button>
+                    <button type="button" onClick="sendAjax('off', 'get')" class="btn btn-danger pull-left"><i class="far fa-stop-circle"></i> Stop motors</button>
+                    <button type="button" onClick="resetPrinter()" class="btn btn-warning pull-left"><i class="fas fa-sync"></i> Reset printer</button>
                     <button type="button"  id="btn-printing-stop" class="btn btn-danger pull-right" onClick="printing('stop');" style="display:none"><i class="fa fa-stop"></i> Stop</button>
                     <button type="button"  id="btn-printing-play" class="btn btn-success pull-right" onClick="printing('play');"><i class="fa fa-play"></i> Start printing!</button>
                     <button type="button"  id="btn-printing-pause" class="btn btn-default pull-right" onClick="printing('pause');" style="display:none"><i class="fa fa-pause"></i> Pause</button>
@@ -136,7 +158,7 @@ $('#bed-temp').on('input', function() {
     <div class="col-md-6 col-sm-12">
         <div class="box box-primary box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-video-camera"></i> Video streaming</h3>
+              <h3 class="box-title"><i class="fas fa-video"></i> Video streaming</h3>
 
               <div class="box-tools pull-right">
               </div>
@@ -213,7 +235,7 @@ $('#bed-temp').on('input', function() {
         <button type="button" onclick="sendAjax('', 'get');">test</button>
     </div>
 </div>
-
+</div>
 
 <script src="/dist/js/panel-control.js"></script>
 <script>
@@ -237,7 +259,9 @@ function getInfo() {
 
 $( document ).ready(function() {
     checkConnection();
+    setDefaultLSValues();
     });
+
 //
 //$( window ).load(function() {
 //    var adapter = getLS('external_power_adapter');

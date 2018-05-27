@@ -39,6 +39,7 @@ use yii\helpers\Html;
   <!-- iCheck -->
   <link rel="stylesheet" href="/plugins/iCheck/square/blue.css">
   <link rel="stylesheet" href="/css/animate.css">
+  <link rel="stylesheet" href="/css/admin-lte-custom.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -49,7 +50,7 @@ use yii\helpers\Html;
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page animated fadeIn">
+<body class="hold-transition login-page animated fadeIn" style="background-image: url(/dist/img/login_page4.jpg) !important; background-size: cover !important;">
 <?php $this->beginBody() ?>
 <div class="login-box">
   <div class="login-logo">

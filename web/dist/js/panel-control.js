@@ -11,41 +11,54 @@ function checkConnection() {
     var ip = $('iframe').attr('src');
     ip = ip.substring(0,ip.length - 5)
     console.log(ip);
-    $.ajax(ip, {
+
+    $.ajax(ip+':3000', {
         method: 'get'
     }).then(function(resp){
-        console.log(resp.status);
+        $('.lock').addClass('fadeOut').remove();
     }).fail(function(err){
         console.log(err);
+        $('#connecting').hide();
+        $('#error-connection').show();
+        $('#refresh_btn').show();
+        // $('.lock').addClass('fadeOut').remove();
     });
 }
 
 function turnOnPrinter() {
-    sendAjax('turnOn', 'get');
-    $.ajax('/admin/settings/turn-on',{
+    // sendAjax('turnOn', 'get');
+    var baseUrl = 'http://'+getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
+    $.ajax(baseUrl + 'turnOn',{
         method: 'get'
     }).then(function(resp){
         console.log(resp);
         setLS('_turnOn', 1);
-        $('#btn-turn-on-printer').css('display', 'none');
-        $('#btn-turn-off-printer').css('display', 'block');
-        
+        $('#btn-turn-on-printer').hide();
+        $('#btn-turn-off-printer').show();
+        $('#panelLock').fadeOut();
+        $('#panel-control').fadeIn();
     }).fail(function(err){
         console.log(err);
+        $('#btn-turn-on-printer').show();
+        $('#btn-turn-off-printer').hide();
     });
 }
 
 function turnOffPrinter() {
-        sendAjax('turnOff', 'get');
-        $.ajax('admin/settings/turn-off',{
+    var baseUrl = 'http://'+getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
+
+        // sendAjax('turnOff', 'get');
+        $.ajax(baseUrl+'turnOff',{
         method: 'get'
     }).then(function(resp){
         console.log(resp);
         setLS('_turnOn', 0);
         setLS('_hotend', 0);
         setLS('_bed', 0);
-        $('#btn-turn-off-printer').css('display', 'none');
-        $('#btn-turn-on-printer').css('display', 'block');
+        $('#btn-turn-on-printer').show();
+        $('#btn-turn-off-printer').hide();
+        $('#panelLock').fadeIn();
+        $('#panel-control').fadeOut();
         
     }).fail(function(err){
         console.log(err);
@@ -131,13 +144,17 @@ function printing(action) {
 
 function sendAjax(url, method) {
     var baseUrl = getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
-    $.ajax(baseUrl+url,{
+    console.log('url: '+ getLS('base_url') + ":" + getLS('port_rrwi-api') + "/");
+
+    $.ajax('http://'+baseUrl+url,{
         dataType: 'json',
         method: method
     }).then(function(resp){
         console.log(resp);
     }).fail(function(err){
         console.log(err);
+        console.log(baseUrl+url);
+        console.log("errrororoorororro");
     });
 }
 
@@ -211,3 +228,8 @@ function moveAxis(axis, direction) {
      console.log("The Axis " + axis + "is shifted by " + steps + " steps");
 }
 
+
+function setDefaultLSValues() {
+    setLS('base_url', '192.168.1.10') + ":" + setLS('port_rrwi-api', '3000')
+    console.log("asd");
+}

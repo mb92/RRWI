@@ -2,3 +2,9 @@
 Custom styles
  */
  
+ .login-page {
+	background-image: url(/dist/img/login_page3.jpg) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: top left !important; 
+}

@@ -1,4 +1,5 @@
 <?php
+// header('Access-Control-Allow-Origin: *');
 //ini_set('memory_limit', '2048M');
 // comment out the following two lines when deployed to production
 defined('YII_DEBUG') or define('YII_DEBUG', true);

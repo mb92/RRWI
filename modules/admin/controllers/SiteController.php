@@ -115,4 +115,16 @@ class SiteController extends Controller
         
         return \Yii::$app->response;
     }
+
+
+    /**
+     * About page.
+     *
+     * @return string
+     */
+    // public function actionAbout()
+    // {
+    //     return $this->render('about');
+    // }
+
 }

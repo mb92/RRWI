@@ -16,7 +16,10 @@ $fieldOptions2 = [
     'options' => ['class' => 'form-group has-feedback'],
     'inputTemplate' => "{input}<span class='glyphicon glyphicon-lock form-control-feedback'></span>",
 ];
+
 ?>
+   
+
 
 <p class="login-box-msg">Sign in to the CMS</p>
 
@@ -47,3 +50,5 @@ $fieldOptions2 = [
 
 <?= Html::a('I forgot my password', ['request-password-reset']) ?>
 <br>
+
+
