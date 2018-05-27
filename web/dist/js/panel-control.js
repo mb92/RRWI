@@ -16,12 +16,43 @@ function checkConnection() {
         method: 'get'
     }).then(function(resp){
         $('.lock').addClass('fadeOut').remove();
+        checkPowerStatus();
+
     }).fail(function(err){
         console.log(err);
         $('#connecting').hide();
         $('#error-connection').show();
         $('#refresh_btn').show();
         // $('.lock').addClass('fadeOut').remove();
+    });
+}
+
+function checkPowerStatus() {
+    var baseUrl = 'http://'+getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
+
+    $.ajax(baseUrl + 'powerStatus',{
+        method: 'get'
+    }).then(function(resp){
+        var s = resp.message;
+
+        // if ( s ) {
+        //     console.log('1');
+        // } else {
+        //     console.log('dd');
+        // }
+        console.log('resp:'+s);
+       // if (resp.message === true ) {
+       //          setLS('_turnOn', 1);
+       //      $('#btn-turn-on-printer').hide();
+       //      $('#btn-turn-off-printer').show();
+       //      $('#panelLock').fadeOut();
+       //      $('#panel-control').fadeIn();   
+       // } else {
+       //  setLS('_turnOn', 0);
+       // }
+        
+    }).fail(function(err){
+       setLS('_turnOn', 0);
     });
 }
 

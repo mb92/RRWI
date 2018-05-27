@@ -265,6 +265,19 @@ img.dt.img-circle {
     font-size: 16px;
     display: block;
     margin-top: -34px;
+    text-align:left;
+}
+
+#causes-error-connection {
+ width:400px;   
+ padding-left:18px;
+}
+
+#causes-error-connection li {
+    margin: 0;
+    padding: 0;
+    line-height: 16px;
+    margin-bottom: 6px;
 }
 
 .skin-purple .wrapper {

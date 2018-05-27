@@ -29,7 +29,15 @@ $('#bed-temp').on('input', function() {
 <div class="lock animated">
     <div>
         <span id="connecting">Connecting with Raspberry Pi <br/><i class="fas fa-spinner fa-pulse 3x"></i></span>
-        <span id="error-connection" style="display: none;">Connection error <span>cannot connectiong with Raspberry Pi</span></span>
+            <span id="error-connection" style="display: none;">Connection error <span>cannot connectiong with Raspberry Pi<br/>
+            Causes of error:
+            <ul id="causes-error-connection">
+                <li>raspberrPI is turned off or there is no network connection</li>
+                <li>api node is not running</li>
+                <li>CMS settings are incorrect (check the IP address and port)</li>
+            </ul>
+            </span>
+        </span>
         <button onClick="window.location.reload()" id="refresh_btn" style="display: none;" class="btn btn-default">Try again</button>
     </div>
 </div>
