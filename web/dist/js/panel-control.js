@@ -23,7 +23,6 @@ function checkConnection() {
         $('#connecting').hide();
         $('#error-connection').show();
         $('#refresh_btn').show();
-        // $('.lock').addClass('fadeOut').remove();
     });
 }
 
@@ -35,21 +34,17 @@ function checkPowerStatus() {
     }).then(function(resp){
         var s = resp.message;
 
-        // if ( s ) {
-        //     console.log('1');
-        // } else {
-        //     console.log('dd');
-        // }
         console.log('resp:'+s);
-       // if (resp.message === true ) {
-       //          setLS('_turnOn', 1);
-       //      $('#btn-turn-on-printer').hide();
-       //      $('#btn-turn-off-printer').show();
-       //      $('#panelLock').fadeOut();
-       //      $('#panel-control').fadeIn();   
-       // } else {
-       //  setLS('_turnOn', 0);
-       // }
+
+       if (s == 1 ) {
+                setLS('_turnOn', 1);
+            $('#btn-turn-on-printer').hide();
+            $('#btn-turn-off-printer').show();
+            $('#panelLock').fadeOut();
+            $('#panel-control').fadeIn();   
+       } else {
+        setLS('_turnOn', 0);
+       }
         
     }).fail(function(err){
        setLS('_turnOn', 0);
@@ -57,7 +52,6 @@ function checkPowerStatus() {
 }
 
 function turnOnPrinter() {
-    // sendAjax('turnOn', 'get');
     var baseUrl = 'http://'+getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
     $.ajax(baseUrl + 'turnOn',{
         method: 'get'
@@ -68,6 +62,7 @@ function turnOnPrinter() {
         $('#btn-turn-off-printer').show();
         $('#panelLock').fadeOut();
         $('#panel-control').fadeIn();
+
     }).fail(function(err){
         console.log(err);
         $('#btn-turn-on-printer').show();
@@ -77,8 +72,6 @@ function turnOnPrinter() {
 
 function turnOffPrinter() {
     var baseUrl = 'http://'+getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
-
-        // sendAjax('turnOff', 'get');
         $.ajax(baseUrl+'turnOff',{
         method: 'get'
     }).then(function(resp){
@@ -261,6 +254,17 @@ function moveAxis(axis, direction) {
 
 
 function setDefaultLSValues() {
-    setLS('base_url', '192.168.1.10') + ":" + setLS('port_rrwi-api', '3000')
+    setLS('base_url', '192.168.1.1') + ":" + setLS('port_rrwi-api', '3000');
+    $('input[type="number"]').each( function() {
+        if ( getLS($(this).data('name')) == null ) {
+            setLS($(this).data('name'), $(this).val());
+        }
+    });
+
+    $('input[type="range"]').each( function() {
+        if ( getLS($(this).data('name')) == null ) {
+            setLS($(this).data('name'), $(this).val());
+        }
+    });
     console.log("asd");
 }

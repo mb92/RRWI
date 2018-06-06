@@ -98,18 +98,18 @@ $('#bed-temp').on('input', function() {
                             <b>Bed:</b> xx <sup>o</sup>C
                         </td>
                         <td align="center" width="40px">
-                            <input type="number" onchange="setLS('moveStepY+', $(this).val())" value="10" min="0" max="200" id="move-y-input-up" class="input-control"/><br/>
+                            <input type="number" onchange="setLS('moveStepY+', $(this).val())" value="10" min="0" max="200" id="move-y-input-up" class="input-control" data-name="moveStepY+"/><br/>
                             <button type="button" onClick="moveAxis('Y', '+')" class="btn btn-control bg-olive"><i class="fa fa-arrow-up fa-move-right-icon"></i><sub>y</sub></button>
                         </td>
                         <td align="left" width="110px">
                             <div>
-                                <input type="number" value="5" onchange="setLS('moveStepZ+', $(this).val())" min="0" max="280" id="move-z-input-up" class="input-control"/>
+                                <input type="number" value="5" onchange="setLS('moveStepZ+', $(this).val())" min="0" max="280" id="move-z-input-up" class="input-control"  data-name="moveStepZ+"/>
                             </div>
                             <button type="button" onClick="moveAxis('Z', '+')" class="btn btn-control bg-orange"><i class="fa fa-arrow-up fa-move-right-icon"></i><sub>z</sub></button>
                         </td>
                         <td align="center" width="40px">
                             <div class="input-align-center">
-                                <input type="number" onchange="setLS('moveStepE+', $(this).val())" value="2" id="move-e-input-up" class="input-control"/>
+                                <input type="number" onchange="setLS('moveStepE+', $(this).val())" value="2" id="move-e-input-up" class="input-control"  data-name="moveStepE+"/>
                             </div>
                             <button type="button" onClick="moveAxis('E', '+')" class="btn btn-control bg-maroon"><i class="fa fa-arrow-up fa-move-right-icon"></i><sub>e</sub></button>
                         </td>
@@ -117,13 +117,13 @@ $('#bed-temp').on('input', function() {
                     
                     <tr>
                             <td align="right">
-                                <input type="number" value="-10" onchange="setLS('moveStepX-', $(this).val())" min="-200" max="0" id="move-x-input-dn" class="input-control"/>
+                                <input type="number" value="-10" onchange="setLS('moveStepX-', $(this).val())" min="-200" max="0" id="move-x-input-dn" class="input-control"  data-name="moveStepX-"/>
                                 <button type="button" onClick="moveAxis('X', '-')" class="btn btn-control btn-info"><i class="fa fa-arrow-left"></i><sub>x</sub></button>
                             </td>
                             <td align="center"></td>
                             <td align="left">
                                 <button type="button" onClick="moveAxis('X', '+')" class="btn btn-control btn-info"><i class="fa fa-arrow-right"></i><sub>x</sub></button>
-                                <input type="number" onchange="setLS('moveStepX+', $(this).val())" value="10" min="0" max="200" id="move-x-input-up" class="input-control"/>
+                                <input type="number" onchange="setLS('moveStepX+', $(this).val())" value="10" min="0" max="200" id="move-x-input-up" class="input-control"  data-name="moveStepX+"/>
                             </td>
                             <td valign="middle" style="padding-top: 24px;">
                                 Extruder
@@ -134,18 +134,18 @@ $('#bed-temp').on('input', function() {
                             <td></td>
                             <td align="center">
                                 <button type="button" onClick="moveAxis('Y', '-')" class="btn btn-control bg-olive"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>y</sub></button><br/>                                
-                                <input type="number" onchange="setLS('moveStepY-', $(this).val())" value="-10"  min="-200" max="0" id="move-y-input-dn" class="input-control"/>
+                                <input type="number" onchange="setLS('moveStepY-', $(this).val())" value="-10"  min="-200" max="0" id="move-y-input-dn" class="input-control"  data-name="moveStepY-"/>
                             </td>
                             <td align="left" width="132px">
                                 <button type="button" onClick="moveAxis('Z', '-')" class="btn btn-control bg-orange"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>z</sub></button>
                                 <div >
-                                    <input type="number" value="-5" onchange="setLS('moveStepZ-', $(this).val())" min="-250" max="0" id="move-z-input-dn" class="input-control"/>
+                                    <input type="number" value="-5" onchange="setLS('moveStepZ-', $(this).val())" min="-250" max="0" id="move-z-input-dn" class="input-control"  data-name="moveStepZ-"/>
                                 </div>
                             </td>
                             <td align="center">
                                 <button type="button" onClick="moveAxis('E', '-')" class="btn btn-control bg-maroon"><i class="fa fa-arrow-down fa-move-right-icon"></i><sub>e</sub></button>
                                 <div class="input-align-center">
-                                    <input type="number" onchange="setLS('moveStepE-', $(this).val())" value="-2" id="move-e-input-dn" class="input-control"/>
+                                    <input type="number" onchange="setLS('moveStepE-', $(this).val())" value="-2" id="move-e-input-dn" class="input-control"  data-name="moveStepE-"/>
                                 </div>
                             </td>
                         </tr>
@@ -208,7 +208,7 @@ $('#bed-temp').on('input', function() {
                                     <label>Hotend: </label>
                                     <input oninput="rangeInputHotend.value=amount.value" id="boxhotend" type="text" value="0" name="amount" for="rangeInputHotend" oninput="amount.value=rangeInputHotend.value" class="input-control" readonly/>
                                     <sup> o</sup>C    
-                                    <input id="range-hotend" type="range" onchange="setLS('hotendSetTemp', $(this).val()); setLS('_hotend', $(this).val());" name="rangeInputHotend" min="0" step="1" max="250" value="0" class="white" oninput="amount.value=rangeInputHotend.value">
+                                    <input id="range-hotend" type="range" onchange="setLS('hotendSetTemp', $(this).val()); setLS('_hotend', $(this).val());" name="rangeInputHotend" min="0" step="1" max="250" value="0" class="white" oninput="amount.value=rangeInputHotend.value" data-name="_hotend">
                                 </form>
                             </td>
                             <td width="60px">
@@ -221,7 +221,7 @@ $('#bed-temp').on('input', function() {
                                     <label>Bed:</label> 
                                     <input oninput="rangeInputBedTemp.value=amount.value" id="boxbed" type="text" value="0" name="amount" for="rangeInputBedTemp" oninput="amount.value=rangeInputBedTemp.value" class="input-control" readonly/>
                                     <sup> o</sup>C
-                                    <input id="range-bedtemp" type="range" onchange="setLS('bedSetTemp', $(this).val());setLS('_bed', $(this).val());" name="rangeInputBedTemp" min="0" step="1" max="100" value="0" class="white" oninput="amount.value=rangeInputBedTemp.value" />
+                                    <input id="range-bedtemp" type="range" onchange="setLS('bedSetTemp', $(this).val());setLS('_bed', $(this).val());" name="rangeInputBedTemp" min="0" step="1" max="100" value="0" class="white" oninput="amount.value=rangeInputBedTemp.value" data-name="_bed"/>
                                 </form>
                             </td>
                             <td>
