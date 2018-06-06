@@ -121,4 +121,30 @@ class Settings extends \yii\db\ActiveRecord
 
         return true;
     }
+
+    public static function getConnectionParams()
+    {
+        $url =      Self::find()->select('value')->where(['slug' => 'base_url'])->one()->value;
+        $portApi =  Self::find()->select('value')->where(['slug' => 'port_rrwi-api'])->one()->value;
+        $urlApiDoc =   Self::find()->select('value')->where(['slug' => 'api_doc'])->one()->value; 
+        $portCam =  Self::find()->select('value')->where(['slug' => 'port_rrwi-cam'])->one()->value; 
+        $homePath = Self::find()->select('value')->where(['slug' => 'home_path'])->one()->value;
+        $maxTempH = Self::find()->select('value')->where(['slug' => 'max_hotend_temp'])->one()->value;
+        $macTempB = Self::find()->select('value')->where(['slug' => 'max_bed_temp'])->one()->value;
+        $portUsb =  Self::find()->select('value')->where(['slug' => 'port_of_printer_(usb_rpi)'])->one()->value;
+        $baudrate = Self::find()->select('value')->where(['slug' => 'baudrate'])->one()->value;
+
+
+        return [
+            'base_url' => $url,
+            'port_rrwi-api' => $portApi,
+            'api_doc' => $urlApiDoc,
+            'port_rrwi-cam' => $portCam,
+            'home_path' => $homePath,
+            'max_hotend_temp' => $maxTempH,
+            'max_bed_temp' => $macTempB,
+            'port_of_printer_(usb_rpi)' => $portUsb,
+            'baudrate' => $baudrate
+        ];
+    }
 }

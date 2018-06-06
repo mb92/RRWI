@@ -6,6 +6,7 @@ use Yii;
 use yii\rest\ActiveController;
 use app\modules\admin\models\Files;
 use yii\httpclient\Client;
+use app\models\Settings;
 
 /**
 * 
@@ -75,4 +76,11 @@ class ActionsController extends ActiveController
         return $response->content;
     }
 
+
+    public function actionSetLocalStorage() 
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        
+        return Settings::getConnectionParams(); 
+    }
 }
