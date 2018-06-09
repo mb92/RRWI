@@ -305,3 +305,20 @@ img.dt.img-circle {
 #panel-control {
     display:none;
 }
+
+.close-message {
+    float: right;
+    font-size: 20px;
+    margin-right: -16px;
+}
+
+.red-exclamation-mark {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 70px;
+    z-index: 999;
+}
+
+.red-exclamation-mark > i {
+}

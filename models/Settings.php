@@ -86,40 +86,40 @@ class Settings extends \yii\db\ActiveRecord
     
     public static function loadControlParams() 
     {
-        $cookies = Yii::$app->request->cookies;
-        if (!is_null($cookies->getValue('loadParams'))) {
-            return true;
-        }
+        // $cookies = Yii::$app->request->cookies;
+        // if (!is_null($cookies->getValue('loadParams'))) {
+        //     return true;
+        // }
         
-        $session = Sessions::getParams();
+        // $session = Sessions::getParams();
         
-        echo '<script>localStorage.setItem("_turnOn", "'.$session['turnOn'].'");</script>';
-        echo '<script>localStorage.setItem("_startPrinting", "'.$session['printStart'].'");</script>';
-        echo '<script>localStorage.setItem("_hotend", "'.$session['hotendTemp'].'");</script>';
-        echo '<script>localStorage.setItem("_bed", "'.$session['bedTemp'].'");</script>';
+        // echo '<script>localStorage.setItem("_turnOn", "'.$session['turnOn'].'");</script>';
+        // echo '<script>localStorage.setItem("_startPrinting", "'.$session['printStart'].'");</script>';
+        // echo '<script>localStorage.setItem("_hotend", "'.$session['hotendTemp'].'");</script>';
+        // echo '<script>localStorage.setItem("_bed", "'.$session['bedTemp'].'");</script>';
 
-        echo '<script>localStorage.setItem("moveStepX+", "10");</script>';
-        echo '<script>localStorage.setItem("moveStepX-", "-10");</script>';
+        // echo '<script>localStorage.setItem("moveStepX+", "10");</script>';
+        // echo '<script>localStorage.setItem("moveStepX-", "-10");</script>';
 
-        echo '<script>localStorage.setItem("moveStepY+", "10");</script>';
-        echo '<script>localStorage.setItem("moveStepY-", "-10");</script>';
+        // echo '<script>localStorage.setItem("moveStepY+", "10");</script>';
+        // echo '<script>localStorage.setItem("moveStepY-", "-10");</script>';
 
-        echo '<script>localStorage.setItem("moveStepZ+", "5");</script>';
-        echo '<script>localStorage.setItem("moveStepZ-", "-5");</script>';
+        // echo '<script>localStorage.setItem("moveStepZ+", "5");</script>';
+        // echo '<script>localStorage.setItem("moveStepZ-", "-5");</script>';
 
-        echo '<script>localStorage.setItem("moveStepE+", "2");</script>';
-        echo '<script>localStorage.setItem("moveStepE-", "-2");</script>';
+        // echo '<script>localStorage.setItem("moveStepE+", "2");</script>';
+        // echo '<script>localStorage.setItem("moveStepE-", "-2");</script>';
 
-        Self::loadSettingsFromDB();
+        // Self::loadSettingsFromDB();
 
         
-        $cookies = Yii::$app->response->cookies;
-        $cookies->add(new \yii\web\Cookie([
-            'name' => 'loadParams',
-            'value' => 'loaded',
-        ]));
+        // $cookies = Yii::$app->response->cookies;
+        // $cookies->add(new \yii\web\Cookie([
+        //     'name' => 'loadParams',
+        //     'value' => 'loaded',
+        // ]));
 
-        return true;
+        // return true;
     }
 
     public static function getConnectionParams()

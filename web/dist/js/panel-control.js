@@ -27,7 +27,7 @@ function checkConnection() {
 }
 
 function checkPowerStatus() {
-    var baseUrl = 'http://'+getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
+    var baseUrl = getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
 
     $.ajax(baseUrl + 'powerStatus',{
         method: 'get'
@@ -52,7 +52,7 @@ function checkPowerStatus() {
 }
 
 function turnOnPrinter() {
-    var baseUrl = 'http://'+getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
+    var baseUrl = getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
     $.ajax(baseUrl + 'turnOn',{
         method: 'get'
     }).then(function(resp){
@@ -71,7 +71,7 @@ function turnOnPrinter() {
 }
 
 function turnOffPrinter() {
-    var baseUrl = 'http://'+getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
+    var baseUrl = getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
         $.ajax(baseUrl+'turnOff',{
         method: 'get'
     }).then(function(resp){
@@ -177,8 +177,9 @@ function sendAjax(url, method) {
         console.log(resp);
     }).fail(function(err){
         console.log(err);
-        console.log(baseUrl+url);
-        console.log("errrororoorororro");
+        $('#api-errors').fadeIn();
+        $('#api-errors > h4').text("API: Unable to connect with pritnter!");
+        $('#api-errors > p').text('Check the connection of the USB cable and power supply. Then verify the parameters needed to carry out the transmission: USB port and baud rate in ').append('<a href="/admin/settings">General settings</a>');
     });
 }
 

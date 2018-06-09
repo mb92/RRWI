@@ -25,6 +25,12 @@ $('#bed-temp').on('input', function() {
 </div>
 <?php } ?>
 
+<div class="row callout callout-danger" id="api-errors" style="display: none;">
+    <div class="close-message" title="Close message"><i class="fas fa-times-circle"></i></div>
+    <h4></h4>
+    <p></p>
+    <div class="red-exclamation-mark animated flash infinite"><i class="fas fa-exclamation-triangle text-red"></i></div>
+</div>
 
 <div class="lock animated">
     <div>
@@ -270,6 +276,9 @@ $( document ).ready(function() {
     setDefaultLSValues();
     });
 
+$( '.close-message > i').click( function () {
+    $('#api-errors').fadeOut();
+});
 //
 //$( window ).load(function() {
 //    var adapter = getLS('external_power_adapter');
