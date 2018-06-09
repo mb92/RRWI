@@ -283,4 +283,5 @@ function setDefaultLSValues() {
             console.log('LS: ' + $(this).data('name') + ' => ' + $(this).val());
         }
     });
+
 }
