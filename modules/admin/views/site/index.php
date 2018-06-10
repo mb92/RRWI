@@ -245,6 +245,37 @@ $('#bed-temp').on('input', function() {
     </div>
 
     <div id="getinfo" class="col-md-6 col-sm-12">
+        <div class="box box-default box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title"><i class="fas fa-terminal"></i> Advenced API command</h3>
+              <div class="box-tools pull-right">
+              </div>
+            </div>
+            <div class="box-body">
+
+
+                <div class="form-group">
+                    <label>Insert command and choose a sending method:</label>
+                    <input type="text" class="form-control" id="command-to-send">
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                      <select class="form-control" name="method">
+                            <option value="get">GET</option>
+                            <option value="post">POST</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6">
+                      <button type="button" class="btn btn-info btn-flat" onClick="sendAdvCommand()" style="margin-top:0px !important;">Send command</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
         <button type="button" onclick="getInfo();">Get info</button>
         <button type="button" onclick="sendAjax('', 'get');">test</button>
     </div>

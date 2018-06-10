@@ -308,3 +308,20 @@ function setDefaultLSValues() {
     });
 
 }
+
+function sendAdvCommand() {
+	var command = $('#command-to-send').val();
+	var method = $('select[name="method"]').val();
+
+	var baseUrl = getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
+
+    $.ajax(baseUrl+command,{
+        dataType: 'json',
+        method: method
+    }).done(function(resp){
+        console.log(resp);
+    }).fail(function(err){
+    	console.log(err.statusText);
+    });	
+	// sendAjax(command, method);
+}
