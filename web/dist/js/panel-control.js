@@ -34,7 +34,7 @@ function checkPowerStatus() {
     }).then(function(resp){
         var s = resp.message;
 
-        console.log('resp:'+s);
+        // console.log('resp:'+s);
 
        if (s == 1 ) {
                 setLS('_turnOn', 1);
@@ -72,7 +72,7 @@ function turnOnPrinter() {
 
 function turnOffPrinter() {
     var baseUrl = getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
-        $.ajax(baseUrl+'turnOff',{
+    $.ajax(baseUrl+'turnOff',{
         method: 'get'
     }).then(function(resp){
         console.log(resp);
@@ -90,31 +90,52 @@ function turnOffPrinter() {
 }
 
 function emergencyStop() {
-    sendAjax('cooldown', 'get');
-    sendAjax('off', 'get');
-    var baseUrl = getLS('base_url') + "/";
-        $('#btn-turn-off-printer').css('display', 'none');
-        $('#btn-turn-on-printer').css('display', 'block');
-        setLS('_turnOn', 0);
-        setLS('_hotend', 0);
-        setLS('_bed', 0);
-    $.ajax('admin/settings/turn-off',{
-        method: 'get'
+    var baseUrl = getLS('base_url') + '/rrwi/stop.php';
+
+    $.ajax(baseUrl ,{
+        method: 'get',
+        dataType: 'json'
     }).then(function(resp){
-        console.log(resp);   
-        $.ajax(baseUrl + 'rrwi/stop.php',{
-            method: 'get'
-        }).then(function(){
-            console.log('Adapter was turned off');
-        }).fail(function(err){
-            console.log(err);
-        });  
+        console.log(resp);
+        turnOffPrinter();
     }).fail(function(err){
         console.log(err);
-    });
+        turnOffPrinter();
+    }); 
+    //     method: 'get'
+    // }).then(function(resp){    
+
+    // sendAjax('cooldown', 'get');
+    // sendAjax('off', 'get');
+    // var baseUrl = getLS('base_url') + "/";
+    //     $('#btn-turn-off-printer').css('display', 'none');
+    //     $('#btn-turn-on-printer').css('display', 'block');
+    //     setLS('_turnOn', 0);
+    //     setLS('_hotend', 0);
+    //     setLS('_bed', 0);
+    // $.ajax('admin/settings/turn-off',{
+    //     method: 'get'
+    // }).then(function(resp){
+    //     console.log(resp);   
+    //     $.ajax(baseUrl + 'rrwi/stop.php',{
+    //         method: 'get'
+    //     }).then(function(){
+    //         console.log('Adapter was turned off');
+    //     }).fail(function(err){
+    //         console.log(err);
+    //     });  
+    // }).fail(function(err){
+    //     console.log(err);
+    // });
 
 }
+function reconnectPrinter() {
 
+	var portUSB = getLS('port_of_printer_(usb_rpi)').replace(/\//g, '%2F');
+	var baud = getLS('baudrate');
+	// console.log(portUSB, baud);
+    sendAjax('connect/'+portUSB+'/'+baud, 'post');
+}
 
 function resetPrinter() {
     sendAjax('cooldown', 'get');
@@ -146,17 +167,22 @@ function resetPrinter() {
 
 function printing(action) {
     if (action == 'play') {
+    	sendAjax('print', 'get');
         $('#btn-printing-play').css('display', 'none');
         $('#btn-printing-pause').css('display', 'block');
         $('#btn-printing-stop').css('display', 'block');
     } else if (action == 'pause') {
+    	sendAjax('pause', 'get');
         $('#btn-printing-pause').css('display', 'none');
         $('#btn-printing-resume').css('display', 'block');
     } else if (action == 'resume') {
+    	sendAjax('resume', 'get');
         $('#btn-printing-play').css('display', 'none');
         $('#btn-printing-pause').css('display', 'block');
         $('#btn-printing-resume').css('display', 'none');
     } else if (action == 'stop') {
+    	sendAjax('reset', 'get');
+    	setLS('sent_file', 0);
         $('#btn-printing-stop').css('display', 'none');
         $('#btn-printing-pause').css('display', 'none');
         $('#btn-printing-resume').css('display', 'none');
@@ -170,16 +196,11 @@ function sendAjax(url, method) {
     var baseUrl = getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
     console.log('url: '+ getLS('base_url') + ":" + getLS('port_rrwi-api') + "/");
 
-    $.ajax('http://'+baseUrl+url,{
+    $.ajax(baseUrl+url,{
         dataType: 'json',
         method: method
     }).then(function(resp){
         console.log(resp);
-    }).fail(function(err){
-        console.log(err);
-        $('#api-errors').fadeIn();
-        $('#api-errors > h4').text("API: Unable to connect with pritnter!");
-        $('#api-errors > p').text('Check the connection of the USB cable and power supply. Then verify the parameters needed to carry out the transmission: USB port and baud rate in ').append('<a href="/admin/settings">General settings</a>');
     });
 }
 
@@ -188,7 +209,7 @@ function setHotendTemp() {
     sendAjax('settemp/'+ val, 'post');
     console.log("Heating hotend to " + val + "deg of C");
 
-    $.ajax('admin/settings/set-hotend-temp?temp='+val,{
+    $.ajax('/admin/settings/set-hotend-temp?temp='+val,{
         method: 'get'
     }).then(function(resp){
         console.log(resp);
@@ -204,7 +225,7 @@ function setBedTemp() {
     sendAjax('bedtemp/'+ val, 'post');
     console.log("Heating bed to " + val + "deg of C");
     
-    $.ajax('admin/settings/set-bed-temp?temp='+val,{
+    $.ajax('/admin/settings/set-bed-temp?temp='+val,{
         method: 'get'
     }).then(function(resp){
         console.log(resp);
@@ -256,7 +277,8 @@ function moveAxis(axis, direction) {
 
 function setDefaultLSValues() {
     $.ajax('/v1/actions/set-local-storage',{
-        method: 'get'
+        method: 'get',
+        dataType: 'json'
     }).then(function(resp) {
 
         $.each(resp, function(key, value) {

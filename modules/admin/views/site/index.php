@@ -85,7 +85,7 @@ $('#bed-temp').on('input', function() {
             <div class="box-body text-center">
                 <div class="move-top-btn">
                     <button type="button" onClick="sendAjax('off', 'get')" class="btn btn-danger pull-left"><i class="far fa-stop-circle"></i> Stop motors</button>
-                    <button type="button" onClick="resetPrinter()" class="btn btn-warning pull-left"><i class="fas fa-sync"></i> Reset printer</button>
+                    <button type="button" onClick="reconnectPrinter()" class="btn btn-warning pull-left"><i class="fas fa-sync"></i> Reconnect printer</button>
                     <button type="button"  id="btn-printing-stop" class="btn btn-danger pull-right" onClick="printing('stop');" style="display:none"><i class="fa fa-stop"></i> Stop</button>
                     <button type="button"  id="btn-printing-play" class="btn btn-success pull-right" onClick="printing('play');"><i class="fa fa-play"></i> Start printing!</button>
                     <button type="button"  id="btn-printing-pause" class="btn btn-default pull-right" onClick="printing('pause');" style="display:none"><i class="fa fa-pause"></i> Pause</button>
@@ -252,15 +252,16 @@ $('#bed-temp').on('input', function() {
 </div>
 
 <script src="/dist/js/panel-control.js"></script>
+
 <script>
 function setLS(name, val) {
     var dd = localStorage.setItem(name, val);
-    console.log(dd);
+    // console.log(dd);
 }
 
 function getLS(name) {
     var dd = localStorage.getItem(name);
-    console.log(dd);
+    // console.log(dd);
     return dd;
 }
 
@@ -276,34 +277,41 @@ $( document ).ready(function() {
     setDefaultLSValues();
     });
 
+//Close Message box - API error message
 $( '.close-message > i').click( function () {
     $('#api-errors').fadeOut();
 });
+
 //
-//$( window ).load(function() {
-//    var adapter = getLS('external_power_adapter');
-//    console.log(adapter);
-//    if (!adapter) {
+$( window ).load(function() {
+   // var adapter = getLS('external_power_adapter');
+   // console.log(adapter);
+   // if (!adapter) {
+   //     $('#btn-turn-on-printer').css('display', 'none');
+   //     $('#btn-emergency').css('display', 'none');
+   // } 
+   
+//    var turnOn = getLS('_turnOn');
+//    if (turnOn == 1) {
 //        $('#btn-turn-on-printer').css('display', 'none');
-//        $('#btn-emergency').css('display', 'none');
-//    } 
-//    
-////    var turnOn = getLS('_turnOn');
-////    if (turnOn == 1) {
-////        $('#btn-turn-on-printer').css('display', 'none');
-////        $('#btn-turn-off-printer').css('display', 'block');
-////    }
-//    
-//    var bedTemp = getLS('_bed');
-//    var hotendTemp = getLS('_hotend');
-//    document.getElementById("range-bedtemp").value=bedTemp; 
-//    document.getElementById("range-hotend").value=hotendTemp;
-//    document.getElementById("boxhotend").value=hotendTemp;
-//    document.getElementById("boxbed").value=bedTemp;
-//    
-//    $( "#camera" ).contents().find( "body" ).css( "background-color", "#BADA55" );
-//    // console.log(sendAjax('status', 'get'));
-//});
+//        $('#btn-turn-off-printer').css('display', 'block');
+//    }
+   
+   var bedTemp = getLS('_bed');
+   var hotendTemp = getLS('_hotend');
+   document.getElementById("range-bedtemp").value=bedTemp; 
+   document.getElementById("range-hotend").value=hotendTemp;
+   document.getElementById("boxhotend").value=hotendTemp;
+   document.getElementById("boxbed").value=bedTemp;
+   
+   // $( "#camera" ).contents().find( "body" ).css( "background-color", "#BADA55" );
+   // console.log(sendAjax('status', 'get'));
+   if (getLS('sent_file') == 0) {
+        $('#btn-printing-play').attr("disabled", true);
+   } else {
+        $('#btn-printing-play').removeAttr("disabled");
+   }
+});
 
 
 </script>

@@ -47,17 +47,17 @@ class ActionsController extends ActiveController
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         
-       vdd(Yii::$app->request->post());
+       // vdd(Yii::$app->request->post());die();
         
         $fileID = (int) Yii::$app->request->post('fileID', false);
-        
+        // vdd($fileID);
         $request_data = Files::prepareDataForRequest($fileID);
         
 //                vdd($request_data);
 
         
-        $url = "http://192.168.1.9:3000/upload";
-//        $url = "http://rrwi.loc/v1/actions/send";
+        // $url = "http://192.168.1.9:3000/upload";
+        $url = Settings::getBaseApiUrl().'/upload';    
 
         $json = json_encode($request_data);
         
@@ -70,9 +70,6 @@ class ActionsController extends ActiveController
             ->setUrl($url)
             ->send();
         
-//        echo 'Search results:<br>';
-//        echo $response->content;
-
         return $response->content;
     }
 
@@ -80,7 +77,7 @@ class ActionsController extends ActiveController
     public function actionSetLocalStorage() 
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        
+
         return Settings::getConnectionParams(); 
     }
 }

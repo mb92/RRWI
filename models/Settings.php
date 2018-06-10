@@ -55,6 +55,14 @@ class Settings extends \yii\db\ActiveRecord
         ];
     }
 
+    public static function getBaseApiUrl() 
+    {
+        $baseUrl = Self::find()->select('value')->where(['slug' => 'base_url'])->one()->value;
+        $portApi = Self::find()->select('value')->where(['slug' => 'port_rrwi-api'])->one()->value;    
+        
+        return $baseUrl . ':'. $portApi;
+    }
+
     public static function checkAdapterStatus() {
         return Self::find()->select('value')->where(['slug' => 'external_power_adapter'])->one()->value;
     }
@@ -71,21 +79,21 @@ class Settings extends \yii\db\ActiveRecord
         return $baseUrl.':'.$camPort;
     }
     
-    public static function loadSettingsFromDB() 
-    {
-        $list = Self::find()->select(['slug', 'value'])->all();
+//     public static function loadSettingsFromDB() 
+//     {
+//         $list = Self::find()->select(['slug', 'value'])->all();
 
-        foreach ($list as $l) {
-            echo '<script>localStorage.setItem("'. $l->slug.'", "'.$l->value .'");</script>';
-        }
+//         foreach ($list as $l) {
+//             echo '<script>localStorage.setItem("'. $l->slug.'", "'.$l->value .'");</script>';
+//         }
         
-//        Self::loadControlParams();
+// //        Self::loadControlParams();
         
-        Yii::$app->session->setFlash('settings', 'loaded');
-    }
+//         Yii::$app->session->setFlash('settings', 'loaded');
+//     }
     
-    public static function loadControlParams() 
-    {
+    // public static function loadControlParams() 
+    // {
         // $cookies = Yii::$app->request->cookies;
         // if (!is_null($cookies->getValue('loadParams'))) {
         //     return true;
@@ -120,7 +128,7 @@ class Settings extends \yii\db\ActiveRecord
         // ]));
 
         // return true;
-    }
+    // }
 
     public static function getConnectionParams()
     {

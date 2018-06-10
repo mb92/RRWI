@@ -314,9 +314,9 @@ img.dt.img-circle {
 
 .red-exclamation-mark {
     position: fixed;
-    bottom: 40px;
+    bottom: 80px;
     right: 40px;
-    font-size: 70px;
+    font-size: 120px;
     z-index: 999;
 }
 

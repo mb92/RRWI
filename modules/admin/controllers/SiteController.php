@@ -69,7 +69,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        Settings::loadControlParams();
+        // Settings::loadControlParams();
 
 //        if (!Yii::$app->session->hasFlash('settings')) 
 //        {
