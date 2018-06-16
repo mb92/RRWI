@@ -67,7 +67,7 @@ class ActionsController extends ActiveController
             ->setMethod('POST')
             ->addHeaders(['content-type' => 'application/json'])
             ->setContent($json)
-            ->setUrl($url)
+            ->setUrl($url)a
             ->send();
         
         return $response->content;

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test WebSocket</title>
+</head>
+<body>
+
+	<script>
+var conn = new WebSocket('ws://localhost:8080');
+    conn.onmessage = function(e) {
+        console.log('Response:' + e.data);
+    };
+    conn.onopen = function(e) {
+        console.log("Connection established!");
+        console.log('Hey!');
+        conn.send('Hey!');
+    };
+
+	</script>
+
+
+<!-- <script>
+	    var conn = new WebSocket('ws://localhost:3010');
+		conn.onmessage = function(e) {
+		    console.log('Response:' + e.data);
+		};
+		conn.onopen = function(e) {
+		    console.log('ping');
+		    conn.send('ping');
+		};
+</script> -->
+
+</body>
+</html>
