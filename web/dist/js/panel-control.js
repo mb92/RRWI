@@ -63,6 +63,8 @@ function turnOnPrinter() {
         $('#panelLock').fadeOut();
         $('#panel-control').fadeIn();
 
+        reconnectPrinter();
+
     }).fail(function(err){
         console.log(err);
         $('#btn-turn-on-printer').show();
