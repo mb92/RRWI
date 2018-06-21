@@ -13,7 +13,7 @@ class EchoServer extends WebSocketServer
 
         $this->on(self::EVENT_CLIENT_MESSAGE, function (WSClientMessageEvent $e) {
         	$msg = $e->message;
-
+        	echo $msg;
             $e->client->send( $msg .'pp');
         });
     }

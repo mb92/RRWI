@@ -142,7 +142,6 @@ class Settings extends \yii\db\ActiveRecord
         $portUsb =  Self::find()->select('value')->where(['slug' => 'port_of_printer_(usb_rpi)'])->one()->value;
         $baudrate = Self::find()->select('value')->where(['slug' => 'baudrate'])->one()->value;
 
-
         return [
             'base_url' => $url,
             'port_rrwi-api' => $portApi,

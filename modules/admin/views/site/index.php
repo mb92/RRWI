@@ -100,8 +100,8 @@ $('#bed-temp').on('input', function() {
                             <button onClick="sendAjax('home/xyz', 'post')"type="button"  class="btn btn-control bg-navy"><i class="fa fa-home"></i><sub>xyz</sub></button>
                         </td>
                         <td width="110px" align="left">
-                            <b>Hotend:</b> xx <sup>o</sup>C<br/>
-                            <b>Bed:</b> xx <sup>o</sup>C
+                            <b>Hotend:</b> <span id="hotendTemp"></span> <sup>o</sup>C<br/>
+                            <b>Bed:</b> <span id="bedTemp"></span> <sup>o</sup>C
                         </td>
                         <td align="center" width="40px">
                             <input type="number" onchange="setLS('moveStepY+', $(this).val())" value="10" min="0" max="200" id="move-y-input-up" class="input-control" data-name="moveStepY+"/><br/>
@@ -283,6 +283,7 @@ $('#bed-temp').on('input', function() {
 </div>
 
 <script src="/dist/js/panel-control.js"></script>
+<script src="/dist/js/sockets.js"></script>
 
 <script>
 function setLS(name, val) {

@@ -59,6 +59,9 @@ AppAsset::register($this);
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script src="http://192.168.1.11:3000/socket.io/socket.io.js"></script>
+
 </head>
 
 <body class="hold-transition skin-purple sidebar-mini" style="background-image: url(/dist/img/login_page3.jpg) !important;

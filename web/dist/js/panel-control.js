@@ -317,7 +317,7 @@ function sendAdvCommand() {
 
 	var baseUrl = getLS('base_url') + ":" + getLS('port_rrwi-api') + "/";
 
-    $.ajax(baseUrl+command,{
+    $.ajax(baseUrl+"command/" + encodeURI(command),{
         dataType: 'json',
         method: method
     }).done(function(resp){
