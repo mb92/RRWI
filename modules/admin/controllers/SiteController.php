@@ -76,6 +76,7 @@ class SiteController extends Controller
 //            Settings::loadSettingsToLocalStorage();
 //        }
 //
+        // $baseUrl = Settings::getBaseApiUrl();
         $camUrl = Settings::getCameraUrl();
         $messages = Yii::$app->session->getFlash('success');
                 

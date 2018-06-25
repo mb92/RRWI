@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\Settings;
 
 AppAsset::register($this);
 ?>
@@ -60,7 +61,8 @@ AppAsset::register($this);
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script src="http://192.168.1.11:3000/socket.io/socket.io.js"></script>
+    <!-- <script src="http://192.168.1.9:3000/socket.io/socket.io.js"></script> -->
+    <script src="<?= Settings::getBaseApiUrl(); ?>/socket.io/socket.io.js"></script>
 
 </head>
 

@@ -3,4 +3,4 @@
      
     </div>
     <!-- Default to the left -->
-    <strong>RepRap Web Interface 2017 - 2018 </strong> by <a href="http://maciejborowiec.pl" target="_blank">Maciej Borowiec</a>.
+    <strong>RepRap Web Interface 2017 - <?= date("Y"); ?> </strong> Magic by <a href="http://maciejborowiec.pl" target="_blank">Maciej Borowiec</a>.

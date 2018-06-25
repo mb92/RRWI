@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test js script</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    
+</head>
+<body>
+    
+        
+
+<script>
+
+
+
+$( document ).ready( function() {
+
+var t = 0;
+
+var i = 0;                     //  set your counter to 1
+var x1 = 0, x2 = 0, x3 = 0;
+function myLoop () {           //  create a loop function
+   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+      i++;                     //  increment the counter
+      if (i < 10000) {            //  if the counter < 10, call the loop function
+         myLoop();
+                     //  ..  again which will trigger another 
+      }    
+      console.log(i);                    //  ..  setTimeout()
+
+      
+      
+
+      x1 = x2;
+      x2 = x3;
+      x3 = i;
+
+      if (x1 < x2 && x2 < x3 ) {
+          console.log("up");
+      } else {
+          console.log("down");
+      }
+
+
+   }, 3000)
+}
+
+myLoop();
+});
+</script>
+
+
+</body>
+</html>

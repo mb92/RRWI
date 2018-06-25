@@ -253,9 +253,9 @@ $('#bed-temp').on('input', function() {
             </div>
             <div class="box-body">
 
-
+                <div id="console"></div>
                 <div class="form-group">
-                    <label>Insert command and choose a sending method:</label>
+                    <!-- <label>Insert command and choose a sending method:</label> -->
                     <input type="text" class="form-control" id="command-to-send">
                 </div>
                 <div class="form-group row">
@@ -275,13 +275,17 @@ $('#bed-temp').on('input', function() {
 
         </div>
 
-
-        <button type="button" onclick="getInfo();">Get info</button>
-        <button type="button" onclick="sendAjax('', 'get');">test</button>
     </div>
 </div>
-</div>
 
+
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+
+
+</div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script src="/dist/js/panel-control.js"></script>
 <script src="/dist/js/sockets.js"></script>
 
