@@ -184,6 +184,7 @@ function printing(action) {
         $('#btn-printing-resume').css('display', 'none');
     } else if (action == 'stop') {
     	sendAjax('reset', 'get');
+        sendAjax('stop', 'get');
     	setLS('sent_file', 0);
         $('#btn-printing-stop').css('display', 'none');
         $('#btn-printing-pause').css('display', 'none');
