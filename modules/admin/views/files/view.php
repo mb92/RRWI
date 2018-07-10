@@ -46,8 +46,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             ]);
                             
                             
-                            
-//                            return Html::img('/'.Yii::$app->params['mediaDir'].$model->name, ['width' => '100', 'height' => 'auto', 'alt' => 'Brak pliku']);
                         }
                             
                     },

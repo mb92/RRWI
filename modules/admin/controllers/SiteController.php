@@ -55,10 +55,6 @@ class SiteController extends Controller
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
-            // 'captcha' => [
-            //     'class' => 'yii\captcha\CaptchaAction',
-            //     'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            // ],
         ];
     }
 
@@ -69,13 +65,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        // Settings::loadControlParams();
-
-//        if (!Yii::$app->session->hasFlash('settings')) 
-//        {
-//            Settings::loadSettingsToLocalStorage();
-//        }
-//
         // $baseUrl = Settings::getBaseApiUrl();
         $camUrl = Settings::getCameraUrl();
         $messages = Yii::$app->session->getFlash('success');

@@ -30,25 +30,7 @@ class FilesController extends Controller
     
     public function behaviors()
     {
-        return [
-            // 'access' => [
-            //     'class' => AccessControl::className(),
-            //     'only' => ['logout'],
-            //     'rules' => [
-            //         [
-            //             'actions' => ['logout'],
-            //             'allow' => true,
-            //             'roles' => ['@'],
-            //         ],
-            //     ],
-            // ],
-            // 'verbs' => [
-            //     'class' => VerbFilter::className(),
-            //     'actions' => [
-            //         'logout' => ['post'],
-            //     ],
-            // ],
-        ];
+
     }
 
     /**
@@ -60,30 +42,12 @@ class FilesController extends Controller
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
-            // 'captcha' => [
-            //     'class' => 'yii\captcha\CaptchaAction',
-            //     'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            // ],
         ];
     }
 
     /**
-     * Displays homepage.
-     *
-     * @return string
+     * Dispaly list of files
      */
-//    public function actionIndex()
-//    {
-////        $path = Yii::getAlias('@webroot').DIRECTORY_SEPARATOR.'upload';
-//        $path = Files::getDestPath();
-//        $allFiles = BaseFileHelper::findFiles($path);
-//        array_shift($allFiles); 
-//        
-////        $filesList = Files::getFullFileName($allFiles);
-//        return $this->render('index', ['files' => $allFiles ]);
-//    }
-    
-    
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
@@ -95,7 +59,9 @@ class FilesController extends Controller
         ]);
     }
     
-    
+    /**
+     * Create new row in Files
+     */
     public function actionCreate()
     {
         $model = new Files();
@@ -119,18 +85,15 @@ class FilesController extends Controller
                         $fileName = $file->name;
                     }
                     
-                    
-//                    $st = $file->saveAs( $path . DIRECTORY_SEPARATOR . $fileName );
-//                    if ($st) 
-//                    {
                         $newFile = new Files;
                         $newFile->name = $fileName;
                         $newFile->slug = slug($fileName);
                         $newFile->ext = $file->extension;
+
                         if ( $newFile->save() ) {
                             $file->saveAs( $path . DIRECTORY_SEPARATOR . $fileName );
                         } 
-//                    }
+
                     gc_collect_cycles ();
                 }
                 

@@ -33,17 +33,6 @@ class ActionsController extends ActiveController
     
     public function actionRun() {
         vdd("runapi");
-		$result = "fail";
-//		$api = Yii::$app->request->post();
-//		// print_r(Yii::$app->request->post());
-//		// die();
-//                
-////		$api['sesId'] = Yii::$app->request->post('sesId', false);
-////		$api['token'] = Yii::$app->request->post('token', false);
-////		$api['action'] = Yii::$app->request->post('action', false);
-
-
-		return $result;
 	}
 //
 

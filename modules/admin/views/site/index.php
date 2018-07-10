@@ -86,8 +86,8 @@ $('#bed-temp').on('input', function() {
                 <div class="move-top-btn">
                     <button type="button" onClick="sendAjax('off', 'get')" class="btn btn-danger pull-left"><i class="far fa-stop-circle"></i> Stop motors</button>
                     <button type="button" onClick="reconnectPrinter()" class="btn btn-warning pull-left"><i class="fas fa-sync"></i> Reconnect printer</button>
-                    <button type="button" onClick="sendAjax('reset');sendAjax('stop');" class="btn btn-warning pull-right"><i class="fas fa-sync"></i> Reset</button>
-                    <button type="button"  id="btn-printing-stop" class="btn btn-danger pull-right" onClick="printing('stop');" style="display:none"><i class="fa fa-stop"></i> Stop</button>
+                    <!-- <button type="button" onClick="sendAjax('off');" class="btn btn-warning pull-right"><i class="fas fa-sync"></i> Reset</button> -->
+                    <button type="button"  id="btn-printing-stop" class="btn btn-danger pull-right" onClick="printing('reset');" style="display:none"><i class="fa fa-stop"></i> Stop</button>
                     <button type="button"  id="btn-printing-play" class="btn btn-success pull-right" onClick="printing('play');"><i class="fa fa-play"></i> Start printing!</button>
                     <button type="button"  id="btn-printing-pause" class="btn btn-default pull-right" onClick="printing('pause');" style="display:none"><i class="fa fa-pause"></i> Pause</button>
                     <button type="button"  id="btn-printing-resume" class="btn btn-info pull-right" onClick="printing('resume');" style="display:none"><i class="fa fa-play"></i> Resume</button>
@@ -283,84 +283,14 @@ $('#bed-temp').on('input', function() {
 
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
-
-
 </div>
+
+
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script src="/dist/js/panel-control.js"></script>
 <script src="/dist/js/sockets.js"></script>
+<script src="/dist/js/main.js"></script>
 
-<script>
-function setLS(name, val) {
-    var dd = localStorage.setItem(name, val);
-    // console.log(dd);
-}
-
-function getLS(name) {
-    var dd = localStorage.getItem(name);
-    // console.log(dd);
-    return dd;
-}
-
-function getInfo() {
-    var message = sendAjax('gettemp', 'get');
-    $('#getinfo').append('<p>' + message + '</p>');
-    console.log(message);
-}
-
-
-$( document ).ready(function() {
-    checkConnection();
-    setDefaultLSValues();
-    });
-
-//Close Message box - API error message
-$( '.close-message > i').click( function () {
-    $('#api-errors').fadeOut();
-});
-
-//
-$( window ).load(function() {
-   var bedTemp = getLS('_bed');
-   var hotendTemp = getLS('_hotend');
-   document.getElementById("range-bedtemp").value=bedTemp; 
-   document.getElementById("range-hotend").value=hotendTemp;
-   document.getElementById("boxhotend").value=hotendTemp;
-   document.getElementById("boxbed").value=bedTemp;
-   
-   // $( "#camera" ).contents().find( "body" ).css( "background-color", "#BADA55" );
-   // console.log(sendAjax('status', 'get'));
-   if (getLS('sent_file') == 0) {
-        $('#btn-printing-play').attr("disabled", true);
-   } else {
-        $('#btn-printing-play').removeAttr("disabled");
-   }
-});
-
-
-
-    setInterval ( function(){ 
-
-        $.ajax('/v1/actions/status',{
-                method: 'get'
-            }).then(function(resp){
-
-                if (!resp) {
-                    window.location.reload(true);
-                } else {
-                    if ($('div.lock').is(':visible')) {
-                        window.location.reload(true);
-                    }
-                }
-                
-                console.log(resp);
-                
-            });
-
-     }, 10000);
-
-
-</script>
 
 
 
