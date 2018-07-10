@@ -321,19 +321,6 @@ $( '.close-message > i').click( function () {
 
 //
 $( window ).load(function() {
-   // var adapter = getLS('external_power_adapter');
-   // console.log(adapter);
-   // if (!adapter) {
-   //     $('#btn-turn-on-printer').css('display', 'none');
-   //     $('#btn-emergency').css('display', 'none');
-   // } 
-   
-//    var turnOn = getLS('_turnOn');
-//    if (turnOn == 1) {
-//        $('#btn-turn-on-printer').css('display', 'none');
-//        $('#btn-turn-off-printer').css('display', 'block');
-//    }
-   
    var bedTemp = getLS('_bed');
    var hotendTemp = getLS('_hotend');
    document.getElementById("range-bedtemp").value=bedTemp; 
@@ -349,6 +336,28 @@ $( window ).load(function() {
         $('#btn-printing-play').removeAttr("disabled");
    }
 });
+
+
+
+    setInterval ( function(){ 
+
+        $.ajax('/v1/actions/status',{
+                method: 'get'
+            }).then(function(resp){
+
+                if (!resp) {
+                    window.location.reload(true);
+                } else {
+                    if ($('div.lock').is(':visible')) {
+                        window.location.reload(true);
+                    }
+                }
+                
+                console.log(resp);
+                
+            });
+
+     }, 10000);
 
 
 </script>
