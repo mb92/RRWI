@@ -159,8 +159,9 @@ img.dt.img-circle {
 }
 
 .videostreaming {
-    width: 480px;
-    height: 320px;
+    width: 487px;
+    height: 327px;
+    padding: 0px 7px 7px 0px;
 }
 
 .top-btns {
