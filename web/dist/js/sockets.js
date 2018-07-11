@@ -2,16 +2,14 @@
 var socket = io(localStorage.getItem('base_url')+":"+localStorage.getItem('port_rrwi-api'));
 
 
-socket.on('connect', function(){
+socket.on('connect', function(resp){
   console.log('connected');
-
 });
 
 socket.on('status', function(resp){
   var hotend = resp && resp.hotendTemp && resp.hotendTemp.nowTemp; 
   var bed = resp && resp.bedTemp && resp.bedTemp.nowTemp;
 //   var bed = resp && resp.hotendTemp && console.log("Hotend:" + (resp && resp.hotendTemp && resp.hotendTemp.nowTemp))/;
-
 
   $("#hotendTemp").text(hotend);
   $("#bedTemp").text(bed);
@@ -24,3 +22,7 @@ socket.on('console', function(resp){
   	$("#console").prepend("<p>"+resp+"</p>");
   }
 });
+
+
+
+
