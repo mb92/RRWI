@@ -294,4 +294,3 @@ $('#bed-temp').on('input', function() {
 
 
 
-

@@ -104,8 +104,33 @@ function emergencyStop() {
         console.log(err);
         turnOffPrinter();
     }); 
-}
+    //     method: 'get'
+    // }).then(function(resp){    
 
+    // sendAjax('cooldown', 'get');
+    // sendAjax('off', 'get');
+    // var baseUrl = getLS('base_url') + "/";
+    //     $('#btn-turn-off-printer').css('display', 'none');
+    //     $('#btn-turn-on-printer').css('display', 'block');
+    //     setLS('_turnOn', 0);
+    //     setLS('_hotend', 0);
+    //     setLS('_bed', 0);
+    // $.ajax('admin/settings/turn-off',{
+    //     method: 'get'
+    // }).then(function(resp){
+    //     console.log(resp);   
+    //     $.ajax(baseUrl + 'rrwi/stop.php',{
+    //         method: 'get'
+    //     }).then(function(){
+    //         console.log('Adapter was turned off');
+    //     }).fail(function(err){
+    //         console.log(err);
+    //     });  
+    // }).fail(function(err){
+    //     console.log(err);
+    // });
+
+}
 function reconnectPrinter() {
 
 	var portUSB = getLS('port_of_printer_(usb_rpi)').replace(/\//g, '%2F');
@@ -113,7 +138,6 @@ function reconnectPrinter() {
 	// console.log(portUSB, baud);
     sendAjax('connect/'+portUSB+'/'+baud, 'post');
 }
-
 
 function resetPrinter() {
     sendAjax('cooldown', 'get');
