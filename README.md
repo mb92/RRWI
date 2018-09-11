@@ -1,3 +1,9 @@
+RUN SOCKECTS SERVER:
+
+php yii server/start
+
+
+
 Yii 2 Basic Project Template
 ============================
 
