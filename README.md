@@ -1,6 +1,74 @@
+# RRWI
+RepRap Web Interface to interfejs webowy do sterowania drukarką 3D inspirowany projektem "Printerface" (https://github.com/w-A-L-L-e/printerface). Projekt łączy w sobie kilka technologii. CMS łączy się z aplikacją NodeJS uruchominonej na Raspberry Pi. Mikrokomputer podłączony jest do drukarki 3D za pomocą kabla USB oraz musi być widoczny w sieci lokalnej.
+
+Zalecane wymagania:
+- zdalny serwer www oraz baza danych umożliwiająca instalację frameworka Yii2
+- raspberry Pi 3 B+ wraz z kartą microSD 16GB
+- zestaw elementów elektronicznych potrzebnych do budowy przystawki (zestawienie na diagramie w pliku diagram.pdf)
+
+
+Interfejs składa się z dwóch części:
+
+1) System CMS na bazie frameworka Yii2 (https://www.yiiframework.com/). System należy zaisntalować zgodnie zasadami instalacji framworka Yii2. Następnie po instalacji, w panelu administratora (/admin , Login: admin@admin.com, Password: asd123) należy skonfigurowac dane niezbędne do połączenia z Aplikacją 2).
+
+2) Skonfigurowany obraz systemu Raspbian z aplikacją NodeJS wraz z biblioteką Pronsole. Obraz należy nanieść na kartę micro SD i uruchomić w Raspberry Pi (testowano na Raspberry 3 B+). Nieodłącznym elementem systemu jest proste urządzenie umożliwiające zdalne sterowanie zasilaniem drukarki. Szkic połączeń elementów układu znajduje się w pliku pdf (diagram.pdf). Instrukcja nagrywania dowolnego obrazu systemu na kardtę SD znajduję się np. pod tym adresem: http://uczymy.edu.pl/wp/mini-kurs-obslugi-raspberry-pi/raspberry-pi-raspbian/
+
+
+Więcej szczegółowych informacji na temat interfejsu oraz przystawki zdalnego sterowania można znaleźć w dokumencie dostępnym pod adresem: https://www.thesis.maciejborowiec.pl/rrwi-maciejborowiec.pdf
+
+Autor nie ponosi odpowiedzialności za ewentualnie powstałe uszkodzenia oprzyrządowania drukarki, mikrokoputera i innych elementów sprzętowych oraz programowych wykorzystywanych w projekcie. Wszystko co użytkownik wykonuje, robi na własną odpowiedzialność.
+
+Interfejs można dowolnie wykorzystywać i rozwijać na własne potrzeby.
+
+
+
+
+
+RepRap Web Interface is a web interface for controlling a 3D printer inspired by the "Printerface" project (https://github.com/w-A-L-L-e/printerface). The project combines several technologies. CMS connects to the NodeJS application launched on Raspberry Pi. The microcomputer is connected to a 3D printer using a USB cable and must be visible on the local network.
+
+Recommended requirements:
+- remote www server and database enabling the installation of the Yii2 framework
+- raspberry Pi 3 B + with 16GB microSD card
+- a set of electronic components needed to build a snap (shown in the diagram in the file diagram.pdf)
+
+
+The interface consists of two parts:
+
+1) CMS based on the Yii2 framework (https://www.yiiframework.com/). The system should be installed in accordance with the installation rules of the Yii2 framework. Then after installation, in the admin panel (/ admin, Login: admin@admin.com, Password: asd123), you must configure the data necessary to connect to Application 2).
+
+2) Configured image of the Raspbian system with the NodeJS application works with the Pronsole library. The image should be applied to the micro SD card and run in Raspberry Pi (tested on Raspberry 3 B +). An inherent element of the system is a simple device enabling remote control of the printer's power supply. The sketch of connection of system elements can be found in the pdf file (diagram.pdf). The instructions for recording any system image on the SD card can be found, for example, at this address: http://uczymy.edu.pl/wp/mini-kurs-obslugi-raspberry-pi/raspberry-pi-raspbian/
+
+
+More detailed information on the interface and remote control adapter can be found in the document available at: https://www.thesis.maciejborowiec.pl/rrwi-maciejborowiec.pdf
+
+The author is not responsible for any damage to printer tooling, microcopier and other hardware and software components used in the project. Everything that the user does is done at his own risk.
+
+The interface can be freely used and developed for your own needs.
+
+
+
+
+
+
+
+
+
+
+Maciej Borowiec
+mb.fizyka@gmail.com
+https://maciejborowiec.pl
+
+
+
+
+
 RUN SOCKECTS SERVER:
 
 php yii server/start
+
+
+
+
 
 
 
