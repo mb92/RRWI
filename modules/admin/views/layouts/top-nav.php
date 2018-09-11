@@ -23,7 +23,7 @@ use app\assets\AppAsset;
 
                 <ul class="nav navbar-nav">
 
-                    <li><?= Html::a('Wyloguj (' . Yii::$app->user->identity->email . ')', ['/admin/auth/logout']) ?></li>
+                    <li><?= Html::a('Logout (' . Yii::$app->user->identity->email . ')', ['/admin/auth/logout']) ?></li>
 
                 </ul>
             </div>
