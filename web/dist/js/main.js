@@ -17,7 +17,11 @@ function getInfo() {
 
 
 $( document ).ready(function() {
-    checkConnection();
+    if (window.location.href == "http://rrwi.loc/admin/site"){
+        checkConnection();
+    } else {
+        console.log(window.location.href);
+    }
     setDefaultLSValues();
     });
 

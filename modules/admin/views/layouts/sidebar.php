@@ -1,5 +1,5 @@
 <?php 
-
+use app\models\Settings;
 ?>
     <!-- Sidebar user panel (optional) -->
 
@@ -8,6 +8,7 @@
         <li><a href="<?= Yii::$app->getHomeUrl() ?>"><i class="fas fa-tachometer-alt"></i> <span> Dashboard</span></a></li>
         <!-- <li><a href="<?= Yii::$app->getHomeUrl() ?>"><i class="fa fa-cubes"></i> <span>Prints</span></a></li> -->
         <li><a href="/admin/files"><i class="far fa-copy"></i> <span> Files</span></a></li>
+        <li><a href="<?= Settings::find()->select('value')->where(['slug' => 'base_url'])->one()->value;?>/api" target="_blank"><i class="fa fa-book"></i> <span> API Docs</span></a></li>
         <li class="header">Settings:</li>
 
         <li><a href="/admin/settings"><i class="fa fa-cogs"></i> <span>General</span></a></li>
