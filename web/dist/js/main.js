@@ -76,7 +76,9 @@ $( window ).load(function() {
                 
                 console.log(resp);
                 
+            }).fail(function(resp) {
+              console.log(resp);
             });
 
-     }, 10000);
+     }, 100000);
 

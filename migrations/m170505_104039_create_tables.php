@@ -20,7 +20,7 @@ class m170505_104039_create_tables extends Migration
         ]);
         
          $this->insert('user', [
-            'email' => 'mb.fizyka@gmail.com',
+            'email' => 'admin@admin.com',
             'password' => Yii::$app->getSecurity()->generatePasswordHash('asd123'),
             'created_at' => mysqltime()
         ]);
